@@ -1,0 +1,11 @@
+import React from "react";
+
+const Heading1 = ({ headingGray, headingWhite }) => {
+  return (
+    <h1 className="font-raleway text-gray-400 font-[400] text-[25px]/[30px] md:text-[32px]/[40px] lg:text-[40px]/[46.96px] uppercase tracking-[5%]">
+      {headingGray} <span className="text-white">{headingWhite}</span>
+    </h1>
+  );
+};
+
+export default Heading1;
