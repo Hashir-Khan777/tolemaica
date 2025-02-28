@@ -1,10 +1,10 @@
 import React from "react";
 import Heading1 from "./ui/Heading1";
 import { Text, GradientSpan } from "./ui/Text";
-import Card from "./ui/Card";
-import CustomBtn from "./ui/CustomeBtn";
+import Card2 from "./ui/Card2";
+import Card3 from "./ui/Card3";
 import { Link } from "react-router-dom";
-import PartnersSlider from './ui/PartnersSLider'
+
 
 function DataClick() {
   return (
@@ -18,7 +18,7 @@ function DataClick() {
       ></video>
 
       {/* ==== Content wrapper ===== */}
-      <div className="relative z-10 flex flex-col justify-center items-center gap-[100px] text-center lg:px-[100px] md:px-[50px] px-[30px]">
+      <div className="relative z-10 flex flex-col justify-center items-center gap-[100px] text-center lg:px-[100px] md:px-[50px] px-[20px]">
 
         {/* ==== What is DataClick ====== */}
         <div className="w-full flex flex-col justify-center items-center gap-[50px]">
@@ -62,54 +62,18 @@ function DataClick() {
           <div className="w-full grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-[24px]">
 
             {/* Card1 */}
-            <div className=" bg-black/25 border-2 border-white/64 rounded-[20px] backdrop-blur-[100px] p-5 flex flex-col gap-[12px]  justify-center items-center text-center">
-              <img src="./dataclickcard1.svg" alt="card1" className="w-[80%] lg:w-full" />
-
-              <div className="py-[12px] px-[10px] flex flex-col md:gap-[16px] gap-[8px]">
-                <h1 className="font-outfit capitalize md:text-[24px]/[30.24px] sm:text-[20px]/[27.24px] text-[18px]/[25.24px] text-center tracking-[5%] font-[500] bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">Instant & Automatic Certification</h1>
-                <p className="text-gray-400 font-outfit font-[300] md:text-[20px]/[25.2px] text-[16px]/[18.2px] text-center tracking-[5%]">Certifies date and location of images.</p>
-              </div>
-
-            </div>
-            {/* Card1 */}
+            <Card3 image="./dataclickcard1.svg" title="Instant & Automatic Certification" description="Certifies date and location of images." />
 
             {/* Card2 */}
-            <div className=" bg-black/25 border-2 border-white/64 rounded-[20px] backdrop-blur-[100px] p-5 flex flex-col gap-[12px]  justify-center items-center text-center">
-              <img src="./dataclickcard2.svg" alt="card1" className="w-[80%] lg:w-full" />
-
-              <div className="py-[12px] px-[10px] flex flex-col md:gap-[16px] gap-[8px]">
-                <h1 className="font-outfit capitalize md:text-[24px]/[30.24px] sm:text-[20px]/[27.24px] text-[18px]/[25.24px] text-center tracking-[5%] font-[500] bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">Multi-Device Accessibility</h1>
-                <p className="text-gray-400 font-outfit font-[300] md:text-[20px]/[25.2px] text-[16px]/[18.2px] text-center tracking-[5%]">Use via PC or
-                  smartphone.</p>
-              </div>
-
-            </div>
-            {/* Card2 */}
+            <Card3 image="./dataclickcard2.svg" title="Multi-Device Accessibility" description="Use via PC or
+                  smartphone." />
 
             {/* Card3 */}
-            <div className=" bg-black/25 border-2 border-white/64 rounded-[20px] backdrop-blur-[100px] p-5 flex flex-col gap-[12px]  justify-center items-center text-center">
-              <img src="./dataclickcard3.svg" alt="card1" className="w-[80%] lg:w-full" />
-
-              <div className="py-[12px] px-[10px] flex flex-col md:gap-[16px] gap-[8px]">
-                <h1 className="font-outfit capitalize md:text-[24px]/[30.24px] sm:text-[20px]/[27.24px] text-[18px]/[25.24px] text-center tracking-[5%] font-[500] bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">Simple & Cost Effective</h1>
-                <p className="text-gray-400 font-outfit font-[300] md:text-[20px]/[25.2px] text-[16px]/[18.2px] text-center tracking-[5%]">Use via PC or
-                  smartphone.</p>
-              </div>
-
-            </div>
-            {/* Card3 */}
+            <Card3 image="./dataclickcard3.svg" title="Simple & Cost Effective" description="Use via PC or
+                  smartphone." />
 
             {/* Card4 */}
-            <div className=" bg-black/25 border-2 border-white/64 rounded-[20px] backdrop-blur-[100px] p-5 flex flex-col gap-[12px]  justify-center items-center text-center">
-              <img src="./dataclickcard4.svg" alt="card1" className="w-[80%] lg:w-full" />
-
-              <div className="py-[12px] px-[10px] flex flex-col md:gap-[16px] gap-[8px]">
-                <h1 className="font-outfit capitalize md:text-[24px]/[30.24px] sm:text-[20px]/[27.24px] text-[18px]/[25.24px] text-center tracking-[5%] font-[500] bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">Secure & Legally Valid</h1>
-                <p className="text-gray-400 font-outfit font-[300] md:text-[20px]/[25.2px] text-[16px]/[18.2px] text-center tracking-[5%]">Provides legally recognized proof of authenticity.</p>
-              </div>
-
-            </div>
-            {/* Card4 */}
+            <Card3 image="./dataclickcard4.svg" title="Secure & Legally Valid" description="Provides legally recognized proof of authenticity." />
 
           </div>
           {/* ==== Cards ==== */}
@@ -117,89 +81,33 @@ function DataClick() {
         {/* ====== Why Choose DataClick ======= */}
 
         {/* ====== Benefit of usind dataclick ===== */}
-        <div className="w-full flex flex-col gap-[64px]">
+        <div className="w-full flex flex-col gap-[64px] mx-auto">
 
           <Heading1 headingGray="benefits of" headingWhite="using dataclick" />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-center items-center p-4">
+          <div className="mx-auto flex flex-col sm:grid  sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-center items-center p-4">
             {/*  */}
             <div className="lg:block  hidden"></div>
 
             {/* Card 1 */}
-            <div className="w-full max-w-[300px] h-[300px] bg-black/25 border-2 border-white/64 rounded-[30px] backdrop-blur-[12px] p-5 flex flex-col gap-[12px] justify-center items-center text-center">
-              <div className="py-[12px] px-[10px] flex flex-col gap-[8px] md:gap-[16px]">
-                <h1 className="font-outfit capitalize text-[18px] sm:text-[20px] md:text-[24px] text-center font-[500] bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-                  Infrastructure Monitoring
-                </h1>
-                <p className="text-gray-400 font-outfit font-[300] text-[16px] md:text-[20px] text-center">
-                  Certify structural conditions with timestamped images.
-                </p>
-              </div>
-            </div>
+            <Card2 title="Infrastructure Monitoring" description=" Certify structural conditions with timestamped images." />
 
             {/* Card 2 */}
-            <div className="w-full max-w-[300px] h-[300px] bg-black/25 border-2 border-white/64 rounded-[30px] backdrop-blur-[12px] p-5 flex flex-col gap-[12px] justify-center items-center text-center">
-              <div className="py-[12px] px-[10px] flex flex-col gap-[8px] md:gap-[16px]">
-                <h1 className="font-outfit capitalize text-[18px] sm:text-[20px] md:text-[24px] text-center font-[500] bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-                  Legal Disputes & Professional Activities
-                </h1>
-                <p className="text-gray-400 font-outfit font-[300] text-[16px] md:text-[20px] text-center">
-                  Provide court-admissible proof.
-                </p>
-              </div>
-            </div>
+            <Card2 title="Legal Disputes & Professional Activities" description="Provide court-admissible proof." />
 
             {/* Card 3 */}
-            <div className="w-full max-w-[300px] h-[300px] bg-black/25 border-2 border-white/64 rounded-[30px] backdrop-blur-[12px] p-5 flex flex-col gap-[12px] justify-center items-center text-center">
-              <div className="py-[12px] px-[10px] flex flex-col gap-[8px] md:gap-[16px]">
-                <h1 className="font-outfit capitalize text-[18px] sm:text-[20px] md:text-[24px] text-center font-[500] bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-                  Consumption Measurement
-                </h1>
-                <p className="text-gray-400 font-outfit font-[300] text-[16px] md:text-[20px] text-center">
-                  Capture utility or resource consumption.
-                </p>
-              </div>
-            </div>
+            <Card2 title="Consumption Measurement" description="Capture utility or resource consumption." />
 
             {/* Card 4 */}
-            <div className="w-full max-w-[300px] h-[300px] bg-black/25 border-2 border-white/64 rounded-[30px] backdrop-blur-[12px] p-5 flex flex-col gap-[12px] justify-center items-center text-center">
-              <div className="py-[12px] px-[10px] flex flex-col gap-[8px] md:gap-[16px]">
-                <h1 className="font-outfit capitalize text-[18px] sm:text-[20px] md:text-[24px] text-center font-[500] bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-                  Point of Sale Control
-                </h1>
-                <p className="text-gray-400 font-outfit font-[300] text-[16px] md:text-[20px] text-center">
-                  Document store conditions and activities.
-                </p>
-              </div>
-            </div>
+            <Card2 title=" Point of Sale Control" description="Document store conditions and activities." />
 
             {/* Card 5 */}
-            <div className="w-full max-w-[300px] h-[300px] bg-black/25 border-2 border-white/64 rounded-[30px] backdrop-blur-[12px] p-5 flex flex-col gap-[12px] justify-center items-center text-center">
-              <div className="py-[12px] px-[10px] flex flex-col gap-[8px] md:gap-[16px]">
-                <h1 className="font-outfit capitalize text-[18px] sm:text-[20px] md:text-[24px] text-center font-[500] bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-                  Insurance Claims
-                </h1>
-                <p className="text-gray-400 font-outfit font-[300] text-[16px] md:text-[20px] text-center">
-                  Secure photographic evidence for claims.
-                </p>
-              </div>
-            </div>
+            <Card2 title="Insurance Claims" description=" Secure photographic evidence for claims." />
 
             {/* Card 6 */}
-            <div className="w-full max-w-[300px] h-[300px] bg-black/25 border-2 border-white/64 rounded-[30px] backdrop-blur-[12px] p-5 flex flex-col gap-[12px] justify-center items-center text-center">
-              <div className="py-[12px] px-[10px] flex flex-col gap-[8px] md:gap-[16px]">
-                <h1 className="font-outfit capitalize text-[18px] sm:text-[20px] md:text-[24px] text-center font-[500] bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-                  Packaging & Storage Inspection
-                </h1>
-                <p className="text-gray-400 font-outfit font-[300] text-[16px] md:text-[20px] text-center">
-                  Certify conditions before shipment or storage.
-                </p>
-              </div>
-            </div>
+            <Card2 title="Packaging & Storage Inspection" description="Certify conditions before shipment or storage." />
 
           </div>
-
-
 
         </div>
         {/* ====== Benefit of usind dataclick ===== */}
@@ -207,7 +115,7 @@ function DataClick() {
       </div>
 
       {/* ======= Our Partners ======== */}
-      <div className="relative z-10 w-full flex flex-col justify-center items-center text-center md:mt-[100px] mt-[50px] gap-[64px]">
+      <div className="relative z-10 w-full flex flex-col justify-center items-center text-center md:mt-[100px] mt-[50px] gap-[64px] px-[20px]">
         <div className="flex flex-col gap-[20px]">
           <Heading1 headingGray="Our" headingWhite="Partners" />
           <Text>

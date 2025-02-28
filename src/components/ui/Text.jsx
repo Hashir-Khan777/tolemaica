@@ -2,7 +2,7 @@ import React from "react";
 
 const Text = ({ children }) => {
   return (
-    <p className="text-gray-400 text-[18px] text-center md:text-[24px]/[28px] max-w-[1000px] px-4 tracking-[5%] font-[300] mx-auto">
+    <p className="text-gray-400 text-[18px] text-center md:text-[24px]/[28px] w-full max-w-[1000px] tracking-[5%] font-[300] mx-auto">
       {children}
     </p>
   );
