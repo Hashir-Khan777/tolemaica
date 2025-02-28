@@ -4,6 +4,7 @@ import { Text, GradientSpan } from "./ui/Text";
 import Card from "./ui/Card";
 import CustomBtn from "./ui/CustomeBtn";
 import { Link } from "react-router-dom";
+import PartnersSlider from './ui/PartnersSLider'
 
 function OurPartners() {
   return (
@@ -29,6 +30,21 @@ function OurPartners() {
         </div>
 
         <img src="/ourPartners.svg" alt="" className="w-[100vw]" />
+        {/* Top Row - Moving Right */}
+      {/* <PartnersSlider direction="right">
+        <img src="/ourpatent1.svg" alt="Logo" className="w-24" />
+        <img src="/ourpatent2.svg" alt="Logo" className="w-24" />
+        <img src="/ourpatent3.svg" alt="Logo" className="w-24" />
+        <img src="/ourpatent3.svg" alt="Logo" className="w-24" />
+      </PartnersSlider> */}
+
+      {/* Bottom Row - Moving Left */}
+      {/* <PartnersSlider direction="left">
+      <img src="/ourpatent1.svg" alt="Logo" className="w-24" />
+        <img src="/ourpatent2.svg" alt="Logo" className="w-24" />
+        <img src="/ourpatent3.svg" alt="Logo" className="w-24" />
+        <img src="/ourpatent3.svg" alt="Logo" className="w-24" />
+      </PartnersSlider> */}
       </div>
 
       {/* ==== Content wrapper ===== */}
