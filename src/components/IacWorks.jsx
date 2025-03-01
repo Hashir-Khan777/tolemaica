@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 function IACWorks() {
     return (
-        <section className="relative overflow-hidden w-full bg-black py-[100px] flex  flex-col gap-[64px] gap-[30px]">
+        <section className="relative overflow-hidden w-full bg-black py-[100px] flex  flex-col md:gap-[64px] gap-[30px]">
             <video
                 src="/ourpartners.mp4"
                 autoPlay
