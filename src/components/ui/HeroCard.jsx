@@ -3,7 +3,10 @@ import React from "react";
 const HeroCard = () => {
   return (
     <div
-      className="w-[90%] max-w-[1200px] min-h-[400px] lg:h-[620px] bg-black/25 border-2 border-white/64 rounded-[24px] backdrop-blur-[10px] p-5 flex flex-col gap-[30px] lg:gap-[50px] justify-center items-center text-center mx-auto my-[30px] lg:my-[50px]"
+      className="z-10 w-[90%] max-w-[1200px] min-h-[400px] lg:h-[620px] border-2 border-white/64 rounded-[24px] backdrop-blur-[10px] p-5 flex flex-col gap-[30px] lg:gap-[50px] justify-center items-center text-center mx-auto my-[30px] lg:my-[50px]"
+    style={{
+        background:"rgba(255, 255, 255, 0.04)"
+    }}
     >
       {/* Heading */}
       <h1 className="font-raleway text-white font-[400] capitalize tracking-[5%] max-w-[890px] 

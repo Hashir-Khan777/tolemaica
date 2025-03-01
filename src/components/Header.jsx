@@ -8,7 +8,7 @@ function Header() {
   return (
     <>
       {/* Navbar Container */}
-      <div className="relative z-10 w-[90%] max-w-[1320px] mx-auto my-6  rounded-full border-2 border-white flex justify-between items-center px-6 py-2 lg:px-16 lg:py-5"
+      <div className="relative z-50 w-[90%] max-w-[1320px] mx-auto my-6  rounded-full border-2 border-white flex justify-between items-center px-6 py-2 lg:px-16 lg:py-5"
       style={{
         background:"rgba(0,0,0,0.5)"
       }}>
