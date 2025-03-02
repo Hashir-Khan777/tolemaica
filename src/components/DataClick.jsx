@@ -4,6 +4,7 @@ import { Text, GradientSpan } from "./ui/Text";
 import Card2 from "./ui/Card2";
 import Card3 from "./ui/Card3";
 import { Link } from "react-router-dom";
+import OurPartnersSlider from './ui/PartnersSLider'
 
 
 function DataClick() {
@@ -18,7 +19,7 @@ function DataClick() {
       ></video>
 
       {/* ==== Content wrapper ===== */}
-      <div className="relative z-10 flex flex-col justify-center items-center gap-[100px] text-center lg:px-[100px] md:px-[50px] px-[20px]">
+      <div className="relative z-10 flex flex-col justify-center items-center md:gap-[100px] gap-[70px] text-center lg:px-[100px] md:px-[50px] px-[20px]">
 
         {/* ==== What is DataClick ====== */}
         <div className="w-full flex flex-col justify-center items-center gap-[50px]">
@@ -114,16 +115,19 @@ function DataClick() {
 
       </div>
 
-      {/* ======= Our Partners ======== */}
-      <div className="relative z-10 w-full flex flex-col justify-center items-center text-center md:mt-[100px] mt-[50px] gap-[64px] px-[20px]">
+      {/* ==== Partners ==== */}
+      <div className="relative md:mt-[100px] mt-[70px] z-20 mg:mb-[100px] flex flex-col justify-center items-center gap-[64px] text-center px-[20px]">
         <div className="flex flex-col gap-[20px]">
           <Heading1 headingGray="Our" headingWhite="Partners" />
           <Text>
-            Lorem ipsum dolor sit amet consectetur. <GradientSpan>Lorem mollis est</GradientSpan> nisl enim sed nunc senectus. Molestie arcu arcu sapien vulputate ligula. Odio dolor velit vestibulum adipiscing.
+            Lorem ipsum dolor sit amet consectetur.{" "}
+            <GradientSpan>Lorem mollis est</GradientSpan> nisl enim sed nunc
+            senectus. Molestie arcu arcu sapien vulputate ligula. Odio dolor
+            velit vestibulum adipiscing.
           </Text>
         </div>
 
-        <img src="./partner.svg" alt="Our partners" className="w-full" />
+        <OurPartnersSlider image1="/img1.svg" image2="/img2.svg" image3="/img3.svg" image4="/img4.svg" />
 
       </div>
 

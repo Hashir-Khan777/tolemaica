@@ -1,7 +1,7 @@
 import React from "react";
 import Heading1 from "./ui/Heading1";
 import { Text, GradientSpan } from "./ui/Text";
-import { Link } from "react-router-dom";
+import OurPartnersSlider from './ui/PartnersSLider'
 
 function IACWorks() {
     return (
@@ -82,9 +82,8 @@ function IACWorks() {
             {/* ==== Content wrapper ===== */}
 
             {/* ==== Partners ==== */}
-            <div className="shrink-0 relative z-10 md:mb-[100px] flex flex-col justify-center items-center md:gap-[64px] gap-[30px]  text-center">
-
-                <div className="px-[20px] flex flex-col md:gap-[64px] gap-[30px] max-w-[950px]">
+            <div className="relative md:mt-[100px] mt-[70px] z-20 mg:mb-[100px] flex flex-col justify-center items-center gap-[64px] text-center px-[20px]">
+                <div className="flex flex-col gap-[20px]">
                     <Heading1 headingGray="Our" headingWhite="Partners" />
                     <Text>
                         Lorem ipsum dolor sit amet consectetur.{" "}
@@ -94,8 +93,8 @@ function IACWorks() {
                     </Text>
                 </div>
 
+                <OurPartnersSlider image1="/img1.svg" image2="/img2.svg" image3="/img3.svg" image4="/img4.svg" />
 
-                <img src="/ourPartners.svg" alt="" className="w-[100vw]" />
             </div>
 
         </section>
