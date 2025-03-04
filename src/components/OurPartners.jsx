@@ -4,6 +4,7 @@ import { Text, GradientSpan } from "./ui/Text";
 import Card from "./ui/Card";
 import CustomBtn from "./ui/CustomeBtn";
 import { Link } from "react-router-dom";
+import OurPartnersSlider from './ui/PartnersSLider'
 
 function OurPartners() {
   return (
@@ -17,7 +18,7 @@ function OurPartners() {
       ></video>
 
       {/* ==== Partners ==== */}
-      <div className="shrink-0 relative z-10 mg:mb-[100px] flex flex-col justify-center items-center gap-[64px] text-center">
+      <div className="shrink-0 relative z-20 mg:mb-[100px] flex flex-col justify-center items-center gap-[64px] text-center px-[20px]">
         <div className="flex flex-col gap-[20px]">
           <Heading1 headingGray="Our" headingWhite="Partners" />
           <Text>
@@ -28,11 +29,12 @@ function OurPartners() {
           </Text>
         </div>
 
-        <img src="/ourPartners.svg" alt="" className="w-[100vw]" />
+        <OurPartnersSlider image1="/img1.svg" image2="/img2.svg" image3="/img3.svg" image4="/img4.svg" />
+       
       </div>
 
       {/* ==== Content wrapper ===== */}
-      <div className="relative z-10 flex flex-col justify-center items-center gap-[100px] text-center lg:px-[100px] md:px-[50px] px-[30px]">
+      <div className="relative mt-10 z-10 flex flex-col justify-center items-center gap-[100px] text-center lg:px-[100px] md:px-[30px] px-[20px]">
         {/* Oval Image section */}
         <div className="w-full shrink-0 flex flex-col justify-center items-center gap-[50px]">
           <div className="w-full flex flex-wrap justify-center md:justify-between gap-10 md:gap-[50px] px-4 md:px-[80px]">
@@ -85,7 +87,7 @@ function OurPartners() {
               loop
               autoPlay
               muted
-              className="w-full h-full object-cover overflow-hidden"
+              className="w-full h-full object-cover overflow-hidden rounded-xl"
             ></video>
           </div>
         </div>

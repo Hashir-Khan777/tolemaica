@@ -8,13 +8,13 @@ function Header() {
   return (
     <>
       {/* Navbar Container */}
-      <div className="relative z-10 w-[90%] max-w-[1320px] mx-auto my-6  rounded-full border-2 border-white flex justify-between items-center px-6 py-2 lg:px-16 lg:py-5"
+      <div className="relative z-50 w-[90%] max-w-[1320px] mx-auto my-6  rounded-full border-2 border-white flex justify-between items-center px-6 py-3 lg:px-16 lg:py-5"
       style={{
         background:"rgba(0,0,0,0.5)"
       }}>
         {/* Logo */}
         <div className="flex shrink-0 items-center gap-3 z-20">
-          <img src="./logo.svg" alt="Logo" className="md:h-10 md:w-48 h-6 " />
+          <img src="./logo.svg" alt="Logo" className="md:h-10 md:w-48 h-9" />
         </div>
 
         {/* Desktop Navigation */}
@@ -85,19 +85,50 @@ function Header() {
 
         {/* Mobile Navigation */}
         <nav className="flex flex-col gap-6 mt-10">
-          {['HOME', 'SERVICES', 'IAC TECH', 'ABOUT'].map((item) => (
             <NavLink
-              key={item}
-              to={`/${item.toLowerCase().replace(' ', '-')}`}
+             
+              to="/"
               className={({ isActive }) =>
                 `text-lg uppercase font-raleway font-semibold block transition-colors duration-300 ${isActive ? 'text-yellow-400' : 'text-gray-400'
                 }`
               }
               onClick={() => setIsOpen(false)}
             >
-              {item}
+              Home
             </NavLink>
-          ))}
+            <NavLink
+             
+              to="/services"
+              className={({ isActive }) =>
+                `text-lg uppercase font-raleway font-semibold block transition-colors duration-300 ${isActive ? 'text-yellow-400' : 'text-gray-400'
+                }`
+              }
+              onClick={() => setIsOpen(false)}
+            >
+              services
+            </NavLink>
+            <NavLink
+             
+              to="/iac-tech"
+              className={({ isActive }) =>
+                `text-lg uppercase font-raleway font-semibold block transition-colors duration-300 ${isActive ? 'text-yellow-400' : 'text-gray-400'
+                }`
+              }
+              onClick={() => setIsOpen(false)}
+            >
+              Iac tech
+            </NavLink>
+            <NavLink
+             
+              to="/about"
+              className={({ isActive }) =>
+                `text-lg uppercase font-raleway font-semibold block transition-colors duration-300 ${isActive ? 'text-yellow-400' : 'text-gray-400'
+                }`
+              }
+              onClick={() => setIsOpen(false)}
+            >
+              about
+            </NavLink>
           <a href="#" className="text-yellow-400 text-lg">
             <img src="./solid.png" alt="Solid" className="h-6 w-auto" />
           </a>
