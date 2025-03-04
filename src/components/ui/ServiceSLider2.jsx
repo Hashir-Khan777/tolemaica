@@ -1,0 +1,72 @@
+"use client";
+import React, { useEffect, useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import Card2 from './Card2'; // Ensure this path is correct
+
+const ServiceSlider1 = ({ cards }) => {
+    const prevRef = useRef(null);
+    const nextRef = useRef(null);
+    const [swiperInstance, setSwiperInstance] = useState(null);
+
+    useEffect(() => {
+        if (swiperInstance) {
+            swiperInstance.navigation.init();
+            swiperInstance.navigation.update();
+        }
+    }, [swiperInstance]);
+
+    return (
+        <div
+            className="container rounded-lg mx-auto"
+        >
+            {/* Debugging: Check if cards array has data */}
+            {cards.length === 0 && (
+                <p className="text-center text-red-500">No cards available!</p>
+            )}
+
+            <Swiper
+                autoplay
+                breakpoints={{
+                    1024: { slidesPerView: 3 },
+                    500: { slidesPerView: 2 },
+                    320: { slidesPerView: 1 },
+                }}
+                spaceBetween={24}
+                navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
+                modules={[Navigation]}
+                onBeforeInit={(swiper) => setSwiperInstance(swiper)}
+                style={{ padding: "15px 0" }}
+            >
+                {cards.map((card, index) => (
+                    <SwiperSlide key={index}>
+                        <Card2 title={card.title}
+                            description={card.description}
+                        />
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+
+            <div className="pe-4 flex justify-end items-end gap-4 container mt-4">
+                <button
+                    className="cursor-pointer"
+                    aria-label="Scroll Left"
+                    ref={prevRef}
+                >
+                    <img src="/preBtn.svg" alt="" />
+                </button>
+                <button
+                    className="cursor-pointer"
+                    aria-label="Scroll Right"
+                    ref={nextRef}
+                >
+                    <img src="/nextBtn.svg" alt="" />
+                </button>
+            </div>
+        </div>
+    );
+};
+
+export default ServiceSlider1;

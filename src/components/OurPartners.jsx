@@ -5,10 +5,92 @@ import Card from "./ui/Card";
 import CustomBtn from "./ui/CustomeBtn";
 import { Link } from "react-router-dom";
 import OurPartnersSlider from './ui/PartnersSLider'
+import OurPatent from "./OurPatent";
+import SliderComponent from './Slider'
+
+const cards = [
+  {
+    icon: "/images/legalClick.png",
+    title: "LegalClick",
+    buttonText: "Visit",
+    buttonLink: "/",
+    buttonBorder: "#FF9966",
+    buttonBg: "black",
+    buttonTextColor: "#FF9966",
+    playButton: "/images/playBtn.png",
+    playButtonLink: "https://example.com/play",
+  },
+  {
+    icon: "/images/dataClick.png",
+    title: "DataClick",
+    buttonText: "Visit",
+    buttonLink: "/",
+    buttonBorder: "#FF9966",
+    buttonBg: "white",
+    buttonTextColor: "black",
+    playButton: "/images/playBtn.png",
+    playButtonLink: "https://example.com/play",
+  },
+  {
+    icon: "/images/legalCheck.png",
+    title: "LegalCheck",
+    buttonText: "Visit",
+    buttonLink: "/",
+    buttonBorder: "white",
+    buttonBg: "black",
+    buttonTextColor: "#FF9966",
+    playButton: "/images/playBtn.png",
+    playButtonLink: "https://example.com/play",
+  },
+  {
+    icon: "/images/qr-certcode.png",
+    title: "QrCertCode",
+    buttonText: "Visit",
+    buttonLink: "/",
+    buttonBorder: "white",
+    buttonBg: "black",
+    buttonTextColor: "#FF9966",
+    playButton: "/images/playBtn.png",
+    playButtonLink: "https://example.com/play",
+  },
+  {
+    icon: "/images/bar-certcode.png",
+    title: "BarCertCode",
+    buttonText: "Visit",
+    buttonLink: "/",
+    buttonBorder: "#FF9966",
+    buttonBg: "white",
+    buttonTextColor: "black",
+    playButton: "/images/playBtn.png",
+    playButtonLink: "https://example.com/play",
+  },
+  {
+    icon: "/images/legalVideo.png",
+    title: "LegalVideo",
+    buttonText: "Visit",
+    buttonLink: "/",
+    buttonBorder: "#FF9966",
+    buttonBg: "white",
+    buttonTextColor: "black",
+    playButton: "/images/playBtn.png",
+    playButtonLink: "https://example.com/play",
+  },
+  {
+    icon: "/images/legalSound.png",
+    title: "LegalSound",
+    buttonText: "Visit",
+    buttonLink: "/",
+    buttonBorder: "white",
+    buttonBg: "black",
+    buttonTextColor: "#FF9966",
+    playButton: "/images/playBtn.png",
+    playButtonLink: "https://example.com/play",
+  },
+];
 
 function OurPartners() {
   return (
-    <section className="relative overflow-hidden w-full bg-black py-[100px] flex  flex-col">
+    <section className="relative overflow-hidden w-full bg-black pt-[100px] flex flex-col">
       <video
         src="/ourpartners.mp4"
         autoPlay
@@ -33,11 +115,14 @@ function OurPartners() {
        
       </div>
 
+      
+
       {/* ==== Content wrapper ===== */}
       <div className="relative mt-10 z-10 flex flex-col justify-center items-center gap-[100px] text-center lg:px-[100px] md:px-[30px] px-[20px]">
         {/* Oval Image section */}
         <div className="w-full shrink-0 flex flex-col justify-center items-center gap-[50px]">
-          <div className="w-full flex flex-wrap justify-center md:justify-between gap-10 md:gap-[50px] px-4 md:px-[80px]">
+
+          <div className="w-full flex justify-center md:justify-between gap-10 md:gap-[50px] px-[20px] md:px-[80px]">
             {[
               { value: "1234+", label: "No of Certifications" },
               { value: "5x", label: "Growth Forecast" },
@@ -47,10 +132,10 @@ function OurPartners() {
                 key={index}
                 className="flex flex-col justify-center items-center gap-[10px] p-[10px] font-outfit text-center"
               >
-                <span className="shrink-0 text-[64px] lg:text-[128px]/[161.28px] font-[400] bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent tracking--[5%]">
+                <span className="shrink-0 text-[40px]/[50px] lg:text-[128px]/[161.28px] font-[400] bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent tracking--[5%]">
                   {item.value}
                 </span>
-                <span className="text-white font-[300] text-[20px] md:text-[24px]/[28px] text-center  leading-[5%] capitalize">
+                <span className="text-white font-[300] text-[14px]/[17px] md:text-[24px]/[28px] text-center tracking-[] capitalize">
                   {item.label}
                 </span>
               </p>
@@ -105,7 +190,7 @@ function OurPartners() {
             </Text>
           </div>
 
-          <div className="w-full grid md:grid-cols-2 grid-cols-1 gap-[24px]">
+          <div className="w-full hidden md:grid md:grid-cols-2 grid-cols-1 gap-[24px]">
             <Card
               icon="/images/legalClick.png"
               title="LegalClick"
@@ -131,7 +216,7 @@ function OurPartners() {
               playButtonLink="https://example.com/play"
               // backgroundImage="/images/image.png"
             />
-            <div className="w-full flex flex-col md:gap-[36px] gap-[20px]">
+            <div className="w-fullflex flex-col md:gap-[36px] gap-[20px]">
               <CustomBtn
                 text="Best In Market"
                 borderColor="white"
@@ -222,44 +307,17 @@ function OurPartners() {
               // backgroundImage="/images/image.png"
             />
           </div>
+
+          <div className="w-full block md:hidden">
+          <SliderComponent cards={cards} />
+          </div>
         </div>
+
+      
         {/* ====== Our Software solutions End ======= */}
 
-        {/* ====== Our Patent ===== */}
-        <div className="w-full flex flex-col gap-[64px]">
-          <div className="flex flex-col gap-[20px]">
-            <Heading1 headingGray="Our" headingWhite="patent" />
-            <Text>
-              Lorem ipsum dolor sit amet consectetur.{" "}
-              <GradientSpan>Lorem mollis est</GradientSpan> nisl enim sed nunc
-              senectus. Molestie arcu arcu sapien vulputate ligula. Odio dolor
-              velit vestibulum adipiscing.
-            </Text>
-          </div>
-          <div className="w-full mx-auto flex flex-row justify-center items-center flex-wrap gap-[20px]">
-            <img
-              src="/ourpatent1.svg"
-              alt=""
-              className="md:w-[200px] w-[130px] h-[130px] md:h-[200px]"
-            />
-            <img
-              src="/ourpatent2.svg"
-              alt=""
-              className="[130px] h-[130px] md:w-[200px] md:h-[200px]"
-            />
-            <img
-              src="/ourpatent3.svg"
-              alt=""
-              className="[130px] h-[130px] md:w-[200px] md:h-[200px]"
-            />
-            <img
-              src="/ourpatent3.svg"
-              alt=""
-              className="[130px] h-[130px] md:w-[200px] md:h-[200px]"
-            />
-          </div>
-        </div>
-        {/* ====== Our Patent =====  End*/}
+       {/* Our Patent */}
+       <OurPatent/>
 
         {/* ======= Industry Service ======== */}
         <div className="w-full flex flex-col gap-[64px]">
