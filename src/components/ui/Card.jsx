@@ -15,7 +15,7 @@ function Card({
 }) {
     return (
         <div
-            className="text-white w-full rounded-2xl border-2 flex flex-col justify-center items-end py-6 px-5 md:py-10 md:px-7 relative isolate overflow-hidden"
+            className="text-white w-full h-[400px] rounded-2xl border-2 flex flex-col justify-center items-end py-6 px-5 md:py-10 md:px-7 relative isolate overflow-hidden"
             style={{
                 backgroundImage: backgroundImage ? `url(${backgroundImage})` : 'none',
                 backgroundSize: 'cover',

@@ -2,7 +2,7 @@ import React from 'react'
 
 function Card3({ title, description, image }) {
   return (
-    <div className=" bg-black/25 border-2 border-white/64 rounded-[20px] backdrop-blur-[100px] p-5 flex flex-col gap-[12px]  justify-center items-center text-center">
+    <div className=" w-full md:w-[302px] h-[450px] bg-black/25 border-2 border-white/64 rounded-[20px] backdrop-blur-[100px] p-5 flex flex-col gap-[12px]  justify-center items-center text-center">
       <img src={image} alt="card1" className="w-[80%] lg:w-full" />
 
       <div className="py-[12px] px-[10px] flex flex-col gap-[8px] md:gap-[16px]">

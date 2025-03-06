@@ -8,30 +8,43 @@ function Header() {
   return (
     <>
       {/* Navbar Container */}
-      <div className="relative z-50 w-[90%] max-w-[1320px] mx-auto my-6  rounded-full border-2 border-white flex justify-between items-center px-6 py-3 lg:px-16 lg:py-5"
-      style={{
-        background:"rgba(0,0,0,0.5)"
-      }}>
+      <div className="relative z-50 w-[350px] sm:w-[95%] mx-auto max-w-[100%] border-2 border-white my-6 rounded-full flex justify-between items-center px-[24px] py-[15px] lg:px-16 lg:py-5"
+        style={{
+          background: "rgba(0,0,0,0.5)",
+          // borderImage: "linear-gradient(to right, #FF9966, #FFFFFF) 1",
+          borderRadius: "9999px" // Ensures fully rounded corners
+        }}>
+
         {/* Logo */}
         <div className="flex shrink-0 items-center gap-3 z-20">
-          <img src="./logo.svg" alt="Logo" className="md:h-10 md:w-48 h-9" />
+          <img src="./logo.svg" alt="Logo" className="md:h-10 md:w-48 h-[24px]" />
         </div>
 
         {/* Desktop Navigation */}
         {/* Navigation Links */}
         <nav className="hidden lg:flex flex-row justify-center items-center xl:gap-[20px] gap-[12px]">
 
-          <NavLink
+          {/* <NavLink
             to='/'
             className={({ isActive }) =>
               `text-sm uppercase font-raleway font-semibold leading-[4%] ${isActive ? "text-white xl:text-[20px]/[23.48px] text-[17px]/[20.48px]" : "text-gray-600 xl:text-[16px]/[18.78px] text-[14px]/[16.78px]"}`
             }
           >
             HOME
+          </NavLink> */}
+          <NavLink
+            to='/'
+            className={({ isActive }) =>
+              `relative text-sm uppercase font-raleway font-semibold leading-[4%] 
+    ${isActive ? "text-white xl:text-[20px]/[23.48px] text-[17px]/[20.48px] before:content-[''] before:absolute before:-left-3 before:text-[#FF9966] before:w-3 before:h-3"
+                : "text-gray-600 xl:text-[16px]/[18.78px] text-[14px]/[16.78px]"}`}
+          >
+            HOME
           </NavLink>
+
           <span className="text-gray-400">/</span>
           <NavLink
-            to='/services'
+            to='/'
             className={({ isActive }) =>
               `text-sm uppercase font-raleway font-semibold ${isActive ? "text-white xl:text-[20px]/[23.48px] text-[17px]/[20.48px]" : "text-gray-600 xl:text-[16px]/[18.78px] text-[14px]/[16.78px]"}`
             }
@@ -69,7 +82,8 @@ function Header() {
 
         {/* Mobile Menu Button */}
         <button className="lg:hidden text-white" onClick={() => setIsOpen(true)}>
-          <Menu size={25} />
+          {/* <Menu size={25} /> */}
+          <img src="menu.svg" alt="Menu icon" className='w-[18px] sm:w-[25px]' />
         </button>
       </div>
 
@@ -85,50 +99,50 @@ function Header() {
 
         {/* Mobile Navigation */}
         <nav className="flex flex-col gap-6 mt-10">
-            <NavLink
-             
-              to="/"
-              className={({ isActive }) =>
-                `text-lg uppercase font-raleway font-semibold block transition-colors duration-300 ${isActive ? 'text-yellow-400' : 'text-gray-400'
-                }`
-              }
-              onClick={() => setIsOpen(false)}
-            >
-              Home
-            </NavLink>
-            <NavLink
-             
-              to="/services"
-              className={({ isActive }) =>
-                `text-lg uppercase font-raleway font-semibold block transition-colors duration-300 ${isActive ? 'text-yellow-400' : 'text-gray-400'
-                }`
-              }
-              onClick={() => setIsOpen(false)}
-            >
-              services
-            </NavLink>
-            <NavLink
-             
-              to="/iac-tech"
-              className={({ isActive }) =>
-                `text-lg uppercase font-raleway font-semibold block transition-colors duration-300 ${isActive ? 'text-yellow-400' : 'text-gray-400'
-                }`
-              }
-              onClick={() => setIsOpen(false)}
-            >
-              Iac tech
-            </NavLink>
-            <NavLink
-             
-              to="/about"
-              className={({ isActive }) =>
-                `text-lg uppercase font-raleway font-semibold block transition-colors duration-300 ${isActive ? 'text-yellow-400' : 'text-gray-400'
-                }`
-              }
-              onClick={() => setIsOpen(false)}
-            >
-              about
-            </NavLink>
+          <NavLink
+
+            to="/"
+            className={({ isActive }) =>
+              `text-lg uppercase font-raleway font-semibold block transition-colors duration-300 ${isActive ? 'text-yellow-400' : 'text-gray-400'
+              }`
+            }
+            onClick={() => setIsOpen(false)}
+          >
+            Home
+          </NavLink>
+          <NavLink
+
+            to="/services"
+            className={({ isActive }) =>
+              `text-lg uppercase font-raleway font-semibold block transition-colors duration-300 ${isActive ? 'text-yellow-400' : 'text-gray-400'
+              }`
+            }
+            onClick={() => setIsOpen(false)}
+          >
+            services
+          </NavLink>
+          <NavLink
+
+            to="/iac-tech"
+            className={({ isActive }) =>
+              `text-lg uppercase font-raleway font-semibold block transition-colors duration-300 ${isActive ? 'text-yellow-400' : 'text-gray-400'
+              }`
+            }
+            onClick={() => setIsOpen(false)}
+          >
+            Iac tech
+          </NavLink>
+          <NavLink
+
+            to="/about"
+            className={({ isActive }) =>
+              `text-lg uppercase font-raleway font-semibold block transition-colors duration-300 ${isActive ? 'text-yellow-400' : 'text-gray-400'
+              }`
+            }
+            onClick={() => setIsOpen(false)}
+          >
+            about
+          </NavLink>
           <a href="#" className="text-yellow-400 text-lg">
             <img src="./solid.png" alt="Solid" className="h-6 w-auto" />
           </a>
