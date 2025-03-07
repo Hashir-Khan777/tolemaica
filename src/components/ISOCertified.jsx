@@ -1,5 +1,5 @@
 import React from "react";
-import {Text,GradientSpan} from './ui/Text'
+import { Text, GradientSpan } from './ui/Text'
 import Heading1 from "./ui/Heading1";
 
 const certifications = [
@@ -22,7 +22,7 @@ const ISOSection = () => {
                 </Text>
 
                 {/* Certification Cards */}
-                <div className="mt-8 flex flex-row flex-wrap lg:grid lg:grid-cols-3 justify-center items-center gap-[24px]">
+                <div className="mt-8 grid md:grid-cols-3 grid-cols-2 justify-center items-center gap-[24px]">
                     {/* {certifications.map((cert, index) => (
                         <div key={index} className="w-full max-w-[280px] p-4 bg-[#151515] border border-gray-600 rounded-xl shadow-lg flex flex-col items-center">
                             <img src={cert.src} alt={cert.title} className="rounded-md w-48 h-28 object-contain" />
@@ -30,12 +30,12 @@ const ISOSection = () => {
                             <p className="text-gray-400">{cert.subtitle}</p>
                         </div>
                     ))} */}
-                    <img src="/iso1.svg" alt="Iso Certification" className="w-full sm:w-[200px] md:w-[370px]"/>
-                    <img src="/iso2.svg" alt="Iso Certification" className="w-full sm:w-[200px] md:w-[370px]" />
-                    <img src="/iso3.svg" alt="Iso Certification" className="w-full sm:w-[200px] md:w-[370px]" />
-                    <img src="/iso4.svg" alt="Iso Certification" className="w-full sm:w-[160px] md:w-[370px] lg:block hidden" />
-                    <img src="/iso5.svg" alt="Iso Certification" className="w-full sm:w-[160px] md:w-[370px] lg:block hidden" />
-                    <img src="/iso6.svg" alt="Iso Certification" className="w-full sm:w-[160px] md:w-[370px] lg:block hidden" />
+                    <img src="/iso1.svg" alt="Iso Certification" className="md:w-[370px]" />
+                    <img src="/iso2.svg" alt="Iso Certification" className="md:w-[370px]" />
+                    <img src="/iso3.svg" alt="Iso Certification" className="md:w-[370px]" />
+                    <img src="/iso4.svg" alt="Iso Certification" className="md:w-[370px]" />
+                    <img src="/iso5.svg" alt="Iso Certification" className="md:w-[370px]" />
+                    <img src="/iso6.svg" alt="Iso Certification" className="md:w-[370px]" />
                 </div>
             </div>
         </section>

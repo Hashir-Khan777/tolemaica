@@ -9,10 +9,30 @@ import ServiceSlider1 from "./ui/ServiceSLider1";
 import ServiceSlider2 from "./ui/ServiceSLider2";
 
 const cardsData = [
-  { image: "./dataclickcard1.svg", title: "Instant & Automatic Certification", description: "Certifies date and location of images." },
-  { image: "./dataclickcard2.svg", title: "Multi-Device Accessibility", description: "Use via PC or smartphone." },
-  { image: "./dataclickcard3.svg", title: "Simple & Cost Effective", description: "Use via PC or smartphone." },
-  { image: "./dataclickcard4.svg", title: "Secure & Legally Valid", description: "Provides legally recognized proof of authenticity." },
+  {
+    image: "./dataclickcard1.svg",
+    title: "Instant & Automatic Certification",
+    description: "Certifies date and location of images.",
+    gradientColors: ["#140902", "#4e2c1c"],
+  },
+  {
+    image: "./dataclickcard2.svg",
+    title: "Multi-Device Accessibility",
+    description: "Use via PC or smartphone.",
+    gradientColors: ["#360e12", "#180808"],
+  },
+  {
+    image: "./dataclickcard3.svg",
+    title: "Simple & Cost Effective",
+    description: "Use via PC or smartphone.",
+    gradientColors: ["#5c5b5a", "070402"],
+  },
+  {
+    image: "./dataclickcard4.svg",
+    title: "Secure & Legally Valid",
+    description: "Provides legally recognized proof of authenticity.",
+    gradientColors: ["#240a12", "#3f3131"],
+  },
 ];
 
 const BenefitCards = [

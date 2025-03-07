@@ -8,7 +8,7 @@ function Header() {
   return (
     <>
       {/* Navbar Container */}
-      <div className="relative z-50 w-[350px] sm:w-[95%] mx-auto max-w-[100%] border-2 border-white my-6 rounded-full flex justify-between items-center px-[24px] py-[15px] lg:px-16 lg:py-5"
+      <div className="relative z-50  w-[100%] mx-auto max-w-[100%] border-2 border-white my-6 rounded-full flex justify-between items-center px-[24px] py-[15px] lg:px-16 lg:py-5"
         style={{
           background: "rgba(0,0,0,0.5)",
           // borderImage: "linear-gradient(to right, #FF9966, #FFFFFF) 1",
