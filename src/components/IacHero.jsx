@@ -20,7 +20,7 @@ function IacTechHero() {
             }}></div>
 
             {/* Navbar (Ensuring it's above the overlay) */}
-            <div className="relative z-50">
+            <div className="relative z-50 w-full md:px-[60px] px-[20px] md:pt-[40px]">
                 <Header />
             </div>
 
