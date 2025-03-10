@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 import OurPartnersSlider from './ui/PartnersSLider'
 import OurPatent from "./OurPatent";
 import SliderComponent from './Slider'
+import Video from './ui/Video'
+import ISOCertified from './ISOCertified'
 
 const cards = [
   {
@@ -90,7 +92,7 @@ const cards = [
 
 function OurPartners() {
   return (
-    <section className="relative overflow-hidden w-full bg-black pt-[100px] flex flex-col">
+    <section className="relative overflow-hidden w-full bg-black py-[100px] flex flex-col">
       <video
         src="/ourpartners.mp4"
         autoPlay
@@ -100,7 +102,8 @@ function OurPartners() {
       ></video>
 
       {/* ==== Partners ==== */}
-      <div className="shrink-0 relative z-20 mg:mb-[100px] flex flex-col justify-center items-center gap-[64px] text-center px-[20px]">
+      <div className="shrink-0 relative z-20 md:mb-[100px] mb-[40px] flex flex-col justify-center items-center gap-[64px] text-center px-[20px]">
+
         <div className="flex flex-col gap-[20px]">
           <Heading1 headingGray="Our" headingWhite="Partners" />
           <Text>
@@ -119,23 +122,23 @@ function OurPartners() {
 
       {/* ==== Content wrapper ===== */}
       <div className="relative mt-10 z-10 flex flex-col justify-center items-center gap-[100px] text-center lg:px-[100px] md:px-[30px] px-[20px]">
-        {/* Oval Image section */}
+        {/* Statistics section */}
         <div className="w-full shrink-0 flex flex-col justify-center items-center gap-[50px]">
 
-          <div className="w-full flex justify-center md:justify-between gap-10 md:gap-[50px] px-[20px] md:px-[80px]">
+          <div className="w-full flex justify-center md:justify-between gap-10 md:gap-[50px]">
             {[
-              { value: "1234+", label: "No of Certifications" },
-              { value: "5x", label: "Growth Forecast" },
-              { value: "23%", label: "Increase in Business" },
+              { value: "1234", operator:"+", label: "No of Certifications" },
+              { value: "5", operator:"x", label: "Growth Forecast" },
+              { value: "23", operator:"%", label: "Increase in Business" },
             ].map((item, index) => (
               <p
                 key={index}
                 className="flex flex-col justify-center items-center gap-[10px] p-[10px] font-outfit text-center"
               >
-                <span className="shrink-0 text-[40px]/[50px] lg:text-[128px]/[161.28px] font-[400] bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent tracking--[5%]">
-                  {item.value}
-                </span>
-                <span className="text-white font-[300] text-[14px]/[17px] md:text-[24px]/[28px] text-center tracking-[] capitalize">
+                <p className="shrink-0 font-outfit text-[40px]/[50px] lg:text-[128px]/[100%] bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent tracking-[5%] flex flex-row">
+                  <span className="font-[400]">{item.value}</span> <span className="font-[200]">{item.operator}</span>
+                </p>
+                <span className="font-outfit text-white font-[300] text-[14px]/[17px] md:text-[24px]/[28px] text-center tracking-[5%] capitalize">
                   {item.label}
                 </span>
               </p>
@@ -148,8 +151,7 @@ function OurPartners() {
         </div>
 
         {/* ==== What we do ====== */}
-        <div className="w-full flex flex-col justify-center items-center gap-[50px]">
-          <div className="flex flex-col gap-[20px]">
+        <div className="w-full flex flex-col justify-center items-center md:gap-[64px] gap-[40px]">    
             <Heading1 headingGray="what" headingWhite="we do" />
             <Text>
               All data collected (photographs, videos, sounds, phone calls,
@@ -163,18 +165,8 @@ function OurPartners() {
               together with the certificate that summarizes all relevant
               references of the data collected.
             </Text>
-          </div>
 
-          {/* Video Section */}
-          <div className="w-full h-[300px] md:h-[600px] lg:h-[800px] overflow-hidden border-white border-2 rounded-2xl flex justify-center items-center">
-            <video
-              src="/video1.mp4"
-              loop
-              autoPlay
-              muted
-              className="w-full h-full object-cover overflow-hidden rounded-xl"
-            ></video>
-          </div>
+          <Video link="/video1.mp4" />
         </div>
         {/* ==== What we do ====== */}
 
@@ -194,9 +186,9 @@ function OurPartners() {
             <Card
               icon="/images/legalClick.png"
               title="LegalClick"
-              buttonText="Visit"
+              buttonText="Visit site"
               buttonLink="/"
-              buttonBorder="#FF9966"
+              buttonBorder="white"
               buttonBg="black"
               buttonTextColor="#FF9966"
               playButton="/images/playBtn.png"
@@ -207,7 +199,7 @@ function OurPartners() {
             <Card
               icon="/images/dataClick.png"
               title="DataClick"
-              buttonText="Visit"
+              buttonText="Visit site"
               buttonLink="/"
               buttonBorder="#FF9966"
               buttonBg="white"
@@ -216,7 +208,7 @@ function OurPartners() {
               playButtonLink="https://example.com/play"
               // backgroundImage="/images/image.png"
             />
-            <div className="w-fullflex flex-col md:gap-[36px] gap-[20px]">
+            <div className="w-full flex flex-col md:gap-[36px] gap-[20px] justify-center">
               <CustomBtn
                 text="Best In Market"
                 borderColor="white"
@@ -245,7 +237,7 @@ function OurPartners() {
             <Card
               icon="/images/legalCheck.png"
               title="legalcheck"
-              buttonText="Visit"
+              buttonText="Visit site"
               buttonLink="/"
               buttonBorder="white"
               buttonBg="black"
@@ -258,7 +250,7 @@ function OurPartners() {
             <Card
               icon="/images/qr-certcode.png"
               title="QrCertCode"
-              buttonText="Visit"
+              buttonText="Visit site"
               buttonLink="/"
               buttonBorder="white"
               buttonBg="black"
@@ -271,7 +263,7 @@ function OurPartners() {
             <Card
               icon="/images/bar-certcode.png"
               title="BarCertCode"
-              buttonText="Visit"
+              buttonText="Visit site"
               buttonLink="/"
               buttonBorder="#FF9966"
               buttonBg="white"
@@ -284,7 +276,7 @@ function OurPartners() {
             <Card
               icon="/images/legalVideo.png"
               title="legalVideo"
-              buttonText="Visit"
+              buttonText="Visit site"
               buttonLink="/"
               buttonBorder="#FF9966"
               buttonBg="white"
@@ -297,7 +289,7 @@ function OurPartners() {
             <Card
               icon="/images/legalSound.png"
               title="LegalSound"
-              buttonText="Visit"
+              buttonText="Visit site"
               buttonLink="/"
               buttonBorder="white"
               buttonBg="black"
@@ -320,8 +312,8 @@ function OurPartners() {
        <OurPatent/>
 
         {/* ======= Industry Service ======== */}
-        <div className="w-full flex flex-col gap-[64px]">
-          <div className="flex flex-col gap-[20px]">
+        <div className="w-full flex flex-col md:gap-[64px] gap-[40px]">
+         
             <Heading1 headingGray="Best" headingWhite="in industry service" />
             <Text>
               The legal certification of an{" "}
@@ -329,7 +321,7 @@ function OurPartners() {
               sometimes be an added value and, in other cases, an essential
               requirement.
             </Text>
-          </div>
+         
 
           {/* My grid */}
           <div className="w-full mx-auto p-4 grid gap-4 grid-cols-1 lg:grid-cols-4 auto-rows-[minmax(120px,_auto)]">
@@ -496,6 +488,9 @@ function OurPartners() {
               </Link>
             </div>
           </div>
+
+          {/* ISO Certified */}
+          <ISOCertified/>
         </div>
 
         {/* ======= Industry Service end ======== */}

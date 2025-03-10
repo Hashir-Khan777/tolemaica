@@ -7,7 +7,7 @@ const OurPatent = () => {
         <section>
             {/* ====== Our Patent ===== */}
             <div className="w-full flex flex-col md:gap-[64px] gap-[40px]">
-                <Heading1 headingGray="Our" headingWhite="patent" />
+                <Heading1 headingGray="Our" headingWhite="patents" />
                 <Text>
                     Lorem ipsum dolor sit amet consectetur.{" "}
                     <GradientSpan>Lorem mollis est</GradientSpan> nisl enim sed nunc
@@ -32,7 +32,7 @@ const OurPatent = () => {
                         className="lg:w-[200px] lg:h-[200px] md:w-[120px] md:h-[120px] w-[80.82px] h-[80.82px] "
                     />
                     <img
-                        src="/ourpatent3.svg"
+                        src="/ourpatent4.svg"
                         alt=""
                         className="lg:w-[200px] lg:h-[200px] md:w-[120px] md:h-[120px] w-[80.82px] h-[80.82px] "
                     />

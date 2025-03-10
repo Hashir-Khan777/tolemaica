@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import OurPartnersSlider from './ui/PartnersSLider'
 import ServiceSlider1 from "./ui/ServiceSLider1";
 import ServiceSlider2 from "./ui/ServiceSLider2";
+import Video from './ui/Video'
 
 const cardsData = [
   {
@@ -78,17 +79,17 @@ function DataClickSecton() {
       <div className="relative z-10 flex flex-col justify-center items-center md:gap-[100px] gap-[70px] text-center lg:px-[100px] md:px-[50px] px-[20px]">
 
         {/* ==== What is DataClick ====== */}
-        <div className="w-full flex flex-col justify-center items-center gap-[50px]">
-          <div className="flex flex-col gap-[20px]">
-            <Heading1 headingGray="what is" headingWhite="dataclick" />
+        <div className="w-full flex flex-col justify-center items-center md:gap-[64px] gap-[40px]">
+         
+            <Heading1 headingGray="what is" headingWhite="dataclick?" />
             <Text>
               DataClick provides a data <GradientSpan>certification service with legal value</GradientSpan> for photos taken by professionals, businesses, and public administrations. The service is <GradientSpan>simple, fast, and cost-effective</GradientSpan>, allowing users to upload images and receive a <GradientSpan className="text-white">probative element</GradientSpan> that holds <GradientSpan>legal validity</GradientSpan>.
             </Text>
-          </div>
+         
 
           {/* Image Section */}
           <div>
-            <img src="./dataclickimg1.svg" alt="" className="lg:h-[730px] min-w-[400px] " />
+            <img src="./images/dataclickimg1.png" alt="" className="lg:h-[730px] min-w-[400px] " />
           </div>
 
         </div>
@@ -96,24 +97,20 @@ function DataClickSecton() {
 
 
         {/* ====== How dataclick works ======= */}
-        <div className="w-full flex flex-col gap-[64px]">
-          <div className="flex flex-col gap-[20px]">
-            <Heading1 headingGray="How" headingWhite="Dataclick works" />
+        <div className="w-full flex flex-col md:gap-[64px] gap-[40px]">
+        
+            <Heading1 headingGray="How" headingWhite="Dataclick works?" />
             <Text>
               Using <GradientSpan><Link to="/" className="underline">www.dataclick.it</Link> </GradientSpan> or the <GradientSpan>free DataClick App</GradientSpan> for iPhone and Android, users can securely certify images, ensuring that they are stored with a legally valid timestamp. This creates a <GradientSpan>valuable personal and corporate archive</GradientSpan> that is always accessible for individual searches or back-office corporate operations.
             </Text>
-          </div>
+          
         </div>
         {/* ====== How dataclick works ======= */}
 
         {/* ====== Why Choose DataClick ======= */}
-        <div className="w-full flex flex-col gap-[64px]">
-          <div className="flex flex-col gap-[20px]">
-            <Heading1 headingGray="Why Choose" headingWhite="data click" />
-            <Text>
-              Using <GradientSpan><Link to="/" className="underline">www.dataclick.it</Link> </GradientSpan> or the <GradientSpan>free DataClick App</GradientSpan> for iPhone and Android, users can securely certify images, ensuring that they are stored with a legally valid timestamp. This creates a <GradientSpan>valuable personal and corporate archive</GradientSpan> that is always accessible for individual searches or back-office corporate operations.
-            </Text>
-          </div>
+        <div className="w-full flex flex-col md:gap-[64px] gap-[40px]">
+
+          <Heading1 headingGray="Why Choose" headingWhite="dataclick?" />
 
           {/* ==== Cards ==== */}
           <div className="w-full ">
@@ -128,7 +125,11 @@ function DataClickSecton() {
             </div>
           </div>
           {/* ==== Cards ==== */}
+
+          <Video link="/dataclick.webm" />
+          
         </div>
+
         {/* ====== Why Choose DataClick ======= */}
 
         {/* ====== Benefit of usind dataclick ===== */}
