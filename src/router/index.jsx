@@ -10,6 +10,7 @@ import LegalClick from "../pages/LegalCLick.jsx";
 import LegalCheck from "../pages/LegalCheck.jsx";
 import QrCertCode from "../pages/QrCertCode.jsx";
 import BarCertCode from "../pages/BarCertCode.jsx";
+import About from "../pages/About.jsx";
 import IacTech from "../pages/IacTech.jsx";
 import App from "../App.jsx";
 
@@ -23,7 +24,7 @@ const router = createBrowserRouter(
       <Route path="QrCertCode" element={<QrCertCode />} />
       <Route path="BarCertCode" element={<BarCertCode />} />
       <Route path="iac-tech" element={<IacTech />} />
-      <Route path="about" element={<Home />} />
+      <Route path="about" element={<About />} />
     </Route>
   )
 );
