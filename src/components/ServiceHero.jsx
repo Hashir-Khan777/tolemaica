@@ -4,7 +4,7 @@ import Header from "../components/Header";
 function ServiceHero({ title, gradientTitle, text, gradientText }) {
     return (
         <div
-            className="relative lg:pb-[100px] w-full min-h-screen flex flex-col md:gap-[60px] gap-[30px] items-center bg-cover bg-center bg-no-repeat md:px-[60px] px-[20px] pb-[200px] md:pt-[40px]"
+            className="relative lg:pb-[100px] w-full min-h-screen flex flex-col md:gap-[60px] gap-[30px] items-center bg-cover bg-center bg-no-repeat lg:px-[100px]  md:px-[50px] px-[20px] pb-[200px]"
             style={{ backgroundImage: 'url("/images/servicesBg.png")' }}
         >
             {/* Navbar */}

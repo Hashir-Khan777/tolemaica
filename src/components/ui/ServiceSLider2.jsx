@@ -44,6 +44,7 @@ const ServiceSlider1 = ({ cards }) => {
                     <SwiperSlide key={index}>
                         <Card2 title={card.title}
                             description={card.description}
+                            bg={card.bg}
                         />
                     </SwiperSlide>
                 ))}
@@ -62,7 +63,7 @@ const ServiceSlider1 = ({ cards }) => {
                     aria-label="Scroll Right"
                     ref={nextRef}
                 >
-                    <img src="/nextBtn.svg" alt=""className="w-[32px] h-[32px]" />
+                    <img src="/nextBtn.svg" alt="" className="w-[32px] h-[32px]" />
                 </button>
             </div>
         </div>

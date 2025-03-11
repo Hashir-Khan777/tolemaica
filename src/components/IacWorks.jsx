@@ -2,10 +2,19 @@ import React from "react";
 import Heading1 from "./ui/Heading1";
 import { Text, GradientSpan } from "./ui/Text";
 import OurPartnersSlider from './ui/PartnersSLider'
+import ISOCertified from './ISOCertified'
 
 function IACWorks() {
     return (
-        <section className="relative overflow-hidden w-full bg-black py-[100px] flex  flex-col md:gap-[64px] gap-[30px]">
+        <section className="relative overflow-hidden w-full bg-black pt-[100px] pb-[200px] flex  flex-col md:gap-[100px] gap-[40px]">
+            {/* <video
+                src="/ourpartners.mp4"
+                autoPlay
+                loop
+                muted
+                className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
+            ></video> */}
+            {/* Base video background */}
             <video
                 src="/ourpartners.mp4"
                 autoPlay
@@ -14,14 +23,19 @@ function IACWorks() {
                 className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
             ></video>
 
+            {/* Colored blob with blur effect to match Figma design */}
+            <div className="absolute top-0 right-0 transform -translate-x-1/2 -translate-y-1/2 w-[880px] h-[880px] rounded-[50%] bg-[#61132A]/40 blur-[300px] mix-blend-overlay z-2"></div>
+            <div className="absolute top-1/2 left-0 transform -translate-x-1/2 -translate-y-1/2 w-[880px] h-[880px] rounded-[50%] bg-[#C84A01]/24 blur-[300px] z-1"></div>
 
+
+            {/* Additional subtle vignette for depth */}
+            <div className="absolute inset-0 bg-gradient-radial from-transparent to-black/30 z-1"></div>
 
             {/* ==== Content wrapper ===== */}
-            <div className="relative z-10 flex flex-col justify-center items-center gap-[100px] text-center lg:px-[100px] md:px-[30px] px-[20px]">
+            <div className="relative z-10 flex flex-col justify-center items-center gap-[40px] md:gap-[100px] text-center lg:px-[100px] md:px-[30px] px-[20px]">
 
                 {/* ==== How IAC Works ==== */}
-                <div className="shrink-0 relative z-10 md:mb-[100px] flex flex-col justify-center items-center md:gap-[64px] gap-[30px] text-center">
-
+                <div className="shrink-0 relative z-10 md:mb-[100px] flex flex-col justify-center items-center md:gap-[64px] gap-[40px] text-center">
 
                     <Heading1 headingGray="How" headingWhite="iac works" />
                     <Text>
@@ -29,7 +43,7 @@ function IACWorks() {
                     </Text>
 
 
-                    <img src="/iacimg1.svg" alt="" className="max-w-[1000px] lg:w-[80%] md:w-[60%] sm:w-[90%] w-[98%]" />
+                    <img src="/images/iacimg1.png" alt="" className="max-w-[1114px] lg:w-[1114px] md:w-[60%] sm:w-[90%] w-[98%]" />
 
 
                     <Text>From a technical point of view, the certification process consists in <GradientSpan>encrypting data</GradientSpan> (sound and images) captured by the camera and/or microphone of smartphones (or other device) and a held in a temporary partitioned memory in order to make it unavailable to the user; the data captured, unmodifiable because inaccessible (!), is subsequently transmitted through certified digital flows such as pec(certified e-mail), time-stamping, block chain or other recognized certification processes to a Certified server held by a Notified Body.</Text>
@@ -41,7 +55,7 @@ function IACWorks() {
                 </div>
 
                 {/* ====== Our Patent ===== */}
-                <div className="w-full flex flex-col md:gap-[64px] gap-[30px]">
+                <div className="w-full flex flex-col md:gap-[64px] gap-[40px]">
 
                     <Heading1 headingGray="Our" headingWhite="patent" />
                     <Text>
@@ -82,19 +96,23 @@ function IACWorks() {
             {/* ==== Content wrapper ===== */}
 
             {/* ==== Partners ==== */}
-            <div className="relative md:mt-[100px] mt-[70px] z-20 mg:mb-[100px] flex flex-col justify-center items-center gap-[64px] text-center px-[20px]">
-                <div className="flex flex-col gap-[20px]">
-                    <Heading1 headingGray="Our" headingWhite="Partners" />
-                    <Text>
-                        Lorem ipsum dolor sit amet consectetur.{" "}
-                        <GradientSpan>Lorem mollis est</GradientSpan> nisl enim sed nunc
-                        senectus. Molestie arcu arcu sapien vulputate ligula. Odio dolor
-                        velit vestibulum adipiscing.
-                    </Text>
-                </div>
+            <div className="relative md:mt-[100px] mt-[70px] z-20 mg:mb-[100px] flex flex-col justify-center items-center md:gap-[64px] gap-[40px] text-center px-[20px]">
+
+                <Heading1 headingGray="Our" headingWhite="Partners" />
+                <Text>
+                    Lorem ipsum dolor sit amet consectetur.{" "}
+                    <GradientSpan>Lorem mollis est</GradientSpan> nisl enim sed nunc
+                    senectus. Molestie arcu arcu sapien vulputate ligula. Odio dolor
+                    velit vestibulum adipiscing.
+                </Text>
+
 
                 <OurPartnersSlider image1="/img1.svg" image2="/img2.svg" image3="/img3.svg" image4="/img4.svg" />
 
+            </div>
+
+            <div className="relative md:mt-[100px] mt-[70px] z-20 mg:mb-[100px] flex flex-col justify-center items-center md:gap-[64px] gap-[40px] text-center px-[20px]">
+                <ISOCertified/>
             </div>
 
         </section>
