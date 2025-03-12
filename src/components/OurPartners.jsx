@@ -9,6 +9,7 @@ import OurPatent from "./OurPatent";
 import SliderComponent from './Slider'
 import Video from './ui/Video'
 import ISOCertified from './ISOCertified'
+import HomeGrid from "./ui/HomeGrid";
 
 const cards = [
   {
@@ -170,6 +171,20 @@ function OurPartners() {
         </div>
         {/* ==== What we do ====== */}
 
+        {/* ===== ABout IAC Technology ======= */}
+        <div className="w-full flex flex-col justify-center items-center md:gap-[64px] gap-[40px]">
+
+          <Heading1 headingGray="about" headingWhite="iac technology" />
+
+          <Text>
+            IAC (Instant Automatic Certification) is a patented technology that provides <span className="text-white font-[500]">instant,</span> <GradientSpan>automated certification of the date, time, and location of data captured by</GradientSpan> <span className="text-[#FF9966] font-[500]">smartphones or other devices.</span> The certified data is securely stored on a Notified Body's server, which promptly issues a verification report to the user.
+          </Text>
+
+          <Link to="/iac-tech" className="uppercase text-white w-[200px] md:w-[330px] md:px-[100px] px-[48px] md:py-[20px] py-[14px] rounded-full border-[2px] border-white font-raleway font-[700] text-[16px]/[100%]  md:text-[20px]/[100%] tracking-[5%]">check now</Link>
+
+        </div>
+        {/* ===== ABout IAC Technology ======= */}
+
         {/* ====== Our Software solutions start ======= */}
         <div className="w-full flex flex-col md:gap-[64px] gap-[40px]">
 
@@ -323,179 +338,15 @@ function OurPartners() {
             requirement.
           </Text>
 
+          <HomeGrid />
 
-          {/* My grid */}
-          <div className="w-full mx-auto p-4 grid gap-4 grid-cols-1 lg:grid-cols-4 auto-rows-[minmax(120px,_auto)]">
-            {/* Territory Monitoring */}
-            <div className="col-span-1 row-span-2 lg:row-span-3 flex rounded-2xl overflow-hidden border-2 border-white">
-              <Link
-                to="/"
-                className="flex flex-col justify-center items-center lg:gap-[32px] gap-[20px] p-[20px] bg-white w-full h-full"
-              >
-                <p className="lg:text-[28px]/[35.28px] text-[22px]/[30.28px]  font-[700] tracking-[5%] text-center font-outfit uppercase">
-                  Territory Monitoring
-                </p>
-                <img
-                  src="/serviceimg1.svg"
-                  alt=""
-                  className="lg:w-[220px] w-[40%] lg:h-[220px] object-cover"
-                />
-              </Link>
-            </div>
-
-            {/* Logistics */}
-            <div className="col-span-1 lg:col-span-2 lg:row-span-2 md:row-span-3 row-span-2 flex rounded-2xl overflow-hidden border-2 border-white">
-              <Link
-                to="/"
-                className="relative w-full h-full p-[20px"
-                style={{
-                  background: "linear-gradient(45deg,#fe9865,#faeae1)",
-                }}
-              >
-                <p className="absolute top-5 md:right-6 right-3 lg:text-[28px]/[35.28px] text-[23px]/[30.28px] text-black font-[700] tracking-[5%] text-center font-outfit uppercase">
-                  Logistics
-                </p>
-                <img
-                  src="/serviceimg2.svg"
-                  alt=""
-                  className="absolute bottom-0 left-0  w-[90%] object-cover"
-                />
-              </Link>
-            </div>
-
-            {/* Measurements */}
-            <div className="col-span-1 row-span-2 flex rounded-2xl overflow-hidden border-2 border-white">
-              <Link
-                to="/"
-                className="w-full h-full p-[20px] flex flex-col justify-center items-center gap-[32px] bg-white "
-                style={{
-                  background: "linear-gradient(45deg,#60544d,#1f130d)",
-                }}
-              >
-                <p className="pt-[48px] lg:text-[28px]/[35.28px] text-[23px]/[30.28px] text-white font-[700] tracking-[5%] text-center font-outfit uppercase">
-                  Measurements
-                </p>
-                <img
-                  src="/serviceimg3.svg"
-                  alt=""
-                  className="w-[250px] h-[270px] object-cover"
-                />
-              </Link>
-            </div>
-
-            {/* Tailored Services */}
-            <div className="col-span-1 lg:col-span-2 row-span-2 flex  rounded-2xl overflow-hidden border-2 border-white ">
-              <Link
-                to="/"
-                className="w-full h-full p-[20px] flex flex-col justify-center items-center"
-                style={{
-                  background: "linear-gradient(90deg,#42281c,#161211)",
-                }}
-              >
-                <p className="lg:text-[80px]/[105.66px] md:text-[60px]/[70.66px] text-[45px]/[55.66px] font-[700] bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent uppercase">
-                  tailored Services
-                </p>
-              </Link>
-            </div>
-
-            {/* WIP Control */}
-            <div className="col-span-1 row-span-1 flex rounded-2xl overflow-hidden border-2 border-white">
-              <Link
-                to="/"
-                className="p-[20px] flex flex-col justify-center items-center bg-white w-full h-full"
-                style={{
-                  background: "linear-gradient(45deg,#60544d,#1f130d)",
-                }}
-              >
-                <img
-                  src="/serviceimg5.svg"
-                  alt=""
-                  className="w-[250px] h-[250px] object-cover"
-                />
-                <p className="pb-[48px] lg:text-[28px]/[35.28px] text-[23px]/[30.28px] text-white font-[700] tracking-[5%] text-center font-outfit uppercase">
-                  WIP control
-                </p>
-              </Link>
-            </div>
-
-            {/* Commercial Contracts */}
-            <div className="col-span-1 row-span-1 flex rounded-2xl overflow-hidden border-2 border-white">
-              <Link
-                to="/"
-                className="p-[20px] flex flex-col justify-center items-center bg-[#61132A7A] w-full h-full"
-              >
-                <img
-                  src="/service6.svg"
-                  alt=""
-                  className="w-[180px] h-[180px] object-cover"
-                />
-                <p className="text-white lg:text-[28px]/[35.28px] text-[23px]/[30.28px] font-[700] tracking-[5%] text-center font-outfit uppercase">
-                  Commercial Contracts
-                </p>
-              </Link>
-            </div>
-
-            {/* Fraud */}
-            <div className="col-span-1 row-span-2 flex rounded-2xl overflow-hidden border-2 border-white">
-              <Link
-                to="/"
-                className="p-[20px] bg-[#fed5d1] flex flex-col justify-center items-center w-full h-full"
-              >
-                <img
-                  src="/service7.svg"
-                  alt=""
-                  className="w-[350px] object-cover"
-                />
-                <p className="text-black lg:text-[28px]/[35.28px] text-[23px]/[30.28px] font-[700] tracking-[5%] text-center font-outfit uppercase">
-                  Fraud
-                </p>
-              </Link>
-            </div>
-
-            {/* Theft */}
-            <div className="col-span-1 lg:col-span-2 row-span-1 flex  rounded-2xl overflow-hidden border-2 border-white">
-              <Link
-                to="/"
-                className="p-[20px] w-full h-full bg-[#ffda90] flex flex-row justify-center items-center"
-              >
-                <img
-                  src="/service8.svg"
-                  alt=""
-                  className="md:w-[400px] w-[70%] md:h-[200px] h-[100px] object-cover"
-                />
-                <p className="text-black lg:text-[28px]/[35.28px] text-[23px]/[30.28px] font-[700] tracking-[5%] text-center font-outfit uppercase pe-48px">
-                  Theft
-                </p>
-              </Link>
-            </div>
-
-            {/* Insurance Fraud */}
-            <div className="col-span-1 row-span-1 flex  rounded-2xl overflow-hidden border-2 border-white">
-              <Link
-                to="/"
-                className="px-[20px] w-full h-full flex flex-row justify-center md:items-stretch items-center"
-                style={{
-                  background: "linear-gradient(45deg,#7b270b,#670b25)",
-                }}
-              >
-                <img
-                  src="/service9.svg"
-                  alt=""
-                  className="object-cover w-[50%]"
-                />
-                <p className="p-[20px] text-white md:text-[23px]/[30.28px] text-[18px]/[22.28px] font-[700] tracking-[5%] text-center font-outfit uppercase">
-                  insurance fraud
-                </p>
-              </Link>
-            </div>
-          </div>
-
-          {/* ISO Certified */}
-          <ISOCertified />
         </div>
-
         {/* ======= Industry Service end ======== */}
+
+        {/* ISO Certified */}
+        <ISOCertified />
       </div>
+      {/* container ends */}
     </section>
   );
 }
