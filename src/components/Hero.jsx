@@ -5,7 +5,7 @@ import  {GradientSpan,Text} from './ui/Text'
 function Hero() {
   return (
     <div
-      className="relative w-full min-h-screen pb-[120px] flex flex-col items-center bg-cover bg-center bg-no-repeat"
+      className="relative w-full min-h-screen md:pb-[120px] pb-[50x] flex flex-col items-start justify-start bg-cover bg-center bg-no-repeat lg:px-[100px] md:px-[50px] px-[20px]"
       style={{
         // backgroundImage: 'url("/images/image.png")',
       }}
@@ -25,14 +25,14 @@ function Hero() {
       {/* Navbar */}
 
       {/* Hero Content */}
-      <div className="flex-1 w-full px-[20px] flex flex-col justify-start items-start sm:px-12 md:px-20 lg:px-[50px] py-[50px] ">
+      <div className="flex-1 w-full px-[20px] flex flex-col justify-start items-start  py-[50px] ">
         {/* Hero Content */}
-        <div className="relative w-full  px-4 sm:px-6 flex flex-col md:items-start items-center justify-center gap-[80px]">
+        <div className="relative w-full flex flex-col md:items-start items-center justify-center gap-[80px]">
 
 
-          <div className="flex flex-col md:justify-start justify-center md:items-start items-center gap-[28px] max-w-[1100px]">
+          <div className="flex flex-col md:justify-start justify-center md:items-start items-center gap-[28px] max-w-[1080px]">
 
-            <h2 className="font-raleway text-[24px]/[23px] md:text-xl lg:text-[40px]/[46px] text-white/60 font-medium uppercase font-raleway">
+            <h2 className="font-raleway text-[24px]/[23px] md:text-xl lg:text-[40px]/[100%] text-white/60 font-[400] uppercase font-raleway">
               We Provide
             </h2>
 
@@ -58,7 +58,7 @@ function Hero() {
               {/* Instant & Automatic Text & Certifications */}
 
               {/* Subtext */}
-              <p className="font-raleway md:text-start text-center text-[20px]/[23px] font-[400] md:text-lg lg:text-[40px]/[46.96px] text-gray-400 uppercase mt-4">
+              <p className="font-raleway md:text-start text-center text-[20px]/[23px] font-[400] md:text-lg lg:text-[40px]/[100%] tracking-[5%] text-white/60 uppercase mt-4">
                 Of date and location for 
                 <span className="bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent"> IMAGES and AUDIO</span> through
                 smartphones and other devices.

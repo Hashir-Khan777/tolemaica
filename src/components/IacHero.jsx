@@ -4,7 +4,7 @@ import IacHeroCard from './ui/iacHeroCard'
 
 function IacTechHero() {
     return (
-        <div className="relative overflow-hidden w-full flex flex-col pb-[50px]">
+        <div className="relative overflow-hidden w-full flex flex-col lg:gap-[100px] md:gap-[60px] gap-[30px] md:pb-[200px] pb-[100px] lg:px-[100px] md:px-[50px] px-[20px]">
             {/* Background Video */}
             <video
                 src="/iac-techBg.mp4"

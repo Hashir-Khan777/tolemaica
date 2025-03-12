@@ -5,6 +5,25 @@ import { Menu, X } from 'lucide-react';
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const navLinks = [
+    {
+      title: "Home",
+      link: "/"
+    },
+    {
+      title: "services",
+      link: "/services"
+    },
+    {
+      title: "IAC Tech",
+      link: "/iac-tech"
+    },
+    {
+      title: "About",
+      link: "/about"
+    },
+  ]
+
   return (
     <>
       {/* Navbar Container */}
@@ -24,56 +43,27 @@ function Header() {
         {/* Navigation Links */}
         <nav className="hidden lg:flex flex-row justify-center items-center xl:gap-[20px] gap-[12px]">
 
-          {/* <NavLink
-            to='/'
-            className={({ isActive }) =>
-              `text-sm uppercase font-raleway font-semibold leading-[4%] ${isActive ? "text-white xl:text-[20px]/[23.48px] text-[17px]/[20.48px]" : "text-gray-600 xl:text-[16px]/[18.78px] text-[14px]/[16.78px]"}`
-            }
-          >
-            HOME
-          </NavLink> */}
-          <NavLink
-            to='/'
-            className={({ isActive }) =>
-              `relative text-sm uppercase font-raleway font-semibold leading-[4%] 
-    ${isActive ? "text-white xl:text-[20px]/[23.48px] text-[17px]/[20.48px] before:content-[''] before:absolute before:-left-3 before:text-[#FF9966] before:w-3 before:h-3"
-                : "text-gray-600 xl:text-[16px]/[18.78px] text-[14px]/[16.78px]"}`}
-          >
-            HOME
-          </NavLink>
+          {
+            navLinks.map((navLink, index) =>
+              <div className='flex flex-row justify-center items-center xl:gap-[20px] gap-[12px]'>
+                <NavLink index={index}
+                  to={navLink.link}
+                  className={({ isActive }) =>
+                    `relative uppercase font-raleway
+    ${isActive ? "text-white font-[600] xl:text-[20px]/[100%] text-[17px]/[20.48px] before:content-[''] before:absolute before:-left-3 before:text-[#FF9966] before:w-3 before:h-3"
+                      : "text-white/60 font-[500] xl:text-[16px]/[100%] tracking-[10%] text-[14px]/[16.78px]"}`}
+                >
+                  {navLink.title}
+                </NavLink>
+                <span className="text-gray-400">/</span>
+              </div>
+            )
+          }
 
-          <span className="text-gray-400">/</span>
-          <NavLink
-            to='/'
-            className={({ isActive }) =>
-              `text-sm uppercase font-raleway font-semibold ${isActive ? "text-white xl:text-[20px]/[23.48px] text-[17px]/[20.48px]" : "text-gray-600 xl:text-[16px]/[18.78px] text-[14px]/[16.78px]"}`
-            }
-          >
-            Services
-          </NavLink>
-          <span className="text-gray-400">/</span>
-          <NavLink
-            to='/iac-tech'
-            className={({ isActive }) =>
-              `text-sm uppercase font-raleway font-semibold ${isActive ? "text-white xl:text-[20px]/[23.48px] text-[17px]/[20.48px]" : "text-gray-600 xl:text-[16px]/[18.78px] text-[14px]/[16.78px]"}`
-            }
-          >
-            IAC Tech
-          </NavLink>
-          <span className="text-gray-400">/</span>
-          <NavLink
-            to='/about'
-            className={({ isActive }) =>
-              `text-sm uppercase font-raleway font-semibold ${isActive ? "text-white xl:text-[20px]/[23.48px] text-[17px]/[20.48px]" : "text-gray-600 xl:text-[16px]/[18.78px] text-[14px]/[16.78px]"}`
-            }
-          >
-            About
-          </NavLink>
-          <span className="text-gray-400">/</span>
           <a href="#" className="text-yellow-400 text-sm">
             <img src="./solid.png" alt="" className='h-20px w-[100px]' />
           </a>
-          <span className="text-gray-400">/</span>
+          <span className="text-white/60">/</span>
           {/* Contact Button */}
           <button className="text-black text-[16px]/[18.78px] bg-white rounded-full font-[700] py-[10px] px-[24px]">
             CONTACT

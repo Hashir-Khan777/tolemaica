@@ -57,14 +57,14 @@ const ServiceSlider1 = ({ cards}) => {
           aria-label="Scroll Left"
           ref={prevRef}
         >
-          <img src="/preBtn.svg" alt="" />
+          <img src="/preBtn.svg" alt="" className="w-[32px] h-[32px]" />
         </button>
         <button
           className="cursor-pointer"
           aria-label="Scroll Right"
           ref={nextRef}
         >
-        <img src="/nextBtn.svg" alt="" />
+        <img src="/nextBtn.svg" alt="" className="w-[32px] h-[32px]" />
         </button>
       </div>
     </div>
