@@ -5,11 +5,11 @@ import { Text, GradientSpan } from './ui/Text'
 function AboutHero() {
     return (
         <div
-            className="relative lg:pb-[100px] w-full min-h-screen flex flex-col md:gap-[60px] gap-[30px] items-center bg-cover bg-center bg-no-repeat md:px-[60px] px-[20px] pb-[200px] md:pt-[40px]"
+            className="relative w-full min-h-screen md:pb-[120px] pb-[50x] flex flex-col items-start justify-start bg-cover bg-center bg-no-repeat lg:px-[100px] md:px-[50px] px-[20px]"
             style={{ backgroundImage: 'url("/aboutBg.png")' }}
         >
             {/* Navbar */}
-            <div className="w-full md:px-[60px] px-[20px] md:pt-[40px]">
+            <div className="w-full md:pt-[40px]">
                 <Header />
             </div>
 

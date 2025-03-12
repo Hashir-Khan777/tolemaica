@@ -19,7 +19,7 @@ function Hero() {
       ></video>
 
       {/* Navbar */}
-      <div className="w-full md:px-[60px] px-[20px] md:pt-[40px]">
+      <div className="w-full md:pt-[40px]">
         <Header />
       </div>
       {/* Navbar */}
