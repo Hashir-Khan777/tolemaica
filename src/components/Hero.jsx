@@ -19,8 +19,10 @@ function Hero() {
       ></video>
 
       {/* Navbar */}
-      <Header />
-
+      <div className="w-full md:px-[60px] px-[20px] md:pt-[40px]">
+        <Header />
+      </div>
+      {/* Navbar */}
 
       {/* Hero Content */}
       <div className="flex-1 w-full px-[20px] flex flex-col justify-start items-start  py-[50px] ">
