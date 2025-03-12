@@ -9,7 +9,9 @@ function AboutHero() {
             style={{ backgroundImage: 'url("/aboutBg.png")' }}
         >
             {/* Navbar */}
-            <Header />
+            <div className="w-full md:px-[60px] px-[20px] md:pt-[40px]">
+                <Header />
+            </div>
 
             <div
                 className="z-10 w-[100%] max-w-[1200px] md:h-[620px] h-[487px] border-[2px] border-white/64 rounded-[24px] backdrop-blur-[16px] flex flex-col  justify-center items-center text-center mx-auto my-[30px] lg:my-[50px] py-[100px] px-[24px]"
