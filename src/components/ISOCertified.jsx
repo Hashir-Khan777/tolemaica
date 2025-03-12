@@ -14,7 +14,7 @@ const certifications = [
 const ISOSection = () => {
     return (
         <section className="text-white py-12 md:px-6">
-            <div className="max-w-6xl mx-auto text-center w-full flex flex-col gap-[64px]">
+            <div className="max-w-6xl mx-auto text-center w-full flex flex-col gap-[40px] md:gap-[64px]">
                 {/* Heading */}
                 <Heading1 headingGray="we are" headingWhite="iso certified" />
                 <Text>

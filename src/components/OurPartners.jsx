@@ -115,10 +115,10 @@ function OurPartners() {
         </div>
 
         <OurPartnersSlider image1="/img1.svg" image2="/img2.svg" image3="/img3.svg" image4="/img4.svg" />
-       
+
       </div>
 
-      
+
 
       {/* ==== Content wrapper ===== */}
       <div className="relative mt-10 z-10 flex flex-col justify-center items-center gap-[100px] text-center lg:px-[100px] md:px-[30px] px-[20px]">
@@ -127,9 +127,9 @@ function OurPartners() {
 
           <div className="w-full flex justify-center md:justify-between gap-10 md:gap-[50px]">
             {[
-              { value: "1234", operator:"+", label: "No of Certifications" },
-              { value: "5", operator:"x", label: "Growth Forecast" },
-              { value: "23", operator:"%", label: "Increase in Business" },
+              { value: "1234", operator: "+", label: "No of Certifications" },
+              { value: "5", operator: "x", label: "Growth Forecast" },
+              { value: "23", operator: "%", label: "Increase in Business" },
             ].map((item, index) => (
               <p
                 key={index}
@@ -151,36 +151,37 @@ function OurPartners() {
         </div>
 
         {/* ==== What we do ====== */}
-        <div className="w-full flex flex-col justify-center items-center md:gap-[64px] gap-[40px]">    
-            <Heading1 headingGray="what" headingWhite="we do" />
-            <Text>
-              All data collected (photographs, videos, sounds, phone calls,
-              etc.) from smartphones and other devices undergo,{" "}
-              <GradientSpan>automatically and instantaneously</GradientSpan>, a
-              certification process giving legal value to the exact moment (date
-              and time) and geolocation of when it was captured. The
-              certification takes place according to different processes such as
-              pec, time-stamping or block chain and returns to the user, or to
-              the company back office, a certified copy of the photo or sound
-              together with the certificate that summarizes all relevant
-              references of the data collected.
-            </Text>
+        <div className="w-full flex flex-col justify-center items-center md:gap-[64px] gap-[40px]">
+          <Heading1 headingGray="what" headingWhite="we do" />
+          <Text>
+            All data collected (photographs, videos, sounds, phone calls,
+            etc.) from smartphones and other devices undergo,{" "}
+            <GradientSpan>automatically and instantaneously</GradientSpan>, a
+            certification process giving legal value to the exact moment (date
+            and time) and geolocation of when it was captured. The
+            certification takes place according to different processes such as
+            pec, time-stamping or block chain and returns to the user, or to
+            the company back office, a certified copy of the photo or sound
+            together with the certificate that summarizes all relevant
+            references of the data collected.
+          </Text>
 
           <Video link="/video1.mp4" />
         </div>
         {/* ==== What we do ====== */}
 
         {/* ====== Our Software solutions start ======= */}
-        <div className="w-full flex flex-col gap-[64px]">
-          <div className="flex flex-col gap-[20px]">
-            <Heading1 headingGray="Our" headingWhite="software solutions" />
-            <Text>
-              Lorem ipsum dolor sit amet consectetur.{" "}
-              <GradientSpan>Lorem mollis est</GradientSpan> nisl enim sed nunc
-              senectus. Molestie arcu arcu sapien vulputate ligula. Odio dolor
-              velit vestibulum adipiscing.
-            </Text>
-          </div>
+        <div className="w-full flex flex-col md:gap-[64px] gap-[40px]">
+
+          <Heading1 headingGray="Our" headingWhite="software solutions" />
+
+          <Text>
+            Lorem ipsum dolor sit amet consectetur.{" "}
+            <GradientSpan>Lorem mollis est</GradientSpan> nisl enim sed nunc
+            senectus. Molestie arcu arcu sapien vulputate ligula. Odio dolor
+            velit vestibulum adipiscing.
+          </Text>
+
 
           <div className="w-full hidden md:grid md:grid-cols-2 grid-cols-1 gap-[24px]">
             <Card
@@ -193,7 +194,7 @@ function OurPartners() {
               buttonTextColor="#FF9966"
               playButton="/images/playBtn.png"
               playButtonLink="https://example.com/play"
-              // backgroundImage="/images/image.png"
+            // backgroundImage="/images/image.png"
             />
 
             <Card
@@ -206,7 +207,7 @@ function OurPartners() {
               buttonTextColor="black"
               playButton="/images/playBtn.png"
               playButtonLink="https://example.com/play"
-              // backgroundImage="/images/image.png"
+            // backgroundImage="/images/image.png"
             />
             <div className="w-full flex flex-col md:gap-[36px] gap-[20px] justify-center">
               <CustomBtn
@@ -244,7 +245,7 @@ function OurPartners() {
               buttonTextColor="#FF9966"
               playButton="/images/playBtn.png"
               playButtonLink="https://example.com/play"
-              // backgroundImage="/images/image.png"
+            // backgroundImage="/images/image.png"
             />
 
             <Card
@@ -257,7 +258,7 @@ function OurPartners() {
               buttonTextColor="#FF9966"
               playButton="/images/playBtn.png"
               playButtonLink="https://example.com/play"
-              // backgroundImage="/images/image.png"
+            // backgroundImage="/images/image.png"
             />
 
             <Card
@@ -270,7 +271,7 @@ function OurPartners() {
               buttonTextColor="black"
               playButton="/images/playBtn.png"
               playButtonLink="https://example.com/play"
-              // backgroundImage="/images/image.png"
+            // backgroundImage="/images/image.png"
             />
 
             <Card
@@ -283,7 +284,7 @@ function OurPartners() {
               buttonTextColor="black"
               playButton="/images/playBtn.png"
               playButtonLink="https://example.com/play"
-              // backgroundImage="/images/image.png"
+            // backgroundImage="/images/image.png"
             />
 
             <Card
@@ -296,32 +297,32 @@ function OurPartners() {
               buttonTextColor="#FF9966"
               playButton="/images/playBtn.png"
               playButtonLink="https://example.com/play"
-              // backgroundImage="/images/image.png"
+            // backgroundImage="/images/image.png"
             />
           </div>
 
           <div className="w-full block md:hidden">
-          <SliderComponent cards={cards} />
+            <SliderComponent cards={cards} />
           </div>
         </div>
 
-      
+
         {/* ====== Our Software solutions End ======= */}
 
-       {/* Our Patent */}
-       <OurPatent/>
+        {/* Our Patent */}
+        <OurPatent />
 
         {/* ======= Industry Service ======== */}
         <div className="w-full flex flex-col md:gap-[64px] gap-[40px]">
-         
-            <Heading1 headingGray="Best" headingWhite="in industry service" />
-            <Text>
-              The legal certification of an{" "}
-              <GradientSpan>image, video, or document</GradientSpan> can
-              sometimes be an added value and, in other cases, an essential
-              requirement.
-            </Text>
-         
+
+          <Heading1 headingGray="Best" headingWhite="in industry service" />
+          <Text>
+            The legal certification of an{" "}
+            <GradientSpan>image, video, or document</GradientSpan> can
+            sometimes be an added value and, in other cases, an essential
+            requirement.
+          </Text>
+
 
           {/* My grid */}
           <div className="w-full mx-auto p-4 grid gap-4 grid-cols-1 lg:grid-cols-4 auto-rows-[minmax(120px,_auto)]">
@@ -490,7 +491,7 @@ function OurPartners() {
           </div>
 
           {/* ISO Certified */}
-          <ISOCertified/>
+          <ISOCertified />
         </div>
 
         {/* ======= Industry Service end ======== */}
