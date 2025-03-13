@@ -9,6 +9,7 @@ import OurPatent from "./OurPatent";
 import SliderComponent from './Slider'
 import Video from './ui/Video'
 import ISOCertified from './ISOCertified'
+import HomeGrid from "./ui/HomeGrid";
 
 const cards = [
   {
@@ -115,10 +116,10 @@ function OurPartners() {
         </div>
 
         <OurPartnersSlider image1="/img1.svg" image2="/img2.svg" image3="/img3.svg" image4="/img4.svg" />
-       
+
       </div>
 
-      
+
 
       {/* ==== Content wrapper ===== */}
       <div className="relative mt-10 z-10 flex flex-col justify-center items-center gap-[100px] text-center lg:px-[100px] md:px-[30px] px-[20px]">
@@ -127,9 +128,9 @@ function OurPartners() {
 
           <div className="w-full flex justify-center md:justify-between gap-10 md:gap-[50px]">
             {[
-              { value: "1234", operator:"+", label: "No of Certifications" },
-              { value: "5", operator:"x", label: "Growth Forecast" },
-              { value: "23", operator:"%", label: "Increase in Business" },
+              { value: "1234", operator: "+", label: "No of Certifications" },
+              { value: "5", operator: "x", label: "Growth Forecast" },
+              { value: "23", operator: "%", label: "Increase in Business" },
             ].map((item, index) => (
               <p
                 key={index}
@@ -151,36 +152,51 @@ function OurPartners() {
         </div>
 
         {/* ==== What we do ====== */}
-        <div className="w-full flex flex-col justify-center items-center md:gap-[64px] gap-[40px]">    
-            <Heading1 headingGray="what" headingWhite="we do" />
-            <Text>
-              All data collected (photographs, videos, sounds, phone calls,
-              etc.) from smartphones and other devices undergo,{" "}
-              <GradientSpan>automatically and instantaneously</GradientSpan>, a
-              certification process giving legal value to the exact moment (date
-              and time) and geolocation of when it was captured. The
-              certification takes place according to different processes such as
-              pec, time-stamping or block chain and returns to the user, or to
-              the company back office, a certified copy of the photo or sound
-              together with the certificate that summarizes all relevant
-              references of the data collected.
-            </Text>
+        <div className="w-full flex flex-col justify-center items-center md:gap-[64px] gap-[40px]">
+          <Heading1 headingGray="what" headingWhite="we do" />
+          <Text>
+            All data collected (photographs, videos, sounds, phone calls,
+            etc.) from smartphones and other devices undergo,{" "}
+            <GradientSpan>automatically and instantaneously</GradientSpan>, a
+            certification process giving legal value to the exact moment (date
+            and time) and geolocation of when it was captured. The
+            certification takes place according to different processes such as
+            pec, time-stamping or block chain and returns to the user, or to
+            the company back office, a certified copy of the photo or sound
+            together with the certificate that summarizes all relevant
+            references of the data collected.
+          </Text>
 
           <Video link="/video1.mp4" />
         </div>
         {/* ==== What we do ====== */}
 
+        {/* ===== ABout IAC Technology ======= */}
+        <div className="w-full flex flex-col justify-center items-center md:gap-[64px] gap-[40px]">
+
+          <Heading1 headingGray="about" headingWhite="iac technology" />
+
+          <Text>
+            IAC (Instant Automatic Certification) is a patented technology that provides <span className="text-white font-[500]">instant,</span> <GradientSpan>automated certification of the date, time, and location of data captured by</GradientSpan> <span className="text-[#FF9966] font-[500]">smartphones or other devices.</span> The certified data is securely stored on a Notified Body's server, which promptly issues a verification report to the user.
+          </Text>
+
+          <Link to="/iac-tech" className="uppercase text-white w-[200px] md:w-[330px] md:px-[100px] px-[48px] md:py-[20px] py-[14px] rounded-full border-[2px] border-white font-raleway font-[700] text-[16px]/[100%]  md:text-[20px]/[100%] tracking-[5%]">check now</Link>
+
+        </div>
+        {/* ===== ABout IAC Technology ======= */}
+
         {/* ====== Our Software solutions start ======= */}
-        <div className="w-full flex flex-col gap-[64px]">
-          <div className="flex flex-col gap-[20px]">
-            <Heading1 headingGray="Our" headingWhite="software solutions" />
-            <Text>
-              Lorem ipsum dolor sit amet consectetur.{" "}
-              <GradientSpan>Lorem mollis est</GradientSpan> nisl enim sed nunc
-              senectus. Molestie arcu arcu sapien vulputate ligula. Odio dolor
-              velit vestibulum adipiscing.
-            </Text>
-          </div>
+        <div className="w-full flex flex-col md:gap-[64px] gap-[40px]">
+
+          <Heading1 headingGray="Our" headingWhite="software solutions" />
+
+          <Text>
+            Lorem ipsum dolor sit amet consectetur.{" "}
+            <GradientSpan>Lorem mollis est</GradientSpan> nisl enim sed nunc
+            senectus. Molestie arcu arcu sapien vulputate ligula. Odio dolor
+            velit vestibulum adipiscing.
+          </Text>
+
 
           <div className="w-full hidden md:grid md:grid-cols-2 grid-cols-1 gap-[24px]">
             <Card
@@ -193,7 +209,7 @@ function OurPartners() {
               buttonTextColor="#FF9966"
               playButton="/images/playBtn.png"
               playButtonLink="https://example.com/play"
-              // backgroundImage="/images/image.png"
+            // backgroundImage="/images/image.png"
             />
 
             <Card
@@ -206,7 +222,7 @@ function OurPartners() {
               buttonTextColor="black"
               playButton="/images/playBtn.png"
               playButtonLink="https://example.com/play"
-              // backgroundImage="/images/image.png"
+            // backgroundImage="/images/image.png"
             />
             <div className="w-full flex flex-col md:gap-[36px] gap-[20px] justify-center">
               <CustomBtn
@@ -244,7 +260,7 @@ function OurPartners() {
               buttonTextColor="#FF9966"
               playButton="/images/playBtn.png"
               playButtonLink="https://example.com/play"
-              // backgroundImage="/images/image.png"
+            // backgroundImage="/images/image.png"
             />
 
             <Card
@@ -257,7 +273,7 @@ function OurPartners() {
               buttonTextColor="#FF9966"
               playButton="/images/playBtn.png"
               playButtonLink="https://example.com/play"
-              // backgroundImage="/images/image.png"
+            // backgroundImage="/images/image.png"
             />
 
             <Card
@@ -270,7 +286,7 @@ function OurPartners() {
               buttonTextColor="black"
               playButton="/images/playBtn.png"
               playButtonLink="https://example.com/play"
-              // backgroundImage="/images/image.png"
+            // backgroundImage="/images/image.png"
             />
 
             <Card
@@ -283,7 +299,7 @@ function OurPartners() {
               buttonTextColor="black"
               playButton="/images/playBtn.png"
               playButtonLink="https://example.com/play"
-              // backgroundImage="/images/image.png"
+            // backgroundImage="/images/image.png"
             />
 
             <Card
@@ -296,205 +312,41 @@ function OurPartners() {
               buttonTextColor="#FF9966"
               playButton="/images/playBtn.png"
               playButtonLink="https://example.com/play"
-              // backgroundImage="/images/image.png"
+            // backgroundImage="/images/image.png"
             />
           </div>
 
           <div className="w-full block md:hidden">
-          <SliderComponent cards={cards} />
+            <SliderComponent cards={cards} />
           </div>
         </div>
 
-      
+
         {/* ====== Our Software solutions End ======= */}
 
-       {/* Our Patent */}
-       <OurPatent/>
+        {/* Our Patent */}
+        <OurPatent />
 
         {/* ======= Industry Service ======== */}
         <div className="w-full flex flex-col md:gap-[64px] gap-[40px]">
-         
-            <Heading1 headingGray="Best" headingWhite="in industry service" />
-            <Text>
-              The legal certification of an{" "}
-              <GradientSpan>image, video, or document</GradientSpan> can
-              sometimes be an added value and, in other cases, an essential
-              requirement.
-            </Text>
-         
 
-          {/* My grid */}
-          <div className="w-full mx-auto p-4 grid gap-4 grid-cols-1 lg:grid-cols-4 auto-rows-[minmax(120px,_auto)]">
-            {/* Territory Monitoring */}
-            <div className="col-span-1 row-span-2 lg:row-span-3 flex rounded-2xl overflow-hidden border-2 border-white">
-              <Link
-                to="/"
-                className="flex flex-col justify-center items-center lg:gap-[32px] gap-[20px] p-[20px] bg-white w-full h-full"
-              >
-                <p className="lg:text-[28px]/[35.28px] text-[22px]/[30.28px]  font-[700] tracking-[5%] text-center font-outfit uppercase">
-                  Territory Monitoring
-                </p>
-                <img
-                  src="/serviceimg1.svg"
-                  alt=""
-                  className="lg:w-[220px] w-[40%] lg:h-[220px] object-cover"
-                />
-              </Link>
-            </div>
+          <Heading1 headingGray="Best" headingWhite="in industry service" />
+          <Text>
+            The legal certification of an{" "}
+            <GradientSpan>image, video, or document</GradientSpan> can
+            sometimes be an added value and, in other cases, an essential
+            requirement.
+          </Text>
 
-            {/* Logistics */}
-            <div className="col-span-1 lg:col-span-2 lg:row-span-2 md:row-span-3 row-span-2 flex rounded-2xl overflow-hidden border-2 border-white">
-              <Link
-                to="/"
-                className="relative w-full h-full p-[20px"
-                style={{
-                  background: "linear-gradient(45deg,#fe9865,#faeae1)",
-                }}
-              >
-                <p className="absolute top-5 md:right-6 right-3 lg:text-[28px]/[35.28px] text-[23px]/[30.28px] text-black font-[700] tracking-[5%] text-center font-outfit uppercase">
-                  Logistics
-                </p>
-                <img
-                  src="/serviceimg2.svg"
-                  alt=""
-                  className="absolute bottom-0 left-0  w-[90%] object-cover"
-                />
-              </Link>
-            </div>
+          <HomeGrid />
 
-            {/* Measurements */}
-            <div className="col-span-1 row-span-2 flex rounded-2xl overflow-hidden border-2 border-white">
-              <Link
-                to="/"
-                className="w-full h-full p-[20px] flex flex-col justify-center items-center gap-[32px] bg-white "
-                style={{
-                  background: "linear-gradient(45deg,#60544d,#1f130d)",
-                }}
-              >
-                <p className="pt-[48px] lg:text-[28px]/[35.28px] text-[23px]/[30.28px] text-white font-[700] tracking-[5%] text-center font-outfit uppercase">
-                  Measurements
-                </p>
-                <img
-                  src="/serviceimg3.svg"
-                  alt=""
-                  className="w-[250px] h-[270px] object-cover"
-                />
-              </Link>
-            </div>
-
-            {/* Tailored Services */}
-            <div className="col-span-1 lg:col-span-2 row-span-2 flex  rounded-2xl overflow-hidden border-2 border-white ">
-              <Link
-                to="/"
-                className="w-full h-full p-[20px] flex flex-col justify-center items-center"
-                style={{
-                  background: "linear-gradient(90deg,#42281c,#161211)",
-                }}
-              >
-                <p className="lg:text-[80px]/[105.66px] md:text-[60px]/[70.66px] text-[45px]/[55.66px] font-[700] bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent uppercase">
-                  tailored Services
-                </p>
-              </Link>
-            </div>
-
-            {/* WIP Control */}
-            <div className="col-span-1 row-span-1 flex rounded-2xl overflow-hidden border-2 border-white">
-              <Link
-                to="/"
-                className="p-[20px] flex flex-col justify-center items-center bg-white w-full h-full"
-                style={{
-                  background: "linear-gradient(45deg,#60544d,#1f130d)",
-                }}
-              >
-                <img
-                  src="/serviceimg5.svg"
-                  alt=""
-                  className="w-[250px] h-[250px] object-cover"
-                />
-                <p className="pb-[48px] lg:text-[28px]/[35.28px] text-[23px]/[30.28px] text-white font-[700] tracking-[5%] text-center font-outfit uppercase">
-                  WIP control
-                </p>
-              </Link>
-            </div>
-
-            {/* Commercial Contracts */}
-            <div className="col-span-1 row-span-1 flex rounded-2xl overflow-hidden border-2 border-white">
-              <Link
-                to="/"
-                className="p-[20px] flex flex-col justify-center items-center bg-[#61132A7A] w-full h-full"
-              >
-                <img
-                  src="/service6.svg"
-                  alt=""
-                  className="w-[180px] h-[180px] object-cover"
-                />
-                <p className="text-white lg:text-[28px]/[35.28px] text-[23px]/[30.28px] font-[700] tracking-[5%] text-center font-outfit uppercase">
-                  Commercial Contracts
-                </p>
-              </Link>
-            </div>
-
-            {/* Fraud */}
-            <div className="col-span-1 row-span-2 flex rounded-2xl overflow-hidden border-2 border-white">
-              <Link
-                to="/"
-                className="p-[20px] bg-[#fed5d1] flex flex-col justify-center items-center w-full h-full"
-              >
-                <img
-                  src="/service7.svg"
-                  alt=""
-                  className="w-[350px] object-cover"
-                />
-                <p className="text-black lg:text-[28px]/[35.28px] text-[23px]/[30.28px] font-[700] tracking-[5%] text-center font-outfit uppercase">
-                  Fraud
-                </p>
-              </Link>
-            </div>
-
-            {/* Theft */}
-            <div className="col-span-1 lg:col-span-2 row-span-1 flex  rounded-2xl overflow-hidden border-2 border-white">
-              <Link
-                to="/"
-                className="p-[20px] w-full h-full bg-[#ffda90] flex flex-row justify-center items-center"
-              >
-                <img
-                  src="/service8.svg"
-                  alt=""
-                  className="md:w-[400px] w-[70%] md:h-[200px] h-[100px] object-cover"
-                />
-                <p className="text-black lg:text-[28px]/[35.28px] text-[23px]/[30.28px] font-[700] tracking-[5%] text-center font-outfit uppercase pe-48px">
-                  Theft
-                </p>
-              </Link>
-            </div>
-
-            {/* Insurance Fraud */}
-            <div className="col-span-1 row-span-1 flex  rounded-2xl overflow-hidden border-2 border-white">
-              <Link
-                to="/"
-                className="px-[20px] w-full h-full flex flex-row justify-center md:items-stretch items-center"
-                style={{
-                  background: "linear-gradient(45deg,#7b270b,#670b25)",
-                }}
-              >
-                <img
-                  src="/service9.svg"
-                  alt=""
-                  className="object-cover w-[50%]"
-                />
-                <p className="p-[20px] text-white md:text-[23px]/[30.28px] text-[18px]/[22.28px] font-[700] tracking-[5%] text-center font-outfit uppercase">
-                  insurance fraud
-                </p>
-              </Link>
-            </div>
-          </div>
-
-          {/* ISO Certified */}
-          <ISOCertified/>
         </div>
-
         {/* ======= Industry Service end ======== */}
+
+        {/* ISO Certified */}
+        <ISOCertified />
       </div>
+      {/* container ends */}
     </section>
   );
 }
