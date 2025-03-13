@@ -10,6 +10,7 @@ import SliderComponent from './Slider'
 import Video from './ui/Video'
 import ISOCertified from './ISOCertified'
 import HomeGrid from "./ui/HomeGrid";
+import Heading2 from './ui/Heading2'
 
 const cards = [
   {
@@ -329,8 +330,7 @@ function OurPartners() {
 
         {/* ======= Industry Service ======== */}
         <div className="w-full flex flex-col md:gap-[64px] gap-[40px]">
-
-          <Heading1 headingGray="Best" headingWhite="in industry service" />
+        <Heading2 headingWhite1="Best" headingGray="in industry" headingWhite2="service" />
           <Text>
             The legal certification of an{" "}
             <GradientSpan>image, video, or document</GradientSpan> can

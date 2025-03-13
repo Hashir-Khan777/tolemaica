@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import GridSlider from '../ui/GridSlider'
 // import ServiceSlider from './ServiceSlider';
 
 const HomeGrid = () => {
@@ -7,7 +8,7 @@ const HomeGrid = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
+      setIsMobile(window.innerWidth < 1200);
     };
 
     // Set initial value
@@ -20,63 +21,12 @@ const HomeGrid = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const serviceCards = [
-    {
-      title: "TERRITORY MONITORING",
-      bg: "bg-white",
-      path: "/",
-    },
-    {
-      title: "LOGISTICS",
-      bg: "bg-gradient-to-br from-[#fe9865] to-[#faeae1]",
-      path: "/",
-    },
-    {
-      title: "MEASUREMENTS",
-      bg: "bg-gradient-to-br from-[#60544d] to-[#1f130d]",
-      textColor: "text-white",
-      path: "/",
-    },
-    {
-      title: "TAILORED SERVICES",
-      bg: "bg-gradient-to-r from-[#42281c] to-[#161211]",
-      textGradient: true,
-      path: "/",
-    },
-    {
-      title: "WIP CONTROL",
-      bg: "bg-gradient-to-br from-[#60544d] to-[#1f130d]",
-      textColor: "text-white",
-      path: "/",
-    },
-    {
-      title: "COMMERCIAL CONTRACTS",
-      bg: "bg-[#61132A7A]",
-      textColor: "text-white",
-      path: "/",
-    },
-    {
-      title: "FRAUD",
-      bg: "bg-[#fed5d1]",
-      path: "/",
-    },
-    {
-      title: "THEFT",
-      bg: "bg-[#ffda90]",
-      path: "/",
-    },
-    {
-      title: "INSURANCE FRAUD",
-      bg: "bg-gradient-to-br from-[#7b270b] to-[#670b25]",
-      textColor: "text-white",
-      path: "/",
-    },
-  ];
+ 
 
   // If mobile, render slider
-  //   if (isMobile) {
-  //     return <ServiceSlider cards={serviceCards} />;
-  //   }
+    if (isMobile) {
+      return <GridSlider />;
+    }
 
   // Otherwise render grid
   return (
@@ -168,14 +118,6 @@ const HomeGrid = () => {
 
         {/* Commercial Contracts */}
         <div className="col-span-2 xl:col-span-1 row-span-2 flex rounded-2xl overflow-hidden border-2 border-white">
-          {/* <Link
-            to="/"
-            className="p-5 flex flex-col justify-center items-center bg-[#61132A7A] w-full h-full"
-          >
-            <p className="text-white lg:text-3xl text-2xl font-bold tracking-wide text-center font-outfit uppercase">
-              Commercial Contracts
-            </p>
-          </Link> */}
           <Link
             to="/"
             className="relative flex flex-col justify-end py-[24px] items-center gap-6 p-5 w-full h-full bg-cover bg-center bg-no-repeat"
