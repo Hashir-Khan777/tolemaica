@@ -62,7 +62,7 @@ function Header() {
                     `relative uppercase font-raleway flex items-center gap-4
     ${
       isActive
-        ? "text-white font-[600] xl:text-[20px]/[100%] text-[17px]/[20.48px] before:content-[''] before:absolute before:-left-3 before:text-[#FF9966] before:w-3 before:h-3"
+        ? "text-white font-[600] xl:text-[20px]/[100%] text-[17px]/[20.48px]"
         : "text-white/60 font-[500] xl:text-[16px]/[100%] tracking-[10%] text-[14px]/[16.78px]"
     }`
                   }
@@ -76,7 +76,11 @@ function Header() {
                 <button
                   onClick={navLink.func}
                   index={index}
-                  className={`flex items-center gap-4 relative cursor-pointer uppercase font-raleway text-white/60 font-[500] xl:text-[16px]/[100%] tracking-[10%] text-[14px]/[16.78px]`}
+                  className={`flex items-center gap-4 relative cursor-pointer uppercase font-raleway ${
+                    navLinks.filter((x) => x.link === pathname)?.length <= 0
+                      ? "text-white font-[600] xl:text-[20px]/[100%] text-[17px]/[20.48px]"
+                      : "text-white/60 font-[500] xl:text-[16px]/[100%] tracking-[10%] text-[14px]/[16.78px]"
+                  }`}
                 >
                   {navLinks.filter((x) => x.link === pathname)?.length <= 0 ? (
                     <div className="bg-[#FF9966] w-[10px] h-[10px] rounded-full"></div>
@@ -139,16 +143,16 @@ function Header() {
           >
             Home
           </NavLink>
-          <NavLink
-            className={({ isActive }) =>
-              `text-lg uppercase font-raleway font-semibold block transition-colors duration-300 ${
-                isActive ? "text-yellow-400" : "text-gray-400"
-              }`
-            }
+          <button
+            className={`text-left text-lg uppercase font-raleway font-semibold block transition-colors duration-300 cursor-pointer ${
+              navLinks.filter((x) => x.link === pathname)?.length <= 0
+                ? "text-yellow-400"
+                : "text-gray-400"
+            }`}
             onClick={() => setModalIsOpen(true)}
           >
             services
-          </NavLink>
+          </button>
           <NavLink
             to="/iac-tech"
             className={({ isActive }) =>
