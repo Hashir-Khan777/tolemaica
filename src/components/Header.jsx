@@ -122,7 +122,7 @@ function Header() {
         >
           <img
             src="/images/cross 1.png"
-            className="ml-auto md:mt-[40px] md:mr-[48px] mb-[20px] md:mb-[8px] cursor-pointer"
+            className="ml-auto md:mt-[40px] w-[32px] h-[32px] md:mr-[48px] mb-[20px] md:mb-[8px] cursor-pointer"
           />
         </button>
 
