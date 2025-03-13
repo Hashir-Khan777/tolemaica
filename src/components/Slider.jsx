@@ -6,14 +6,11 @@ import "swiper/css";
 import "swiper/css/navigation";
 import Card from "./ui/Card"; // Ensure this path is correct
 
-
-
-
-const SliderComponent = ({ cards}) => {
+const SliderComponent = ({ cards }) => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   const [swiperInstance, setSwiperInstance] = useState(null);
-  
+
   useEffect(() => {
     if (swiperInstance) {
       swiperInstance.navigation.init();
@@ -22,9 +19,7 @@ const SliderComponent = ({ cards}) => {
   }, [swiperInstance]);
 
   return (
-    <div
-      className="container rounded-lg mx-auto"
-    >
+    <div className="container rounded-lg mx-auto">
       {/* Debugging: Check if cards array has data */}
       {cards.length === 0 && (
         <p className="text-center text-red-500">No cards available!</p>
@@ -59,20 +54,20 @@ const SliderComponent = ({ cards}) => {
         ))}
       </Swiper>
 
-      <div className="pe-4 flex justify-end items-end gap-4 container mt-4">
+      <div className=" flex justify-end items-end gap-4 container mt-4">
         <button
           className="cursor-pointer"
           aria-label="Scroll Left"
           ref={prevRef}
         >
-          <img src="/preBtn.svg" alt="" />
+          <img src="/preBtn.svg" className="w-[34px] h-[34px]" alt="" />
         </button>
         <button
           className="cursor-pointer"
           aria-label="Scroll Right"
           ref={nextRef}
         >
-        <img src="/nextBtn.svg" alt="" />
+          <img src="/nextBtn.svg" className="w-[34px] h-[34px]" alt="" />
         </button>
       </div>
     </div>
