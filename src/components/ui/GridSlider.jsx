@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 const Cards = [
     {
         title: "TERRITORY MONITORING",
-        bgImage: "/images/territoryMonitorng.png",
+        bgImage: "/images/TeritorryMonitoring.jpg",
         path: "/",
     },
     {
