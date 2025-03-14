@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { X } from "lucide-react";
 import ServiceModal from "./ui/ServiceModal";
 
 function Header() {
@@ -60,11 +59,10 @@ function Header() {
                   to={navLink.link}
                   className={({ isActive }) =>
                     `relative uppercase font-raleway flex items-center gap-4
-    ${
-      isActive
-        ? "text-white font-[600] xl:text-[20px]/[100%] text-[17px]/[20.48px]"
-        : "text-white/60 font-[500] xl:text-[16px]/[100%] tracking-[10%] text-[14px]/[16.78px]"
-    }`
+    ${isActive
+                      ? "text-white font-[600] xl:text-[20px]/[100%] text-[17px]/[20.48px]"
+                      : "text-white/60 font-[500] xl:text-[16px]/[100%] tracking-[10%] text-[14px]/[16.78px]"
+                    }`
                   }
                 >
                   {navLink.link === pathname ? (
@@ -76,11 +74,10 @@ function Header() {
                 <button
                   onClick={navLink.func}
                   index={index}
-                  className={`flex items-center gap-4 relative cursor-pointer uppercase font-raleway ${
-                    navLinks.filter((x) => x.link === pathname)?.length <= 0
-                      ? "text-white font-[600] xl:text-[20px]/[100%] text-[17px]/[20.48px]"
-                      : "text-white/60 font-[500] xl:text-[16px]/[100%] tracking-[10%] text-[14px]/[16.78px]"
-                  }`}
+                  className={`flex items-center gap-4 relative cursor-pointer uppercase font-raleway ${navLinks.filter((x) => x.link === pathname)?.length <= 0
+                    ? "text-white font-[600] xl:text-[20px]/[100%] text-[17px]/[20.48px]"
+                    : "text-white/60 font-[500] xl:text-[16px]/[100%] tracking-[10%] text-[14px]/[16.78px]"
+                    }`}
                 >
                   {navLinks.filter((x) => x.link === pathname)?.length <= 0 ? (
                     <div className="bg-[#FF9966] w-[10px] h-[10px] rounded-full"></div>
@@ -102,85 +99,67 @@ function Header() {
           </button>
         </nav>
 
+
         {/* Mobile Menu Button */}
-        <button
-          className="lg:hidden text-white"
-          onClick={() => setIsOpen(true)}
-        >
-          {/* <Menu size={25} /> */}
-          <img
-            src="menu.svg"
-            alt="Menu icon"
-            className="w-[18px] sm:w-[25px]"
-          />
+        <button className="lg:hidden text-white" onClick={() => setIsOpen(true)}>
+          <img src="menu.svg" alt="Menu icon" className="w-[18px] sm:w-[25px]" />
         </button>
       </div>
 
+
       {/* Mobile Sidebar */}
       <div
-        className={`fixed z-50 top-0 right-0 h-full w-[80%] max-w-[400px] bg-black text-white p-6 transform ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        } transition-transform duration-300 ease-in-out lg:hidden rounded-l-lg`}
-      >
-        {/* Close Button */}
+        className={`fixed z-50 top-0 right-0 h-full w-full backdrop-blur-3xl bCK flex flex-col justify-center items-center bg-black text-white p-6 transform ${isOpen ? "translate-x-0" : "translate-x-full"
+          } transition-transform duration-300 ease-in-out lg:hidden rounded-l-lg`}
+        style={{
+          background: " linear-gradient(to left bottom, #8f644f, #48423f 80%, #4c2a34 )"
+        }}>
+        {/* Close Button  */}
+
         <button
           className="absolute top-4 right-4"
           onClick={() => setIsOpen(false)}
         >
-          <X size={30} />
+          <img
+            src="/images/cross 1.png"
+            className="ml-auto md:mt-[40px] w-[32px] h-[32px] md:mr-[48px] mb-[20px] md:mb-[8px] cursor-pointer"
+          />
         </button>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation  */}
         <nav className="flex flex-col gap-6 mt-10">
-          <NavLink
+          <Link
+            className="h-[52px] w-[300px] rounded-full border-[2.1px] text-white border-white flex justify-center items-center font-raleway font-medium md:text-[20px]/[100%] py-[12px] px-[40px] uppercase"
             to="/"
-            className={({ isActive }) =>
-              `text-lg uppercase font-raleway font-semibold block transition-colors duration-300 ${
-                isActive ? "text-yellow-400" : "text-gray-400"
-              }`
-            }
-            onClick={() => setIsOpen(false)}
           >
             Home
-          </NavLink>
+          </Link>
           <button
-            className={`text-left text-lg uppercase font-raleway font-semibold block transition-colors duration-300 cursor-pointer ${
-              navLinks.filter((x) => x.link === pathname)?.length <= 0
-                ? "text-yellow-400"
-                : "text-gray-400"
-            }`}
+            className="h-[52px] w-[300px] rounded-full border-[2.1px] text-white border-[#FF9966] flex justify-center items-center font-raleway font-medium md:text-[20px]/[100%] py-[12px] px-[40px] uppercase"
             onClick={() => setModalIsOpen(true)}
           >
-            services
+            Services
           </button>
-          <NavLink
+          <Link
+            className="h-[52px] w-[300px] rounded-full border-[2.1px] text-[#FF9966] border-white flex justify-center items-center font-raleway font-medium md:text-[20px]/[100%] py-[12px] px-[40px] uppercase"
             to="/iac-tech"
-            className={({ isActive }) =>
-              `text-lg uppercase font-raleway font-semibold block transition-colors duration-300 ${
-                isActive ? "text-yellow-400" : "text-gray-400"
-              }`
-            }
-            onClick={() => setIsOpen(false)}
           >
-            Iac tech
-          </NavLink>
-          <NavLink
+            iac tech
+          </Link>
+          <Link
+            className="h-[52px] w-[300px] rounded-full border-[2.1px] text-white border-[#FF9966] flex justify-center items-center font-raleway font-medium md:text-[20px]/[100%] py-[12px] px-[40px] uppercase"
             to="/about"
-            className={({ isActive }) =>
-              `text-lg uppercase font-raleway font-semibold block transition-colors duration-300 ${
-                isActive ? "text-yellow-400" : "text-gray-400"
-              }`
-            }
-            onClick={() => setIsOpen(false)}
           >
             about
-          </NavLink>
-          <a href="#" className="text-yellow-400 text-lg">
+          </Link>
+
+          <Link
+            className="h-[52px] w-[300px] rounded-full border-[2.1px] text-white border-white flex justify-center items-center font-raleway font-medium md:text-[20px]/[100%] py-[12px] px-[40px]"
+            to="/"
+          >
             <img src="./solid.png" alt="Solid" className="h-6 w-auto" />
-          </a>
-          <button className="text-black bg-white rounded-full font-bold py-2 px-6">
-            CONTACT
-          </button>
+          </Link>
+
         </nav>
       </div>
       <ServiceModal
