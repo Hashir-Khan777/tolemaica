@@ -12,6 +12,7 @@ import QrCertCode from "../pages/QrCertCode.jsx";
 import BarCertCode from "../pages/BarCertCode.jsx";
 import About from "../pages/About.jsx";
 import IacTech from "../pages/IacTech.jsx";
+import MSCShipping from '../pages/MSCShipping.jsx'
 import App from "../App.jsx";
 
 const router = createBrowserRouter(
@@ -24,6 +25,7 @@ const router = createBrowserRouter(
       <Route path="legal-check" element={<LegalCheck />} />
       <Route path="QrCertCode" element={<QrCertCode />} />
       <Route path="BarCertCode" element={<BarCertCode />} />
+      <Route path="msc-shipping" element={<MSCShipping />} />
       <Route path="iac-tech" element={<IacTech />} />
       <Route path="about" element={<About />} />
     </Route>
