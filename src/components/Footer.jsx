@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import ServiceModal from "./ui/ServiceModal";
 
 function Footer() {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
   return (
     <div className="w-full bg-black relative overflow-hidden">
       <img
@@ -23,7 +26,7 @@ function Footer() {
                 placeholder="Email"
                 className="border border-white rounded-full max-w-[400px] placeholder:text-white px-6 py-3"
               />
-              <button className="max-w-[400px] h-[47px] px-[30px] sm:px-[40px] md:px-[100px] lg:px-[100px] border-2 border-[#FF9966] bg-white/10 opacity-55 text-[#FF9966] rounded-full text-sm sm:text-lg lg:text-[20px]/[23.48px] font-[700] cursor-pointer mt-8 mb-6">
+              <button className="button max-w-[400px] h-[47px] px-[30px] sm:px-[40px] md:px-[100px] lg:px-[100px] border-2 border-[#FF9966] bg-white/10 opacity-55 text-[#FF9966] rounded-full text-sm sm:text-lg lg:text-[20px]/[23.48px] font-[700] cursor-pointer mt-8 mb-6">
                 REGISTER
               </button>
               <p className="font-[400] text-white/[64%]">
@@ -60,12 +63,17 @@ function Footer() {
               <div className="flex flex-wrap justify-between font-outfit">
                 <div className="max-w-[300px] w-full font-medium text-2xl flex flex-col gap-2.5">
                   <Link to="/">Home</Link>
-                  <Link to="/">About</Link>
-                  <Link to="/">Services</Link>
+                  <Link to="/about">About</Link>
+                  <button
+                    onClick={() => setModalIsOpen(true)}
+                    className="cursor-pointer text-left"
+                  >
+                    Services
+                  </button>
                 </div>
                 <div className="max-w-[300px] w-full font-medium text-2xl flex flex-col gap-2.5 mt-8 md:mt-0">
                   <Link to="/">Use Case</Link>
-                  <Link to="/">IAC Tech</Link>
+                  <Link to="/iac-tech">IAC Tech</Link>
                   <Link to="/">Solid</Link>
                 </div>
               </div>
@@ -82,6 +90,10 @@ function Footer() {
         </div>
         <img src="/images/footer.png" className="w-full" />
       </div>
+      <ServiceModal
+        modalIsOpen={modalIsOpen}
+        closeModal={() => setModalIsOpen(false)}
+      />
     </div>
   );
 }

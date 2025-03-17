@@ -30,11 +30,12 @@ function Header() {
     <>
       {/* Navbar Container */}
       <div
-        className="relative z-50  w-[100%] mx-auto max-w-[100%] border-2 border-white my-6 rounded-full flex justify-between items-center px-[24px] py-[15px] lg:px-16 lg:py-5"
+        className="relative z-50 w-[100%] bg-black/50 mx-auto max-w-[100%] my-6 flex justify-between items-center px-[24px] py-[15px] lg:px-16 lg:py-5"
         style={{
-          background: "rgba(0,0,0,0.5)",
-          borderImage: "linear-gradient(to right, #FF9966, #FFFFFF) 1",
-          borderRadius: "9999px", // Ensures fully rounded corners
+          border: "2px solid transparent",
+          background:
+            "linear-gradient(#000000, #000000) padding-box, linear-gradient(to right, #ff9966, #ffffff) border-box",
+          borderRadius: "999px",
         }}
       >
         {/* Logo */}
@@ -59,10 +60,11 @@ function Header() {
                   to={navLink.link}
                   className={({ isActive }) =>
                     `relative uppercase font-raleway flex items-center gap-4
-    ${isActive
-                      ? "text-white font-[600] xl:text-[20px]/[100%] text-[17px]/[20.48px]"
-                      : "text-white/60 font-[500] xl:text-[16px]/[100%] tracking-[10%] text-[14px]/[16.78px]"
-                    }`
+    ${
+      isActive
+        ? "text-white font-[600] xl:text-[20px]/[100%] text-[17px]/[20.48px]"
+        : "text-white/60 font-[500] xl:text-[16px]/[100%] tracking-[10%] text-[14px]/[16.78px]"
+    }`
                   }
                 >
                   {navLink.link === pathname ? (
@@ -74,10 +76,11 @@ function Header() {
                 <button
                   onClick={navLink.func}
                   index={index}
-                  className={`flex items-center gap-4 relative cursor-pointer uppercase font-raleway ${navLinks.filter((x) => x.link === pathname)?.length <= 0
-                    ? "text-white font-[600] xl:text-[20px]/[100%] text-[17px]/[20.48px]"
-                    : "text-white/60 font-[500] xl:text-[16px]/[100%] tracking-[10%] text-[14px]/[16.78px]"
-                    }`}
+                  className={`flex items-center gap-4 relative cursor-pointer uppercase font-raleway ${
+                    navLinks.filter((x) => x.link === pathname)?.length <= 0
+                      ? "text-white font-[600] xl:text-[20px]/[100%] text-[17px]/[20.48px]"
+                      : "text-white/60 font-[500] xl:text-[16px]/[100%] tracking-[10%] text-[14px]/[16.78px]"
+                  }`}
                 >
                   {navLinks.filter((x) => x.link === pathname)?.length <= 0 ? (
                     <div className="bg-[#FF9966] w-[10px] h-[10px] rounded-full"></div>
@@ -94,26 +97,34 @@ function Header() {
           </a>
           <span className="text-white/60">/</span>
           {/* Contact Button */}
-          <button className="text-black text-[16px]/[18.78px] bg-white rounded-full font-[700] py-[10px] px-[24px]">
+          <button className="cursor-pointer text-black text-[16px]/[18.78px] bg-white rounded-full font-[700] py-[10px] px-[24px]">
             CONTACT
           </button>
         </nav>
 
-
         {/* Mobile Menu Button */}
-        <button className="lg:hidden text-white" onClick={() => setIsOpen(true)}>
-          <img src="menu.svg" alt="Menu icon" className="w-[18px] sm:w-[25px]" />
+        <button
+          className="lg:hidden text-white"
+          onClick={() => setIsOpen(true)}
+        >
+          <img
+            src="menu.svg"
+            alt="Menu icon"
+            className="w-[18px] sm:w-[25px]"
+          />
         </button>
       </div>
 
-
       {/* Mobile Sidebar */}
       <div
-        className={`fixed z-50 top-0 right-0 h-full w-full backdrop-blur-3xl bCK flex flex-col justify-center items-center bg-black text-white p-6 transform ${isOpen ? "translate-x-0" : "translate-x-full"
-          } transition-transform duration-300 ease-in-out lg:hidden rounded-l-lg`}
+        className={`fixed z-50 top-0 right-0 h-full w-full backdrop-blur-3xl bCK flex flex-col justify-center items-center bg-black text-white p-6 transform ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        } transition-transform duration-300 ease-in-out lg:hidden rounded-l-lg`}
         style={{
-          background: " linear-gradient(to left bottom, #8f644f, #48423f 80%, #4c2a34 )"
-        }}>
+          background:
+            " linear-gradient(to left bottom, #8f644f, #48423f 80%, #4c2a34 )",
+        }}
+      >
         {/* Close Button  */}
 
         <button
@@ -159,7 +170,6 @@ function Header() {
           >
             <img src="./solid.png" alt="Solid" className="h-6 w-auto" />
           </Link>
-
         </nav>
       </div>
       <ServiceModal
