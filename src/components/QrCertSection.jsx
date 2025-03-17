@@ -3,12 +3,12 @@ import Heading1 from "./ui/Heading1";
 import { Text, GradientSpan } from "./ui/Text";
 import Card2 from "./ui/Card2";
 import Card3 from "./ui/Card3";
-import { Link } from "react-router-dom";
 import OurPartnersSlider from './ui/PartnersSLider'
 import ServiceSlider1 from "./ui/ServiceSLider1";
 import ServiceSlider2 from "./ui/ServiceSLider2";
 import Video from './ui/Video'
 import IsoCertified from './ISOCertified'
+import ImageSec from "./ui/ImageSec";
 
 const cardsData = [
     { image: "/lcimg1.svg", title: "Instant Document Verification", description: "Scan the QR code to confirm analog document authenticity and completeness." },
@@ -69,9 +69,7 @@ function QrCertSection() {
 
 
                     {/* Image Section */}
-                    <div>
-                        <img src="./qrcode.svg" alt="" className="lg:h-[660px] min-w-[400px] " />
-                    </div>
+                    <ImageSec imageUrl="/images/QRCode.jpg" />
 
                 </div>
                 {/* ==== What is QrCertCode ====== */}
@@ -107,7 +105,7 @@ function QrCertSection() {
                     {/* ==== Cards ==== */}
 
                     {/* === Video Section === */}
-                    <Video />
+                    <Video link="/dataclick.webm" />
                 </div>
                 {/* ====== Why Choose QrCertCode ======= */}
 

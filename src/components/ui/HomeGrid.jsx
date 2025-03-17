@@ -38,7 +38,7 @@ const HomeGrid = () => {
             to="/"
             className="relative flex flex-col justify-end py-[24px] items-center gap-6 p-5 w-full h-full bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: "url('/images/territoryMonitorng.png')",
+              backgroundImage: "url('/images/TeritorryMonitoring.jpg')",
             }}
           >
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>

@@ -3,18 +3,12 @@ import Heading1 from "./ui/Heading1";
 import { Text, GradientSpan } from "./ui/Text";
 import OurPartnersSlider from './ui/PartnersSLider'
 import ISOCertified from './ISOCertified'
+import ImageSec from './ui/ImageSec'
 
 function IACWorks() {
     return (
         <section className="relative overflow-hidden w-full bg-black pt-[100px] pb-[200px] flex  flex-col md:gap-[100px] gap-[40px]">
-            {/* <video
-                src="/ourpartners.mp4"
-                autoPlay
-                loop
-                muted
-                className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
-            ></video> */}
-            {/* Base video background */}
+
             <video
                 src="/ourpartners.mp4"
                 autoPlay
@@ -42,8 +36,7 @@ function IACWorks() {
                         <GradientSpan>IAC (Instant Automatic Certification)</GradientSpan> technology is the internationally patented solution for date and location legal certification of data captured by smartphones or other devices. The process is an <GradientSpan>automatic and instantaneous way of storing data</GradientSpan> in a server held by a Notified Body that returns a report to the user summarizing date, time and location references of the given data (image/sound).
                     </Text>
 
-
-                    <img src="/images/iacimg1.png" alt="" className="max-w-[1114px] lg:w-[1114px] md:w-[60%] sm:w-[90%] w-[98%]" />
+                    <ImageSec imageUrl="/images/IACTech.png" />
 
 
                     <Text>From a technical point of view, the certification process consists in <GradientSpan>encrypting data</GradientSpan> (sound and images) captured by the camera and/or microphone of smartphones (or other device) and a held in a temporary partitioned memory in order to make it unavailable to the user; the data captured, unmodifiable because inaccessible (!), is subsequently transmitted through certified digital flows such as pec(certified e-mail), time-stamping, block chain or other recognized certification processes to a Certified server held by a Notified Body.</Text>

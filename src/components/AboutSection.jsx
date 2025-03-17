@@ -14,28 +14,28 @@ const timelineData = [
         title: "Foundation Years",
         text1: `Tolemaica, founded in 2015, develops legal certification services for digital data. Initially, it focused on IAC (Instant Automatic Certification) technology, securing patents nationally (MSE) and internationally (WIPO). It later obtained copyright registrations (SIAE, Copyright Office of Washington).`,
         text2: 'The service began with OwnClick, an app certifying date and location for photos, leading to solutions like LegalClick, DataClick, LegalCheck, QrCertCode, and BarCertCode.',
-        image: "/timeline1.svg",
+        image: "/images/Foundationyears.png",
     },
     {
         year: "2017",
         title: "Year of Growth",
         text1: `Tolemaica received funding from the "Startup Innovative 2017" program and joined the Campania New Steel incubator.`,
         text2: 'It expanded its certification service with smartphone apps, libraries, and APIs, integrating with devices like drones, combat cams, handhelds, scanners, and cameras.',
-        image: "/timeline2.svg",
+        image: "/images/Yearsofgrowth.png",
     },
     {
         year: "2018",
         title: "Awards & allocations",
         text1: `Tolemaica gained recognition in innovation, winning the "SMAU Innovation Award 2018" and later in 2021 & 2024.`,
         text2: 'That year, ICE (Italian Trade Agency) selected Tolemaica to represent Italy at Launch Scale in San Francisco, engaging with top Silicon Valley companies.',
-        image: "/timeline3.svg",
+        image: "/images/Awardds.png",
     },
     {
         year: "2019 - Present",
         title: "The Legacy Continues",
         text1: `In 2019, Tolemaica participated in CES Las Vegas, gaining international attention. After winning NtData's "Let's Change the World" competition, the Japanese tech giant partnered with Tolemaica and later acquired a minority stake.`,
         text2: 'This enabled Tolemaica to expand its technology portfolio, integrating AI, Blockchain, and Quantum Cryptography. The company has since gained prestigious clients, including Terna, SKY Italia, the Ministry of Infrastructure, ASI, Italo Treni, ALA Logistics, and MSC Group terminals.',
-        image: "/timeline4.svg",
+        image: "/images/Legacy.jpg",
     },
 ];
 
@@ -45,7 +45,7 @@ const timelineDataSM = [
         title: "Foundation Years",
         text1: `Tolemaica, founded in 2015, develops legal certification services for digital data. Initially, it focused on IAC (Instant Automatic Certification) technology, securing patents nationally (MSE) and internationally (WIPO). It later obtained copyright registrations (SIAE, Copyright Office of Washington).`,
         text2: 'The service began with OwnClick, an app certifying date and location for photos, leading to solutions like LegalClick, DataClick, LegalCheck, QrCertCode, and BarCertCode.',
-        image: "/timelinesm1.svg",
+        image: "/images/Foundationyears.png",
         icon:'/timelineicon1.svg'
     },
     {
@@ -53,7 +53,7 @@ const timelineDataSM = [
         title: "Year of Growth",
         text1: `Tolemaica received funding from the "Startup Innovative 2017" program and joined the Campania New Steel incubator.`,
         text2: 'It expanded its certification service with smartphone apps, libraries, and APIs, integrating with devices like drones, combat cams, handhelds, scanners, and cameras.',
-        image: "/timelinesm2.svg",
+        image: "/images/Yearsofgrowth.png",
          icon:'/timelineicon2.svg'
     },
     {
@@ -61,7 +61,7 @@ const timelineDataSM = [
         title: "Awards & allocations",
         text1: `Tolemaica gained recognition in innovation, winning the "SMAU Innovation Award 2018" and later in 2021 & 2024.`,
         text2: 'That year, ICE (Italian Trade Agency) selected Tolemaica to represent Italy at Launch Scale in San Francisco, engaging with top Silicon Valley companies.',
-        image: "/timelinesm3.svg",
+        image: "/images/Awardds.png",
          icon:'/timelineicon3.svg'
     },
     {
@@ -69,7 +69,7 @@ const timelineDataSM = [
         title: "The Legacy Continues",
         text1: `In 2019, Tolemaica participated in CES Las Vegas, gaining international attention. After winning NtData's "Let's Change the World" competition, the Japanese tech giant partnered with Tolemaica and later acquired a minority stake.`,
         text2: 'This enabled Tolemaica to expand its technology portfolio, integrating AI, Blockchain, and Quantum Cryptography. The company has since gained prestigious clients, including Terna, SKY Italia, the Ministry of Infrastructure, ASI, Italo Treni, ALA Logistics, and MSC Group terminals.',
-        image: "/timelinesm4.svg",
+        image: "/images/Legacy.jpg",
          icon:'/timelineicon4.svg'
     },
 ];

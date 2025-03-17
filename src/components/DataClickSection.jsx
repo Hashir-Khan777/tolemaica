@@ -10,6 +10,7 @@ import ServiceSlider2 from "./ui/ServiceSLider2";
 import Video from './ui/Video'
 import Heading2 from "./ui/Heading2";
 import ISOCertified from './ISOCertified'
+import ImageSec from './ui/ImageSec'
 
 const cardsData = [
   {
@@ -107,9 +108,7 @@ function DataClickSecton() {
 
 
           {/* Image Section */}
-          <div>
-            <img src="./images/dataclickimg1.png" alt="" className="lg:h-[730px] min-w-[400px] " />
-          </div>
+          <ImageSec imageUrl="/images/Dataclick.jpg" />
 
         </div>
         {/* ==== What is DataClick ====== */}

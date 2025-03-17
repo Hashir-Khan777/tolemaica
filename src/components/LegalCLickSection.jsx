@@ -9,6 +9,7 @@ import ServiceSlider1 from "./ui/ServiceSLider1";
 import ServiceSlider2 from "./ui/ServiceSLider2";
 import Video from './ui/Video'
 import IsoCertified from './ISOCertified'
+import ImageSec from "./ui/ImageSec";
 
 const cardsData = [
     { image: "/lcimg1.svg", title: "Instant Certification", description: "Provides immediate proof of authenticity." },
@@ -70,9 +71,7 @@ function DataClickSecton() {
                     </div>
 
                     {/* Image Section */}
-                    <div>
-                        <img src="./legalCLickimg1.svg" alt="" className="lg:h-[660px] min-w-[400px] " />
-                    </div>
+                    <ImageSec imageUrl="/images/Legalclick.jpg" />
 
                 </div>
                 {/* ==== What is DataClick ====== */}
@@ -108,7 +107,7 @@ function DataClickSecton() {
                     {/* ==== Cards ==== */}
 
                     {/* === Video Section === */}
-                    <Video />
+                    <Video link="/dataclick.webm" />
                 </div>
                 {/* ====== Why Choose DataClick ======= */}
 
