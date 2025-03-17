@@ -19,8 +19,8 @@ function ServiceHero({ title, gradientTitle, text, gradientText }) {
         >
           <div className=" flex flex-col gap-[64px] lg:gap-[100px]">
             {/* Dynamic Heading */}
-            <div className="max-w-[894px]">
-              <h1 className=" font-raleway text-white text-center tracking-[5%] font-[400] capitalize text-[28px]/[100%] sm:text-[36px]/[100%] md:text-[48px]/[100%] lg:text-[72px]/[100%] flex flex-col">
+            <div className="max-w-[894px] mx-auto">
+              <h1 className=" font-raleway text-white leading-[85px] text-center font-[400] capitalize text-[28px] sm:text-[36px] md:text-[48px] lg:text-[72px] flex flex-col">
                 <span className="px-10">{title}</span>
                 {/* Gradient heading */}
                 <span className="bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
