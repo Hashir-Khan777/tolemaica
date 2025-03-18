@@ -19,11 +19,12 @@ function MSCShippingSection() {
         muted
         className="absolute inset-0 w-full h-full object-cover -z-1 pointer-events-none"
       ></video>
-      <div className="container px-[20px] md:px-auto mx-auto">
-        <h1 className="text-center font-raleway text-white font-normal text-[40px] mb-[48px]">
+      {/* <div className="md:container px-[20px] md:px-auto mx-auto"> */}
+      <div className="max-w-[1280px] mx-auto">
+        <h1 className="text-center font-raleway text-white font-normal text-xl md:text-[40px] mb-[48px]">
           <span className="text-white/[0.64]">THE</span> CHALLENGE
         </h1>
-        <div className="flex flex-col gap-[48px] font-outfit font-light text-2xl text-white/[0.64] text-center mb-[50px]">
+        <div className="flex flex-col gap-[48px] font-outfit font-light text-base md:text-2xl text-white/[0.64] text-center mb-[50px]">
           <p>
             Sky Italia offers TV subscriptions for both private users(Family) &
             businesses (Business). Business plans cost over twice as much as
@@ -44,10 +45,10 @@ function MSCShippingSection() {
             }}
             className="shadow-challenge flex flex-wrap lg:flex-nowrap lg:justify-start lg:text-start justify-center text-center rounded-[10px] items-center gap-[32px] py-[65px] lg:pl-[45px] px-[5px] text-white"
           >
-            <div className="z-999 font-outfit font-[100] text-[104px] bg-gradient-to-r to-[#FFFFFF] from-[#555555] bg-clip-text text-transparent">
+            <div className="z-999 font-outfit font-[100] text-[32px] md:text-[104px] bg-gradient-to-r to-[#FFFFFF] from-[#555555] bg-clip-text text-transparent">
               01
             </div>
-            <div className="font-outfit font-light text-[32px]">
+            <div className="font-outfit font-light text-[24px] md:text-[32px]">
               Unverified container conditions at entry and exit points.
             </div>
           </div>
@@ -59,10 +60,10 @@ function MSCShippingSection() {
             }}
             className="shadow-challenge-2 flex flex-wrap lg:flex-nowrap lg:justify-end lg:text-start justify-center text-center rounded-[10px] items-center gap-[32px] py-[65px] lg:pr-[45px] px-[5px] text-white"
           >
-            <div className="font-outfit font-light text-[32px]">
+            <div className="font-outfit font-light text-[24px] md:text-[32px]">
               Unclear proof of seal integrity at different supply chain stages.
             </div>
-            <div className="z-999 font-outfit font-[100] text-[104px] bg-gradient-to-r to-[#FFFFFF] from-[#555555] bg-clip-text text-transparent">
+            <div className="z-999 font-outfit font-[100] text-[32px] md:text-[104px] bg-gradient-to-r to-[#FFFFFF] from-[#555555] bg-clip-text text-transparent">
               02
             </div>
           </div>
@@ -74,19 +75,19 @@ function MSCShippingSection() {
             }}
             className="shadow-challenge flex flex-wrap lg:flex-nowrap lg:justify-start lg:text-start justify-center text-center rounded-[10px] items-center gap-[32px] py-[65px] lg:pl-[45px] px-[5px] text-white"
           >
-            <div className="z-999 font-outfit font-[100] text-[104px] bg-gradient-to-r to-[#FFFFFF] from-[#555555] bg-clip-text text-transparent">
+            <div className="z-999 font-outfit font-[100] text-[32px] md:text-[104px] bg-gradient-to-r to-[#FFFFFF] from-[#555555] bg-clip-text text-transparent">
               03
             </div>
-            <div className="font-outfit font-light text-[32px]">
+            <div className="font-outfit font-light text-[24px] md:text-[32px]">
               Extensive manual documentation processes leading to
               inefficiencies.
             </div>
           </div>
         </div>
-        <h1 className="mt-[100px] text-center font-raleway text-white font-normal text-[40px] mb-[48px]">
+        <h1 className="mt-[100px] text-center font-raleway text-white font-normal text-xl md:text-[40px] mb-[48px]">
           <span className="text-white/[0.64]">THE</span> SOLUTION
         </h1>
-        <p className="text-center text-white/64 font-outfit font-light text-2xl mb-[48px]">
+        <p className="text-center text-white/64 font-outfit font-light text-base md:text-2xl mb-[48px]">
           Tolemaica introduces a certified digital solution that ensures
           complete traceability by capturing{" "}
           <span className="bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
@@ -123,36 +124,37 @@ function MSCShippingSection() {
               </p>
             </div>
           </div>
-          <p className="text-center font-outfit font-light text-2xl text-white/64">
+          <p className="text-center font-outfit font-light text-base md:text-2xl text-white/64">
             The solution automates the documentation process for both land and
             maritime transport, covering loading, unloading, and transshipment
             operations.
           </p>
         </div>
-
-        {/* ==== Content wrapper ===== */}
-        <div className="relative mt-[100px] z-10 flex flex-col justify-center items-center text-center lg:px-[100px] md:px-[30px] px-[20px]">
-          {/* Fumigation process */}
-          <div className="w-full shrink-0 flex flex-col justify-center items-center gap-[50px]">
-            {/* <Heading2 headingGray="The Fumigation Process" headingWhite2="for Export" /> */}
-            <h1 className="font-raleway text-white/60 font-[400] text-[20px]/[23px] md:text-[32px]/[40px] lg:text-[40px]/[100%] uppercase tracking-wide">
-              The <span className="px-2 text-white">Fumigation Process</span>{" "}
-              for export
-            </h1>
-            <FumigationProcess />
-          </div>
-
-          {/* Solution Section */}
-          <SolutionSection />
-
-          {/* Result Section */}
-          <ResultsSection />
-
-          {/* ISO Certified */}
-          <ISOCertified />
-        </div>
-        {/* container ends */}
       </div>
+
+      {/* ==== Content wrapper ===== */}
+      <div className="relative mt-[100px] z-10 flex flex-col justify-center items-center text-center lg:px-[100px] md:px-[30px] px-[20px]">
+        {/* Fumigation process */}
+        <div className="w-full shrink-0 flex flex-col justify-center items-center gap-[50px]">
+          {/* <Heading2 headingGray="The Fumigation Process" headingWhite2="for Export" /> */}
+          <h1 className="font-raleway text-white/60 font-[400] text-[20px]/[23px] md:text-[32px]/[40px] lg:text-[40px]/[100%] uppercase tracking-wide">
+            The <span className="px-2 text-white">Fumigation Process</span> for
+            export
+          </h1>
+          <FumigationProcess />
+        </div>
+
+        {/* Solution Section */}
+        <SolutionSection />
+
+        {/* Result Section */}
+        <ResultsSection />
+
+        {/* ISO Certified */}
+        <ISOCertified />
+      </div>
+      {/* container ends */}
+      {/* </div> */}
     </section>
   );
 }

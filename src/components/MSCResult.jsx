@@ -88,7 +88,7 @@ const ResultsSection = ({ data }) => {
           {item.operator}
         </span>
       </h3>
-      <p className="font-outfit md:text-[24px]/[28px] text-[14px]/[100%] font-[300] capitalize max-w-xs">
+      <p className="font-outfit md:text-[24px]/[28px] text-[14px] font-[300] capitalize max-w-xs">
         {item.description}
       </p>
     </div>

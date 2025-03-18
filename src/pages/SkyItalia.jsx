@@ -100,11 +100,11 @@ const SkyItalia = () => {
           muted
           className="absolute inset-0 w-full h-full object-cover -z-1 pointer-events-none"
         />
-        <div className="container py-[100px] px-[20px] md:px-auto mx-auto">
-          <h1 className="text-center font-raleway text-white font-normal text-[40px] mb-[48px]">
+        <div className="max-w-[1280px] py-[100px] px-[20px] md:px-auto mx-auto">
+          <h1 className="text-center font-raleway text-white font-normal text-xl md:text-[40px] mb-[48px]">
             <span className="text-white/[0.64]">THE</span> CHALLENGE
           </h1>
-          <div className="flex flex-col gap-[48px] font-outfit font-light text-2xl text-white/[0.64] text-center mb-[50px]">
+          <div className="flex flex-col gap-[48px] font-outfit font-light text-base md:text-2xl text-white/[0.64] text-center mb-[50px]">
             <p>
               Sky Italia offers TV subscriptions for both private users(Family)
               & businesses (Business). Business plans cost over twice as much as
@@ -125,10 +125,10 @@ const SkyItalia = () => {
               }}
               className="shadow-challenge flex flex-wrap lg:flex-nowrap lg:justify-start lg:text-start justify-center text-center rounded-[10px] items-center gap-[32px] py-[65px] lg:pl-[45px] px-[5px] text-white"
             >
-              <div className="z-999 font-outfit font-[100] text-[104px] bg-gradient-to-r to-[#FFFFFF] from-[#555555] bg-clip-text text-transparent">
+              <div className="z-999 font-outfit font-[100] text-[32px] md:text-[104px] bg-gradient-to-r to-[#FFFFFF] from-[#555555] bg-clip-text text-transparent">
                 01
               </div>
-              <div className="font-outfit font-light text-[32px]">
+              <div className="font-outfit font-light text-[24px] md:text-[32px]">
                 Violators claimed photos were taken when their venue was closed
                 to the public.
               </div>
@@ -141,19 +141,19 @@ const SkyItalia = () => {
               }}
               className="shadow-challenge-2 flex flex-wrap lg:flex-nowrap lg:justify-end lg:text-start justify-center text-center rounded-[10px] items-center gap-[32px] py-[65px] lg:pr-[45px] px-[5px] text-white"
             >
-              <div className="font-outfit font-light text-[32px]">
+              <div className="font-outfit font-light text-[24px] md:text-[32px]">
                 This led to 500 lawsuits per year, costing{" "}
                 <span className="font-bold">€1.5M annually</span> in legal fees.
               </div>
-              <div className="z-999 font-outfit font-[100] text-[104px] bg-gradient-to-r to-[#FFFFFF] from-[#555555] bg-clip-text text-transparent">
+              <div className="z-999 font-outfit font-[100] text-[32px] md:text-[104px] bg-gradient-to-r to-[#FFFFFF] from-[#555555] bg-clip-text text-transparent">
                 02
               </div>
             </div>
           </div>
-          <h1 className="mt-[100px] text-center font-raleway text-white font-normal text-[40px] mb-[48px]">
+          <h1 className="mt-[100px] text-center font-raleway text-white font-normal text-xl md:text-[40px] mb-[48px]">
             <span className="text-white/[0.64]">THE</span> SOLUTION
           </h1>
-          <p className="text-center text-white/64 font-outfit font-light text-2xl mb-[48px]">
+          <p className="text-center text-white/64 font-outfit font-light text-base md:text-2xl mb-[48px]">
             Tolemaica introduced a{" "}
             <span className="bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
               secure, tamper-proof digital certification process
@@ -163,24 +163,24 @@ const SkyItalia = () => {
           <div className="flex flex-wrap items-center justify-center gap-16">
             <div className="solution-shadow w-[302px] h-[475px] border-2 border-white/64 bg-black/24 backdrop-blur-[200] py-[24px] px-[16px] rounded-[20px]">
               <img src="/sol1.png" className="rounded-[12px] mx-auto" />
-              <p className="mt-[24px] mb-[16px] font-outfit text-center font-medium text-2xl bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
+              <p className="mt-[24px] mb-[16px] font-outfit text-center font-medium text-xl md:text-2xl bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
                 Secure Uploads
               </p>
-              <p className="font-outfit font-light text-xl text-white/64 text-center">
+              <p className="font-outfit font-light text-base md:text-xl text-white/64 text-center">
                 Real-time uploads to a secure portal
               </p>
             </div>
             <div className="solution-shadow w-[302px] h-[475px] border-2 border-white/64 bg-black/24 backdrop-blur-[200] py-[24px] px-[16px] rounded-[20px]">
               <img src="/sol2.png" className="rounded-[12px] mx-auto" />
-              <p className="mt-[24px] mb-[16px] font-outfit text-center font-medium text-2xl bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
+              <p className="mt-[24px] mb-[16px] font-outfit text-center font-medium text-xl md:text-2xl bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
                 Automatic Metadata
               </p>
-              <p className="font-outfit font-light text-xl text-white/64 text-center">
+              <p className="font-outfit font-light text-base md:text-xl text-white/64 text-center">
                 Automatic timestamps & geolocation for indisputable evidence
               </p>
             </div>
           </div>
-          <h1 className="mt-[50px] text-center font-raleway text-white font-normal text-[40px] mb-[48px]">
+          <h1 className="mt-[50px] text-center font-raleway text-white font-normal text-xl md:text-[40px] mb-[48px]">
             <span className="text-white/[0.64]">THE</span> RESULTS
           </h1>
           <div>
@@ -192,7 +192,7 @@ const SkyItalia = () => {
               ))}
             </div>
           </div>
-          <h1 className="mt-[50px] text-center font-raleway text-white font-normal text-[40px] mb-[48px]">
+          <h1 className="mt-[50px] text-center font-raleway text-white font-normal text-xl md:text-[40px] mb-[48px]">
             <span className="text-white/[0.64]">IMPACT</span> OVERVIEW
           </h1>
           <div className="text-white gap-[64px] hidden lg:flex">
