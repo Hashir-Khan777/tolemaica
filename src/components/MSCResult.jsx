@@ -8,90 +8,101 @@ import Heading1 from "./ui/Heading1";
 import { Text, GradientSpan } from "./ui/Text";
 
 const ResultsSection = ({ data }) => {
-    const [isMobile, setIsMobile] = useState(false);
-    const [swiperInstance, setSwiperInstance] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const [swiperInstance, setSwiperInstance] = useState(null);
 
-    useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth < 768);
-        };
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
 
-        // Initial check
-        handleResize();
+    // Initial check
+    handleResize();
 
-        // Add event listener
-        window.addEventListener('resize', handleResize);
+    // Add event listener
+    window.addEventListener("resize", handleResize);
 
-        // Cleanup
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
+    // Cleanup
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
-    useEffect(() => {
-        if (swiperInstance) {
-            swiperInstance.navigation.init();
-            swiperInstance.navigation.update();
-        }
-    }, [swiperInstance]);
+  useEffect(() => {
+    if (swiperInstance) {
+      swiperInstance.navigation.init();
+      swiperInstance.navigation.update();
+    }
+  }, [swiperInstance]);
 
-    // Default data if none provided
-    const defaultData = [
-        {
-            value: "8",
-            operator: "%",
-            description: "Containers Experience Damage Or Tampering, Impacting Efficiency."
-        },
-        {
-            value: "5",
-            operator: "%",
-            description: "Shipments Face Claims, Often Unrelated To Reported Damage."
-        },
-        {
-            value: "2-4",
-            operator: "%",
-            description: "Shipments Require Overseas Verification; Digital Proof Ensures Compliance."
-        },
-        {
-            value: "€9.6",
-            operator: "M",
-            description: "Annual Savings With Full Process Automation."
-        },
-        {
-            value: "€1.6",
-            operator: "M",
-            description: "Additional Yearly Profit By Passing Certification Costs To Shippers."
-        },
-        {
-            value: "5",
-            operator: "hrs",
-            description: "Reduction In Claim Resolution Time Per Case, Minimizing Delays."
-        }
-    ];
+  // Default data if none provided
+  const defaultData = [
+    {
+      value: "8",
+      operator: "%",
+      description:
+        "Containers Experience Damage Or Tampering, Impacting Efficiency.",
+    },
+    {
+      value: "5",
+      operator: "%",
+      description: "Shipments Face Claims, Often Unrelated To Reported Damage.",
+    },
+    {
+      value: "2-4",
+      operator: "%",
+      description:
+        "Shipments Require Overseas Verification; Digital Proof Ensures Compliance.",
+    },
+    {
+      value: "€9.6",
+      operator: "M",
+      description: "Annual Savings With Full Process Automation.",
+    },
+    {
+      value: "€1.6",
+      operator: "M",
+      description:
+        "Additional Yearly Profit By Passing Certification Costs To Shippers.",
+    },
+    {
+      value: "5",
+      operator: "hrs",
+      description:
+        "Reduction In Claim Resolution Time Per Case, Minimizing Delays.",
+    },
+  ];
 
-    // Use provided data or default
-    const resultsData = data || defaultData;
+  // Use provided data or default
+  const resultsData = data || defaultData;
 
-    // Split data for desktop view (showing all at once)
+  // Split data for desktop view (showing all at once)
 
-    const renderResultItem = (item) => (
-        <div className="flex flex-col items-center  gap-[10px] p-[10px] text-center min-w-[105px] md:[372px]">
-            <h3 className="bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent font-outfit ">
-                <span className="font-[400] lg:text-[128px]/[100%] text-[40px]/[100%]">{item.value}</span>
-                <span className="lg:text-[100px]/[100%] text-[24px]/[100%] font-[400] md:font-[200]">{item.operator}</span></h3>
-            <p className="font-outfit md:text-[24px]/[28px] text-[14px]/[100%] font-[300] capitalize max-w-xs">{item.description}</p>
+  const renderResultItem = (item) => (
+    <div className="flex flex-col items-center  gap-[10px] p-[10px] text-center min-w-[105px] md:[372px]">
+      <h3 className="bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent font-outfit ">
+        <span className="font-[400] lg:text-[128px]/[100%] text-[40px]/[100%]">
+          {item.value}
+        </span>
+        <span className="lg:text-[100px]/[100%] text-[24px]/[100%] font-[400] md:font-[200]">
+          {item.operator}
+        </span>
+      </h3>
+      <p className="font-outfit md:text-[24px]/[28px] text-[14px]/[100%] font-[300] capitalize max-w-xs">
+        {item.description}
+      </p>
+    </div>
+  );
+
+  return (
+    <div className="text-white w-full py-12">
+      <div className="container mx-auto px-4 max-w-6xl">
+        <div className="text-center mb-8">
+          <Heading1 headingGray="THE" headingWhite="RESULTS" />
         </div>
-    );
 
-    return (
-        <div className="text-white w-full py-12">
-            <div className="container mx-auto px-4 max-w-6xl">
-                <div className="text-center mb-8">
-                    <Heading1 headingGray="THE" headingWhite="RESULTS" />
-                </div>
-
-                {/* Mobile view with swiper */}
-                {/* {isMobile && (
+        {/* Mobile view with swiper */}
+        {/* {isMobile && (
           <div>
             <Swiper
               slidesPerView={1}
@@ -122,34 +133,34 @@ const ResultsSection = ({ data }) => {
           </div>
         )} */}
 
-                {/* Desktop view with grid layout */}
+        {/* Desktop view with grid layout */}
 
-                <div>
-                    <div className="grid grid-cols-3 gap-6">
-                        {defaultData.map((item, index) => (
-                            <div key={index} className="flex flex-col items-center">
-                                {renderResultItem(item)}
-                            </div>
-                        ))}
-                    </div>
-                </div>
-
-
-                <div className="mt-16 text-center flex flex-col md:gap-[64px] gap-[40px]">
-                    <Heading1 headingGray="bottom" headingWhite="line" />
-                    <Text>
-                        Tolemaica's certified digital solution transforms terminal and shipping operations,
-                        ensuring compliance, minimizing disputes, reducing costs, and
-                        <GradientSpan> creating a cost-neutral, transparent, and efficient process </GradientSpan>
-                        for container management and navigation.
-                    </Text>
-                    <p className="text-sm md:text-base max-w-4xl mx-auto">
-
-                    </p>
-                </div>
-            </div>
+        <div>
+          <div className="grid grid-cols-3 gap-6">
+            {defaultData.map((item, index) => (
+              <div key={index} className="flex flex-col items-center">
+                {renderResultItem(item)}
+              </div>
+            ))}
+          </div>
         </div>
-    );
+
+        <div className="mt-[100px] text-center flex flex-col md:gap-[64px] gap-[40px]">
+          <Heading1 headingGray="bottom" headingWhite="line" />
+          <Text>
+            Tolemaica's certified digital solution transforms terminal and
+            shipping operations, ensuring compliance, minimizing disputes,
+            reducing costs, and
+            <GradientSpan>
+              {" "}
+              creating a cost-neutral, transparent, and efficient process{" "}
+            </GradientSpan>
+            for container management and navigation.
+          </Text>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default ResultsSection;

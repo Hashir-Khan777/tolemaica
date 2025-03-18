@@ -57,7 +57,7 @@ const UseCaseHero = ({
             </div>
             <div className="h-0.5 bg-white/[0.2] w-[90%] mx-auto" />
             <p
-              className="font-raleway text-white text-center font-[400] capitalize tracking-[5%] 
+              className="z-999 font-raleway text-white text-center font-[400] capitalize tracking-[5%] 
       text-[30px]/[100%] md:text-[40px]/[100%] lg:text-[72px]/[100%] md:mx-[32px]"
             >
               {text}

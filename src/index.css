@@ -42,6 +42,50 @@
   bottom: -70px;
 }
 
+.shadow-challenge,
+.shadow-challenge-2,
+.solution-shadow {
+  position: relative;
+  overflow: hidden;
+}
+
+.shadow-challenge::before {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background-color: rgba(255, 153, 102, 0.64);
+  filter: blur(100px);
+  left: -20px;
+  bottom: -20px;
+  border-radius: 999px;
+}
+
+.shadow-challenge-2::before {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background-color: rgba(255, 153, 102, 0.64);
+  filter: blur(100px);
+  right: -20px;
+  bottom: -20px;
+  border-radius: 999px;
+}
+
+.solution-shadow::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background-color: rgba(200, 74, 1, 0.24);
+  filter: blur(60px);
+  left: -160px;
+  bottom: -200px;
+  border-radius: 999px;
+  z-index: -1;
+}
+
 /* @keyframes scrollLeft {
   0% {
     transform: translateX(100%);

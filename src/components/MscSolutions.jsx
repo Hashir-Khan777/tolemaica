@@ -270,7 +270,7 @@ const SolutionSection = ({ data }) => {
                 {/* Custom navigation */}
                 <div className={`flex ${isMobile ? 'justify-end' : 'justify-between'} items-center mt-4`}>
                     {!isMobile && (
-                        <button
+                        <button className='cursor-pointer'
                             ref={prevRef}
                         >
                             <img src="/preBtn.svg" alt="Previous" className="md:w-[50px] md:h-[50px] w-[33px] h-[33px]" />
@@ -279,12 +279,12 @@ const SolutionSection = ({ data }) => {
 
                     {isMobile && (
                         <div className="flex space-x-2">
-                            <button
+                            <button className='cursor-pointer'
                                 ref={prevRef}
                             >
                                 <img src="/preBtn.svg" alt="Previous" className="md:w-[50px] md:h-[50px] w-[33px] h-[33px]" />
                             </button>
-                            <button
+                            <button className='cursor-pointer'
                                 ref={nextRef}
                             >
                                 <img src="/nextBtn.svg" alt="Next" className="md:w-[50px] md:h-[50px] w-[33px] h-[33px]" />
@@ -293,7 +293,7 @@ const SolutionSection = ({ data }) => {
                     )}
 
                     {!isMobile && (
-                        <button
+                        <button className='cursor-pointer'
                             ref={nextRef}
                         >
                             <img src="/nextBtn.svg" alt="Next" className="md:w-[50px] md:h-[50px] w-[33px] h-[33px]" />

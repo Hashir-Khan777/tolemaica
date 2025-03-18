@@ -12,7 +12,7 @@ import QrCertCode from "../pages/QrCertCode.jsx";
 import BarCertCode from "../pages/BarCertCode.jsx";
 import About from "../pages/About.jsx";
 import IacTech from "../pages/IacTech.jsx";
-import MSCShipping from '../pages/MSCShipping.jsx'
+import MSCShipping from "../pages/MSCShipping.jsx";
 import App from "../App.jsx";
 import SkyItalia from "../pages/SkyItalia.jsx";
 
