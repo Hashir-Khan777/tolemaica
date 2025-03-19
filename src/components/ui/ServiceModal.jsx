@@ -10,11 +10,12 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
-    background:
-      "linear-gradient(to left bottom, rgba(255, 153, 102, 0.64), rgba(255, 255, 255, 0.64) 80%, rgba(97, 19, 42, 0.64))",
+    background: "rgba(255, 255, 255, 0.4)",
+    backdropFilter: "blur(19.64px)",
     border: "2.4px solid rgba(255, 255, 255, 0.64)",
     borderRadius: "24px",
     width: "70%",
+    overflow: "hidden",
   },
   overlay: {
     background: "rgba(0, 0, 0, 0.9)",
@@ -29,6 +30,8 @@ const ServiceModal = ({ modalIsOpen, closeModal }) => {
       onRequestClose={closeModal}
       style={customStyles}
     >
+      <div className="absolute right-0 -top-[100px] w-[484px] h-[484px] bg-[#FF9966A3]/64 blur-[100px] -z-1" />
+      <div className="absolute left-0 -bottom-[100px] w-[484px] h-[484px] bg-[#61132AA3]/64 blur-[100px] -z-1" />
       <div>
         <img
           src="/images/cross 1.png"

@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../components/Header";
 import { GradientSpan, Text } from "./ui/Text";
+import ContactUsModal from "./ui/ContactUsModal";
+import RegisterModal from "./ui/RegisterModal";
 
 function Hero() {
+  const [contactModalIsOpen, setContactModalIsOpen] = useState(false);
+  const [registerModalIsOpen, setRegisterModalIsOpen] = useState(false);
+
   return (
     <div
       className="relative w-full h-screen flex flex-col items-start justify-start bg-cover bg-center bg-no-repeat lg:px-[100px] md:px-[50px] px-[20px]"
@@ -75,11 +80,15 @@ function Hero() {
 
             {/* Buttons */}
             <div className="mt-6 flex sm:flex-row flex-col gap-[24px] sm:gap-4">
-              <button className="whitespace-nowrap md:h-[63px] h-[47px] w-[200px] md:w-full flex justify-center items-center cursor-pointer px-[48px] py-[14px] sm:py-3 md:py-[20px] md:px-[100px] border-2 border-white text-black bg-white rounded-full text-[16px]/[18.78px] lg:text-[20px]/[23.48px] font-[700]font-raleway">
+              <button
+                onClick={() => setContactModalIsOpen(true)}
+                className="whitespace-nowrap md:h-[63px] h-[47px] w-[200px] md:w-full flex justify-center items-center cursor-pointer px-[48px] py-[14px] sm:py-3 md:py-[20px] md:px-[100px] border-2 border-white text-black bg-white rounded-full text-[16px]/[18.78px] lg:text-[20px]/[23.48px] font-[700]font-raleway"
+              >
                 CONTACT US
               </button>
 
               <button
+                onClick={() => setRegisterModalIsOpen(true)}
                 className="button md:h-[63px] h-[47px] w-[200px] md:w-full flex justify-center items-center cursor-pointer px-[48px] py-[14px] sm:py-3 md:py-[20px] md:px-[100px] border-2 border-[#FF9966] text-[#FF9966] rounded-full text-[16px]/[18.78px] lg:text-[20px]/[23.48px] font-[700] font-raleway"
                 style={{
                   background: "rgba(0,0,0,0.4)",
@@ -91,6 +100,14 @@ function Hero() {
           </div>
         </div>
       </div>
+      <ContactUsModal
+        modalIsOpen={contactModalIsOpen}
+        closeModal={() => setContactModalIsOpen(false)}
+      />
+      <RegisterModal
+        modalIsOpen={registerModalIsOpen}
+        closeModal={() => setRegisterModalIsOpen(false)}
+      />
     </div>
   );
 }
