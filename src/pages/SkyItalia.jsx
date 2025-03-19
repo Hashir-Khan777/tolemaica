@@ -92,16 +92,16 @@ const SkyItalia = () => {
         secondtext="with Tolemaica"
         image="/skyimage.png"
       />
-      <div className="relative">
+      <div className="relative bg-black">
         <video
           src="/ourpartners.mp4"
           autoPlay
           loop
           muted
-          className="absolute inset-0 w-full h-full object-cover -z-1 pointer-events-none"
+          className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
           style={{ filter: "blur(40px)" }}
         />
-        <div className="max-w-[1280px] py-[100px] px-[20px] md:px-auto mx-auto">
+        <div className="max-w-[1280px] relative z-10 py-[100px] px-[20px] md:px-auto mx-auto">
           <h1 className="text-center font-raleway text-white font-normal text-xl md:text-[40px] mb-[48px]">
             <span className="text-white/[0.64]">THE</span> CHALLENGE
           </h1>
@@ -223,6 +223,18 @@ const SkyItalia = () => {
                 prevEl: prevRef.current,
                 nextEl: nextRef.current,
               }}
+              onSwiper={(swiper) => {
+            // Important: Update navigation when swiper instance is created
+            setTimeout(() => {
+              // Update swiper after a small delay to ensure DOM is ready
+              if (prevRef.current && nextRef.current) {
+                swiper.params.navigation.prevEl = prevRef.current;
+                swiper.params.navigation.nextEl = nextRef.current;
+                swiper.navigation.init();
+                swiper.navigation.update();
+              }
+            }, 100);
+          }}
               modules={[Navigation]}
               className="solution-swiper"
             >

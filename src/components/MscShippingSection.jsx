@@ -11,17 +11,18 @@ import ResultsSection from "./MSCResult";
 
 function MSCShippingSection() {
   return (
-    <section className="relative overflow-hidden w-full py-[100px] flex flex-col">
+    <section className="relative overflow-hidden bg-black w-full py-[100px] flex flex-col">
       <video
         src="/ourpartners.mp4"
         autoPlay
         loop
         muted
-        className="absolute inset-0 w-full h-full object-cover -z-1 pointer-events-none"
+        className="absolute inset-0 w-[150%] h-[130%] object-cover z-0 pointer-events-none"
         style={{ filter: "blur(40px)" }}
       ></video>
+
       {/* <div className="md:container px-[20px] md:px-auto mx-auto"> */}
-      <div className="max-w-[1280px] mx-auto">
+      <div className="relative max-w-[1280px] mx-auto z-10">
         <h1 className="text-center font-raleway text-white font-normal text-xl md:text-[40px] mb-[48px]">
           <span className="text-white/[0.64]">THE</span> CHALLENGE
         </h1>
