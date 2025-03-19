@@ -43,7 +43,7 @@ const RegisterModal = ({ modalIsOpen, closeModal }) => {
           onClick={closeModal}
           className="ml-auto md:mt-[40px] md:mr-[48px] mb-[20px] md:mb-[58px] cursor-pointer"
         />
-        <div className="w-[516px] mx-auto flex flex-col items-center">
+        <div className="max-w-[516px] mx-auto flex flex-col items-center">
           <input
             placeholder="Mobile"
             className="border-[1.5px] border-white text-white rounded-full w-full placeholder:text-white px-6 py-3 mb-6"
@@ -75,7 +75,7 @@ const RegisterModal = ({ modalIsOpen, closeModal }) => {
           />
           <button
             onClick={() => setThanksModalIsOpen(true)}
-            className="button max-w-[400px] h-[47px] px-[30px] sm:px-[40px] md:px-[100px] lg:px-[100px] border-2 border-[#FF9966] bg-white/10 opacity-55 text-[#FF9966] rounded-full text-sm sm:text-lg lg:text-[20px]/[23.48px] font-[700] cursor-pointer mt-12 mb-[100px]"
+            className="button w-full md:max-w-[400px] h-[47px] px-[30px] sm:px-[40px] md:px-[100px] lg:px-[100px] border-2 border-[#FF9966] bg-white/10 opacity-55 text-[#FF9966] rounded-full text-sm sm:text-lg lg:text-[20px]/[23.48px] font-[700] cursor-pointer mt-12 mb-[100px]"
           >
             REGISTER
           </button>

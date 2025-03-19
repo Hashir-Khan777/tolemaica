@@ -38,7 +38,7 @@ const ThanksModal = ({ modalIsOpen, closeModal }) => {
           onClick={closeModal}
           className="ml-auto md:mt-[40px] md:mr-[48px] mb-[20px] md:mb-[8px] cursor-pointer"
         />
-        <p className="font-lexend font-medium text-4xl/[150%] text-white text-center w-[653px] mx-auto my-[200px]">
+        <p className="font-lexend font-medium md:text-4xl/[150%] text-white text-center max-w-[653px] mx-auto my-[50px] md:my-[200px]">
           We appreciate you reaching out! Our team is excited to assist you and
           will connect with you as soon as possible.
         </p>

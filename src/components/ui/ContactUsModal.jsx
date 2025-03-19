@@ -41,12 +41,12 @@ const ContactUsModal = ({ modalIsOpen, closeModal }) => {
           onClick={closeModal}
           className="ml-auto md:mt-[40px] md:mr-[48px] mb-[20px] md:mb-[58px] cursor-pointer"
         />
-        <h1 className="font-raleway font-normal text-[32px] text-white/64 text-center mb-[64px]">
+        <h1 className="font-raleway font-normal text-[25px] md:text-[32px] text-white/64 text-center mb-[32px] md:mb-[64px]">
           Thank You for choosing <span className="text-white">Tolemaica</span>
         </h1>
-        <div className="flex flex-wrap justify-center text-white mx-auto gap-[120px]">
+        <div className="flex flex-wrap justify-center text-white mx-auto md:gap-[120px]">
           <div className="max-w-[400px] w-full flex flex-col font-outfit">
-            <h2 className="uppercase font-outfit font-[600] text-xl mb-[55px]">
+            <h2 className="uppercase font-outfit font-[600] text-xl mb-[20px] md:mb-[55px]">
               Join our newsletter
             </h2>
             <input
@@ -83,13 +83,13 @@ const ContactUsModal = ({ modalIsOpen, closeModal }) => {
               </label>
             </div>
           </div>
-          <div className="flex flex-col mt-8 md:mt-0">
+          <div className="flex flex-col md:mt-8">
             <div className="flex flex-col flex-wrap justify-between font-outfit my-[48px]">
-              <p className="max-w-[300px] w-full font-[400] text-2xl text-white/[64%]">
+              <p className="max-w-[300px] w-full font-[400] md:text-2xl text-white/[64%]">
                 TolemaicaVia San Tommaso d’Aquino n.6780 133 Napoli
                 (NA)info@tolemaica.itP.IVA 08113661212
               </p>
-              <p className="max-w-[300px] w-full font-[400] text-2xl text-white/[64%] mt-6">
+              <p className="max-w-[300px] w-full font-[400] md:text-2xl text-white/[64%] mt-6">
                 Cyber Management s.r.l.p.iva 09078881217Via Boscofangone
                 snc 80035 - NOLA (NA) 
               </p>
