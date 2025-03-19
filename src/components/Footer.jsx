@@ -51,9 +51,19 @@ function Footer() {
                 </div>
               </label>
               <div className="flex flex-wrap items-center justify-between mt-8">
-                <p className="font-[400] text-xl text-white/65">Privacy</p>
+                <Link
+                  to="/privacy"
+                  className="font-[400] text-xl text-white/65"
+                >
+                  Privacy
+                </Link>
                 <p className="font-[400] text-xl text-white/65">Terms of Use</p>
-                <p className="font-[400] text-xl text-white/65">Cookies</p>
+                <Link
+                  to="/cookies"
+                  className="font-[400] text-xl text-white/65"
+                >
+                  Cookies
+                </Link>
               </div>
               {/* <div className="flex items-center gap-5">
                 <img src="/images/insta.svg" />
