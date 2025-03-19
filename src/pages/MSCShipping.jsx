@@ -1,5 +1,4 @@
 import React from "react";
-import FumigationProcess from "../components/FumigationProcess";
 import MSCShippingSection from "../components/MscShippingSection";
 import UseCaseHero from "../components/UseCaseHero";
 
