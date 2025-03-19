@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import ServiceModal from "./ui/ServiceModal";
+import WorkModal from "./ui/WorkModal";
 
 function Footer() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [workModalIsOpen, setWorkModalIsOpen] = useState(false);
 
   return (
     <div className="w-full bg-black relative overflow-hidden">
@@ -29,22 +31,37 @@ function Footer() {
               <button className="button max-w-[400px] h-[47px] px-[30px] sm:px-[40px] md:px-[100px] lg:px-[100px] border-2 border-[#FF9966] bg-white/10 opacity-55 text-[#FF9966] rounded-full text-sm sm:text-lg lg:text-[20px]/[23.48px] font-[700] cursor-pointer mt-8 mb-6">
                 REGISTER
               </button>
-              <p className="font-[400] text-white/[64%]">
-                By proceeding, you agree to our Terms and Conditions and Privacy
-                Policy
-              </p>
-              <div className="flex flex-wrap items-center justify-between my-8">
+              <div className="flex items-center">
+                <div className="relative w-[16px] h-[16px]">
+                  <input
+                    id="link-checkbox"
+                    type="checkbox"
+                    className="absolute w-full h-full opacity-0 checkbox"
+                  />
+                  <span className="absolute w-[16px] h-[16px] border border-white rounded-[2px] bg-white/20 checkmark" />
+                </div>
+                <label
+                  for="link-checkbox"
+                  className="ms-2 text-sm font-medium text-white/64"
+                >
+                  I agree to the{" "}
+                  <Link to="/" className="underline">
+                    Terms & Conditions
+                  </Link>
+                </label>
+              </div>
+              <div className="flex flex-wrap items-center justify-between mt-8">
                 <p className="font-[400] text-xl text-white/65">Privacy</p>
                 <p className="font-[400] text-xl text-white/65">Terms of Use</p>
                 <p className="font-[400] text-xl text-white/65">Cookies</p>
               </div>
-              <div className="flex items-center gap-5">
+              {/* <div className="flex items-center gap-5">
                 <img src="/images/insta.svg" />
                 <img src="/images/facebook.svg" />
                 <img src="/images/youtube.svg" />
                 <img src="/images/linkedin.svg" />
                 <img src="/images/snapchat.svg" />
-              </div>
+              </div> */}
             </div>
             <div className="max-w-[680px] w-full flex flex-col mt-8 md:mt-0">
               <h2 className="uppercase font-raleway font-medium text-[40px]">
@@ -72,7 +89,12 @@ function Footer() {
                   </button>
                 </div>
                 <div className="max-w-[300px] w-full font-medium text-2xl flex flex-col gap-2.5 mt-8 md:mt-0">
-                  <Link to="/">Use Case</Link>
+                  <button
+                    onClick={() => setWorkModalIsOpen(true)}
+                    className="cursor-pointer text-left"
+                  >
+                    Work
+                  </button>
                   <Link to="/iac-tech">IAC Tech</Link>
                   <Link to="/">Solid</Link>
                 </div>
@@ -93,6 +115,10 @@ function Footer() {
       <ServiceModal
         modalIsOpen={modalIsOpen}
         closeModal={() => setModalIsOpen(false)}
+      />
+      <WorkModal
+        modalIsOpen={workModalIsOpen}
+        closeModal={() => setWorkModalIsOpen(false)}
       />
     </div>
   );

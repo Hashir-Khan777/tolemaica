@@ -71,7 +71,7 @@ function DataClickSecton() {
 
                     {/* Image Section */}
                     <div>
-                        <img src="./legalcheckimg1.svg" alt="" className="lg:h-[660px] min-w-[400px] " />
+                        <img src="/legalcheckimg1.svg" alt="" className="lg:h-[660px] min-w-[400px] " />
                     </div>
 
                 </div>

@@ -22,7 +22,7 @@ const customStyles = {
   },
 };
 
-const ServiceModal = ({ modalIsOpen, closeModal }) => {
+const WorkModal = ({ modalIsOpen, closeModal }) => {
   return (
     <Modal
       isOpen={modalIsOpen}
@@ -38,33 +38,21 @@ const ServiceModal = ({ modalIsOpen, closeModal }) => {
         <div className="flex flex-col gap-[24px] max-w-[428px] mx-auto mb-[96px]">
           <Link
             className="h-[55px] md:h-[77px] rounded-full border-[3px] text-white border-white flex justify-center items-center font-raleway font-medium md:text-[40px]"
-            to="/services/data-click"
+            to="/work/sky-italia"
           >
-            DATACLICK
+            SKY ITALIA
           </Link>
           <Link
             className="h-[55px] md:h-[77px] rounded-full border-[3px] text-white border-[#FF9966] flex justify-center items-center font-raleway font-medium md:text-[40px]"
-            to="/services/legal-click"
+            to="/work/banking-sector"
           >
-            LEGALCLICK
+            BANKING SECTOR
           </Link>
           <Link
             className="h-[55px] md:h-[77px] rounded-full border-[3px] text-[#FF9966] border-white flex justify-center items-center font-raleway font-medium md:text-[40px]"
-            to="/services/legal-check"
+            to="/work/msc-shipping"
           >
-            LEGALCHECK
-          </Link>
-          <Link
-            className="h-[55px] md:h-[77px] rounded-full border-[3px] text-white border-[#FF9966] flex justify-center items-center font-raleway font-medium md:text-[40px]"
-            to="/services/BarCertCode"
-          >
-            BARCERTCODE
-          </Link>
-          <Link
-            className="h-[55px] md:h-[77px] rounded-full border-[3px] text-[#FF9966] border-white flex justify-center items-center font-raleway font-medium md:text-[40px]"
-            to="/services/QrCertCode"
-          >
-            QRCERTCODE
+            MSC SHIPPING
           </Link>
         </div>
       </div>
@@ -72,4 +60,4 @@ const ServiceModal = ({ modalIsOpen, closeModal }) => {
   );
 };
 
-export default ServiceModal;
+export default WorkModal;

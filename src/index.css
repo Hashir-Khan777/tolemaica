@@ -114,6 +114,25 @@
   z-index: -1;
 }
 
+.checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 4px;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.checkbox:checked ~ .checkmark::after {
+  display: block;
+}
+
 /* @keyframes scrollLeft {
   0% {
     transform: translateX(100%);

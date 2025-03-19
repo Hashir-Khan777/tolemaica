@@ -6,7 +6,7 @@ const HeroCard = () => {
     <div className="w-[100%] max-w-[1200px] min-h-[400px] lg:h-[620px]  border-2 border-white/64 rounded-[24px] backdrop-blur-[10px] p-5 flex md:flex-row flex-col  gap-[30px] xl:gap-[100px] justify-center items-center text-center mx-auto bg-gradient-to-br from-white/30 via-transparent to-[#FF9966]/30 ">
       <div>
         <img
-          src="./iac.svg"
+          src="/iac.svg"
           alt="iac icon"
           className="lg:w-[430px] md:w-[300px] md:h-[300px] lg:h-[430px] w-[250px] h-[250px]"
         />

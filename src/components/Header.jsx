@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import ServiceModal from "./ui/ServiceModal";
+import WorkModal from "./ui/WorkModal";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [workModalIsOpen, setWorkModalIsOpen] = useState(false);
   const { pathname } = useLocation();
 
   const navLinks = [
@@ -15,6 +17,10 @@ function Header() {
     {
       title: "services",
       func: () => setModalIsOpen(true),
+    },
+    {
+      title: "work",
+      func: () => setWorkModalIsOpen(true),
     },
     {
       title: "IAC Tech",
@@ -42,7 +48,7 @@ function Header() {
         <div className="flex shrink-0 items-center gap-3 z-20">
           <Link to="/">
             <img
-              src="./logo.svg"
+              src="/logo.svg"
               alt="Logo"
               className="md:h-10 md:w-48 h-[24px]"
             />
@@ -77,12 +83,12 @@ function Header() {
                   onClick={navLink.func}
                   index={index}
                   className={`flex items-center gap-4 relative cursor-pointer uppercase font-raleway ${
-                    navLinks.filter((x) => x.link === pathname)?.length <= 0
+                    pathname.includes(navLink.title)
                       ? "text-white font-[600] xl:text-[20px]/[100%] text-[17px]/[20.48px]"
                       : "text-white/60 font-[500] xl:text-[16px]/[100%] tracking-[10%] text-[14px]/[16.78px]"
                   }`}
                 >
-                  {navLinks.filter((x) => x.link === pathname)?.length <= 0 ? (
+                  {pathname.includes(navLink.title) ? (
                     <div className="bg-[#FF9966] w-[10px] h-[10px] rounded-full"></div>
                   ) : null}
                   {navLink.title}
@@ -93,7 +99,7 @@ function Header() {
           ))}
 
           <a href="#" className="text-yellow-400 text-sm">
-            <img src="./solid.png" alt="" className="h-20px w-[100px]" />
+            <img src="/solid.png" alt="" className="h-20px w-[100px]" />
           </a>
           <span className="text-white/60">/</span>
           {/* Contact Button */}
@@ -151,6 +157,12 @@ function Header() {
           >
             Services
           </button>
+          <button
+            className="h-[52px] w-[300px] rounded-full border-[2.1px] text-white border-[#FF9966] flex justify-center items-center font-raleway font-medium md:text-[20px]/[100%] py-[12px] px-[40px] uppercase"
+            onClick={() => setWorkModalIsOpen(true)}
+          >
+            Work
+          </button>
           <Link
             className="h-[52px] w-[300px] rounded-full border-[2.1px] text-[#FF9966] border-white flex justify-center items-center font-raleway font-medium md:text-[20px]/[100%] py-[12px] px-[40px] uppercase"
             to="/iac-tech"
@@ -168,13 +180,17 @@ function Header() {
             className="h-[52px] w-[300px] rounded-full border-[2.1px] text-white border-white flex justify-center items-center font-raleway font-medium md:text-[20px]/[100%] py-[12px] px-[40px]"
             to="/"
           >
-            <img src="./solid.png" alt="Solid" className="h-6 w-auto" />
+            <img src="/solid.png" alt="Solid" className="h-6 w-auto" />
           </Link>
         </nav>
       </div>
       <ServiceModal
         modalIsOpen={modalIsOpen}
         closeModal={() => setModalIsOpen(false)}
+      />
+      <WorkModal
+        modalIsOpen={workModalIsOpen}
+        closeModal={() => setWorkModalIsOpen(false)}
       />
     </>
   );

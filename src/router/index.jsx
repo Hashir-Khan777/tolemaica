@@ -21,16 +21,20 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route path="" element={<Home />} />
-      <Route path="data-click" element={<DataClick />} />
-      <Route path="legal-click" element={<LegalClick />} />
-      <Route path="legal-check" element={<LegalCheck />} />
-      <Route path="QrCertCode" element={<QrCertCode />} />
-      <Route path="BarCertCode" element={<BarCertCode />} />
-      <Route path="msc-shipping" element={<MSCShipping />} />
-      <Route path="iac-tech" element={<IacTech />} />
       <Route path="about" element={<About />} />
-      <Route path="sky-italia" element={<SkyItalia />} />
-      <Route path="banking-sector" element={<BankingSector />} />
+      <Route path="iac-tech" element={<IacTech />} />
+      <Route path="/services">
+        <Route path="data-click" element={<DataClick />} />
+        <Route path="legal-click" element={<LegalClick />} />
+        <Route path="legal-check" element={<LegalCheck />} />
+        <Route path="QrCertCode" element={<QrCertCode />} />
+        <Route path="BarCertCode" element={<BarCertCode />} />
+      </Route>
+      <Route path="/work">
+        <Route path="msc-shipping" element={<MSCShipping />} />
+        <Route path="sky-italia" element={<SkyItalia />} />
+        <Route path="banking-sector" element={<BankingSector />} />
+      </Route>
     </Route>
   )
 );

@@ -66,7 +66,7 @@ function Hero() {
                   Of date and location for
                   <span className="bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
                     {" "}
-                    IMAGES and AUDIO
+                    IMAGES, VIDEO and AUDIO
                   </span>{" "}
                   through smartphones and other devices.
                 </p>
@@ -76,7 +76,7 @@ function Hero() {
             {/* Buttons */}
             <div className="mt-6 flex sm:flex-row flex-col gap-[24px] sm:gap-4">
               <button className="whitespace-nowrap md:h-[63px] h-[47px] w-[200px] md:w-full flex justify-center items-center cursor-pointer px-[48px] py-[14px] sm:py-3 md:py-[20px] md:px-[100px] border-2 border-white text-black bg-white rounded-full text-[16px]/[18.78px] lg:text-[20px]/[23.48px] font-[700]font-raleway">
-                REACH US
+                CONTACT US
               </button>
 
               <button
