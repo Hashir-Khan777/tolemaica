@@ -60,7 +60,7 @@ const TeamSection = () => {
                 }
                 </div>
 
-                <div className="flex-1 flex flex-col md:mt-40 mt-0 gap-[20px] md:gap-10 lg:gap-20">
+                <div className="flex-1 flex flex-col md:mt-[400px] mt-0 gap-[20px] md:gap-10 lg:gap-20">
                 {
                     ourTeam2.map((card,index)=> <div index={index}>
                     <TeamCard cards={card}/>
