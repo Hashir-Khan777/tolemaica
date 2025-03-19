@@ -1,14 +1,8 @@
 import React, { useRef } from "react";
 import Heading1 from "./ui/Heading1";
 import { Text, GradientSpan } from "./ui/Text";
-import { Link } from "react-router-dom";
-import Video from "./ui/Video";
 import ISOCertified from "./ISOCertified";
-import Heading2 from "./ui/Heading2";
-import FumigationProcess from "./FumigationProcess";
 import SolutionSection from "./MscSolutions";
-import ResultsSection from "./MSCResult";
-import AuthenticationUI from "./Authentication";
 import PhaseAccor from "./PhaseAccor";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
@@ -48,17 +42,17 @@ function BankingSectorSection() {
   const nextRef = useRef(null);
 
   return (
-    <section className="relative overflow-hidden w-full py-[100px] flex flex-col">
+    <section className="relative overflow-hidden bg-black w-full py-[100px] flex flex-col">
       <video
         src="/ourpartners.mp4"
         autoPlay
         loop
         muted
-        className="absolute inset-0 w-full h-full object-cover -z-1 pointer-events-none"
+        className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
         style={{ filter: "blur(40px)" }}
       ></video>
 
-      <div className="max-w-[1280px] overflow-auto w-full mx-auto px-[20px] py-[40px] text-center">
+      <div className="max-w-[1280px] relative z-10 overflow-auto w-full mx-auto px-[20px] py-[40px] text-center">
         {/* Solution Section */}
         <SolutionSection />
 
@@ -151,6 +145,7 @@ function BankingSectorSection() {
             </div>
           ))}
         </div>
+
         <div className="block lg:hidden">
           <Swiper
             slidesPerView={1}
@@ -159,6 +154,17 @@ function BankingSectorSection() {
               prevEl: prevRef.current,
               nextEl: nextRef.current,
             }}
+            onSwiper={(swiper) => {
+      // Add this callback to properly connect the buttons
+      setTimeout(() => {
+        if (prevRef.current && nextRef.current) {
+          swiper.params.navigation.prevEl = prevRef.current;
+          swiper.params.navigation.nextEl = nextRef.current;
+          swiper.navigation.init();
+          swiper.navigation.update();
+        }
+      }, 100);
+    }}
             modules={[Navigation]}
             className="solution-swiper"
           >
@@ -179,6 +185,7 @@ function BankingSectorSection() {
               </SwiperSlide>
             ))}
           </Swiper>
+
           <div className="flex gap-3 justify-end">
             <button className="cursor-pointer" ref={prevRef}>
               <img
@@ -306,7 +313,7 @@ function BankingSectorSection() {
 
       {/* Hero secton Again */}
 
-      <div className="relative w-full h-screen flex flex-col items-center bg-cover bg-center bg-no-repeat lg:px-[100px]  md:px-[50px] px-[20px]">
+      <div className="relative z-10 w-full h-screen flex flex-col items-center bg-cover bg-center bg-no-repeat lg:px-[100px]  md:px-[50px] px-[20px]">
         <video
           src="/usecasehero.mov"
           autoPlay
@@ -363,7 +370,7 @@ function BankingSectorSection() {
         </div>
       </div>
 
-      <div className="max-w-[1280px] overflow-auto w-full mx-auto px-[20px] py-[40px] text-center">
+      <div className="max-w-[1280px] z-10 relative overflow-auto w-full mx-auto px-[20px] py-[40px] text-center">
         <div className="flex flex-col  gap-[16px]">
           <Text>
             Based on the forecast of a{" "}
