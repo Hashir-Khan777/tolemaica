@@ -31,25 +31,25 @@ function Footer() {
               <button className="button max-w-[400px] h-[47px] px-[30px] sm:px-[40px] md:px-[100px] lg:px-[100px] border-2 border-[#FF9966] bg-white/10 opacity-55 text-[#FF9966] rounded-full text-sm sm:text-lg lg:text-[20px]/[23.48px] font-[700] cursor-pointer mt-8 mb-6">
                 REGISTER
               </button>
-              <div className="flex items-center">
-                <div className="relative w-[16px] h-[16px]">
-                  <input
-                    id="link-checkbox"
-                    type="checkbox"
-                    className="absolute w-full h-full opacity-0 checkbox"
-                  />
-                  <span className="absolute w-[16px] h-[16px] border border-white rounded-[2px] bg-white/20 checkmark" />
-                </div>
-                <label
-                  for="link-checkbox"
-                  className="ms-2 text-sm font-medium text-white/64"
-                >
+              <label
+                for="link-checkbox"
+                className="text-sm font-medium text-white/64"
+              >
+                <div className="flex items-center gap-[4px]">
+                  <div className="relative w-[16px] h-[16px]">
+                    <input
+                      id="link-checkbox"
+                      type="checkbox"
+                      className="absolute w-full h-full opacity-0 checkbox"
+                    />
+                    <span className="absolute w-[16px] h-[16px] border border-white rounded-[2px] bg-white/20 checkmark" />
+                  </div>
                   I agree to the{" "}
                   <Link to="/" className="underline">
                     Terms & Conditions
                   </Link>
-                </label>
-              </div>
+                </div>
+              </label>
               <div className="flex flex-wrap items-center justify-between mt-8">
                 <p className="font-[400] text-xl text-white/65">Privacy</p>
                 <p className="font-[400] text-xl text-white/65">Terms of Use</p>

@@ -51,7 +51,9 @@
 .shadow-challenge-2,
 .solution-shadow,
 .accord-1,
-.accord-2 {
+.accord-2,
+.patent-1,
+.patent-2 {
   position: relative;
   overflow: hidden;
 }
@@ -115,6 +117,32 @@
   filter: blur(60px);
   right: -300px;
   top: 0px;
+  border-radius: 999px;
+  z-index: -1;
+}
+
+.patent-1::before {
+  content: "";
+  position: absolute;
+  width: 297px;
+  height: 297px;
+  background-color: rgba(255, 153, 102, 0.64);
+  filter: blur(100px);
+  left: -80px;
+  top: -100px;
+  border-radius: 999px;
+  z-index: -1;
+}
+
+.patent-2::before {
+  content: "";
+  position: absolute;
+  width: 297px;
+  height: 297px;
+  background-color: rgba(255, 255, 255, 0.44);
+  filter: blur(100px);
+  left: -80px;
+  top: -100px;
   border-radius: 999px;
   z-index: -1;
 }

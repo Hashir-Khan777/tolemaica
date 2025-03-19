@@ -42,13 +42,13 @@ function Card({
             </div>
 
             {playButton && playButtonLink && (
-                <a href={playButtonLink} target="_blank" rel="noopener noreferrer">
+                <button target="_blank" rel="noopener noreferrer">
                     <img
                         src={playButton}
                         alt="play button"
                         className="w-8 h-8 md:w-10 md:h-10 mt-4"
                     />
-                </a>
+                </button>
             )}
         </div>
     );

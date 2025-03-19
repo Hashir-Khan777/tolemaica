@@ -57,7 +57,7 @@ function Header() {
 
         {/* Desktop Navigation */}
         {/* Navigation Links */}
-        <nav className="hidden lg:flex flex-row justify-center items-center xl:gap-[20px] gap-[12px]">
+        <nav className="hidden xl:flex flex-row justify-center items-center xl:gap-[20px] gap-[12px]">
           {navLinks.map((navLink, index) => (
             <div className="flex flex-row justify-center items-center xl:gap-[20px] gap-[12px]">
               {navLink?.link ? (
@@ -110,11 +110,11 @@ function Header() {
 
         {/* Mobile Menu Button */}
         <button
-          className="lg:hidden text-white"
+          className="xl:hidden text-white"
           onClick={() => setIsOpen(true)}
         >
           <img
-            src="menu.svg"
+            src="/menu.svg"
             alt="Menu icon"
             className="w-[18px] sm:w-[25px]"
           />

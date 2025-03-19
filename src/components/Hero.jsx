@@ -33,7 +33,7 @@ function Hero() {
 
       {/* Hero Content */}
       <div className="flex flex-1 items-center justify-center">
-        <div className="flex-1 w-full px-[20px] flex flex-col justify-start items-start  py-[50px] ">
+        <div className="flex-1 w-full px-[20px] flex flex-col justify-start items-start  ">
           {/* Hero Content */}
           <div className="relative w-full flex flex-col md:items-start items-center justify-center gap-[80px]">
             <div className="flex flex-col md:justify-start justify-center md:items-start items-center gap-[28px] max-w-[1080px]">

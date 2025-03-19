@@ -15,7 +15,7 @@ function AboutHero() {
 
       <div className="mx-auto flex flex-1 justify-center items-center">
         <div
-          className="z-10 w-[100%] max-w-[1200px] md:h-[620px] h-[487px] border-[2px] border-white/64 rounded-[24px] backdrop-blur-[16px] flex flex-col justify-center items-center text-center my-[30px] lg:my-[50px] py-[100px] px-[24px]"
+          className="z-10 w-[100%] max-w-[1200px] md:h-[620px] h-[487px] border-[2px] border-white/64 rounded-[24px] backdrop-blur-[16px] flex flex-col justify-center items-center text-center py-[100px] px-[24px]"
           style={{ background: "rgba(255, 255, 255, 0.04)" }}
         >
           <div className="max-w-[1000px] flex flex-col gap-[30px] lg:gap-[77px]">
