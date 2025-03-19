@@ -55,7 +55,7 @@ function BankingSectorSection() {
         loop
         muted
         className="absolute inset-0 w-full h-full object-cover -z-1 pointer-events-none"
-        style={{ filter: "blur(20px)" }}
+        style={{ filter: "blur(40px)" }}
       ></video>
 
       <div className="max-w-[1280px] overflow-auto w-full mx-auto px-[20px] py-[40px] text-center">
