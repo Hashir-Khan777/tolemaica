@@ -15,6 +15,7 @@ import IacTech from "../pages/IacTech.jsx";
 import MSCShipping from "../pages/MSCShipping.jsx";
 import App from "../App.jsx";
 import SkyItalia from "../pages/SkyItalia.jsx";
+import BankingSector from "../pages/BankingSector.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -29,6 +30,7 @@ const router = createBrowserRouter(
       <Route path="iac-tech" element={<IacTech />} />
       <Route path="about" element={<About />} />
       <Route path="sky-italia" element={<SkyItalia />} />
+      <Route path="banking-sector" element={<BankingSector />} />
     </Route>
   )
 );
