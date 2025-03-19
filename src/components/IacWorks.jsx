@@ -4,6 +4,7 @@ import { Text, GradientSpan } from "./ui/Text";
 import OurPartnersSlider from './ui/PartnersSLider'
 import ISOCertified from './ISOCertified'
 import ImageSec from './ui/ImageSec'
+import OurPatent from './OurPatent'
 
 function IACWorks() {
     return (
@@ -26,11 +27,12 @@ function IACWorks() {
             {/* Additional subtle vignette for depth */}
             <div className="absolute inset-0 bg-gradient-radial from-transparent to-black/30 z-1"></div>
 
+           
             {/* ==== Content wrapper ===== */}
             <div className="relative z-10 flex flex-col justify-center items-center gap-[40px] md:gap-[100px] text-center lg:px-[100px] md:px-[30px] px-[20px]">
 
                 {/* ==== How IAC Works ==== */}
-                <div className="shrink-0 relative z-10 md:mb-[100px] flex flex-col justify-center items-center md:gap-[64px] gap-[40px] text-center">
+                <div className="shrink-0 relative w-full z-10 md:mb-[100px] flex flex-col justify-center items-center md:gap-[64px] gap-[40px] text-center">
 
                     <Heading1 headingGray="How" headingWhite="iac works" />
                     <Text>
@@ -38,7 +40,6 @@ function IACWorks() {
                     </Text>
 
                     <ImageSec imageUrl="/images/IACTech.png" />
-
 
                     <Text>From a technical point of view, the certification process consists in <GradientSpan>encrypting data</GradientSpan> (sound and images) captured by the camera and/or microphone of smartphones (or other device) and a held in a temporary partitioned memory in order to make it unavailable to the user; the data captured, unmodifiable because inaccessible (!), is subsequently transmitted through certified digital flows such as pec(certified e-mail), time-stamping, block chain or other recognized certification processes to a Certified server held by a Notified Body.</Text>
 
@@ -50,38 +51,7 @@ function IACWorks() {
 
                 {/* ====== Our Patent ===== */}
                 <div className="w-full flex flex-col md:gap-[64px] gap-[40px]">
-
-                    <Heading1 headingGray="Our" headingWhite="patent" />
-                    <Text>
-                        Lorem ipsum dolor sit amet consectetur.{" "}
-                        <GradientSpan>Lorem mollis est</GradientSpan> nisl enim sed nunc
-                        senectus. Molestie arcu arcu sapien vulputate ligula. Odio dolor
-                        velit vestibulum adipiscing.
-                    </Text>
-
-
-                    <div className="w-full mx-auto flex flex-row justify-center items-center flex-wrap gap-[20px]">
-                        <img
-                            src="/ourpatent1.svg"
-                            alt=""
-                            className="md:w-[200px] w-[130px] h-[130px] md:h-[200px]"
-                        />
-                        <img
-                            src="/ourpatent2.svg"
-                            alt=""
-                            className="[130px] h-[130px] md:w-[200px] md:h-[200px]"
-                        />
-                        <img
-                            src="/ourpatent3.svg"
-                            alt=""
-                            className="[130px] h-[130px] md:w-[200px] md:h-[200px]"
-                        />
-                        <img
-                            src="/ourpatent3.svg"
-                            alt=""
-                            className="[130px] h-[130px] md:w-[200px] md:h-[200px]"
-                        />
-                    </div>
+                    <OurPatent />
                 </div>
                 {/* ====== Our Patent =====  End*/}
 
@@ -91,22 +61,11 @@ function IACWorks() {
 
             {/* ==== Partners ==== */}
             <div className="relative md:mt-[100px] mt-[70px] z-20 mg:mb-[100px] flex flex-col justify-center items-center md:gap-[64px] gap-[40px] text-center px-[20px]">
-
-                <Heading1 headingGray="Our" headingWhite="Partners" />
-                <Text>
-                    Lorem ipsum dolor sit amet consectetur.{" "}
-                    <GradientSpan>Lorem mollis est</GradientSpan> nisl enim sed nunc
-                    senectus. Molestie arcu arcu sapien vulputate ligula. Odio dolor
-                    velit vestibulum adipiscing.
-                </Text>
-
-
                 <OurPartnersSlider image1="/img1.svg" image2="/img2.svg" image3="/img3.svg" image4="/img4.svg" />
-
             </div>
 
             <div className="relative md:mt-[100px] mt-[70px] z-20 mg:mb-[100px] flex flex-col justify-center items-center md:gap-[64px] gap-[40px] text-center px-[20px]">
-                <ISOCertified/>
+                <ISOCertified />
             </div>
 
         </section>

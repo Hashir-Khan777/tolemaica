@@ -59,10 +59,10 @@ function QrCertSection() {
 
                 {/* ==== What is BarCertCode ====== */}
                 <div className="w-full flex flex-col justify-center items-center gap-[50px]">
-                        <Heading1 headingGray="what is" headingWhite="BarCertCode?" />
-                        <Text>
+                    <Heading1 headingGray="what is" headingWhite="BarCertCode?" />
+                    <Text>
                         BarCertCode is a <GradientSpan>certified digital certification</GradientSpan> service for data flows related to the <GradientSpan>printing and scanning of unique barcodes</GradientSpan>, enabling the legal verification of storage duration and various transitions of products within warehouses. This service allows for <GradientSpan>real-time consultation</GradientSpan> of product movements, including entries and exits within warehouses, providing <GradientSpan>legally certified proof</GradientSpan>.
-                        </Text>
+                    </Text>
 
 
                     {/* Image Section */}
@@ -76,7 +76,7 @@ function QrCertSection() {
                     <div className="flex flex-col gap-[20px]">
                         <Heading1 headingGray="How" headingWhite="BarCertCode Works" />
                         <Text>
-                        <GradientSpan>BarCertCode</GradientSpan> certifies the exact time of printing and individual scans of a unique barcode for each item by <GradientSpan>integrating codes and APIs</GradientSpan> into label printers, printers, and scanners connected to the company's management system. This allows companies and institutions to legally verify the storage times of goods in warehouses or specific departments with certified traceability.
+                            <GradientSpan>BarCertCode</GradientSpan> certifies the exact time of printing and individual scans of a unique barcode for each item by <GradientSpan>integrating codes and APIs</GradientSpan> into label printers, printers, and scanners connected to the company's management system. This allows companies and institutions to legally verify the storage times of goods in warehouses or specific departments with certified traceability.
                         </Text>
                     </div>
                 </div>
@@ -117,39 +117,24 @@ function QrCertSection() {
                     <div className="mx-auto hidden md:flex flex-wrap gap-[36px] justify-center items-center">
                         {/*  */}
                         {
-                            BenefitCards.map((card,index)=> 
-                            <Card2 index={index} title={card.title} description={card.description} />
+                            BenefitCards.map((card, index) =>
+                                <Card2 index={index} title={card.title} description={card.description} />
                             )
                         }
-                        
+
                     </div>
 
                 </div>
                 {/* ====== Benefit of usind QrCertCode ===== */}
 
                 {/* IsoCertified */}
-                <IsoCertified/>
+                <IsoCertified />
 
             </div>
 
             {/* ==== Partners ==== */}
             <div className="relative md:mt-[100px] mt-[70px] z-20 mg:mb-[100px] flex flex-col justify-center items-center gap-[64px] text-center px-[20px]">
-                <div className="flex flex-col gap-[20px]">
-                    <Heading1 headingGray="Our" headingWhite="Partners" />
-                    <Text>
-                                At Tolemaica, we collaborate with leading organizations across
-                                industries to provide secure, instant, and legally certified digital
-                                solutions. Our trusted partners rely on ourLorem ipsum dolor sit
-                                amet consectetur.{" "}
-                                <GradientSpan>
-                                  IAC (Instant Automatic Certification) technology
-                                </GradientSpan>{" "}
-                                IAC (Instant Automatic Certification) technology
-                              </Text>
-                </div>
-
                 <OurPartnersSlider image1="/img1.svg" image2="/img2.svg" image3="/img3.svg" image4="/img4.svg" />
-
             </div>
 
             {/* ======= Our Partners ======== */}

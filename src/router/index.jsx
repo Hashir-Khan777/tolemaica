@@ -16,6 +16,9 @@ import MSCShipping from "../pages/MSCShipping.jsx";
 import App from "../App.jsx";
 import SkyItalia from "../pages/SkyItalia.jsx";
 import BankingSector from "../pages/BankingSector.jsx";
+import PrivacyPolicy from "../pages/Privacy.jsx";
+import CookiesPolicy from "../pages/Cookies.jsx";
+import PolicyLayout from "../PolicyLayout.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -35,6 +38,22 @@ const router = createBrowserRouter(
         <Route path="sky-italia" element={<SkyItalia />} />
         <Route path="banking-sector" element={<BankingSector />} />
       </Route>
+      <Route
+        path="/privacy"
+        element={
+          <PolicyLayout>
+            <PrivacyPolicy />
+          </PolicyLayout>
+        }
+      />
+      <Route
+        path="/cookies"
+        element={
+          <PolicyLayout>
+            <CookiesPolicy />
+          </PolicyLayout>
+        }
+      />
     </Route>
   )
 );

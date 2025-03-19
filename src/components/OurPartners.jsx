@@ -106,20 +106,6 @@ function OurPartners() {
 
       {/* ==== Partners ==== */}
       <div className="shrink-0 relative z-20 md:mb-[100px] mb-[40px] flex flex-col justify-center items-center gap-[64px] text-center px-[20px]">
-        <div className="flex flex-col gap-[20px]">
-          <Heading1 headingGray="Our" headingWhite="Partners" />
-          <Text>
-            At Tolemaica, we collaborate with leading organizations across
-            industries to provide secure, instant, and legally certified digital
-            solutions. Our trusted partners rely on ourLorem ipsum dolor sit
-            amet consectetur.{" "}
-            <GradientSpan>
-              IAC (Instant Automatic Certification) technology
-            </GradientSpan>{" "}
-            IAC (Instant Automatic Certification) technology
-          </Text>
-        </div>
-
         <OurPartnersSlider
           image1="/img1.svg"
           image2="/img2.svg"
