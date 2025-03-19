@@ -99,6 +99,7 @@ const SkyItalia = () => {
           loop
           muted
           className="absolute inset-0 w-full h-full object-cover -z-1 pointer-events-none"
+          style={{ filter: "blur(20px)" }}
         />
         <div className="max-w-[1280px] py-[100px] px-[20px] md:px-auto mx-auto">
           <h1 className="text-center font-raleway text-white font-normal text-xl md:text-[40px] mb-[48px]">

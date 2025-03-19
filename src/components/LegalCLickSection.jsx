@@ -15,8 +15,8 @@ const cardsData = [
     { image: "/lcimg1.svg", title: "Instant Certification", description: "Provides immediate proof of authenticity." },
     { image: "/lcimg2.svg", title: "Pay-Per-Use", description: "No subscriptions—only pay when you need it." },
     { image: "/lcimg3.svg", title: "Legally Recognized", description: "Ensures digital media has evidentiary value. " },
-    { image: "./lcimg4.svg", title: "Accessible Anywhere", description: "Use via web platform or mobile app. " },
-    { image: "./lcimg5.svg", title: "Secure Storage", description: " Certified media is safely stored and retrievable." },
+    { image: "/lcimg4.svg", title: "Accessible Anywhere", description: "Use via web platform or mobile app. " },
+    { image: "/lcimg5.svg", title: "Secure Storage", description: " Certified media is safely stored and retrievable." },
 ];
 
 const BenefitCards = [
@@ -56,6 +56,7 @@ function DataClickSecton() {
                 loop
                 muted
                 className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
+                style={{ filter: "blur(20px)" }}
             ></video>
 
             {/* ==== Content wrapper ===== */}
@@ -107,7 +108,7 @@ function DataClickSecton() {
                     {/* ==== Cards ==== */}
 
                     {/* === Video Section === */}
-                    <Video link="/dataclick.webm" />
+                    {/* <Video link="/dataclick.webm" /> */}
                 </div>
                 {/* ====== Why Choose DataClick ======= */}
 

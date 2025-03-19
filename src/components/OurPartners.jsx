@@ -101,6 +101,7 @@ function OurPartners() {
         loop
         muted
         className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
+        style={{ filter: "blur(20px)" }}
       ></video>
 
       {/* ==== Partners ==== */}
@@ -108,10 +109,14 @@ function OurPartners() {
         <div className="flex flex-col gap-[20px]">
           <Heading1 headingGray="Our" headingWhite="Partners" />
           <Text>
-            Lorem ipsum dolor sit amet consectetur.{" "}
-            <GradientSpan>Lorem mollis est</GradientSpan> nisl enim sed nunc
-            senectus. Molestie arcu arcu sapien vulputate ligula. Odio dolor
-            velit vestibulum adipiscing.
+            At Tolemaica, we collaborate with leading organizations across
+            industries to provide secure, instant, and legally certified digital
+            solutions. Our trusted partners rely on ourLorem ipsum dolor sit
+            amet consectetur.{" "}
+            <GradientSpan>
+              IAC (Instant Automatic Certification) technology
+            </GradientSpan>{" "}
+            IAC (Instant Automatic Certification) technology
           </Text>
         </div>
 
@@ -129,9 +134,9 @@ function OurPartners() {
         <div className="w-full shrink-0 flex flex-col justify-center items-center gap-[50px]">
           <div className="w-full flex justify-center md:justify-between gap-10 md:gap-[50px]">
             {[
-              { value: "1234", operator: "+", label: "No of Certifications" },
-              { value: "5", operator: "x", label: "Growth Forecast" },
-              { value: "23", operator: "%", label: "Increase in Business" },
+              { value: "99", operator: "%", label: "Uptime Reliability" },
+              { value: "25K", operator: "+", label: "Certifications Issued " },
+              { value: "15", operator: "+", label: "Countries Operating In" },
             ].map((item, index) => (
               <p
                 key={index}
@@ -205,10 +210,14 @@ function OurPartners() {
           <Heading1 headingGray="Our" headingWhite="software solutions" />
 
           <Text>
-            Lorem ipsum dolor sit amet consectetur.{" "}
-            <GradientSpan>Lorem mollis est</GradientSpan> nisl enim sed nunc
-            senectus. Molestie arcu arcu sapien vulputate ligula. Odio dolor
-            velit vestibulum adipiscing.
+            Tolemaica provides secure and automated digital solutions to ensure
+            legal certification, authenticity, compliance, and data integrity.
+            Our software suite leverages proprietary{" "}
+            <GradientSpan>
+              Instant Automatic Certification (IAC) technology
+            </GradientSpan>{" "}
+            to deliver trust and security across all industries. velit
+            vestibulum adipiscing.
           </Text>
 
           <div className="w-full hidden md:grid md:grid-cols-2 grid-cols-1 gap-[24px]">

@@ -51,6 +51,7 @@ function QrCertSection() {
                 loop
                 muted
                 className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
+                style={{ filter: "blur(20px)" }}
             ></video>
 
             {/* ==== Content wrapper ===== */}
@@ -100,7 +101,7 @@ function QrCertSection() {
                     {/* ==== Cards ==== */}
 
                     {/* === Video Section === */}
-                    <Video link="/dataclick.webm" />
+                    {/* <Video link="/dataclick.webm" /> */}
                 </div>
                 {/* ====== Why Choose BarCertCode  ======= */}
 

@@ -15,6 +15,7 @@ function IACWorks() {
                 loop
                 muted
                 className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
+                style={{ filter: "blur(20px)" }}
             ></video>
 
             {/* Colored blob with blur effect to match Figma design */}
