@@ -101,7 +101,7 @@ function OurPartners() {
         loop
         muted
         className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
-        style={{ filter: "blur(20px)" }}
+        style={{ filter: "blur(40px)" }}
       ></video>
 
       {/* ==== Partners ==== */}

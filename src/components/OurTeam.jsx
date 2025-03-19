@@ -25,12 +25,12 @@ const ourTeam = [
     },
 ]
 const ourTeam2 = [
-    {
-        name:"Vittorio Genna",
-        position:"Chairman",
-        image:"/images/teamMember4.png",
-        bgImage:"/images/card4bg.png"
-    },
+    // {
+    //     name:"Vittorio Genna",
+    //     position:"Chairman",
+    //     image:"/images/teamMember4.png",
+    //     bgImage:"/images/card4bg.png"
+    // },
     {
         name:"Gianluca Pirpan",
         position:"Chief Technology Officer",

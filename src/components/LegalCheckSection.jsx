@@ -55,7 +55,7 @@ function DataClickSecton() {
                 loop
                 muted
                 className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
-                style={{ filter: "blur(20px)" }}
+                style={{ filter: "blur(40px)" }}
             ></video>
 
             {/* ==== Content wrapper ===== */}
@@ -160,12 +160,16 @@ function DataClickSecton() {
             <div className="relative md:mt-[100px] mt-[70px] z-20 mg:mb-[100px] flex flex-col justify-center items-center gap-[64px] text-center px-[20px]">
                 <div className="flex flex-col gap-[20px]">
                     <Heading1 headingGray="Our" headingWhite="Partners" />
-                    <Text>
-                        Lorem ipsum dolor sit amet consectetur.{" "}
-                        <GradientSpan>Lorem mollis est</GradientSpan> nisl enim sed nunc
-                        senectus. Molestie arcu arcu sapien vulputate ligula. Odio dolor
-                        velit vestibulum adipiscing.
-                    </Text>
+                   <Text>
+                               At Tolemaica, we collaborate with leading organizations across
+                               industries to provide secure, instant, and legally certified digital
+                               solutions. Our trusted partners rely on ourLorem ipsum dolor sit
+                               amet consectetur.{" "}
+                               <GradientSpan>
+                                 IAC (Instant Automatic Certification) technology
+                               </GradientSpan>{" "}
+                               IAC (Instant Automatic Certification) technology
+                             </Text>
                 </div>
 
                 <OurPartnersSlider image1="/img1.svg" image2="/img2.svg" image3="/img3.svg" image4="/img4.svg" />

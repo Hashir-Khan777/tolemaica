@@ -56,7 +56,7 @@ function DataClickSecton() {
                 loop
                 muted
                 className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
-                style={{ filter: "blur(20px)" }}
+                style={{ filter: "blur(40px)" }}
             ></video>
 
             {/* ==== Content wrapper ===== */}
@@ -126,22 +126,22 @@ function DataClickSecton() {
                         <div className="lg:block hidden"></div>
 
                         {/* Card 1 */}
-                        <Card2 title="Lorem ipsum dolor sit amet" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit" />
+                        <Card2 title="Legally Valid Certification" description="Provides legally recognized proof of authenticity for photos, videos, and audio recordings" />
 
                         {/* Card 2 */}
-                        <Card2 title="Lorem ipsum dolor sit amet" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit" />
+                        <Card2 title="Instant Certification" description="Quickly certifies media files with a probative element, ensuring fast and reliable authentication" />
 
                         {/* Card 3 */}
-                        <Card2 title="Lorem ipsum dolor sit amet" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit" />
+                        <Card2 title="Pay-Per-Use Model" description="No need for subscriptions; only pay when you use the service, making it cost-effective for individuals and small businesses" />
 
                         {/* Card 4 */}
-                        <Card2 title="Lorem ipsum dolor sit amet" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit" />
+                        <Card2 title="User-Friendly & Accessible" description="Easily upload and certify files via PC or smartphone, ensuring convenience anytime, anywhere" />
 
                         {/* Card 5 */}
-                        <Card2 title="Lorem ipsum dolor sit amet" description=" Lorem ipsum dolor sit amet, consectetur adipiscing elit" />
+                        <Card2 title="Secure & Tamper-Proof" description="Uses strong encryption and digital signatures to prevent any alteration of the certified media" />
 
                         {/* Card 6 */}
-                        <Card2 title="Lorem ipsum dolor sit amet" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit" />
+                        <Card2 title="Versatile Applications" description="Useful for legal disputes, copyright protection, insurance claims, contract verification, and more" />
 
                         <div className="lg:block hidden"></div>
 
@@ -160,11 +160,15 @@ function DataClickSecton() {
                 <div className="flex flex-col gap-[20px]">
                     <Heading1 headingGray="Our" headingWhite="Partners" />
                     <Text>
-                        Lorem ipsum dolor sit amet consectetur.{" "}
-                        <GradientSpan>Lorem mollis est</GradientSpan> nisl enim sed nunc
-                        senectus. Molestie arcu arcu sapien vulputate ligula. Odio dolor
-                        velit vestibulum adipiscing.
-                    </Text>
+                                At Tolemaica, we collaborate with leading organizations across
+                                industries to provide secure, instant, and legally certified digital
+                                solutions. Our trusted partners rely on ourLorem ipsum dolor sit
+                                amet consectetur.{" "}
+                                <GradientSpan>
+                                  IAC (Instant Automatic Certification) technology
+                                </GradientSpan>{" "}
+                                IAC (Instant Automatic Certification) technology
+                              </Text>
                 </div>
 
                 <OurPartnersSlider image1="/img1.svg" image2="/img2.svg" image3="/img3.svg" image4="/img4.svg" />

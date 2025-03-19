@@ -18,7 +18,7 @@ function MSCShippingSection() {
         loop
         muted
         className="absolute inset-0 w-full h-full object-cover -z-1 pointer-events-none"
-        style={{ filter: "blur(20px)" }}
+        style={{ filter: "blur(40px)" }}
       ></video>
       {/* <div className="md:container px-[20px] md:px-auto mx-auto"> */}
       <div className="max-w-[1280px] mx-auto">
