@@ -63,10 +63,10 @@ function QrCertSection() {
 
                 {/* ==== What is QrCertCode ====== */}
                 <div className="w-full flex flex-col justify-center items-center gap-[50px]">
-                        <Heading1 headingGray="what is" headingWhite="QrCertCode?" />
-                        <Text>
+                    <Heading1 headingGray="what is" headingWhite="QrCertCode?" />
+                    <Text>
                         QrCertCode is a <GradientSpan>digital certification service</GradientSpan> that generates <GradientSpan>unique certificated QR codes</GradientSpan> (no simple QrCode) to verify the authenticity of documents. It ensures that documents are <GradientSpan>tamper-proof and legally verifiable</GradientSpan>, offering a seamless way to confirm their integrity and completeness.
-                        </Text>
+                    </Text>
 
 
                     {/* Image Section */}
@@ -81,7 +81,7 @@ function QrCertSection() {
                     <div className="flex flex-col gap-[20px]">
                         <Heading1 headingGray="How" headingWhite="QRCERTCODE Works" />
                         <Text>
-                        With <GradientSpan>QrCertCode</GradientSpan>, each document is assigned a <GradientSpan>unique QR code</GradientSpan> that can be scanned to instantly verify its authenticity. This allows businesses, institutions, and individuals to securely store and validate documents.
+                            With <GradientSpan>QrCertCode</GradientSpan>, each document is assigned a <GradientSpan>unique QR code</GradientSpan> that can be scanned to instantly verify its authenticity. This allows businesses, institutions, and individuals to securely store and validate documents.
                         </Text>
                     </div>
                 </div>
@@ -149,28 +149,13 @@ function QrCertSection() {
                 {/* ====== Benefit of usind QrCertCode ===== */}
 
                 {/* IsoCertified */}
-                <IsoCertified/>
+                <IsoCertified />
 
             </div>
 
             {/* ==== Partners ==== */}
             <div className="relative md:mt-[100px] mt-[70px] z-20 mg:mb-[100px] flex flex-col justify-center items-center gap-[64px] text-center px-[20px]">
-                <div className="flex flex-col gap-[20px]">
-                    <Heading1 headingGray="Our" headingWhite="Partners" />
-                    <Text>
-                                At Tolemaica, we collaborate with leading organizations across
-                                industries to provide secure, instant, and legally certified digital
-                                solutions. Our trusted partners rely on ourLorem ipsum dolor sit
-                                amet consectetur.{" "}
-                                <GradientSpan>
-                                  IAC (Instant Automatic Certification) technology
-                                </GradientSpan>{" "}
-                                IAC (Instant Automatic Certification) technology
-                              </Text>
-                </div>
-
                 <OurPartnersSlider image1="/img1.svg" image2="/img2.svg" image3="/img3.svg" image4="/img4.svg" />
-
             </div>
 
             {/* ======= Our Partners ======== */}

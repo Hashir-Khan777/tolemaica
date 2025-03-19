@@ -62,22 +62,22 @@ const BenefitCards = [
   {
     title: "Consumption Measurement",
     description: "Capture utility or resource consumption.",
-    bg:gradients[2]
+    bg: gradients[2]
   },
   {
     title: "Point of Sale Control",
     description: "Document store conditions and activities.",
-    bg:gradients[3]
+    bg: gradients[3]
   },
   {
     title: "Insurance Claims",
     description: "Secure photographic evidence for claims.",
-    bg:gradients[4]
+    bg: gradients[4]
   },
   {
     title: "Packaging & Storage Inspection",
     description: "Certify conditions before shipment or storage.",
-    bg:gradients[5]
+    bg: gradients[5]
   },
 ];
 
@@ -192,26 +192,11 @@ function DataClickSecton() {
 
       {/* ==== Partners ==== */}
       <div className="relative md:mt-[100px] mt-[70px] z-20 mg:mb-[100px] flex flex-col justify-center items-center md:gap-[64px] gap-[40px]  text-center px-[20px]">
-        
-          <Heading1 headingGray="Our" headingWhite="Partners" />
-          <Text>
-                      At Tolemaica, we collaborate with leading organizations across
-                      industries to provide secure, instant, and legally certified digital
-                      solutions. Our trusted partners rely on ourLorem ipsum dolor sit
-                      amet consectetur.{" "}
-                      <GradientSpan>
-                        IAC (Instant Automatic Certification) technology
-                      </GradientSpan>{" "}
-                      IAC (Instant Automatic Certification) technology
-                    </Text>
-      
-
         <OurPartnersSlider image1="/img1.svg" image2="/img2.svg" image3="/img3.svg" image4="/img4.svg" />
-
       </div>
 
       <div className="relative md:mt-[100px] mt-[70px] z-20 mg:mb-[100px] flex flex-col justify-center items-center md:gap-[64px] gap-[40px]  text-center px-[20px]">
-        <ISOCertified/>
+        <ISOCertified />
       </div>
 
       {/* ======= Our Partners ======== */}

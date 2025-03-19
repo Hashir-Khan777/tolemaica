@@ -21,28 +21,28 @@ const cardsData = [
 
 const BenefitCards = [
     {
-        title: "Lorem ipsum dolor sit amet",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        title: "Government & Public Sector ",
+        description: "Secure, timestamped documentation for official records.",
     },
     {
-        title: "Lorem ipsum dolor sit amet",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        title: "Legal & Compliance Departments",
+        description: "Automated document verification with OCR and certification logs.",
     },
     {
-        title: "Lorem ipsum dolor sit amet",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        title: "Corporate Auditing & Internal Control",
+        description: "Maintain compliance and certify key operational records.",
     },
     {
-        title: "Lorem ipsum dolor sit amet",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        title: "Supply Chain & Logistics",
+        description: "Certify packaging, storage, and transit documentation.",
     },
     {
-        title: "Lorem ipsum dolor sit amet",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        title: "Insurance & Claims Processing",
+        description: "Authenticate evidence for claims and prevent fraud.",
     },
     {
-        title: "Lorem ipsum dolor sit amet",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        title: "Infrastructure & Engineering Projects",
+        description: "Document construction progress with certified images.",
     },
 ];
 
@@ -151,28 +151,13 @@ function DataClickSecton() {
                 {/* ====== Benefit of usind dataclick ===== */}
 
                 {/* IsoCertified */}
-                <IsoCertified/>
+                <IsoCertified />
 
             </div>
 
             {/* ==== Partners ==== */}
             <div className="relative md:mt-[100px] mt-[70px] z-20 mg:mb-[100px] flex flex-col justify-center items-center gap-[64px] text-center px-[20px]">
-                <div className="flex flex-col gap-[20px]">
-                    <Heading1 headingGray="Our" headingWhite="Partners" />
-                    <Text>
-                                At Tolemaica, we collaborate with leading organizations across
-                                industries to provide secure, instant, and legally certified digital
-                                solutions. Our trusted partners rely on ourLorem ipsum dolor sit
-                                amet consectetur.{" "}
-                                <GradientSpan>
-                                  IAC (Instant Automatic Certification) technology
-                                </GradientSpan>{" "}
-                                IAC (Instant Automatic Certification) technology
-                              </Text>
-                </div>
-
                 <OurPartnersSlider image1="/img1.svg" image2="/img2.svg" image3="/img3.svg" image4="/img4.svg" />
-
             </div>
 
             {/* ======= Our Partners ======== */}

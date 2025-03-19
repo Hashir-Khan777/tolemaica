@@ -28,15 +28,7 @@ const OurPatent = () => {
       <div className="w-full flex flex-col md:gap-[64px] gap-[40px]">
         <Heading1 headingGray="Our" headingWhite="patents" />
         <Text>
-          Tolemaica's commitment to innovation and security is backed by strong
-          intellectual property protection. Our patentedLorem ipsum dolor sit
-          amet consectetur.{" "}
-          <GradientSpan>
-            Instant Automatic Certification (IAC) technology
-          </GradientSpan>{" "}
-          is recognized at both national and international levels, ensuring
-          legal validity and compliance in data certification. velit vestibulum
-          adipiscing.
+        Tolemaica's commitment to innovation and security is backed by strong intellectual property protection. Our patented <GradientSpan>Instant Automatic Certification (IAC) technology</GradientSpan> is recognized at both national and international levels, ensuring legal validity and compliance in data certification.
         </Text>
 
         <div className="w-full mx-auto flex flex-col xl:flex-row justify-center items-center  md:gap-[20px] gap-2">
