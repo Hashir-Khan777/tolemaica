@@ -231,7 +231,7 @@ function OurPartners() {
               buttonTextColor="#FF9966"
               playButton="/images/playBtn.png"
               playButtonLink="https://example.com/play"
-              // backgroundImage="/images/image.png"
+              backgroundImage="/card1.png"
             />
 
             <Card
@@ -244,7 +244,7 @@ function OurPartners() {
               buttonTextColor="black"
               playButton="/images/playBtn.png"
               playButtonLink="https://example.com/play"
-              // backgroundImage="/images/image.png"
+              backgroundImage="/card2.png"
             />
             <div className="w-full flex flex-col md:gap-[36px] gap-[20px] justify-center">
               <CustomBtn
@@ -282,7 +282,7 @@ function OurPartners() {
               buttonTextColor="#FF9966"
               playButton="/images/playBtn.png"
               playButtonLink="https://example.com/play"
-              // backgroundImage="/images/image.png"
+              backgroundImage="/card3.png"
             />
 
             <Card
@@ -295,7 +295,7 @@ function OurPartners() {
               buttonTextColor="#FF9966"
               playButton="/images/playBtn.png"
               playButtonLink="https://example.com/play"
-              // backgroundImage="/images/image.png"
+              backgroundImage="/card4.png"
             />
 
             <Card
@@ -308,7 +308,7 @@ function OurPartners() {
               buttonTextColor="black"
               playButton="/images/playBtn.png"
               playButtonLink="https://example.com/play"
-              // backgroundImage="/images/image.png"
+              backgroundImage="/card5.png"
             />
           </div>
 
