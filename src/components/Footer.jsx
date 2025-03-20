@@ -10,7 +10,7 @@ function Footer() {
   const [registerModalIsOpen, setRegisterModalIsOpen] = useState(false);
 
   return (
-    <div id="footer"  className=" w-full bg-black relative overflow-hidden">
+    <div id="footer" className=" w-full bg-black relative overflow-hidden">
       <img
         src="/images/footerbg.png"
         className="absolute h-full w-full object-cover -right-[800px]"
@@ -108,10 +108,10 @@ function Footer() {
                     onClick={() => setWorkModalIsOpen(true)}
                     className="cursor-pointer text-left"
                   >
-                    Work
+                    Case Study
                   </button>
                   <Link to="/iac-tech">IAC Tech</Link>
-                  <Link to="/">Solid</Link>
+                  <a href="https://ddeluca4.wixsite.com/solid-srl" target="_blank">Solid</a>
                 </div>
               </div>
             </div>
