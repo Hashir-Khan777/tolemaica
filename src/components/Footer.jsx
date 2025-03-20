@@ -104,12 +104,12 @@ function Footer() {
                   </button>
                 </div>
                 <div className="max-w-[300px] w-full font-medium text-2xl flex flex-col gap-2.5 mt-8 md:mt-0">
-                  <button
+                  {/* <button
                     onClick={() => setWorkModalIsOpen(true)}
                     className="cursor-pointer text-left"
                   >
                     Case Study
-                  </button>
+                  </button> */}
                   <Link to="/iac-tech">IAC Tech</Link>
                   <a href="https://ddeluca4.wixsite.com/solid-srl" target="_blank">Solid</a>
                 </div>

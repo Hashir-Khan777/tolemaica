@@ -19,10 +19,10 @@ function Header() {
       func: () => setModalIsOpen(true),
       hasDropdown: true,
     },
-    {
-      title: "case  study",
-      func: () => setWorkModalIsOpen(true),
-    },
+    // {
+    //   title: "case  study",
+    //   func: () => setWorkModalIsOpen(true),
+    // },
     {
       title: "IAC Tech",
       link: "/iac-tech",
@@ -153,7 +153,7 @@ function Header() {
 
         {/* Mobile Menu Button */}
         <button
-          className="xl:hidden text-white"
+          className="xl:hidden text-white cursor-pointer"
           onClick={() => setIsOpen(true)}
         >
           <img
@@ -168,7 +168,7 @@ function Header() {
       <div
         className={`fixed z-50 top-0 right-0 h-full w-full backdrop-blur-3xl bCK flex flex-col justify-center items-center bg-black text-white p-6 transform ${
           isOpen ? "translate-x-0" : "translate-x-full"
-        } transition-transform duration-300 ease-in-out lg:hidden rounded-l-lg`}
+        } transition-transform duration-300 ease-in-out xl:hidden rounded-l-lg`}
         style={{
           background:
             " linear-gradient(to left bottom, #8f644f, #48423f 80%, #4c2a34 )",
@@ -200,12 +200,12 @@ function Header() {
           >
             Services
           </button>
-          <button
+          {/* <button
             className="h-[52px] w-[300px] rounded-full border-[2.1px] text-white border-[#FF9966] flex justify-center items-center font-raleway font-medium md:text-[20px]/[100%] py-[12px] px-[40px] uppercase"
             onClick={() => setWorkModalIsOpen(true)}
           >
-            Work
-          </button>
+            Case Study
+          </button> */}
           <Link
             className="h-[52px] w-[300px] rounded-full border-[2.1px] text-[#FF9966] border-white flex justify-center items-center font-raleway font-medium md:text-[20px]/[100%] py-[12px] px-[40px] uppercase"
             to="/iac-tech"

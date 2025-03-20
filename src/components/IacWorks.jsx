@@ -33,7 +33,7 @@ function IACWorks() {
             <div className="relative z-10 flex flex-col justify-center items-center gap-[40px] md:gap-[100px] text-center lg:px-[100px] md:px-[30px] px-[20px]">
 
                 {/* ==== How IAC Works ==== */}
-                <div className="shrink-0 relative w-full z-10 md:mb-[100px] flex flex-col justify-center items-center md:gap-[64px] gap-[40px] text-center">
+                <div className="shrink-0 relative w-full z-10 flex flex-col justify-center items-center md:gap-[64px] gap-[40px] text-center">
 
                     <Heading1 headingGray="How" headingWhite="iac works" />
                     <Text>
@@ -56,7 +56,7 @@ function IACWorks() {
                         ADVANTAGES OF USING{" "} <span className="text-white">IAC</span>{" "}TECHNOLOGY
                     </h1>
 
-                    <div className="md:grid hidden lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-x-[50px] gap-y-[64px] max-w-[1280px] mx-auto">
+                    <div className="md:grid hidden xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-x-[50px] gap-y-[64px] max-w-[1280px] mx-auto">
 
                         <div className="w-[350px] h-[350px] md:h-[428px] border-white border-[2.24px] rounded-[20px] bg-gradient-to-br from-[#3e2516] to-[#371b1b] px-[24px] py-[32px]">
                             <div className="px-[32px] py-[12px] w-full flex flex-col gap-[16px] ">

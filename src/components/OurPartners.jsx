@@ -213,7 +213,7 @@ function OurPartners() {
             vestibulum adipiscing.
           </Text>
 
-          <div className="w-full hidden md:grid md:grid-cols-2 grid-cols-1 gap-[24px]">
+          <div className="w-full hidden lg:grid md:grid-cols-2 grid-cols-1 gap-[24px]">
             <Card
               icon="/images/legalClick.png"
               title="LegalClick"
@@ -240,7 +240,7 @@ function OurPartners() {
               backgroundImage="/card2.png"
             />
             
-            <div className="w-full flex flex-col md:gap-[36px] gap-[20px] justify-center">
+            <div className="w-full flex flex-col justify-center">
               <CustomBtn
                 text="Best In Market"
                 borderColor="white"
