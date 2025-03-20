@@ -2,7 +2,7 @@ import React from "react";
 import Heading1 from "./ui/Heading1";
 import { Text, GradientSpan } from "./ui/Text";
 import Card2 from "./ui/Card2";
-import Card3 from "./ui/Card3";
+import Card4 from "./ui/Card4";
 import OurPartnersSlider from './ui/PartnersSLider'
 import ServiceSlider1 from "./ui/ServiceSLider1";
 import ServiceSlider2 from "./ui/ServiceSLider2";
@@ -11,37 +11,78 @@ import IsoCertified from './ISOCertified'
 import ImageSec from "./ui/ImageSec";
 
 const cardsData = [
-    { image: "/lcimg1.svg", title: "Instant Document Verification", description: "Scan the QR code to confirm analog document authenticity and completeness." },
-    { image: "/qrCertCard2.svg", title: "Legally Valid Certification", description: "Ensures documents maintain evidentiary value." },
-    { image: "/qrCertCard3.svg", title: "Tamper Proof Security", description: "Protects against unauthorized modifications." },
-    { image: "/lcheck4.svg", title: "Scalable & Customizable", description: "Ideal for businesses, government institutions, and individuals." },
-    { image: "/qrCertCard5.svg", title: "Seamless Integrations", description: "Can be integrated into document management systems." },
+    {
+        image: "/qrcert1.png",
+        title: "Instant Document Verification",
+        description: "Scan the QR code to confirm analog document authenticity and completeness.",
+        gradientColors: ["#140902", "#4e2c1c"],
+    },
+    {
+        image: "/dataclick1.png",
+        title: "Legally Valid Certification",
+        description: "Ensures documents maintain evidentiary value.",
+        gradientColors: ["#360e12", "#180808"],
+    },
+    {
+        image: "/qrcert3.png",
+        title: "Tamper Proof Security",
+        description: "Protects against unauthorized modifications.",
+        gradientColors: ["#5c5b5a", "070402"],
+    },
+    {
+        image: "/legalcheck5.png",
+        title: "Scalable & Customizable",
+        description: "Ideal for businesses, government institutions, and individuals.",
+        gradientColors: ["#240a12", "#3f3131"],
+    },
+    {
+        image: "/legalcheck2.png",
+        title: "Seamless Integrations",
+        description: "Can be integrated into document management systems.",
+        gradientColors: ["#240a12", "#3f3131"],
+    },
 ];
+
+const gradients = [
+    "linear-gradient(145deg, #171515, #271519)",
+    "linear-gradient(145deg, #0a0604, #433f3e)",
+    "linear-gradient(145deg, #281e19, #593c2d)",
+    "linear-gradient(145deg, #1a1a1a, #505050)",
+    "linear-gradient(145deg, #060505, #060505)",
+    "linear-gradient(145deg, #171616, #29151a)"
+];
+
 
 const BenefitCards = [
     {
         title: "Legal & Compliance",
         description: "Secure contracts, agreements, and legal records.",
+        bg: gradients[0]
     },
     {
         title: "Government & Public Administration",
         description: "Authenticate official documents.",
+        bg: gradients[1]
     },
     {
         title: "Educational Institutions",
         description: "Certify diplomas, transcripts, and certifications.",
+        bg: gradients[2]
     },
     {
         title: "Healthcare & Medical Records",
         description: " Secure patient data and prescriptions.",
+        bg: gradients[3]
     },
     {
         title: "Financial & Banking Sector",
         description: "Validate reports, statements, and sensitive data.",
+        bg: gradients[4]
     },
     {
         title: "Supply Chain & Logistics",
         description: "Ensure authenticity of invoices and shipping documents.",
+        bg: gradients[5]
     },
 ];
 
@@ -93,10 +134,49 @@ function QrCertSection() {
 
                     {/* ==== Cards ==== */}
                     <div className="w-full ">
-                        <div className="hidden lg:flex flex-row flex-wrap justify-center items-center gap-[24px]">
-                            {cardsData.map((card, index) => (
+                        <div className="flex flex-col justify-content-center items-center gap-[36px]">
+                            <div className="hidden lg:flex flex-row flex-wrap justify-center items-center gap-[24px]">
+                                {/* {cardsData.map((card, index) => (
                                 <Card3 key={index} {...card} />
-                            ))}
+                            ))} */}
+                                <Card4
+                                    description={cardsData[0].description}
+                                    image={cardsData[0].image}
+                                    gradientColors={cardsData[0].gradientColors}
+                                    title={cardsData[0].title}
+                                />
+                                <Card4
+                                    description={cardsData[1].description}
+                                    image={cardsData[1].image}
+                                    gradientColors={cardsData[1].gradientColors}
+                                    title={cardsData[1].title}
+                                />
+                                <Card4
+                                    description={cardsData[2].description}
+                                    image={cardsData[2].image}
+                                    gradientColors={cardsData[2].gradientColors}
+                                    title={cardsData[2].title}
+                                />
+                            </div>
+
+                            <div className="hidden lg:flex flex-row flex-wrap justify-center items-center gap-[24px]">
+                                {/* {cardsData.map((card, index) => (
+                                <Card3 key={index} {...card} />
+                            ))} */}
+                                <Card4
+                                    description={cardsData[3].description}
+                                    image={cardsData[3].image}
+                                    gradientColors={cardsData[3].gradientColors}
+                                    title={cardsData[3].title}
+                                />
+                                <Card4
+                                    description={cardsData[4].description}
+                                    image={cardsData[4].image}
+                                    gradientColors={cardsData[4].gradientColors}
+                                    title={cardsData[4].title}
+                                />
+
+                            </div>
                         </div>
 
                         <div className="flex lg:hidden">
@@ -119,27 +199,27 @@ function QrCertSection() {
                         <ServiceSlider2 cards={BenefitCards} />
                     </div>
 
-                    <div className="mx-auto hidden lg:grid grid-cols-4 gap-x-20 gap-y-5">
+                    <div className="mx-auto hidden lg:grid grid-cols-4 gap-[36px]">
                         {/*  */}
                         <div className="lg:block hidden"></div>
 
                         {/* Card 1 */}
-                        <Card2 title="Legal & Compliance" description="Secure contracts, agreements, and legal records." />
+                        <Card2 title="Legal & Compliance" description="Secure contracts, agreements, and legal records." bg={gradients[0]} />
 
                         {/* Card 2 */}
-                        <Card2 title="Government & Public Administration" description=" Automated document verification with OCR and certification logs.Authenticate official documents." />
+                        <Card2 title="Government & Public Administration" description=" Automated document verification with OCR and certification logs.Authenticate official documents." bg={gradients[1]} />
 
                         {/* Card 3 */}
-                        <Card2 title="Educational Institutions" description="Certify diplomas, transcripts, and certifications." />
+                        <Card2 title="Educational Institutions" description="Certify diplomas, transcripts, and certifications." bg={gradients[2]} />
 
                         {/* Card 4 */}
-                        <Card2 title="Healthcare & Medical Records" description="Secure patient data and prescriptions." />
+                        <Card2 title="Healthcare & Medical Records" description="Secure patient data and prescriptions." bg={gradients[3]} />
 
                         {/* Card 5 */}
-                        <Card2 title="Financial & Banking Sector" description="Validate reports, statements, and sensitive data." />
+                        <Card2 title="Financial & Banking Sector" description="Validate reports, statements, and sensitive data." bg={gradients[4]} />
 
                         {/* Card 6 */}
-                        <Card2 title="Supply Chain & Logistics" description="Ensure authenticity of invoices and shipping documents." />
+                        <Card2 title="Supply Chain & Logistics" description="Ensure authenticity of invoices and shipping documents." bg={gradients[5]} />
 
                         <div className="lg:block hidden"></div>
 

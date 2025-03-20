@@ -5,7 +5,7 @@ import { Text, GradientSpan } from "./ui/Text";
 function AboutHero() {
   return (
     <div
-      className="relative w-full h-screen flex flex-col items-start justify-start bg-cover bg-center bg-no-repeat lg:px-[100px] md:px-[50px] px-[20px]"
+      className="relative w-full min-h-screen flex flex-col lg:gap-[64px] gap-[40px] pb-[100px] items-start justify-start bg-cover bg-center bg-no-repeat lg:px-[100px] md:px-[50px] px-[20px]"
       style={{ backgroundImage: 'url("/aboutBg.png")' }}
     >
       {/* Navbar */}
@@ -13,7 +13,7 @@ function AboutHero() {
         <Header />
       </div>
 
-      <div className="mx-auto flex flex-1 justify-center items-center">
+      <div className="mx-auto lg:w-[1200px] flex flex-1 justify-center items-center">
         <div
           className="z-10 w-[100%] max-w-[1200px] md:h-[620px] h-[487px] border-[2px] border-white/64 rounded-[24px] backdrop-blur-[16px] flex flex-col justify-center items-center text-center py-[100px] px-[24px]"
           style={{ background: "rgba(255, 255, 255, 0.04)" }}
@@ -39,7 +39,7 @@ function AboutHero() {
             >
               the
               <span className="px-2 bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-                Creators, Innovators, and Game-Changers
+                Creators, Innovators, and<br/> Game-Changers
               </span>
               of Tolemaica
             </p>

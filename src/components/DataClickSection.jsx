@@ -14,25 +14,25 @@ import ImageSec from './ui/ImageSec'
 
 const cardsData = [
   {
-    image: "/dataclickcard1.svg",
+    image: "/dataclick1.png",
     title: "Instant & Automatic Certification",
     description: "Certifies date and location of images.",
     gradientColors: ["#140902", "#4e2c1c"],
   },
   {
-    image: "/dataclickcard2.svg",
+    image: "/dataclick2.png",
     title: "Multi-Device Accessibility",
     description: "Use via PC or smartphone.",
     gradientColors: ["#360e12", "#180808"],
   },
   {
-    image: "/dataclickcard3.svg",
+    image: "/dataclick3.png",
     title: "Simple & Cost Effective",
     description: "Use via PC or smartphone.",
     gradientColors: ["#5c5b5a", "070402"],
   },
   {
-    image: "/dataclickcard4.svg",
+    image: "/dataclick4.png",
     title: "Secure & Legally Valid",
     description: "Provides legally recognized proof of authenticity.",
     gradientColors: ["#240a12", "#3f3131"],

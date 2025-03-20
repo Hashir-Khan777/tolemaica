@@ -1,13 +1,13 @@
 import React from 'react';
 
-function Card3({ title, description, image, gradientColors=["#140902", "#4e2c1c"] }) {
+function Card4({ title, description, image, gradientColors=["#140902", "#4e2c1c"] }) {
   const backgroundStyle = {
     background: `linear-gradient(180deg, ${gradientColors[0]} 50%, ${gradientColors[1]})`,
   };
 
   return (
     <div 
-      className="w-full md:w-[302px] md:h-[450px] h-[480px] border-2 border-white/64 rounded-[20px] backdrop-blur-[100px] p-5 flex flex-col gap-[12px] py-[24px] items-center justify-start text-center"
+      className="w-full md:w-[302px] md:h-[525px] min-h-[500px] border-2 border-white/64 rounded-[20px] backdrop-blur-[100px] p-5 flex flex-col gap-[12px] py-[24px] items-center justify-start text-center"
       style={backgroundStyle}
     >
       <img src={image} alt="card1" className="lg:min-w-[270px] h-[240px] min-w-[302px]" />
@@ -24,5 +24,5 @@ function Card3({ title, description, image, gradientColors=["#140902", "#4e2c1c"
   );
 }
 
-export default Card3;
+export default Card4;
 
