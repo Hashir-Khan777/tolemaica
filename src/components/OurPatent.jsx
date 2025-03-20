@@ -27,9 +27,9 @@ const OurPatent = () => {
       {/* ====== Our Patent ===== */}
       <div className="w-full flex flex-col md:gap-[64px] gap-[40px]">
         <Heading1 headingGray="Our" headingWhite="patents" />
-        <Text>
+        {/* <Text>
         Tolemaica's commitment to innovation and security is backed by strong intellectual property protection. Our patented <GradientSpan>Instant Automatic Certification (IAC) technology</GradientSpan> is recognized at both national and international levels, ensuring legal validity and compliance in data certification.
-        </Text>
+        </Text> */}
 
         <div className="w-full mx-auto flex flex-col xl:flex-row justify-center items-center  md:gap-[20px] gap-2">
           {patents.map((patent, index) => (
@@ -41,7 +41,7 @@ const OurPatent = () => {
               <img
                 src={patent.image}
                 alt=""
-                className="lg:w-[200px] lg:h-[200px] md:w-[120px] md:h-[120px] w-[80.82px] h-[80.82px] "
+                className="lg:w-[150px] lg:h-[80px] md:w-[120px] md:h-[120px] w-[60px] h-[32px] "
               />
               <p className="font-outfit font-light text-[12px] md:text-xl text-white/64 text-center">
                 {patent.text}
@@ -49,13 +49,13 @@ const OurPatent = () => {
             </div>
           ))}
         </div>
-        <Text>
+        {/* <Text>
           Our patented technology ensures{" "}
           <GradientSpan>
             legal certification, data integrity, security, and compliance,
           </GradientSpan>{" "}
           protecting businesses and individuals worldwide.
-        </Text>
+        </Text> */}
       </div>
       {/* ====== Our Patent =====  End*/}
     </section>
