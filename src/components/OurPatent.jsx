@@ -36,7 +36,7 @@ const OurPatent = () => {
             <div
               className={`${
                 index % 2 === 0 ? "patent-2" : "patent-1"
-              } py-[12px] md:py-[62px] px-[27px] md:px-[50px] max-h-[400px] w-full border border-white/64 bg-black/[0.08] rounded-[20px] flex flex-row xl:flex-col justify-center items-center gap-[10px] md:gap-[60px]`}
+              } py-[12px] md:py-[62px] px-[27px] md:px-[50px] min-h-[400px] w-full border border-white/64 bg-black/[0.08] rounded-[20px] flex flex-row xl:flex-col justify-center items-center gap-[10px] md:gap-[60px]`}
             >
               <img
                 src={patent.image}
