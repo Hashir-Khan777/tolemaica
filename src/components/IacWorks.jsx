@@ -5,6 +5,7 @@ import OurPartnersSlider from './ui/PartnersSLider'
 import ISOCertified from './ISOCertified'
 import ImageSec from './ui/ImageSec'
 import OurPatent from './OurPatent'
+import IACSlider from "./ui/iacSlider";
 
 function IACWorks() {
     return (
@@ -27,7 +28,7 @@ function IACWorks() {
             {/* Additional subtle vignette for depth */}
             <div className="absolute inset-0 bg-gradient-radial from-transparent to-black/30 z-1"></div>
 
-           
+
             {/* ==== Content wrapper ===== */}
             <div className="relative z-10 flex flex-col justify-center items-center gap-[40px] md:gap-[100px] text-center lg:px-[100px] md:px-[30px] px-[20px]">
 
@@ -47,6 +48,74 @@ function IACWorks() {
                         The result of the instantaneous procedure, which only requires one simple control, is reported to user and/or the office appointed, together with relevant legal evidence.
                     </Text>
 
+                </div>
+
+                {/* === ADVANTAGES OF USING IAC TECHNOLOGY === */}
+                <div className="w-full flex flex-col md:gap-[64px] gap-[40px]">
+                    <h1 className="md:block hidden font-raleway text-white/60 font-[400] text-[20px]/[23px] md:text-[40px]/[100%] uppercase tracking-wide">
+                        ADVANTAGES OF USING{" "} <span className="text-white">IAC</span>{" "}TECHNOLOGY
+                    </h1>
+
+                    <div className="md:grid hidden lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-x-[50px] gap-y-[64px] max-w-[1280px] mx-auto">
+
+                        <div className="w-[350px] h-[350px] md:h-[428px] border-white border-[2.24px] rounded-[20px] bg-gradient-to-br from-[#3e2516] to-[#371b1b] px-[24px] py-[32px]">
+                            <div className="px-[32px] py-[12px] w-full flex flex-col gap-[16px] ">
+                                <h1 className="font-outfit font-[600] text-[24px]/[120%] tracking-wider text-center capitalize  bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
+                                    Instant Legal Certification
+                                </h1>
+                                <p className="font-outfit font-[200] tracking-wider text-[20px]/[100%] text-white/64">Obtain legally certified documents instantly with real-time verification, ensuring compliance with international standards.</p>
+                            </div>
+                        </div>
+
+                        <div className="w-[350px] h-[350px] md:h-[428px] border-white border-[2.24px] rounded-[20px] bg-gradient-to-br from-[#261911] to-[#444241] px-[24px] py-[32px]">
+                            <div className="px-[32px] py-[12px] w-full flex flex-col gap-[16px] ">
+                                <h1 className="font-outfit font-[600] text-[24px]/[120%] tracking-wider text-center capitalize  bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
+                                    Post-Quantum Encryption & Blockchain Security
+                                </h1>
+                                <p className="font-outfit font-[200] tracking-wider text-[20px]/[100%] text-white/64">Data certification and verification processes use post-quantum encryption, and every certified data entry can be securely stored via blockchain technology, preventing fraud, forgery, or unauthorized modifications.</p>
+                            </div>
+                        </div>
+
+                        <div className="w-[350px] h-[350px] md:h-[428px] border-white border-[2.24px] rounded-[20px] bg-gradient-to-br from-[#1e1b19] to-[#4c3428] px-[24px] py-[32px]">
+                            <div className="px-[32px] py-[12px] w-full flex flex-col gap-[16px] ">
+                                <h1 className="font-outfit font-[600] text-[24px]/[120%] tracking-wider text-center capitalize  bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
+                                    Globally Recognized Standards
+                                </h1>
+                                <p className="font-outfit font-[200] tracking-wider text-[20px]/[100%] text-white/64">LegalClick meets the highest international compliance requirements, including ISO 27001, GDPR, eIDAS, and eIDAS2 regulations.</p>
+                            </div>
+                        </div>
+
+                        <div className="w-[350px] h-[350px] md:h-[428px] border-white border-[2.24px] rounded-[20px] bg-gradient-to-br from-[#2a211b] to-[#4e4d4b] px-[24px] py-[32px]">
+                            <div className="px-[32px] py-[12px] w-full flex flex-col gap-[16px] ">
+                                <h1 className="font-outfit font-[600] text-[24px]/[120%] tracking-wider text-center capitalize  bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
+                                    Seamless Digital Integration
+                                </h1>
+                                <p className="font-outfit font-[200] tracking-wider text-[20px]/[100%] text-white/64">Easily integrates with existing corporate systems, legal platforms, and cloud storage for efficient workflows through APIs, Libraries, Web Services, and AI-driven data processing & reporting modules.</p>
+                            </div>
+                        </div>
+
+                        <div className="w-[350px] h-[350px] md:h-[428px] border-white border-[2.24px] rounded-[20px] bg-gradient-to-br from-[#0b0706] to-[#0b0706] px-[24px] py-[32px]">
+                            <div className="px-[32px] py-[12px] w-full flex flex-col gap-[16px] ">
+                                <h1 className="font-outfit font-[600] text-[24px]/[120%] tracking-wider text-center capitalize  bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
+                                Intuitive Mobile & Web Interface
+                                </h1>
+                                <p className="font-outfit font-[200] tracking-wider text-[20px]/[100%] text-white/64">Accessible via web and mobile applications, ensuring a user-friendly experience for businesses, individuals, and public administrations.</p>
+                            </div>
+                        </div>
+
+                        <div className="w-[350px] h-[350px] md:h-[428px] border-white border-[2.24px] rounded-[20px] bg-gradient-to-br from-[#181617] to-[#321f25] px-[24px] py-[32px]">
+                            <div className="px-[32px] py-[12px] w-full flex flex-col gap-[16px] ">
+                                <h1 className="font-outfit font-[600] text-[24px]/[120%] tracking-wider text-center capitalize  bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
+                                Verified & Secure Document Storage
+                                </h1>
+                                <p className="font-outfit font-[200] tracking-wider text-[20px]/[100%] text-white/64">Ensures authenticity and long-term accessibility of certified data with encrypted and secure cloud storage.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="md:hidden block">
+                    <IACSlider/>
+                    </div>
                 </div>
 
                 {/* ====== Our Patent ===== */}
