@@ -12,7 +12,7 @@ const GridCard = ({bgImage,title}) => {
                 }}
             >
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
-                <p className="z-10 text-[28px]/[120%] font-[700] tracking-wide text-white text-center font-outfit uppercase">
+                <p className="z-10 text-[26px]/[120%] font-[700] tracking-wide text-white text-center font-outfit uppercase">
                 {title}
                 </p>
             </Link>

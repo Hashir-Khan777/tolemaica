@@ -16,29 +16,32 @@ const cards = [
   {
     icon: "/images/legalClick.png",
     title: "LegalClick",
-    buttonText: "Visit",
+    buttonText: "know more",
     buttonLink: "/",
     buttonBorder: "#FF9966",
     buttonBg: "black",
     buttonTextColor: "#FF9966",
     playButton: "/images/playBtn.png",
     playButtonLink: "https://example.com/play",
+    backgroundImage: "/card1.png"
   },
   {
     icon: "/images/dataClick.png",
     title: "DataClick",
-    buttonText: "Visit",
+    buttonText: "know more",
     buttonLink: "/",
     buttonBorder: "#FF9966",
     buttonBg: "white",
     buttonTextColor: "black",
     playButton: "/images/playBtn.png",
     playButtonLink: "https://example.com/play",
+    backgroundImage: "/card2.png"
   },
   {
     icon: "/images/legalCheck.png",
     title: "LegalCheck",
-    buttonText: "Visit",
+    buttonText: "know more",
+    backgroundImage: "/card3.png",
     buttonLink: "/",
     buttonBorder: "white",
     buttonBg: "black",
@@ -49,7 +52,8 @@ const cards = [
   {
     icon: "/images/qr-certcode.png",
     title: "QrCertCode",
-    buttonText: "Visit",
+    buttonText: "know more",
+    backgroundImage: "/card4.png",
     buttonLink: "/",
     buttonBorder: "white",
     buttonBg: "black",
@@ -60,7 +64,8 @@ const cards = [
   {
     icon: "/images/bar-certcode.png",
     title: "BarCertCode",
-    buttonText: "Visit",
+    buttonText: "know more",
+    backgroundImage: "/card5.png",
     buttonLink: "/",
     buttonBorder: "#FF9966",
     buttonBg: "white",
@@ -71,7 +76,8 @@ const cards = [
   {
     icon: "/images/legalVideo.png",
     title: "LegalVideo",
-    buttonText: "Visit",
+    buttonText: "know more",
+    backgroundImage: "/card6.png",
     buttonLink: "/",
     buttonBorder: "#FF9966",
     buttonBg: "white",
@@ -82,7 +88,8 @@ const cards = [
   {
     icon: "/images/legalSound.png",
     title: "LegalSound",
-    buttonText: "Visit",
+    buttonText: "know more",
+    backgroundImage: "/card7.png",
     buttonLink: "/",
     buttonBorder: "white",
     buttonBg: "black",
@@ -210,7 +217,7 @@ function OurPartners() {
             <Card
               icon="/images/legalClick.png"
               title="LegalClick"
-              buttonText="Visit site"
+              buttonText="know more"
               buttonLink="/services/legal-click"
               buttonBorder="white"
               buttonBg="black"
@@ -223,7 +230,7 @@ function OurPartners() {
             <Card
               icon="/images/dataClick.png"
               title="DataClick"
-              buttonText="Visit site"
+              buttonText="know more"
               buttonLink="/services/data-click"
               buttonBorder="#FF9966"
               buttonBg="white"
@@ -232,6 +239,7 @@ function OurPartners() {
               playButtonLink="https://example.com/play"
               backgroundImage="/card2.png"
             />
+            
             <div className="w-full flex flex-col md:gap-[36px] gap-[20px] justify-center">
               <CustomBtn
                 text="Best In Market"
@@ -261,7 +269,7 @@ function OurPartners() {
             <Card
               icon="/images/legalCheck.png"
               title="legalcheck"
-              buttonText="Visit site"
+              buttonText="know more"
               buttonLink="/services/legal-check"
               buttonBorder="white"
               buttonBg="black"
@@ -274,7 +282,7 @@ function OurPartners() {
             <Card
               icon="/images/qr-certcode.png"
               title="QrCertCode"
-              buttonText="Visit site"
+              buttonText="know more"
               buttonLink="/services/QrCertCode"
               buttonBorder="white"
               buttonBg="black"
@@ -287,7 +295,7 @@ function OurPartners() {
             <Card
               icon="/images/bar-certcode.png"
               title="BarCertCode"
-              buttonText="Visit site"
+              buttonText="know more"
               buttonLink="/services/BarCertCode"
               buttonBorder="#FF9966"
               buttonBg="white"

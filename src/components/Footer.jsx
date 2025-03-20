@@ -8,7 +8,7 @@ function Footer() {
   const [workModalIsOpen, setWorkModalIsOpen] = useState(false);
 
   return (
-    <div className="w-full bg-black relative overflow-hidden">
+    <div id="footer"  className=" w-full bg-black relative overflow-hidden">
       <img
         src="/images/footerbg.png"
         className="absolute h-full w-full object-cover -right-[800px]"
