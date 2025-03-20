@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import ServiceModal from "./ui/ServiceModal";
 import WorkModal from "./ui/WorkModal";
+import RegisterModal from "./ui/RegisterModal";
 
 function Footer() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [workModalIsOpen, setWorkModalIsOpen] = useState(false);
+  const [registerModalIsOpen, setRegisterModalIsOpen] = useState(false);
 
   return (
     <div id="footer"  className=" w-full bg-black relative overflow-hidden">
@@ -28,7 +30,10 @@ function Footer() {
                 placeholder="Email"
                 className="border border-white rounded-full max-w-[400px] placeholder:text-white px-6 py-3"
               />
-              <button className="button max-w-[400px] h-[47px] px-[30px] sm:px-[40px] md:px-[100px] lg:px-[100px] border-2 border-[#FF9966] bg-white/10 opacity-55 text-[#FF9966] rounded-full text-sm sm:text-lg lg:text-[20px]/[23.48px] font-[700] cursor-pointer mt-8 mb-6">
+              <button
+                onClick={() => setRegisterModalIsOpen(true)}
+                className="button max-w-[400px] h-[47px] px-[30px] sm:px-[40px] md:px-[100px] lg:px-[100px] border-2 border-[#FF9966] bg-white/10 opacity-55 text-[#FF9966] rounded-full text-sm sm:text-lg lg:text-[20px]/[23.48px] font-[700] cursor-pointer mt-8 mb-6"
+              >
                 REGISTER
               </button>
               <label
@@ -51,9 +56,19 @@ function Footer() {
                 </div>
               </label>
               <div className="flex flex-wrap items-center justify-between mt-8">
-                <p className="font-[400] text-xl text-white/65">Privacy</p>
+                <Link
+                  to="/privacy"
+                  className="font-[400] text-xl text-white/65"
+                >
+                  Privacy
+                </Link>
                 <p className="font-[400] text-xl text-white/65">Terms of Use</p>
-                <p className="font-[400] text-xl text-white/65">Cookies</p>
+                <Link
+                  to="/cookies"
+                  className="font-[400] text-xl text-white/65"
+                >
+                  Cookies
+                </Link>
               </div>
               {/* <div className="flex items-center gap-5">
                 <img src="/images/insta.svg" />
@@ -119,6 +134,10 @@ function Footer() {
       <WorkModal
         modalIsOpen={workModalIsOpen}
         closeModal={() => setWorkModalIsOpen(false)}
+      />
+      <RegisterModal
+        modalIsOpen={registerModalIsOpen}
+        closeModal={() => setRegisterModalIsOpen(false)}
       />
     </div>
   );

@@ -42,7 +42,7 @@ const HomeGrid = () => {
             }}
           >
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
-            <p className="z-10 lg:text-3xl text-2xl font-bold tracking-wide text-white text-center font-outfit uppercase">
+            <p className="z-10 text-[28px] font-bold tracking-wide text-white text-center font-outfit uppercase">
               Territory Monitoring
             </p>
           </Link>
