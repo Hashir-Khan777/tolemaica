@@ -130,7 +130,7 @@ function Header() {
             </div>
           ))}
 
-          <a href="#" className="text-yellow-400 shrink-0 text-sm">
+          <a href="https://ddeluca4.wixsite.com/solid-srl" trarget="_blank" className="text-yellow-400 shrink-0 text-sm">
             <img src="/solid.png" alt="" className="h-[20px] w-auto" />
           </a>
           <span className="text-white/60">/</span>

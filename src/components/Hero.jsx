@@ -35,7 +35,6 @@ function Hero() {
               </p>
               <h1 className=" font-raleway text-center font-[400] capitalize text-[28px] sm:text-[36px] md:text-[48px] lg:text-[80px]   text-white">
                 <span className="text-[#FF9966]">instant &</span> automatic
-                automatic
               </h1>
               <p className="font-raleway text-[28px]/[120%] text-center uppercase text-white/64">
                 of date and location for{" "}
