@@ -17,9 +17,11 @@ function Header() {
     {
       title: "services",
       func: () => setModalIsOpen(true),
+      hasDropdown: true
+
     },
     {
-      title: "work",
+      title: "case  study",
       func: () => setWorkModalIsOpen(true),
     },
     {
@@ -32,11 +34,38 @@ function Header() {
     },
   ];
 
+  // const scrollToFooter = () => {
+  //   const footer = document.getElementById('footer');
+  //   if (footer) {
+  //     footer.scrollIntoView({ behavior: 'smooth' });
+  //   }
+  // };
+  const scrollToFooter = () => {
+    // If on a different page, first navigate to the page with the footer
+    if (!window.location.pathname.includes('/')) {
+      navigate('/'); // Navigate to home or page with footer
+      
+      // Wait for navigation to complete before scrolling
+      setTimeout(() => {
+        const footer = document.getElementById('footer');
+        if (footer) {
+          footer.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 500);
+    } else {
+      // If already on the right page, just scroll
+      const footer = document.getElementById('footer');
+      if (footer) {
+        footer.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <>
       {/* Navbar Container */}
       <div
-        className="relative z-50 w-[100%] bg-black/50 mx-auto max-w-[100%] my-6 flex justify-between items-center px-[24px] py-[15px] lg:px-16 lg:py-5"
+        className="relative md:min-h-[90px] h-[48px]  z-50 w-[100%] bg-black/50 mx-auto my-6 flex justify-between items-center px-[24px] py-[15px] lg:px-16 lg:py-5"
         style={{
           border: "2px solid transparent",
           background:
@@ -50,7 +79,7 @@ function Header() {
             <img
               src="/logo.svg"
               alt="Logo"
-              className="md:h-10 md:w-48 h-[24px]"
+              className="h-[35px] sm:h-[40px] md:h-[45px] w-auto"
             />
           </Link>
         </div>
@@ -66,11 +95,10 @@ function Header() {
                   to={navLink.link}
                   className={({ isActive }) =>
                     `relative uppercase font-raleway flex items-center gap-4
-    ${
-      isActive
-        ? "text-white font-[600] xl:text-[20px]/[100%] text-[17px]/[20.48px]"
-        : "text-white/60 font-[500] xl:text-[16px]/[100%] tracking-[10%] text-[14px]/[16.78px]"
-    }`
+    ${isActive
+                      ? "text-white font-[600] xl:text-[20px]/[100%] text-[17px]/[20.48px]"
+                      : "text-white/60 font-[500] xl:text-[16px]/[100%] tracking-[10%] text-[14px]/[16.78px]"
+                    }`
                   }
                 >
                   {navLink.link === pathname ? (
@@ -82,28 +110,34 @@ function Header() {
                 <button
                   onClick={navLink.func}
                   index={index}
-                  className={`flex items-center gap-4 relative cursor-pointer uppercase font-raleway ${
-                    pathname.includes(navLink.title)
-                      ? "text-white font-[600] xl:text-[20px]/[100%] text-[17px]/[20.48px]"
-                      : "text-white/60 font-[500] xl:text-[16px]/[100%] tracking-[10%] text-[14px]/[16.78px]"
-                  }`}
+                  className={`flex items-center gap-4 relative cursor-pointer uppercase font-raleway ${pathname.includes(navLink.title)
+                    ? "text-white font-[600] xl:text-[20px]/[100%] text-[17px]/[20.48px]"
+                    : "text-white/60 font-[500] xl:text-[16px]/[100%] tracking-[10%] text-[14px]/[16.78px]"
+                    }`}
                 >
                   {pathname.includes(navLink.title) ? (
                     <div className="bg-[#FF9966] w-[10px] h-[10px] rounded-full"></div>
                   ) : null}
                   {navLink.title}
+                  {navLink.hasDropdown && (
+                    <img src="/dropdown.svg" alt="Dropdown" className="w-4 h-4 ml-1" />
+                  )}
+
                 </button>
               )}
-              <span className="text-gray-400">/</span>
+              {/* <span className="text-gray-400">/</span> */}
+              <img src="/divider.svg" alt="Divider" />
             </div>
           ))}
 
-          <a href="#" className="text-yellow-400 text-sm">
-            <img src="/solid.png" alt="" className="h-20px w-[100px]" />
+          <a href="#" className="text-yellow-400 shrink-0 text-sm">
+            <img src="/solid.png" alt="" className="h-[20px] w-auto" />
           </a>
           <span className="text-white/60">/</span>
           {/* Contact Button */}
-          <button className="cursor-pointer text-black text-[16px]/[18.78px] bg-white rounded-full font-[700] py-[10px] px-[24px]">
+          <button
+            onClick={scrollToFooter}
+            className="cursor-pointer text-black text-[16px]/[18.78px] bg-white rounded-full font-[700] py-[10px] px-[24px]">
             CONTACT
           </button>
         </nav>
@@ -123,9 +157,8 @@ function Header() {
 
       {/* Mobile Sidebar */}
       <div
-        className={`fixed z-50 top-0 right-0 h-full w-full backdrop-blur-3xl bCK flex flex-col justify-center items-center bg-black text-white p-6 transform ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        } transition-transform duration-300 ease-in-out lg:hidden rounded-l-lg`}
+        className={`fixed z-50 top-0 right-0 h-full w-full backdrop-blur-3xl bCK flex flex-col justify-center items-center bg-black text-white p-6 transform ${isOpen ? "translate-x-0" : "translate-x-full"
+          } transition-transform duration-300 ease-in-out lg:hidden rounded-l-lg`}
         style={{
           background:
             " linear-gradient(to left bottom, #8f644f, #48423f 80%, #4c2a34 )",

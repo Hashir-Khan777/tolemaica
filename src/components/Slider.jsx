@@ -49,6 +49,7 @@ const SliderComponent = ({ cards }) => {
               buttonTextColor={card.buttonTextColor}
               playButton={card.playButton}
               playButtonLink={card.playButtonLink}
+              backgroundImage={card.backgroundImage}
             />
           </SwiperSlide>
         ))}

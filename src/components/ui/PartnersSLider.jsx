@@ -29,9 +29,9 @@ function OurPartnersSlider({ image1, image2, image3, image4 }) {
   return (
     <div className='flex flex-col justify-center items-center gap-[40px] md:gap-[64px]'>
       <Heading1 headingGray="Our" headingWhite="Partners" />
-      <Text>
+      {/* <Text>
       At Tolemaica, we collaborate with leading organizations across industries to provide secure, instant, and legally certified digital solutions. Our trusted partners rely on our <GradientSpan>IAC (Instant Automatic Certification) technology</GradientSpan> to ensure data integrity, security, and compliance with international standards.
-      </Text>
+      </Text> */}
       <div className="slider-container w-[100vw] flex flex-col gap-5">
         <Slider {...settings} >
           {[image1, image2, image3, image4, image1, image2, image3, image4].map((img, index) => (
