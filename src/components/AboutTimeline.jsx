@@ -32,7 +32,7 @@ const DeskTopTimeline = ({ cards }) => {
           <Heading1 headingGray="Tolemaica" headingWhite="Through the Years" />
         </div>
 
-        <div className="flex justify-center items-center gap-[10px]">
+        <div className="about flex justify-center items-center gap-[10px]">
           <button
             className="mt-[200px] cursor-pointer"
             aria-label="Scroll Left"

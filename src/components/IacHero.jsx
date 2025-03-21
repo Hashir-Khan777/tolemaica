@@ -29,7 +29,7 @@ function IacTechHero() {
       </div>
 
       {/* Hero Content (Ensuring it's above the overlay) */}
-      <div className="relative z-10 flex flex-1 justify-center items-center">
+      <div className="relative z-10 flex flex-1">
         <IacHeroCard />
       </div>
     </div>

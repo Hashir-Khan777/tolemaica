@@ -3,7 +3,7 @@ import CustomeBtn from "./CustomeBtn";
 
 const HeroCard = () => {
   return (
-    <div className="w-full max-w-[1200px] md:h-[450px] h-[487px] lg:h-full  border-2 border-white/64 rounded-[24px] backdrop-blur-[10px] p-5 flex md:flex-row flex-col gap-[30px] xl:gap-[100px] justify-center md:justify-between items-center text-center mx-auto bg-gradient-to-br from-white/30 via-transparent to-[#FF9966]/30 py-[100px] px-[24px]">
+    <div className="w-full max-w-[1200px] max-h-[620px] h-full border-2 border-white/64 rounded-[24px] backdrop-blur-[10px] p-5 flex md:flex-row flex-col gap-[30px] xl:gap-[100px] justify-center items-center text-center mx-auto bg-gradient-to-br from-white/30 via-transparent to-[#FF9966]/30 py-[100px] px-[24px]">
       <div>
         <img
           src="/iac.svg"
@@ -14,13 +14,13 @@ const HeroCard = () => {
 
       <div className="flex flex-col md:items-start items-center justify-baseline gap-[10px] md:gap-[24px] md:px-0 px-10">
 
-        <span className="font-raleway font-[500] text-[28px]/[100%] md:text-[50px]/[100%] lg:text-[80px]/[100%] tracking-wide uppercase text-[#FF9966]">
+        <span className="font-raleway font-[500] text-[28px]/[100%] md:text-[50px]/[100%] xl:text-[80px]/[100%] tracking-wide uppercase text-[#FF9966]">
           Instant &
         </span>
-        <span className="font-raleway font-[500] text-[28px]/[100%] md:text-[50px]/[100%] lg:text-[80px]/[100%] tracking-wide uppercase text-white">
+        <span className="font-raleway font-[500] text-[28px]/[100%] md:text-[50px]/[100%] xl:text-[80px]/[100%] tracking-wide uppercase text-white">
           Automatic
         </span>
-        <span className="font-raleway font-[500] text-[28px]/[100%] md:text-[50px]/[100%] lg:text-[80px]/[100%] tracking-wide uppercase text-white">
+        <span className="font-raleway font-[500] text-[28px]/[100%] md:text-[50px]/[100%] xl:text-[80px]/[100%] tracking-wide uppercase text-white">
           Certification
         </span>
 

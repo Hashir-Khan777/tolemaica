@@ -110,7 +110,7 @@ function Header() {
                 <button
                   onClick={navLink.func}
                   index={index}
-                  className={`flex items-center gap-4 relative cursor-pointer uppercase font-raleway ${
+                  className={`flex items-center gap-2 relative cursor-pointer uppercase font-raleway ${
                     pathname.includes(navLink.title)
                       ? "text-white font-[600] xl:text-[20px]/[100%] text-[17px]/[20.48px]"
                       : "text-white/60 font-[500] xl:text-[16px]/[100%] tracking-[10%] text-[14px]/[16.78px]"
@@ -124,7 +124,7 @@ function Header() {
                     <img
                       src="/dropdown.svg"
                       alt="Dropdown"
-                      className="w-4 h-4 ml-1"
+                      className="w-4 h-4"
                     />
                   )}
                 </button>
@@ -141,7 +141,7 @@ function Header() {
           >
             <img src="/solid.png" alt="" className="h-[20px] w-auto" />
           </a>
-          <span className="text-white/60">/</span>
+          {/* <span className="text-white/60">/</span> */}
           {/* Contact Button */}
           <button
             onClick={scrollToFooter}

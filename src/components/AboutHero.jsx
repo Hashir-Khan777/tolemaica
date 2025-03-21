@@ -20,7 +20,7 @@ function AboutHero() {
         >
           <div className="max-w-[1000px] flex flex-col gap-[30px] lg:gap-[77px]">
             {/* Dynamic Heading */}
-            <h1 className=" font-raleway text-white text-center tracking-[5%] font-[400] capitalize text-[28px]/[32px] sm:text-[36px]/[42px] md:text-[48px]/[54px] lg:text-[64px]/[75.53px]">
+            <h1 className=" font-raleway text-white text-center tracking-[5%] font-[400] capitalize xl:text-[64px]/[75.53px] text-[36px]/[42px]">
               Brilliant{" "}
               <span className="px-1 bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
                 Minds, Bold <br /> Visions

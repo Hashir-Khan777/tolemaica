@@ -20,7 +20,7 @@ function ServiceHero({ title, gradientTitle, text, gradientText }) {
           <div className="flex flex-col gap-[64px] lg:gap-[100px]">
             {/* Dynamic Heading */}
             <div className="mx-auto ">
-              <h1 className="lg:w-[940px] mx-auto font-raleway text-white font-[400] capitalize text-[28px]/[120%]  md:text-[48px] lg:text-[60px] text-center">
+              <h1 className="lg:w-[940px] mx-auto font-raleway text-white font-[400] capitalize text-[28px]/[120%]  md:text-[48px] xl:text-[60px] text-center">
                 {title}
                 {/* Gradient heading */}
                 {" "}<span className="bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
@@ -32,7 +32,7 @@ function ServiceHero({ title, gradientTitle, text, gradientText }) {
             {/* Dynamic Paragraph */}
             <p
               className="lg:w-[773px] w-[231px] sm:w-[70%] mx-auto font-raleway text-white/64 text-center font-[400] capitalize tracking-[5%] 
-        text-[16px]/[100%] sm:text-[24px]/[100%] md:text-[30px]/[100%] lg:text-[40px]/[100%]"
+        text-[16px]/[100%] sm:text-[24px]/[100%] md:text-[30px]/[100%] xl:text-[40px]/[100%]"
             >
               {text}
               {/* Gradient text */}

@@ -4,7 +4,7 @@
 @import "tailwindcss";
 
 @theme {
-  --breakpoint-lg: 1440px;
+  --breakpoint-lg: 1400px;
 }
 
 .font-raleway {
@@ -168,6 +168,10 @@
 
 .checkbox:checked ~ .checkmark::after {
   display: block;
+}
+
+.about > .swiper {
+  width: 1280px;
 }
 
 /* @keyframes scrollLeft {
