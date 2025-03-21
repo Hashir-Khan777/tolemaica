@@ -54,7 +54,7 @@ function Hero() {
             {/* Dynamic Heading */}
             <div className="mx-auto max-w-[1000px] flex flex-col gap-[24px]">
               <p className="font-raleway text-[28px]/[100%] text-center uppercase text-white/64">We Provide</p>
-              <h1 className=" font-raleway  leading-[85px] text-center font-[400] capitalize text-[28px] sm:text-[36px] md:text-[48px] lg:text-[80px]   text-white">
+              <h1 className=" font-raleway text-center font-[400] capitalize text-[28px] sm:text-[36px] md:text-[48px] lg:text-[80px]   text-white">
                 <span className="text-[#FF9966]">instant &</span>{" "}automatic certifications
               </h1>
               <p className="font-raleway text-[28px]/[120%] text-center uppercase text-white/64">
