@@ -42,30 +42,35 @@ const ServiceModal = ({ modalIsOpen, closeModal }) => {
           <Link
             className="h-[55px] md:h-[77px] rounded-full border-[3px] text-white border-white flex justify-center items-center font-raleway font-medium md:text-[40px]"
             to="/services/data-click"
+            onClick={closeModal}
           >
             DATACLICK
           </Link>
           <Link
             className="h-[55px] md:h-[77px] rounded-full border-[3px] text-white border-[#FF9966] flex justify-center items-center font-raleway font-medium md:text-[40px]"
             to="/services/legal-click"
+            onClick={closeModal}
           >
             LEGALCLICK
           </Link>
           <Link
             className="h-[55px] md:h-[77px] rounded-full border-[3px] text-[#FF9966] border-white flex justify-center items-center font-raleway font-medium md:text-[40px]"
             to="/services/legal-check"
+            onClick={closeModal}
           >
             LEGALCHECK
           </Link>
           <Link
             className="h-[55px] md:h-[77px] rounded-full border-[3px] text-white border-[#FF9966] flex justify-center items-center font-raleway font-medium md:text-[40px]"
             to="/services/BarCertCode"
+            onClick={closeModal}
           >
             BARCERTCODE
           </Link>
           <Link
             className="h-[55px] md:h-[77px] rounded-full border-[3px] text-[#FF9966] border-white flex justify-center items-center font-raleway font-medium md:text-[40px]"
             to="/services/QrCertCode"
+            onClick={closeModal}
           >
             QRCERTCODE
           </Link>
