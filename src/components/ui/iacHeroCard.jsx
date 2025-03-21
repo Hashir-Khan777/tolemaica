@@ -3,7 +3,7 @@ import CustomeBtn from "./CustomeBtn";
 
 const HeroCard = () => {
   return (
-    <div className="w-[100%] max-w-[1200px] min-h-[400px] lg:h-[620px]  border-2 border-white/64 rounded-[24px] backdrop-blur-[10px] p-5 flex md:flex-row flex-col gap-[30px] xl:gap-[100px] justify-center md:justify-between items-center text-center mx-auto bg-gradient-to-br from-white/30 via-transparent to-[#FF9966]/30 lg:px-[64px]">
+    <div className="w-full max-w-[1200px] md:h-[450px] h-[487px] lg:h-full  border-2 border-white/64 rounded-[24px] backdrop-blur-[10px] p-5 flex md:flex-row flex-col gap-[30px] xl:gap-[100px] justify-center md:justify-between items-center text-center mx-auto bg-gradient-to-br from-white/30 via-transparent to-[#FF9966]/30 py-[100px] px-[24px]">
       <div>
         <img
           src="/iac.svg"

@@ -45,7 +45,7 @@ function Hero() {
         <Header />
       </div>
 
-      <div className="mx-auto flex flex-1 justify-center items-center">
+      <div className="mx-auto w-full max-w-[1200px] flex flex-1 justify-center items-center">
         <div
           className="z-10 w-[100%] max-w-[1200px] md:h-[620px] h-[587px] border-[2px] border-white/64 rounded-[24px] backdrop-blur-[16px] flex flex-col justify-center items-center text-center py-[100px] px-[24px]"
           style={{ background: "rgba(255, 255, 255, 0.04)" }}

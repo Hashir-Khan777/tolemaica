@@ -4,7 +4,7 @@ import Header from "../components/Header";
 function ServiceHero({ title, gradientTitle, text, gradientText }) {
   return (
     <div
-      className="relative w-full min-h-screen pb-[100px] flex flex-col items-center md:gap-[64px] gap-[40px] bg-cover bg-center bg-no-repeat lg:px-[100px]  md:px-[50px] px-[20px]"
+      className="relative w-full h-screen flex flex-col items-center bg-cover bg-center bg-no-repeat lg:px-[100px]  md:px-[50px] px-[20px]"
       style={{ backgroundImage: 'url("/images/servicesBg.png")' }}
     >
       {/* Navbar */}
@@ -12,7 +12,7 @@ function ServiceHero({ title, gradientTitle, text, gradientText }) {
         <Header />
       </div>
 
-      <div className="flex flex-1 justify-center items-center">
+      <div className="flex flex-1 w-full max-w-[1200px] justify-center items-center">
         <div
           className="z-10 w-[100%] max-w-[1200px] lg:w-[1200px] md:h-[620px] h-[434px] border-[2px] border-white/64 rounded-[12px] md:rounded-[24px] backdrop-blur-[16px] flex flex-col  justify-center items-center text-center mx-auto py-[100px] px-[24px]"
           style={{ background: "rgba(255, 255, 255, 0.04)" }}

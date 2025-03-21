@@ -133,7 +133,7 @@ function DataClickSecton() {
 
           {/* ==== Cards ==== */}
           <div className="w-full ">
-            <div className="hidden md:grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-[24px]">
+            <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-[24px] place-items-center">
               {cardsData.map((card, index) => (
                 <Card3 key={index} {...card} />
               ))}

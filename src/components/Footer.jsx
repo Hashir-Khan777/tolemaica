@@ -17,7 +17,7 @@ function Footer() {
       />
       <div className="bg-gradient-to-r from-black/[95%] from-50% to-black/[70%] relative">
         <div className="py-8 px-[20px] md:px-[100px]">
-          <div className="flex flex-wrap justify-between text-white">
+          <div className="flex flex-col lg:flex-row justify-between text-white">
             <div className="max-w-[400px] w-full flex flex-col font-outfit">
               <h2 className="uppercase font-outfit font-[600] text-xl mb-[55px]">
                 Join our newsletter
@@ -78,7 +78,7 @@ function Footer() {
                 <img src="/images/snapchat.svg" />
               </div> */}
             </div>
-            <div className="max-w-[680px] w-full flex flex-col mt-8 md:mt-0">
+            <div className="max-w-[680px] w-full flex flex-col mt-8 lg:mt-0">
               <h2 className="uppercase font-raleway font-medium text-[40px]">
                 Contact us
               </h2>
@@ -111,7 +111,12 @@ function Footer() {
                     Case Study
                   </button> */}
                   <Link to="/iac-tech">IAC Tech</Link>
-                  <a href="https://ddeluca4.wixsite.com/solid-srl" target="_blank">Solid</a>
+                  <a
+                    href="https://ddeluca4.wixsite.com/solid-srl"
+                    target="_blank"
+                  >
+                    Solid
+                  </a>
                 </div>
               </div>
             </div>
