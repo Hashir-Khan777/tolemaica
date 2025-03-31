@@ -107,7 +107,7 @@ const ServiceSlider1 = ({ cards }) => {
                                         }}
                                     >
                                         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
-                                        <p className="z-10 text-[48px]/[100%] font-raleway font-[700] tracking-widest text-white text-center font-outfit uppercase flex flex-col">
+                                        <p className="z-10 g:text-3xl text-2xl font-bold tracking-wide text-white text-center font-outfit uppercase">
 
                                             <span className="bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
                                                 tailored

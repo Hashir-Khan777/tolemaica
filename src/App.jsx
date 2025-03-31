@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import Footer from "./components/Footer";
 import { Outlet, useLocation } from "react-router-dom";
+import './mycss.css';
 
 const App = () => {
   const { pathname } = useLocation();

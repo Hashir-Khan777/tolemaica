@@ -48,6 +48,8 @@ function BankingSectorSection() {
         autoPlay
         loop
         muted
+        playsInline
+        webkit-playsinline
         className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
         style={{ filter: "blur(40px)" }}
       ></video>
@@ -131,7 +133,7 @@ function BankingSectorSection() {
         </h1>
         <div className="text-white gap-[64px] hidden lg:flex">
           {impacts.map((impact, index) => (
-            <div className="relative flex-1 opacity-30">
+            <div className="relative flex-1 lg:opacity-30 hover:opacity-100">
               <h1 className="mb-8 font-outfit font-light text-2xl text-center py-2 px-16 border border-[#FF9966] rounded-full bg-gradient-to-r from-[#7C7C7C] to-[#2D2D2D]">
                 {impact.heading}
               </h1>
@@ -408,7 +410,7 @@ function BankingSectorSection() {
           <div className="flex flex-col w-full lg:flex-row justify-center items-center gap-4">
             <div className="w-full max-w-4xl mx-auto flex flex-row justify-center items-center">
               {/* Desktop View */}
-              <div className="hidden w-full md:flex flex-col justify-center items-center text-white lg:w-[856px] md:w-[60%] md:h-[450px] border-[2px] border-white/64 rounded-[15px] px-[16px] py-[32px]">
+              <div className="hidden w-full md:flex flex-col justify-center items-center text-white lg:w-[856px] md:w-[856px] md:h-[450px] border-[2px] border-white/64 rounded-[15px] px-[16px] py-[32px]">
                 <div className=" flex flex-row justify-between items-center lg:w-[792px] w-full mx-auto  text-center px-[50px] ">
                   <span className="w-[132px] text-[64px]/[100%] font-[400] font-outfit  text-orange-200 mb-6">
                     1

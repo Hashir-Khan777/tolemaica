@@ -44,32 +44,32 @@ const ResultsSection = ({ data }) => {
         "Containers Experience Damage Or Tampering, Impacting Efficiency.",
     },
     {
-      value: "5",
+      value: "7",
       operator: "%",
       description: "Shipments Face Claims, Often Unrelated To Reported Damage.",
     },
     {
-      value: "2-4",
+      value: "5",
       operator: "%",
       description:
         "Shipments Require Overseas Verification; Digital Proof Ensures Compliance.",
     },
     {
-      value: "€9.6",
-      operator: "M",
-      description: "Annual Savings With Full Process Automation.",
+      value: "50",
+      operator: "%",
+      description: "Reduction in manual dispute resolution efforts due to automation.",
     },
     {
-      value: "€1.6",
-      operator: "M",
+      value: "60",
+      operator: "%",
       description:
-        "Additional Yearly Profit By Passing Certification Costs To Shippers.",
+        "Decrease in administrative costs per dispute resolution case.",
     },
     {
-      value: "5",
-      operator: "hrs",
+      value: "40",
+      operator: "%",
       description:
-        "Reduction In Claim Resolution Time Per Case, Minimizing Delays.",
+        "improvement in operational efficiency with full process automation.",
     },
   ];
 

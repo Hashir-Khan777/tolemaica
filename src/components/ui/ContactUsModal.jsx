@@ -26,6 +26,35 @@ const customStyles = {
 
 const ContactUsModal = ({ modalIsOpen, closeModal }) => {
   const [thanksModalIsOpen, setThanksModalIsOpen] = useState(false);
+  const [mobile, setMobile] = useState("");
+  const [email, setEmail] = useState("");
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleSubmit = async () => {
+    if (!mobile || !email || !isChecked) {
+      alert("Please fill in all fields and agree to the terms.");
+      return;
+    }
+
+    try {
+      const response = await fetch("https://www.tolemaica.it/subscribe.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ mobile, email }),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setThanksModalIsOpen(true);
+      } else {
+        alert(result.message);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
+  };
 
   return (
     <Modal
@@ -52,34 +81,30 @@ const ContactUsModal = ({ modalIsOpen, closeModal }) => {
             <input
               placeholder="Mobile"
               className="border-[1.5px] border-white rounded-full max-w-[400px] placeholder:text-white px-6 py-3 mb-4"
+              value={mobile}
+              onChange={(e) => setMobile(e.target.value)}
             />
             <input
               placeholder="Email"
               className="border border-white rounded-full max-w-[400px] placeholder:text-white px-6 py-3"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <button
-              onClick={() => setThanksModalIsOpen(true)}
+              onClick={handleSubmit}
               className="button max-w-[400px] h-[47px] px-[30px] sm:px-[40px] md:px-[100px] lg:px-[100px] border-2 border-[#FF9966] bg-white/10 opacity-55 text-[#FF9966] rounded-full text-sm sm:text-lg lg:text-[20px]/[23.48px] font-[700] cursor-pointer mt-8 mb-6"
             >
               REGISTER
             </button>
-            <label
-              for="link-checkbox-2"
-              className="text-sm font-medium text-white/64"
-            >
+            <label className="text-sm font-medium text-white/64">
               <div className="flex items-center gap-[4px]">
-                <div className="relative w-[16px] h-[16px]">
-                  <input
-                    id="link-checkbox-2"
-                    type="checkbox"
-                    className="absolute w-full h-full opacity-0 checkbox"
-                  />
-                  <span className="absolute w-[16px] h-[16px] border border-white rounded-[2px] bg-white/20 checkmark" />
-                </div>
-                I agree to the{" "}
-                <Link to="/" className="underline">
-                  Terms & Conditions
-                </Link>
+                <input
+                  type="checkbox"
+                  className="w-[16px] h-[16px] border border-white rounded-[2px] bg-white/20"
+                  checked={isChecked}
+                  onChange={() => setIsChecked(!isChecked)}
+                />
+                I agree to the <Link to="/" className="underline">Terms & Conditions</Link>
               </div>
             </label>
           </div>

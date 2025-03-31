@@ -15,11 +15,11 @@ const SkyItalia = () => {
       operator: "%",
       description: "Reduction in Legal Disputes",
     },
-    {
-      value: "€1.5",
-      operator: "M",
-      description: "Eliminated in Legal Costs",
-    },
+    // {
+    //   value: "€1.5",
+    //   operator: "M",
+    //   description: "Eliminated in Legal Costs",
+    // },
     {
       value: "2",
       operator: "X",
@@ -41,7 +41,7 @@ const SkyItalia = () => {
       heading: "BEFORE",
       points: [
         "500 per year",
-        "1.5M annually",
+        "Legal Disputes",
         "1x (baseline)",
         "Weak",
         "High",
@@ -49,7 +49,7 @@ const SkyItalia = () => {
     },
     {
       heading: "AFTER",
-      points: ["2 per year", "Near 0", "2x (100% increase)", "Strong", "Low"],
+      points: ["2 per year", "99.6%", "2x (100% increase)", "Strong", "Low"],
     },
     {
       heading: "IMPACT",
@@ -98,11 +98,13 @@ const SkyItalia = () => {
           autoPlay
           loop
           muted
+          playsInline
+          webkit-playsinline
           className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
           style={{ filter: "blur(40px)" }}
         />
         <div className="max-w-[1280px] relative z-10 py-[100px] px-[20px] md:px-auto mx-auto">
-          <h1 className="text-center font-raleway text-white font-normal text-xl md:text-[40px] mb-[48px]">
+          <h1 className="text-center font-raleway text-white font-normal text-xl md:text-[40px] my-[48px]">
             <span className="text-white/[0.64]">THE</span> CHALLENGE
           </h1>
           <div className="flex flex-col gap-[48px] font-outfit font-light text-base md:text-2xl text-white/[0.64] text-center mb-[50px]">
@@ -185,7 +187,7 @@ const SkyItalia = () => {
             <span className="text-white/[0.64]">THE</span> RESULTS
           </h1>
           <div>
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-2 gap-0">
               {defaultData.map((item, index) => (
                 <div key={index} className="flex flex-col items-center">
                   {renderResultItem(item)}

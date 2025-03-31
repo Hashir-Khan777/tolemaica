@@ -7,7 +7,7 @@ const MSCShipping = () => {
     <section>
       <UseCaseHero
         title="Use case"
-        page="msc shipping"
+        page="Containers and Shipping"
         text="Certified Digital Solution for"
         gradientText="Secure Container Entry & Exit"
         // secondtext="for Financial Institutions"

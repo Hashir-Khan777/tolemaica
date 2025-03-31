@@ -6,7 +6,7 @@ function AboutHero() {
   return (
     <div
       className="relative w-full h-screen flex flex-col items-start justify-start bg-cover bg-center bg-no-repeat lg:px-[100px] md:px-[50px] px-[20px]"
-      style={{ backgroundImage: 'url("/aboutBg.png")' }}
+      style={{ backgroundImage: 'url("/aboutBG.jpg")' }}
     >
       {/* Navbar */}
       <div className="w-full md:pt-[40px]">
@@ -23,9 +23,9 @@ function AboutHero() {
             <h1 className=" font-raleway text-white text-center tracking-[5%] font-[400] capitalize xl:text-[64px]/[75.53px] text-[36px]/[42px]">
               Brilliant{" "}
               <span className="px-1 bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-                Minds, Bold <br /> Visions
+                Minds, Bold <br /> Visions, 
               </span>
-              One
+               One
               {/* Gradient heading */}
               <span className="px-1 bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
                 Mission

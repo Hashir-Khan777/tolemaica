@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "tolemaicaweb"
-  }
+    "default": "tolemaicaweb",
+    "staging": "tolemaica-qa"
+  },
+  "targets": {},
+  "etags": {}
 }

@@ -71,7 +71,7 @@ const DeskTopTimeline = ({ cards }) => {
                       <h1 className="whitespace-nowrap bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent font-Outfit text-[64px] font-[400] uppercase tracking-[5%]">
                         {card.year}
                       </h1>
-                      <h3 className="w-[164px] text-white font-Outfit font-[300] text-[24px] tracking-[5%] capitalize text-wrap">
+                      <h3 className="w-[180px] text-white font-Outfit font-[300] text-[24px] tracking-[5%] capitalize text-wrap">
                         {card.title}
                       </h3>
                     </div>

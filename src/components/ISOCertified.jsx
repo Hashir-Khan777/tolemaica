@@ -46,8 +46,9 @@ const ISOSection = () => {
         </Text>
 
         {/* Certification Cards */}
-        <div className="mt-8 grid md:grid-cols-3 grid-cols-2 justify-center items-center gap-[24px]">
-          {/* {certifications.map((cert, index) => (
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[24px] w-full ">
+          {/* mt-8 grid md:grid-cols-3 grid-cols-2 justify-center items-center gap-[24px]
+          {certifications.map((cert, index) => (
                         <div key={index} className="w-full max-w-[280px] p-4 bg-[#151515] border border-gray-600 rounded-xl shadow-lg flex flex-col items-center">
                             <img src={cert.src} alt={cert.title} className="rounded-md w-48 h-28 object-contain" />
                             <h3 className="mt-3 text-lg font-semibold">{cert.title}</h3>
@@ -76,7 +77,7 @@ const ISOSection = () => {
           <GradientSpan>commitment to compliance</GradientSpan> is further
           supported by funding from:
         </Text>
-        <div className="mt-8 grid md:grid-cols-3 grid-cols-2 justify-center items-center gap-[24px]">
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[24px] w-full">
           <img
             src="/iso4.svg"
             alt="Iso Certification"
