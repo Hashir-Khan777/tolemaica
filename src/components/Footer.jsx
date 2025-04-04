@@ -111,6 +111,7 @@ function Footer() {
                     Case Study
                   </button> */}
                   <Link to="/iac-tech">IAC Tech</Link>
+                  <Link to="/our-work">Work</Link>
                   <a
                     href="https://ddeluca4.wixsite.com/solid-srl"
                     target="_blank"

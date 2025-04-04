@@ -108,8 +108,8 @@ const ContactUsModal = ({ modalIsOpen, closeModal }) => {
               </div>
             </label>
           </div>
-          <div className="flex flex-col md:mt-8">
-            <div className="flex flex-col flex-wrap justify-between font-outfit my-[48px]">
+          <div className="flex flex-col sm:mt-8">
+            <div className="flex flex-col flex-wrap justify-between font-outfit mb-[48px]">
               <p className="max-w-[300px] w-full font-[400] md:text-2xl text-white/[64%]">
                 TolemaicaVia San Tommaso d’Aquino n.6780 133 Napoli
                 (NA)info@tolemaica.itP.IVA 08113661212
