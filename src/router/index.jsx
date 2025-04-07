@@ -13,12 +13,16 @@ import BarCertCode from "../pages/BarCertCode.jsx";
 import About from "../pages/About.jsx";
 import IacTech from "../pages/IacTech.jsx";
 import MSCShipping from "../pages/MSCShipping.jsx";
+import InsuranceSector from "../pages/InsuranceSector.jsx";
+import ConstructionSector from "../pages/ConstructionSector.jsx";
+import AerospaceLogistics from "../pages/AerospaceLogistics.jsx";
 import App from "../App.jsx";
 import SkyItalia from "../pages/SkyItalia.jsx";
 import BankingSector from "../pages/BankingSector.jsx";
 import PrivacyPolicy from "../pages/Privacy.jsx";
 import CookiesPolicy from "../pages/Cookies.jsx";
 import PolicyLayout from "../PolicyLayout.jsx";
+import OurWork from "../pages/OurWork.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -33,11 +37,17 @@ const router = createBrowserRouter(
         <Route path="QrCertCode" element={<QrCertCode />} />
         <Route path="BarCertCode" element={<BarCertCode />} />
       </Route>
-      <Route path="/work">
+      <Route path="our-work" element={<OurWork />}  />
         <Route path="msc-shipping" element={<MSCShipping />} />
         <Route path="sky-italia" element={<SkyItalia />} />
         <Route path="banking-sector" element={<BankingSector />} />
-      </Route>
+         <Route path="insurance-sector" element={<InsuranceSector />} />
+      <Route path="construction-sector" element={<ConstructionSector />} />
+        <Route path="aerospace-logistics" element={<AerospaceLogistics />} /> 
+     
+      {/* <Route path="/work">
+        
+      </Route> */}
       <Route
         path="/privacy"
         element={

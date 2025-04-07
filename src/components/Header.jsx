@@ -19,13 +19,16 @@ function Header() {
       func: () => setModalIsOpen(true),
       hasDropdown: true,
     },
-    // {
-    //   title: "case  study",
-    //   func: () => setWorkModalIsOpen(true),
-    // },
+   
     {
       title: "IAC Tech",
       link: "/iac-tech",
+    },
+    {
+      title: "Work",
+      //func: () => setWorkModalIsOpen(true),
+     // hasDropdown: true,
+      link: "/our-work",
     },
     {
       title: "About",
@@ -211,6 +214,12 @@ function Header() {
             to="/iac-tech"
           >
             iac tech
+          </Link>
+          <Link
+            className="h-[52px] w-[300px] rounded-full border-[2.1px] text-[#FF9966] border-white flex justify-center items-center font-raleway font-medium md:text-[20px]/[100%] py-[12px] px-[40px] uppercase"
+            to="/our-work"
+          >
+            Work
           </Link>
           <Link
             className="h-[52px] w-[300px] rounded-full border-[2.1px] text-white border-[#FF9966] flex justify-center items-center font-raleway font-medium md:text-[20px]/[100%] py-[12px] px-[40px] uppercase"

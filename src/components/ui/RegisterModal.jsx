@@ -27,7 +27,40 @@ const customStyles = {
 
 const RegisterModal = ({ modalIsOpen, closeModal }) => {
   const [thanksModalIsOpen, setThanksModalIsOpen] = useState(false);
-  const [value, setValue] = useState();
+  const [mobile, setValue] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState(""); // Store error message
+  const [success, setSuccess] = useState("");
+
+  const handleSubmit = async () => {
+    setError(""); // Reset error before API call
+    setSuccess("");
+  
+    try {
+      const response = await fetch("https://www.tolemaica.it/api.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" }, // Ensure JSON format
+        body: JSON.stringify({ name, email, mobile, message }),
+      });
+  
+      const result = await response.json(); // Parse JSON response
+  
+      if (!response.ok) {
+        console.error("Error response:", result); // Log error response in console
+        throw new Error(result.message || "Failed to register. Please try again.");
+      }
+  
+      console.log("Success:", result); // Log success response
+      setSuccess("Registration successful!");
+      setThanksModalIsOpen(true);
+    } catch (err) {
+      console.error("API Error:", err); // Log error in console
+      setError(err.message || "Something went wrong!"); // Display error message in UI
+    }
+  };
+  
 
   return (
     <Modal
@@ -45,36 +78,38 @@ const RegisterModal = ({ modalIsOpen, closeModal }) => {
         />
         <div className="max-w-[516px] mx-auto flex flex-col items-center">
           <input
-            placeholder="Mobile"
+            placeholder="Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             className="border-[1.5px] border-white text-white rounded-full w-full placeholder:text-white px-6 py-3 mb-6"
           />
           <input
             placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             className="border border-white text-white rounded-full w-full placeholder:text-white px-6 py-3 mb-6"
           />
           <PhoneInput
             placeholder="Mobile"
             international
             defaultCountry="US"
-            value={value}
+            value={mobile}
             onChange={setValue}
-            countrySelectProps={{
-              style: {
-                color: "#000",
-              },
-            }}
             className="border border-white rounded-full w-full placeholder:text-white text-white px-6 py-3 mb-6"
           />
-          {/* <input
-            placeholder="Number"
-            className="border border-white rounded-full w-full placeholder:text-white px-6 py-3 mb-6"
-          /> */}
           <textarea
             placeholder="Message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
             className="border border-white text-white rounded-[16px] w-full h-[148px] placeholder:text-white px-6 py-3"
           />
+
+          {/* Show Error or Success Message */}
+          {error && <p className="text-red-500 mt-2">{error}</p>}
+          {success && <p className="text-green-500 mt-2">{success}</p>}
+
           <button
-            onClick={() => setThanksModalIsOpen(true)}
+            onClick={handleSubmit}
             className="button w-full md:max-w-[400px] h-[47px] px-[30px] sm:px-[40px] md:px-[100px] lg:px-[100px] border-2 border-[#FF9966] bg-white/10 opacity-55 text-[#FF9966] rounded-full text-sm sm:text-lg lg:text-[20px]/[23.48px] font-[700] cursor-pointer mt-12 mb-[100px]"
           >
             REGISTER

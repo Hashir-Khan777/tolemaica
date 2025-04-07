@@ -1,0 +1,32 @@
+.text-right {
+    text-align: right;
+  }
+.readMore {
+    display: flex;
+    padding: 17.218px 19.131px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 7.652px;
+border: 2px solid #F96;
+opacity: 0.3;
+background: linear-gradient(90deg, rgba(153, 9, 57, 0.24) 0%, rgba(200, 74, 1, 0.24) 99.83%);
+max-width:200px;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 1px;
+text-transform: capitalize;
+}
+@media (max-width: 640px) {
+    .video-container {
+        height: 300px;
+    }
+    .readMore {
+    max-width: auto;
+  margin: auto;
+    margin-top: auto;
+  margin-top: 24px;
+}
+}

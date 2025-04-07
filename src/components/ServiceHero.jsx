@@ -5,7 +5,7 @@ function ServiceHero({ title, gradientTitle, text, gradientText }) {
   return (
     <div
       className="relative w-full h-screen flex flex-col items-center bg-cover bg-center bg-no-repeat lg:px-[100px]  md:px-[50px] px-[20px]"
-      style={{ backgroundImage: 'url("/images/servicesBg.png")' }}
+      style={{ backgroundImage: 'url("/images/servicesBg.jpg")' }}
     >
       {/* Navbar */}
       <div className="w-full md:pt-[40px]">

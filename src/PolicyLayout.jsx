@@ -61,6 +61,8 @@ const PolicyLayout = ({ children }) => {
         autoPlay
         loop
         muted
+        playsInline
+        webkit-playsinline
         className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
         style={{ filter: "blur(40px)" }}
       ></video>

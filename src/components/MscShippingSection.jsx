@@ -17,25 +17,23 @@ function MSCShippingSection() {
         autoPlay
         loop
         muted
+        playsInline
+        webkit-playsinline
         className="absolute inset-0 w-[150%] h-[130%] object-cover z-0 pointer-events-none"
         style={{ filter: "blur(40px)" }}
       ></video>
 
       {/* <div className="md:container px-[20px] md:px-auto mx-auto"> */}
       <div className="relative max-w-[1280px] mx-auto z-10">
-        <h1 className="text-center font-raleway text-white font-normal text-xl md:text-[40px] mb-[48px]">
+        <h1 className="text-center font-raleway text-white font-normal text-xl md:text-[40px] my-[48px]">
           <span className="text-white/[0.64]">THE</span> CHALLENGE
         </h1>
-        <div className="flex flex-col gap-[48px] font-outfit font-light text-base md:text-2xl text-white/[0.64] text-center mb-[50px]">
-          <p>
-            Sky Italia offers TV subscriptions for both private users(Family) &
-            businesses (Business). Business plans cost over twice as much as
-            Family plans, but some commercial venues misused the cheaper Family
-            plan to broadcast sports events.
+        <div className="flex flex-col gap-[48px] font-outfit font-light text-base md:text-2xl text-white/[0.64] text-center mb-[50px] sm:px-[20px]">
+          <p className="px-[20px] bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">  
+          Container Entry & Exit Process
           </p>
-          <p>
-            Sky Italia relied on on-site inspections to detect violations, but
-            enforcement faced legal challenges:
+          <p className="px-[20px]">
+          Clients frequently file complaints regarding the condition of goods inside containers, leading to disputes between shippers and consignees. Common issues include:
           </p>
         </div>
         <div className="flex flex-col gap-[50px]">

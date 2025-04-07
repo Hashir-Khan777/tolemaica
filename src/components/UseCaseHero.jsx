@@ -48,17 +48,17 @@ const UseCaseHero = ({
           ></div>
           <div className="flex flex-col gap-[32px]">
             <div className="max-w-[894px] mx-auto">
-              <h1 className="bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent font-raleway font-normal text-2xl text-center">
+              <h1 className="uppercase bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent font-raleway font-normal text-2xl text-center">
                 <span className="px-10">{title}</span>
               </h1>
-              <h1 className="font-raleway text-white text-center font-[400] capitalize text-[28px] sm:text-[36px] md:text-[40px]">
-                <span className="px-10">{page}</span>
+              <h1 className="uppercase font-raleway text-white text-center font-[400] capitalize text-[28px] sm:text-[36px] md:text-[40px]">
+                <span className="">{page}</span>
               </h1>
             </div>
             <div className="h-0.5 bg-white/[0.2] w-[90%] mx-auto" />
             <p
               className="z-999 font-raleway text-white text-center font-[400] capitalize tracking-[5%] 
-      text-[30px]/[100%] md:text-[40px]/[100%] lg:text-[72px]/[100%] md:mx-[32px]"
+      text-[30px]/[100%] md:text-[40px]/[100%] lg:text-[72px]/[100%] md:mx-[32px] lg:px-[100px] lg:py-0"
             >
               {text}
               <span className="bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">

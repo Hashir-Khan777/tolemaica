@@ -7,6 +7,7 @@ import RegisterModal from "./ui/RegisterModal";
 function Hero() {
   const [contactModalIsOpen, setContactModalIsOpen] = useState(false);
   const [registerModalIsOpen, setRegisterModalIsOpen] = useState(false);
+  
 
   const scrollToFooter = () => {
     // If on a different page, first navigate to the page with the footer
@@ -36,6 +37,8 @@ function Hero() {
         autoPlay
         loop
         muted
+        playsInline
+        webkit-playsinline
         className="absolute  inset-0 w-full h-full object-cover z-0 pointer-events-none"
       ></video>
       {/* Navbar */}
@@ -68,8 +71,10 @@ function Hero() {
             </div>
 
             <button
-              onClick={scrollToFooter}
-              className="md:max-w-[350px] whitespace-nowrap md:h-[63px] h-[47px] w-[200px] md:w-full flex justify-center items-center cursor-pointer px-[48px] py-[14px] sm:py-3 md:py-[20px] md:px-[100px] border-2 border-white text-black bg-white rounded-full text-[16px]/[18.78px] lg:text-[20px]/[23.48px] font-[700]font-raleway"
+              // onClick={scrollToFooter}
+              //onClick={() => setRegisterModalIsOpen(true)}
+              onClick={() => setContactModalIsOpen(true)}
+              className="md:max-w-[350px] whitespace-nowrap md:h-[63px] h-[47px] w-[200px] md:w-full flex justify-center items-center cursor-pointer px-[48px] py-[14px] sm:py-3 md:py-[20px] md:px-[100px] border-2 border-white text-black bg-white rounded-full text-[16px]/[18.78px] lg:text-[20px]/[23.48px] font-[700] font-raleway"
             >
               CONTACT US
             </button>
@@ -83,6 +88,10 @@ function Hero() {
                   <HeroCard key={index} {...card} />
               ))}
           </div> */}
+          <ContactUsModal
+        modalIsOpen={contactModalIsOpen}
+        closeModal={() => setContactModalIsOpen(false)}
+      />
     </div>
   );
 }
