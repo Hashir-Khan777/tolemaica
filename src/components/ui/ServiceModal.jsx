@@ -14,7 +14,7 @@ const customStyles = {
     backdropFilter: "blur(19.64px)",
     border: "2.4px solid rgba(255, 255, 255, 0.64)",
     borderRadius: "24px",
-    width: "70%",
+    width: "95%",
     overflow: "hidden",
   },
   overlay: {
