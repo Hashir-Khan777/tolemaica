@@ -16,6 +16,7 @@ const customStyles = {
     border: "2.4px solid rgba(255, 255, 255, 0.64)",
     borderRadius: "24px",
     width: "70%",
+    height: "80%",
     overflow: "hidden",
   },
   overlay: {
@@ -73,7 +74,7 @@ const ContactUsModal = ({ modalIsOpen, closeModal }) => {
         <h1 className="font-raleway font-normal text-[25px] md:text-[32px] text-white/64 text-center mb-[32px] md:mb-[64px]">
           Thank You for choosing <span className="text-white">Tolemaica</span>
         </h1>
-        <div className="flex flex-wrap justify-center text-white mx-auto md:gap-[120px]">
+        <div className="flex flex-wrap justify-center items-start text-white mx-auto md:gap-[120px]">
           <div className="max-w-[400px] w-full flex flex-col font-outfit">
             <h2 className="uppercase font-outfit font-[600] text-xl mb-[20px] md:mb-[55px]">
               Join our newsletter
@@ -104,11 +105,14 @@ const ContactUsModal = ({ modalIsOpen, closeModal }) => {
                   checked={isChecked}
                   onChange={() => setIsChecked(!isChecked)}
                 />
-                I agree to the <Link to="/" className="underline">Terms & Conditions</Link>
+                I agree to the{" "}
+                <Link to="/" className="underline">
+                  Terms & Conditions
+                </Link>
               </div>
             </label>
           </div>
-          <div className="flex flex-col sm:mt-8">
+          <div className="flex flex-col">
             <div className="flex flex-col flex-wrap justify-between font-outfit mb-[48px]">
               <p className="max-w-[300px] w-full font-[400] md:text-2xl text-white/[64%]">
                 TolemaicaVia San Tommaso d’Aquino n.6780 133 Napoli

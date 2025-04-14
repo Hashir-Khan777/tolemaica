@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import GridSlider from '../ui/GridSlider'
+import GridSlider from "../ui/GridSlider";
 // import ServiceSlider from './ServiceSlider';
 
 const HomeGrid = () => {
@@ -21,12 +21,10 @@ const HomeGrid = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
- 
-
   // If mobile, render slider
-    if (isMobile) {
-      return <GridSlider />;
-    }
+  if (isMobile) {
+    return <GridSlider />;
+  }
 
   // Otherwise render grid
   return (
@@ -42,7 +40,7 @@ const HomeGrid = () => {
             }}
           >
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
-            <p className="z-10 text-[28px] font-bold tracking-wide text-white text-center font-outfit uppercase">
+            <p className="z-10 lg:text-[1.2rem] text-2xl font-bold tracking-wide text-white text-center font-outfit uppercase">
               Territory Monitoring
             </p>
           </Link>
@@ -58,7 +56,7 @@ const HomeGrid = () => {
             }}
           >
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
-            <p className="z-10 lg:text-3xl text-2xl font-bold tracking-wide text-white text-center font-outfit uppercase">
+            <p className="z-10 lg:text-[1.2rem] text-2xl font-bold tracking-wide text-white text-center font-outfit uppercase">
               Logistics
             </p>
           </Link>
@@ -74,7 +72,7 @@ const HomeGrid = () => {
             }}
           >
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
-            <p className="z-10 lg:text-3xl text-2xl font-bold tracking-wide text-white text-center font-outfit uppercase">
+            <p className="z-10 lg:text-[1.2rem] text-2xl font-bold tracking-wide text-white text-center font-outfit uppercase">
               Measurements
             </p>
           </Link>
@@ -110,7 +108,7 @@ const HomeGrid = () => {
             }}
           >
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
-            <p className="z-10 lg:text-3xl text-2xl font-bold tracking-wide text-white text-center font-outfit uppercase">
+            <p className="z-10 lg:text-[1.2rem] text-2xl font-bold tracking-wide text-white text-center font-outfit uppercase">
               WIP control
             </p>
           </Link>
@@ -126,7 +124,7 @@ const HomeGrid = () => {
             }}
           >
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
-            <p className="z-10 lg:text-3xl text-2xl font-bold tracking-wide text-white text-center font-outfit uppercase">
+            <p className="z-10 lg:text-[1.2rem] text-2xl font-bold tracking-wide text-white text-center font-outfit uppercase">
               Commercial Contracts
             </p>
           </Link>
@@ -142,7 +140,7 @@ const HomeGrid = () => {
             }}
           >
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
-            <p className="z-10 lg:text-3xl text-2xl font-bold tracking-wide text-white text-center font-outfit uppercase">
+            <p className="z-10 lg:text-[1.2rem] text-2xl font-bold tracking-wide text-white text-center font-outfit uppercase">
               Fraud
             </p>
           </Link>
@@ -158,7 +156,7 @@ const HomeGrid = () => {
             }}
           >
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
-            <p className="z-10 g:text-3xl text-2xl font-bold tracking-wide text-white text-center font-outfit uppercase">
+            <p className="z-10 lg:text-[1.2rem] text-2xl font-bold tracking-wide text-white text-center font-outfit uppercase">
               Theft
             </p>
           </Link>
@@ -176,7 +174,7 @@ const HomeGrid = () => {
             {/* Overlay */}
             {/* <div className="absolute inset-0 bg-black/30"></div> */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
-            <p className="text-[28px]/[100%] font-outfit font-[700] text-center uppercase tracking-wide text-white  text-shadow-md z-10">
+            <p className="z-10 lg:text-[1.2rem] text-2xl font-bold tracking-wide text-white text-center font-outfit uppercase">
               insurance fraud
             </p>
           </Link>
