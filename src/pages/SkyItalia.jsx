@@ -40,7 +40,7 @@ const SkyItalia = () => {
     {
       heading: "BEFORE",
       points: [
-        "500 per year",
+        "500 lawsuits per year",
         "Legal Disputes",
         "1x (baseline)",
         "Weak",
@@ -49,7 +49,7 @@ const SkyItalia = () => {
     },
     {
       heading: "AFTER",
-      points: ["2 per year", "99.6%", "2x (100% increase)", "Strong", "Low"],
+      points: ["2 lawsuits per year", "99.6%", "2x (100% increase)", "Strong", "Low"],
     },
     {
       heading: "IMPACT",
@@ -145,8 +145,8 @@ const SkyItalia = () => {
               className="shadow-challenge-2 flex flex-wrap lg:flex-nowrap lg:justify-end lg:text-start justify-center text-center rounded-[10px] items-center gap-[32px] py-[65px] lg:pr-[45px] px-[5px] text-white"
             >
               <div className="font-outfit font-light text-[24px] md:text-[32px]">
-                This led to 500 lawsuits per year, costing{" "}
-                <span className="font-bold">€1.5M annually</span> in legal fees.
+                This led to {" "}
+                <span className="font-bold">500 lawsuits per year</span>
               </div>
               <div className="z-999 font-outfit font-[100] text-[32px] md:text-[104px] bg-gradient-to-r to-[#FFFFFF] from-[#555555] bg-clip-text text-transparent">
                 02
