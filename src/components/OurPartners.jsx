@@ -117,10 +117,7 @@ function OurPartners() {
         {/* ==== Partners ==== */}
         <div className="shrink-0 relative z-20 md:mb-[100px] mb-[40px] flex flex-col justify-center items-center gap-[64px] text-center px-[20px]">
           <OurPartnersSlider
-            image1="/img1.svg"
-            image2="/img2.svg"
-            image3="/img3.svg"
-            image4="/img4.svg"
+           
           />
         </div>
 
