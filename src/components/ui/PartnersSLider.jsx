@@ -3,7 +3,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import Heading1 from "./Heading1";
-import axios from "axios";
 
 const settings = {
   dots: false,
@@ -29,19 +28,17 @@ function OurPartnersSlider() {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:1337/api/ourpartner?populate=*")
+    fetch("http://localhost:1337/api/ourpartner?populate=*")
+      .then((res) => res.json())
       .then((res) => {
         const baseUrl = "http://localhost:1337";
-        const fetchedImages = res.data.data.images.map((img) => baseUrl + img.url);
+        const fetchedImages = res.data.images.map((img) => baseUrl + img.url);
         setImages(fetchedImages);
       })
       .catch((err) => {
         console.error("Error fetching partner images:", err);
       });
   }, []);
-
-  
 
   return (
     <div className="flex flex-col justify-center items-center gap-[40px] md:gap-[64px]">

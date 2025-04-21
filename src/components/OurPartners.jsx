@@ -116,9 +116,7 @@ function OurPartners() {
       <div className="mx-auto w-full max-w-[1280px]">
         {/* ==== Partners ==== */}
         <div className="shrink-0 relative z-20 md:mb-[100px] mb-[40px] flex flex-col justify-center items-center gap-[64px] text-center px-[20px]">
-          <OurPartnersSlider
-           
-          />
+          <OurPartnersSlider />
         </div>
 
         {/* ==== Content wrapper ===== */}

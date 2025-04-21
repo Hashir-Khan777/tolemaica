@@ -11,7 +11,7 @@ function Hero() {
   const [heroData, setHeroData] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:1337/api/home-hero")
+    fetch("http://localhost:1337/api/homehero?populate=*")
       .then((res) => res.json())
       .then((json) => {
         setHeroData(json.data);
@@ -60,16 +60,20 @@ function Hero() {
           <div className="flex flex-col justify-center items-center gap-[40px] lg:gap-[60px]">
             <div className="mx-auto max-w-[1000px] flex flex-col gap-[24px]">
               <p className="font-raleway text-[28px]/[100%] text-center uppercase text-white/64">
-                {heroData?.short_heading || "Loading..."}
+                {heroData?.short_heading}
               </p>
               <h1 className="font-raleway text-center font-[500] capitalize text-[36px] lg:text-[80px] text-white">
                 <span className="text-[#FF9966]">
-                  {heroData?.long_heading?.split(" ")[0] || ""}
+                  {heroData?.colored_long_heading}
                 </span>{" "}
-                {heroData?.long_heading?.split(" ").slice(1).join(" ") || ""}
+                {heroData?.simple_long_heading}
               </h1>
               <p className="font-raleway text-[28px]/[120%] text-center uppercase text-white/64">
-                {heroData?.paragraph || ""}
+                {heroData?.paragraph?.text}{" "}
+                <span className="bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
+                  {heroData?.paragraph?.colored_text}
+                </span>{" "}
+                {heroData?.paragraph?.second_text}
               </p>
             </div>
 
@@ -77,7 +81,7 @@ function Hero() {
               onClick={() => setContactModalIsOpen(true)}
               className="md:max-w-[350px] whitespace-nowrap md:h-[63px] h-[47px] w-[200px] md:w-full flex justify-center items-center cursor-pointer px-[48px] py-[14px] sm:py-3 md:py-[20px] md:px-[100px] border-2 border-white text-black bg-white rounded-full text-[16px]/[18.78px] lg:text-[20px]/[23.48px] font-[700] font-raleway"
             >
-              {heroData?.btn_text || "Contact Us"}
+              {heroData?.btn_text}
             </button>
           </div>
         </div>

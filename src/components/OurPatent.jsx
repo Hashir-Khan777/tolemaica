@@ -64,7 +64,7 @@
 
 // export default OurPatent;
 
-import React from "react";
+import React, { useEffect } from "react";
 import Heading1 from "./ui/Heading1";
 import { Text, GradientSpan } from "./ui/Text";
 
@@ -74,27 +74,40 @@ const OurPatent = () => {
       image: "/ourpatent1.svg",
       text: "SIAE – National copyright registration in Italy",
       w: "150px",
-      h: "80px"
+      h: "80px",
     },
     {
       image: "/ourpatent2.svg",
       text: "Copyright Office – International copyright protections",
       w: "120px",
-      h: "120px"
+      h: "120px",
     },
     {
       image: "/ourpatent3.svg",
       text: "Italian Ministry of Economic Development (MSE) – National patent recognition",
       w: "107px",
-      h: "120px"
+      h: "120px",
     },
     {
       image: "/ourpatent4.svg",
       text: "WIPO (World Intellectual Property Organization) – International patent validation",
       w: "95px",
-      h: "120px"
+      h: "120px",
     },
   ];
+
+  useEffect(() => {
+    fetch("http://localhost:1337/api/ourpatent?populate=*")
+      .then((res) => res.json())
+      .then((res) => {
+        const baseUrl = "http://localhost:1337";
+        const fetchedImages = res.data.images.map((img) => baseUrl + img.url);
+        setImages(fetchedImages);
+      })
+      .catch((err) => {
+        console.error("Error fetching partner images:", err);
+      });
+  }, []);
 
   return (
     <section>
@@ -136,4 +149,3 @@ const OurPatent = () => {
 };
 
 export default OurPatent;
-
