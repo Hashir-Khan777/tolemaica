@@ -7,8 +7,36 @@ import PhaseAccor from "./PhaseAccor";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 
-function BankingSectorSection() {
-  const impacts = [
+const BankingSectorSection = ({ worksectorData }) => {
+  const { details, services } = worksectorData;
+  
+  const ensureDetails = details[3];
+  const solutionHeading = details[16];
+  const conceptProofPara = details[15];
+  const conceptProof = details[14];
+  const theBottomLine = details[12];
+  const theBottomLinePara = details[13];
+  const solutionSlider = details.filter(item => item.__component === "common.solution-slider");
+  const phases = details.filter(item => 
+    item.__component === "common.phases" && 
+    item.Heading?.light_heading?.toUpperCase().includes("PHASE")
+  );
+  const benefits = details.filter(item => 
+    item.__component === "common.phases" && 
+    item.Heading?.dark_heading?.toUpperCase().includes("BENEFITS")
+  );
+
+  const impacts = details.filter(item => 
+    item.__component === "common.phases" && 
+    item.Heading?.light_heading?.toUpperCase().includes("IMPACT")
+  );
+  const workList = details.filter(item => item.__component === "work.work-list");
+ 
+  if (!worksectorData) {
+    return <div className="bg-black">Loading...</div>; // Display loading message until data is available
+  }
+
+ /*  const impacts = [
     {
       heading: "Regulatory Compliance & Legal Validity",
       points: [
@@ -36,7 +64,7 @@ function BankingSectorSection() {
         "🌍 High Interoperability: Meets evolving RegTech and SupTech demands.",
       ],
     },
-  ];
+  ]; */
 
   const prevRef = useRef(null);
   const nextRef = useRef(null);
@@ -56,16 +84,16 @@ function BankingSectorSection() {
 
       <div className="max-w-[1280px] relative z-10 overflow-auto w-full mx-auto px-[20px] py-[40px] text-center">
         {/* Solution Section */}
-        <SolutionSection />
+        <SolutionSection data={solutionSlider}/>
 
         {/* Cards */}
         <div className="">
           <h1 className="mt-[100px] text-center font-raleway text-white/[0.64]  font-normal text-xl md:text-[40px] mb-[48px] uppercase">
-            Tolemaica ensures
+          {ensureDetails ? ensureDetails.light_heading : "Loading..."}
             <span className="text-white px-2">
-              real-time certification
+            {ensureDetails ? ensureDetails.dark_heading : "Loading..."}
             </span>{" "}
-            throughSOLUTION
+            
           </h1>
 
           {/* <p className="text-center text-white/64 font-outfit font-light text-base md:text-2xl mb-[48px]">
@@ -79,53 +107,50 @@ function BankingSectorSection() {
 
           <div className="flex flex-col gap-[32px]">
             <div className="flex flex-wrap items-center justify-center gap-16">
-              <div className="solution-shadow w-[302px] h-[475px] border-2 border-white/64 bg-black/24 backdrop-blur-[200] py-[24px] px-[16px] rounded-[20px]">
-                <img src="/biometric.png" className="rounded-[12px] mx-auto" />
-                <p className="mt-[24px] mb-[16px] font-outfit text-center font-medium text-2xl bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-                  advance biometric identification
-                </p>
-              </div>
-
-              <div className="solution-shadow w-[302px] h-[475px] border-2 border-white/64 bg-black/24 backdrop-blur-[200] py-[24px] px-[16px] rounded-[20px]">
-                <img src="/automation.png" className="rounded-[12px] mx-auto" />
-                <p className="mt-[24px] mb-[16px] font-outfit text-center font-medium text-2xl bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-                  Instant Automatic Certification (IAC) Technology
-                </p>
-              </div>
-
-              <div className="solution-shadow w-[302px] h-[475px] border-2 border-white/64 bg-black/24 backdrop-blur-[200] py-[24px] px-[16px] rounded-[20px]">
-                <img src="/tsp.png" className="rounded-[12px] mx-auto" />
-                <p className="mt-[24px] mb-[16px] font-outfit text-center font-medium text-2xl bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-                  Multi-TSP <br /> Certification
-                </p>
-              </div>
+            {services.slice(0, 3).map((service, index) => (
+    <div
+      key={index}
+      className="solution-shadow w-[302px] h-[475px] border-2 border-white/64 bg-black/24 backdrop-blur-[200] py-[24px] px-[16px] rounded-[20px]"
+    >
+      <img
+        src={service.image.url}
+        className="rounded-[12px] mx-auto"
+        alt={service.image.name}
+      />
+      <p className="mt-[24px] mb-[16px] font-outfit text-center font-medium text-2xl bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
+        {service.heading.light_heading}
+      </p>
+    </div>
+  ))}
             </div>
 
             <div className="flex flex-wrap items-center justify-center gap-16">
-              <div className="solution-shadow w-[302px] h-[475px] border-2 border-white/64 bg-black/24 backdrop-blur-[200] py-[24px] px-[16px] rounded-[20px]">
-                <img src="/blockchain.png" className="rounded-[12px] mx-auto" />
-                <p className="mt-[24px] mb-[16px] font-outfit text-center font-medium text-2xl bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-                  Modular Blockchain Preservation
-                </p>
-              </div>
-              <div className="solution-shadow w-[302px] h-[475px] border-2 border-white/64 bg-black/24 backdrop-blur-[200] py-[24px] px-[16px] rounded-[20px]">
-                <img src="/sol3.png" className="rounded-[12px] mx-auto" />
-                <p className="mt-[24px] mb-[16px] font-outfit text-center font-medium text-2xl bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-                  Data Originality Verification
-                </p>
-              </div>
+             {/* Map through the next 2 services for the second row */}
+  {services.slice(3, 5).map((service, index) => (
+    <div
+      key={index}
+      className="solution-shadow w-[302px] h-[475px] border-2 border-white/64 bg-black/24 backdrop-blur-[200] py-[24px] px-[16px] rounded-[20px]"
+    >
+      <img
+        src={service.image.url}
+        className="rounded-[12px] mx-auto"
+        alt={service.image.name}
+      />
+      <p className="mt-[24px] mb-[16px] font-outfit text-center font-medium text-2xl bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
+        {service.heading.light_heading}
+      </p>
+    </div>
+  ))}
             </div>
             <p className="text-center font-outfit font-light text-base md:text-2xl max-w-[1000px] mx-auto text-white/64 my-[100px]">
-              Our approach is structured into four key phases, each addressing a
-              critical aspect of the user experience. This ensures a clear,
-              step-by-step improvement process.
+            {ensureDetails ? ensureDetails.second_dark_heading : "Loading..."}
             </p>
           </div>
         </div>
         {/* === Cards End ==== */}
 
         {/* Phases */}
-        <PhaseAccor />
+        <PhaseAccor data={phases}/>
 
         {/* Impact Section Here */}
         <h1 className="mt-[100px] text-center font-raleway text-white font-normal text-xl md:text-[40px] mb-[48px]">
@@ -135,14 +160,12 @@ function BankingSectorSection() {
           {impacts.map((impact, index) => (
             <div className="relative flex-1 lg:opacity-30 hover:opacity-100">
               <h1 className="mb-8 font-outfit font-light text-2xl text-center py-2 px-16 border border-[#FF9966] rounded-full bg-gradient-to-r from-[#7C7C7C] to-[#2D2D2D]">
-                {impact.heading}
+              {impact ? impact.Heading.dark_heading : "Loading..."}
               </h1>
-              <ul className="list-disc">
-                {impact.points.map((point) => (
-                  <li className="mb-4 font-outfit font-light text-xl text-start">
-                    {point}
-                  </li>
-                ))}
+              <ul 
+               dangerouslySetInnerHTML={{ __html: impact.Description	 }}
+               >
+                
               </ul>
             </div>
           ))}
@@ -174,15 +197,13 @@ function BankingSectorSection() {
               <SwiperSlide>
                 <div className="text-white relative flex-1">
                   <h1 className="mb-8 font-outfit font-light text-2xl text-center py-2 border border-[#FF9966] rounded-full bg-gradient-to-r from-[#7C7C7C] to-[#2D2D2D]">
-                    {impact.heading}
+                  {impact ? impact.Heading.dark_heading : "Loading..."}
                   </h1>
-                  <ul>
-                    {impact.points.map((point) => (
-                      <li className="mb-4 font-outfit font-light text-xl text-center">
-                        {point}
-                      </li>
-                    ))}
-                  </ul>
+                  <div
+                   dangerouslySetInnerHTML={{ __html: impact.Description	 }}
+                  >
+                    
+                  </div>
                 </div>
               </SwiperSlide>
             ))}
@@ -209,106 +230,69 @@ function BankingSectorSection() {
         {/* The Challenge section */}
         <div className="mt-[100px]">
           <div className="flex flex-col gap-[50px]">
-            <div
-              style={{
-                border: "2px solid transparent",
-                background:
-                  "linear-gradient(#000000 0%, #000000 0%) padding-box, linear-gradient(to left, #FF986433 20%, #602F16, #FF9864) border-box",
-              }}
-              className="shadow-challenge flex flex-wrap lg:flex-nowrap lg:justify-start lg:text-start justify-center text-center rounded-[10px] items-center gap-[32px] py-[65px] lg:pl-[45px] px-[5px] text-white"
-            >
-              <div className="z-999 font-outfit font-[100] text-[32px] md:text-[104px] bg-gradient-to-r to-[#FFFFFF] from-[#555555] bg-clip-text text-transparent">
-                01
+          {details
+  .filter((item) => item.__component === "work.work-list")
+  .slice(0, 4)
+  .map((item, index) => (
+    <div
+      key={index}
+      style={{
+        border: "2px solid transparent",
+        background:
+          "linear-gradient(#000000 0%, #000000 0%) padding-box, linear-gradient(to left, #FF986433 20%, #602F16, #FF9864) border-box",
+      }}
+      className={`${index % 2 === 0 ? "shadow-challenge flex flex-wrap lg:flex-nowrap lg:justify-start lg:text-start justify-center text-center rounded-[10px] items-center gap-[32px] py-[65px] lg:pl-[45px] px-[5px] text-white" : "shadow-challenge-2 flex lg:flex-row flex-col-reverse lg:flex-nowrap lg:justify-end lg:text-start justify-center text-center rounded-[10px] items-center gap-[32px] py-[65px] lg:pr-[45px] px-[5px] text-white"} `}
+    >
+      {index % 2 === 0 ? (
+        // For even-index items (first item, Title comes first)
+        <>
+          
+          <div className="z-999 font-outfit font-[100] text-[32px] md:text-[104px] bg-gradient-to-r to-[#FFFFFF] from-[#555555] bg-clip-text text-transparent">
+          {item.Title}
               </div>
               <div className="flex flex-col gap-[16px]">
                 <h1 className="font-outfit font-light text-[24px] md:text-[32px]">
-                  Market Relevance
+                {item.Description}
                 </h1>
                 <p className="font-outfit text-[24px]/[28px] font-[300] tracking-wide text-white/64">
-                  Applicable to banks, fintech firms, insurers & regulatory
-                  agencies.{" "}
+                {item.Details}
                 </p>
               </div>
-            </div>
 
-            <div
-              style={{
-                border: "2px solid transparent",
-                background:
-                  "linear-gradient(#000000 0%, #000000 0%) padding-box, linear-gradient(to right, #FF986433 20%, #602F16, #FF9864) border-box",
-              }}
-              className="shadow-challenge-2 flex lg:flex-row flex-col-reverse lg:flex-nowrap lg:justify-end lg:text-start justify-center text-center rounded-[10px] items-center gap-[32px] py-[65px] lg:pr-[45px] px-[5px] text-white"
-            >
-              <div className="flex flex-col lg:justify-end justify-center lg:items-end items-center gap-[16px]">
+         
+        </>
+      ) : (
+        // For odd-index items (second item, Title comes second)
+        <>
+          <div className="flex flex-col lg:justify-end justify-center lg:items-end items-center gap-[16px]">
                 <h1 className="font-outfit font-light text-[24px] md:text-[32px]">
-                  Scalability
+                {item.Description}
                 </h1>
                 <p className="font-outfit text-[24px]/[28px] font-[300] tracking-wide text-white/64">
-                  Immediate API-based deployment across banking & insurance
-                  systems.
+                {item.Details}
                 </p>
               </div>
 
-              <div className="z-999 font-outfit font-[100] text-[32px] md:text-[104px] bg-gradient-to-r to-[#FFFFFF] from-[#555555] bg-clip-text text-transparent">
-                02
+           
+          <div className="z-999 font-outfit font-[100] text-[32px] md:text-[104px] bg-gradient-to-r to-[#FFFFFF] from-[#555555] bg-clip-text text-transparent">
+          {item.Title}
               </div>
-            </div>
-            <div
-              style={{
-                border: "2px solid transparent",
-                background:
-                  "linear-gradient(#000000 0%, #000000 0%) padding-box, linear-gradient(to left, #FF986433 20%, #602F16, #FF9864) border-box",
-              }}
-              className="shadow-challenge flex flex-wrap lg:flex-nowrap lg:justify-start lg:text-start justify-center text-center rounded-[10px] items-center gap-[32px] py-[65px] lg:pl-[45px] px-[5px] text-white"
-            >
-              <div className="z-999 font-outfit font-[100] text-[32px] md:text-[104px] bg-gradient-to-r to-[#FFFFFF] from-[#555555] bg-clip-text text-transparent">
-                03
-              </div>
-              <div className="flex flex-col gap-[16px]">
-                <h1 className="font-outfit font-light text-[24px] md:text-[32px]">
-                  Regulatory Adaptability
-                </h1>
-                <p className="font-outfit text-[24px]/[28px] font-[300] tracking-wide text-white/64">
-                  Fully compliant with EU MiCA, Swiss DLT Act, US FinCEN, UAE
-                  VARA.
-                </p>
-              </div>
-            </div>
-
-            <div
-              style={{
-                border: "2px solid transparent",
-                background:
-                  "linear-gradient(#000000 0%, #000000 0%) padding-box, linear-gradient(to right, #FF986433 20%, #602F16, #FF9864) border-box",
-              }}
-              className="shadow-challenge-2 flex lg:flex-row flex-col-reverse lg:flex-nowrap lg:justify-end lg:text-start justify-center text-center rounded-[10px] items-center gap-[32px] py-[65px] lg:pr-[45px] px-[5px] text-white"
-            >
-              <div className="flex flex-col lg:justify-end justify-center lg:items-end items-center gap-[16px]">
-                <h1 className="font-outfit font-light text-[24px] md:text-[32px]">
-                  Competitive Edge
-                </h1>
-                <p className="font-outfit text-[24px]/[28px] font-[300] tracking-wide text-white/64">
-                  AI-driven compliance & blockchain notarization leader.
-                </p>
-              </div>
-
-              <div className="z-999 font-outfit font-[100] text-[32px] md:text-[104px] bg-gradient-to-r to-[#FFFFFF] from-[#555555] bg-clip-text text-transparent">
-                04
-              </div>
-            </div>
+        </>
+      )}
+    </div>
+  ))}
           </div>
           {/* Bottom Line */}
           <div className="mt-[100px] text-center flex flex-col md:gap-[64px] gap-[40px] max-w-[1000px] mx-auto">
-            <Heading1 headingGray="bottom" headingWhite="line" />
-            <Text>
-              Tolemaica's technology enhances legal certainty, regulatory
-              compliance, and fraud prevention for financial institutions,{" "}
-              <GradientSpan>
-                providing a future-proof, scalable, and legally
-              </GradientSpan>{" "}
-              <GradientSpan>secure solution</GradientSpan> in an era of digital
-              finance transformation.
-            </Text>
+            
+            <Heading1 headingGray={theBottomLine ? theBottomLine.light_heading : "Loading..."} headingWhite={theBottomLine ? theBottomLine.dark_heading : "Loading..."} />
+                  <Text>
+                  {theBottomLinePara ? theBottomLinePara.text : "Loading..."}{" "}
+                    <GradientSpan>
+                    {theBottomLinePara ? theBottomLinePara.colored_text : "Loading..."}
+                    </GradientSpan>{" "}
+              <GradientSpan> {theBottomLinePara ? theBottomLinePara.second_text : "Loading..."}</GradientSpan> 
+                  </Text>
           </div>
         </div>
       </div>
@@ -353,7 +337,7 @@ function BankingSectorSection() {
                   {/* <span className="px-10">{title}</span> */}
                 </h1>
                 <h1 className="font-raleway text-white text-center font-[400] capitalize text-[28px] sm:text-[36px] md:text-[40px]">
-                  <span className="px-10">Proof of concept</span>
+                  <span className="px-10"> {conceptProof ? conceptProof.light_heading : "Loading..."}</span>
                 </h1>
               </div>
               <div className="h-0.5 bg-white/[0.2] w-[90%] mx-auto" />
@@ -363,7 +347,7 @@ function BankingSectorSection() {
               >
                 {/* {text} */}
                 <span className="bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-                  Central Bank Of Italy
+                {conceptProof ? conceptProof.dark_heading : "Loading..."}
                 </span>{" "}
                 {/* {secondtext} */}
               </p>
@@ -375,36 +359,25 @@ function BankingSectorSection() {
       <div className="max-w-[1280px] z-10 relative overflow-auto w-full mx-auto px-[20px] py-[40px] text-center">
         <div className="flex flex-col  gap-[16px]">
           <Text>
-            Based on the forecast of a{" "}
-            <GradientSpan>progressive migration</GradientSpan> of transaction
-            collection between different financial institutions onto a
-            blockchain network—requiring interoperability between different
-            blockchain networks—the{" "}
-            <GradientSpan>Proof of Concept (PoC)</GradientSpan> focused on{" "}
+          {conceptProofPara ? conceptProofPara.text : "Loading..."}{" "}
             <GradientSpan>
-              enhancing the value of information related to interbank
-              transactions
-            </GradientSpan>{" "}
-            across European institutions.
+            {conceptProofPara ? conceptProofPara.colored_text : "Loading..."}{" "}
+              </GradientSpan> 
+           
+           
           </Text>
 
           <Text>
-            This enhancement would have an{" "}
-            <GradientSpan>
-              immediate impact on the upcoming issuance of
+            <GradientSpan>{conceptProofPara ? conceptProofPara.second_text : "Loading..."}{" "}
             </GradientSpan>{" "}
-            <GradientSpan>
-              official cryptocurrencies by the Central Bank Digital Currency
-              (CBDC).
-            </GradientSpan>
           </Text>
         </div>
 
         {/* ===== Solution Section ===== */}
         <div className="p-4 mx-auto mt-8 lg:max-w-[1280px] w-full">
           <h1 className="mt-[100px] text-center font-raleway text-white/[0.64]  font-normal text-xl md:text-[40px] mb-[48px] uppercase">
-            THE
-            <span className="text-white px-2">solution</span>
+          {solutionHeading ? solutionHeading.light_heading : "Loading..."}
+            <span className="text-white px-2"> {solutionHeading ? solutionHeading.dark_heading : "Loading..."}</span>
           </h1>
 
           <div className="flex flex-col w-full lg:flex-row justify-center items-center gap-4">
@@ -413,27 +386,27 @@ function BankingSectorSection() {
               <div className="hidden w-full md:flex flex-col justify-center items-center text-white lg:w-[856px] md:w-[856px] md:h-[450px] border-[2px] border-white/64 rounded-[15px] px-[16px] py-[32px]">
                 <div className=" flex flex-row justify-between items-center lg:w-[792px] w-full mx-auto  text-center px-[50px] ">
                   <span className="w-[132px] text-[64px]/[100%] font-[400] font-outfit  text-orange-200 mb-6">
-                    1
+                  {workList ? workList[4].Title : "Loading..."}
                   </span>
                   <div className="h-[2px] w-[196px] bg-white/20 self-center  mx-4"></div>
                   <span className="w-[132px] text-[64px]/[100%] font-[400] font-outfit  text-orange-200 mb-6">
-                    2
+                  {workList ? workList[5].Title : "Loading..."}
                   </span>
                   <div className="h-[2px] w-[196px] bg-white/20 self-center mx-4"></div>
                   <span className="w-[132px] text-[64px]/[100%] font-[400] font-outfit  text-orange-200 mb-6">
-                    3
+                  {workList ? workList[6].Title : "Loading..."}
                   </span>
                 </div>
 
                 <div className=" flex flex-row justify-between items-center lg:w-[792px] w-full mx-auto  text-center px-[20px] ">
                   <p className="md:w-[132px] font-outfit text-[20px]/[28px] tracking-wide text-center font-extralight">
-                    Apply Library & Web Service for E -Signatures{" "}
+                  {workList ? workList[4].Description : "Loading..."}{" "}
                   </p>
                   <p className="md:w-[132px] font-outfit text-[20px]/[28px] tracking-wide text-center font-extralight">
-                    Add API for Legal Certification
+                  {workList ? workList[5].Description : "Loading..."}{" "}
                   </p>
                   <p className="md:w-[132px] font-outfit text-[20px]/[28px] tracking-wide text-center font-extralight">
-                    Get FEA Authentication & Verification
+                  {workList ? workList[6].Description : "Loading..."}{" "}
                   </p>
                 </div>
               </div>
@@ -442,27 +415,27 @@ function BankingSectorSection() {
               <div className="md:hidden min-w-[316px] w-full flex flex-row justify-start items-start border-[2px] border-white/64 rounded-[15px] text-white px-[16px] py-[32px]">
                 <div className="pl-5 flex flex-col justify-start items-start gap-[16px] mx-auto  text-center p-[10px] ">
                   <span className="w-[22px] text-[40px]/[100%] font-[400] font-outfit  text-orange-200 mb-6">
-                    1
+                  {workList ? workList[4].Title : "Loading..."}
                   </span>
                   <div className="w-[2px] h-[24px] bg-white/20 self-center  mx-4"></div>
                   <span className="w-[22px] text-[40px]/[100%] font-[400] font-outfit  text-orange-200 mb-6">
-                    2
+                  {workList ? workList[5].Title : "Loading..."}
                   </span>
                   <div className="w-[2px] h-[24px] bg-white/20 self-center mx-4"></div>
                   <span className="w-[22px] text-[40px]/[100%] font-[400] font-outfit  text-orange-200 mb-6">
-                    3
+                  {workList ? workList[6].Title : "Loading..."}
                   </span>
                 </div>
 
                 <div className="flex flex-col gap-[46px] justify-between items-center  w-[95%] mx-auto  text-center px-[20px] py-[10px]">
                   <p className="w-[163px] h-[60px] font-outfit text-[20px]/[28px] tracking-wide text-center font-extralight">
-                    Apply Library & Web Service for E -Signatures{" "}
+                  {workList ? workList[4].Description : "Loading..."}{" "}
                   </p>
                   <p className="w-[163px] h-[60px] font-outfit text-[20px]/[28px] tracking-wide text-center font-extralight">
-                    Add API for Legal Certification
+                  {workList ? workList[5].Description : "Loading..."}{" "}
                   </p>
                   <p className="w-[163px] h-[60px] font-outfit text-[20px]/[28px] tracking-wide text-center font-extralight">
-                    Get FEA Authentication & Verification
+                  {workList ? workList[6].Description : "Loading..."}{" "}
                   </p>
                 </div>
                 {/* <div className="flex items-start mb-6">
@@ -484,34 +457,14 @@ function BankingSectorSection() {
 
             <div className="lg:w-[392px] md:w-[40%] w-full h-[450px] border-[2px] border-white/64 rounded-[15px] py-[32px] px-[16px] min-w-[316px] flex flex-col gap-[32px]">
               <h1 className=" text-center font-raleway text-white/[0.64]  font-normal text-xl md:text-[40px] uppercase">
-                Key
-                <span className="text-white px-2">benefits</span>
+              {benefits ? benefits[0].Heading.light_heading : "Loading..."}
+                <span className="text-white px-2">{benefits ? benefits[0].Heading.dark_heading : "Loading..."}</span>
               </h1>
-
-              <p className="font-outfit font-[500] text-[24px]/[28px] tracking-[5%] flex flex-col gap-[10px] justify-center items-center">
-                <span className="bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-                  Legal recognition
-                </span>
-                <span className="bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-                  across EU
-                </span>
-              </p>
-              <p className="font-outfit font-[500] text-[24px]/[28px] tracking-[5%] flex flex-col gap-[10px] justify-center items-center">
-                <span className="bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-                  Pre-processing
-                </span>
-                <span className="bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-                  certification
-                </span>
-              </p>
-              <p className="font-outfit font-[500] text-[24px]/[28px] tracking-[5%] flex flex-col gap-[10px] justify-center items-center">
-                <span className="bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-                  Guaranteed{" "}
-                </span>
-                <span className="bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-                  data integrity
-                </span>
-              </p>
+              <p
+                   
+                  dangerouslySetInnerHTML={{ __html: benefits[0].Description	 }}
+                />
+              
 
               {/* <ul className="space-y-4">
                                 {keyBenefits.map((benefit, index) => (

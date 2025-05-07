@@ -1,8 +1,38 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 import { Text, GradientSpan } from "./ui/Text";
 
 function AboutHero() {
+  const [heading, setHeading] = useState({
+    light_heading: "",
+    dark_heading: "",
+    second_dark_heading: "",
+  });
+  const [paragraph, setParagraph] = useState({
+    text: "",
+    colored_text: "",
+    second_text: "",
+  });
+
+  useEffect(() => {
+    const apiUrl = `${import.meta.env.VITE_API_BASE_URL}/abouhero?populate=*`;
+
+    fetch(apiUrl)
+      .then((res) => res.json())
+      .then((res) => {
+        // Set heading data
+        const headingData = res.data.heading[0];  // Accessing the first item in the heading array
+        setHeading(headingData);
+
+        // Set paragraph data
+        const paragraphData = res.data.paragraph[0];  // Accessing the first item in the paragraph array
+        setParagraph(paragraphData);
+      })
+      .catch((err) => {
+        console.error("Error fetching AboutHero data:", err);
+      });
+  }, []);
+
   return (
     <div
       className="relative w-full h-screen flex flex-col items-start justify-start bg-cover bg-center bg-no-repeat lg:px-[100px] md:px-[50px] px-[20px]"
@@ -20,29 +50,25 @@ function AboutHero() {
         >
           <div className="max-w-[1000px] flex flex-col gap-[30px] lg:gap-[77px]">
             {/* Dynamic Heading */}
-            <h1 className=" font-raleway text-white text-center tracking-[5%] font-[400] capitalize xl:text-[64px]/[75.53px] text-[36px]/[42px]">
-              Brilliant{" "}
+            <h1 className="font-raleway text-white text-center tracking-[5%] font-[400] capitalize xl:text-[64px]/[75.53px] text-[36px]/[42px]">
+              {heading.light_heading}{" "}
               <span className="px-1 bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-                Minds, Bold <br /> Visions, 
+                {heading.dark_heading}
               </span>
-               One
+              <br />
               {/* Gradient heading */}
               <span className="px-1 bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-                Mission
+                {heading.second_dark_heading}
               </span>
             </h1>
 
             {/* Dynamic Paragraph */}
-            <p
-              className="font-raleway text-white/50 text-center font-[400] capitalize tracking-[5%] 
-        text-[16px]/[18.78px] sm:text-[24px]/[30px] md:text-[30px]/[36px] lg:text-[40px]/[46.96px]"
-            >
-              the
+            <p className="font-raleway text-white/50 text-center font-[400] capitalize tracking-[5%] text-[16px]/[18.78px] sm:text-[24px]/[30px] md:text-[30px]/[36px] lg:text-[40px]/[46.96px]">
+              {paragraph.text}
               <span className="px-2 bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-                Creators, Innovators, and
-                <br /> Game-Changers
+                {paragraph.colored_text}
+                <br /> {paragraph.second_text}
               </span>
-              of Tolemaica
             </p>
           </div>
         </div>

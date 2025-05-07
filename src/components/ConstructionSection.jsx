@@ -9,7 +9,20 @@ import FumigationProcess from "./FumigationProcess";
 import SolutionSection from "./MscSolutions";
 import ResultsSection from "./MSCResult";
 
-function InsuranceSection() {
+const ConstructionSection = ({ worksectorData }) => {
+  const { details, services } = worksectorData;
+  
+  const challengeDetail = details[2];
+  const challengeDetailPara = details[12];
+  const theSolution = details[6];
+  const theSolutionText = details[7];
+  const theBottomLine = details[10];
+  const theBottomLinePara = details[11];
+ 
+  if (!worksectorData) {
+    return <div className="bg-black">Loading...</div>; // Display loading message until data is available
+  }
+
   return (
     <section className="relative overflow-hidden bg-black w-full py-[100px] flex flex-col">
       <video
@@ -28,21 +41,22 @@ function InsuranceSection() {
       
 
         <h2 className="text-center font-raleway text-white font-normal text-xl md:text-[40px] lg:my-[48px]">
-          <span className="text-white/[0.64]">THE</span> CHALLENGE
+          <span className="text-white/[0.64]">{challengeDetail ? challengeDetail.light_heading : "Loading..."}</span> 
         </h2>
         <div className="flex flex-col gap-[48px] font-outfit font-light text-base md:text-2xl text-white/[0.64] text-center mb-[50px]">
        
           <p>
-          In large-scale construction projects, monitoring work progress accurately is a significant challenge. While traditional tools like work schedules and site accounting systems help track project completion, remote supervision often leads to discrepancies between reported and actual progress. Photographic documentation is frequently used, but without verification, it cannot be fully trusted. This creates risks of manipulated records, delayed corrections, and disputes over work completion timelines.
+          {challengeDetailPara ? challengeDetailPara.text : "Loading..."}
           </p>
+          <p>{challengeDetailPara ? challengeDetailPara.colored_text : "Loading..."}</p>
           </div>
           
           <h2 className="text-center font-raleway text-white font-normal text-xl md:text-[40px] mb-[48px]">
-          <span className="text-white/[0.64]">THE</span> SOLUTION
+          <span className="text-white/[0.64]">{theSolution ? theSolution.light_heading : "Loading..."}</span> {theSolution ? theSolution.dark_heading : "Loading..."}
         </h2>
         <div className="flex flex-col gap-[48px] font-outfit font-light text-base md:text-2xl text-white/[0.64] text-center mb-[50px]">
           <p>
-          Tolemaica’s DataClick provides a certified photographic documentation system that ensures transparency and accuracy in work progress tracking. By legally certifying the time and location of each image captured via smartphone or tablet, stakeholders can remotely verify the status of construction projects in real time. The certified images are securely uploaded to a shared platform, eliminating inaccuracies and ensuring compliance with project timelines.
+          {theSolutionText ? theSolutionText.text : "Loading..."}
           </p>
         </div>
         
@@ -50,81 +64,42 @@ function InsuranceSection() {
           <span className="text-white/[0.64]">THE</span> BENEFITS
         </h2>
           <div className="flex flex-col gap-[50px]">
-          <div
-            style={{
-              border: "2px solid transparent",
-              background:
-                "linear-gradient(#000000 0%, #000000 0%) padding-box, linear-gradient(to left, #FF986433 20%, #602F16, #FF9864) border-box",
-            }}
-            className="shadow-challenge flex flex-wrap lg:flex-nowrap lg:justify-start lg:text-start justify-center text-center rounded-[10px] items-center gap-[32px] py-[65px] lg:pl-[45px] px-[5px] text-white"
-          >
-            <div className="z-999 font-outfit font-[100] text-[32px] md:text-[104px] bg-gradient-to-r to-[#FFFFFF] from-[#555555] bg-clip-text text-transparent">
-              01
-            </div>
-            <div className="font-outfit font-light text-[24px] md:text-[32px]">
-            Prevention of falsified records in site accounting.
-            </div>
+          {details
+  .filter((item) => item.__component === "work.work-list")
+  .map((item, index) => (
+    <div
+      key={index}
+      style={{
+        border: "2px solid transparent",
+        background:
+          "linear-gradient(#000000 0%, #000000 0%) padding-box, linear-gradient(to left, #FF986433 20%, #602F16, #FF9864) border-box",
+      }}
+      className={`shadow-challenge ${index % 2 === 0 ? "lg:justify-start" : "lg:justify-end"} flex flex-wrap lg:flex-nowrap justify-center text-center rounded-[10px] items-center gap-[32px] py-[65px] lg:px-[45px] px-[5px] text-white`}
+    >
+      {index % 2 === 0 ? (
+        // For even-index items (first item, Title comes first)
+        <>
+          <div className="z-999 font-outfit font-[100] text-[32px] md:text-[104px] bg-gradient-to-r to-[#FFFFFF] from-[#555555] bg-clip-text text-transparent">
+            {item.Title}
           </div>
-          <div
-            style={{
-              border: "2px solid transparent",
-              background:
-                "linear-gradient(#000000 0%, #000000 0%) padding-box, linear-gradient(to right, #FF986433 20%, #602F16, #FF9864) border-box",
-            }}
-            className="shadow-challenge-2 flex flex-wrap lg:flex-nowrap lg:justify-end lg:text-start justify-center text-center rounded-[10px] items-center gap-[32px] py-[65px] lg:pr-[45px] px-[5px] text-white"
-          >
-            <div className="font-outfit font-light text-[24px] md:text-[32px]">
-            Reduction in disputes over work completion dates.
-            </div>
-            <div className="z-999 font-outfit font-[100] text-[32px] md:text-[104px] bg-gradient-to-r to-[#FFFFFF] from-[#555555] bg-clip-text text-transparent">
-              02
-            </div>
+          <div className="font-outfit font-light text-[24px] md:text-[32px]">
+            {item.Description}
           </div>
-          <div
-            style={{
-              border: "2px solid transparent",
-              background:
-                "linear-gradient(#000000 0%, #000000 0%) padding-box, linear-gradient(to left, #FF986433 20%, #602F16, #FF9864) border-box",
-            }}
-            className="shadow-challenge flex flex-wrap lg:flex-nowrap lg:justify-start lg:text-start justify-center text-center rounded-[10px] items-center gap-[32px] py-[65px] lg:pl-[45px] px-[5px] text-white"
-          >
-            <div className="z-999 font-outfit font-[100] text-[32px] md:text-[104px] bg-gradient-to-r to-[#FFFFFF] from-[#555555] bg-clip-text text-transparent">
-              03
-            </div>
-            <div className="font-outfit font-light text-[24px] md:text-[32px]">
-            Enhanced efficiency in project workflows.
-            </div>
+        </>
+      ) : (
+        // For odd-index items (second item, Title comes second)
+        <>
+          <div className="font-outfit font-light text-[24px] md:text-[32px]">
+            {item.Description}
           </div>
-          <div
-            style={{
-              border: "2px solid transparent",
-              background:
-                "linear-gradient(#000000 0%, #000000 0%) padding-box, linear-gradient(to right, #FF986433 20%, #602F16, #FF9864) border-box",
-            }}
-            className="shadow-challenge-2 flex flex-wrap lg:flex-nowrap lg:justify-end lg:text-start justify-center text-center rounded-[10px] items-center gap-[32px] py-[65px] lg:pr-[45px] px-[5px] text-white"
-          >
-            <div className="font-outfit font-light text-[24px] md:text-[32px]">
-            A strong deterrent against fraud in large construction projects.
-            </div>
-            <div className="z-999 font-outfit font-[100] text-[32px] md:text-[104px] bg-gradient-to-r to-[#FFFFFF] from-[#555555] bg-clip-text text-transparent">
-              04
-            </div>
+          <div className="z-999 font-outfit font-[100] text-[32px] md:text-[104px] bg-gradient-to-r to-[#FFFFFF] from-[#555555] bg-clip-text text-transparent">
+            {item.Title}
           </div>
-          <div
-            style={{
-              border: "2px solid transparent",
-              background:
-                "linear-gradient(#000000 0%, #000000 0%) padding-box, linear-gradient(to left, #FF986433 20%, #602F16, #FF9864) border-box",
-            }}
-            className="shadow-challenge flex flex-wrap lg:flex-nowrap lg:justify-start lg:text-start justify-center text-center rounded-[10px] items-center gap-[32px] py-[65px] lg:pl-[45px] px-[5px] text-white"
-          >
-            <div className="z-999 font-outfit font-[100] text-[32px] md:text-[104px] bg-gradient-to-r to-[#FFFFFF] from-[#555555] bg-clip-text text-transparent">
-              05
-            </div>
-            <div className="font-outfit font-light text-[24px] md:text-[32px]">
-            Optimized infrastructure maintenance, especially for high-risk sectors like railway and energy distribution.
-            </div>
-          </div>
+        </>
+      )}
+    </div>
+  ))}
+
         </div> 
         
         <div className="flex flex-col gap-[32px]">
@@ -132,21 +107,16 @@ function InsuranceSection() {
           <span className="text-white/[0.64]">EXAMPLE</span> 
         </h2>
         <div className="flex flex-wrap items-center justify-center gap-16">
-          
-            <div className="solution-shadow w-[302px] h-[auto] border-2 border-white/64 bg-black/24 backdrop-blur-[200] py-[24px] px-[16px] rounded-[20px]">
+        {services.map((service, index) => (
+            <div  key={index} className="solution-shadow w-[302px] h-[auto] border-2 border-white/64 bg-black/24 backdrop-blur-[200] py-[24px] px-[16px] rounded-[20px]">
                
               <p className="mt-[24px] mb-[16px] font-outfit text-center font-medium text-2xl bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-              TERNA
+              {service.heading.light_heading}
               </p>
-              <p class="font-outfit font-light text-[12px] md:text-xl text-white/64 text-center">Uses similar monitoring for the maintenance of electricity distribution sites, where tasks must be completed within specific time slots—failure to comply can result in high voltage surges.</p>
+              <p class="font-outfit font-light text-[12px] md:text-xl text-white/64 text-center">  {service.paragraph}</p>
             </div>
-            <div className="solution-shadow w-[302px] h-[auto] border-2 border-white/64 bg-black/24 backdrop-blur-[200] py-[24px] px-[16px] rounded-[20px]">
-             
-              <p className="mt-[24px] mb-[16px] font-outfit text-center font-medium text-2xl bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-              Ferrovie dello Stato
-              </p>
-              <p class="font-outfit font-light text-[12px] md:text-xl text-white/64 text-center">Applies similar procedures to railway maintenance. Maintenance must be conducted at an exactly scheduled time; otherwise, trains will continue running on the tracks, creating a major safety risk.</p>
-            </div>
+             ))}
+            
             
           </div>
           
@@ -164,13 +134,13 @@ function InsuranceSection() {
       <div className="relative mt-[100px] z-10 flex flex-col justify-center items-center text-center lg:px-[100px] md:px-[30px] px-[20px]">
       
         <div className="mt-[100px] text-center flex flex-col md:gap-[64px] gap-[40px] max-w-[1000px] mx-auto">
-                  <Heading1 headingGray="bottom" headingWhite="line" />
+                  <Heading1 headingGray={theBottomLine ? theBottomLine.light_heading : "Loading..."} headingWhite={theBottomLine ? theBottomLine.dark_heading : "Loading..."} />
                   <Text>
-                  By implementing certified, real-time evidence, construction companies, infrastructure managers, and government agencies can enhance {" "}
+                  {theBottomLinePara ? theBottomLinePara.text : "Loading..."}{" "}
                     <GradientSpan>
-                    project efficiency, accountability, and compliance—leading to reduced costs,
-                    </GradientSpan>{" "}
-                    <GradientSpan>fewer disputes, and improved operational transparency.</GradientSpan>
+                    {theBottomLinePara ? theBottomLinePara.colored_text : "Loading..."}
+                    </GradientSpan>
+                    
                   </Text>
                 </div>
         {/* Fumigation process */}
@@ -198,4 +168,4 @@ function InsuranceSection() {
   );
 }
 
-export default InsuranceSection;
+export default ConstructionSection;

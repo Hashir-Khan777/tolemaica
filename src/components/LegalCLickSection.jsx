@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Heading1 from "./ui/Heading1";
 import { Text, GradientSpan } from "./ui/Text";
 import Card2 from "./ui/Card2";
 import Card3 from "./ui/Card3";
+import Card4 from "./ui/Card4";
 import { Link } from "react-router-dom";
 import OurPartnersSlider from "./ui/PartnersSLider";
 import ServiceSlider1 from "./ui/ServiceSLider1";
@@ -88,6 +89,88 @@ const BenefitCards = [
 ];
 
 function DataClickSecton() {
+  const [serviceData, setServiceData] = useState(null);
+  const [whyChooseData, setWhyChooseData] = useState([]); // Default to an empty array
+  const [benefitsData, setBenefitsData] = useState([]);
+
+  useEffect(() => {
+    const apiUrl = import.meta.env.VITE_API_BASE_URL;
+    fetch(`${apiUrl}/serviceworks?populate=*`)
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Network response was not ok " + res.statusText); // This will throw an error if the response is not ok.
+        }
+        return res.json(); // This will parse the response as JSON.
+      })
+      .then((data) => {
+        const filteredData = data.data.find(item => item.id === 5);
+        if (filteredData) {
+          setServiceData(filteredData);
+        } else {
+          console.error('No data found with id 3');
+        }
+      })
+      .catch((err) => {
+        console.error("Error fetching service works data:", err);
+      });
+  }, []);
+
+  // Fetch the "Why Choose" section data
+  useEffect(() => {
+    const apiUrl = import.meta.env.VITE_API_BASE_URL;
+    fetch(`${apiUrl}/chooseservices/vcpfx6k4uvzg1mmtoyogz0ca?populate=heading&populate=benefits&populate=benefits.heading&populate=benefits.image`)
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Network response was not ok " + res.statusText);
+        }
+        return res.json(); // This will parse the response as JSON.
+      })
+      .then(({ data }) => {
+    if (data && Array.isArray(data.benefits)) {
+      setWhyChooseData(data.benefits);
+    } else {
+      console.error("No valid benefits array returned");
+    }
+  })
+      .catch((err) => {
+        console.error("Error fetching why choose data:", err);
+      });
+  }, []);
+
+  useEffect(() => {
+    const apiUrl = import.meta.env.VITE_API_BASE_URL;
+    fetch(`${apiUrl}/servicebenefits/sjxbirjud3bi0d9k1dw4ugn7?populate=heading&populate=benefits&populate=benefits.heading`)
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Network response was not ok " + res.statusText);  // Handle error
+        }
+        return res.json(); // Parse the response as JSON
+      })
+      
+      .then(({ data }) => {
+        if (data && Array.isArray(data.benefits)) {
+          // Map over all items in the benefits array
+          const benefits = data.benefits.map((benefit, benefitIndex) => ({
+            title: benefit.heading ? benefit.heading.dark_heading : "No Title",
+            description: benefit.paragraph,
+            bg: gradients[benefitIndex % gradients.length], // Dynamically assigning background gradients
+          }));
+          setBenefitsData(benefits); // Update the state with the fetched benefits data
+        } else {
+          console.error("No valid data found for benefits");
+        }
+      })
+      .catch((err) => {
+        console.error("Error fetching service benefits data:", err);
+      });
+  }, []);
+
+  // Log the service data after it has been updated
+  useEffect(() => {
+    if (serviceData) {
+      console.log("Updated service data:", serviceData);
+    }
+  }, [serviceData]);
   return (
     <section className="relative overflow-hidden w-full bg-black py-[100px] flex  flex-col">
       <video
@@ -105,40 +188,35 @@ function DataClickSecton() {
         {/* ==== Content wrapper ===== */}
         <div className="relative z-10 flex flex-col justify-center items-center md:gap-[100px] gap-[70px] text-center">
           {/* ==== What is LEGALCLICK ====== */}
-          <div className="w-full flex flex-col justify-center items-center gap-[50px]">
-            <div className="flex flex-col gap-[20px]">
-              <Heading1 headingGray="what is" headingWhite="LEGALCLICK" />
+          {serviceData ? (
+            <div className="w-full flex flex-col justify-center items-center md:gap-[64px] gap-[40px]">
+              <Heading1 headingGray={serviceData.heading[0].light_heading} headingWhite={serviceData.heading[0].dark_heading} />
               <Text>
-                LegalClick is a{" "}
-                <GradientSpan>
-                  pay-per-usage digital certification service
-                </GradientSpan>{" "}
-                designed for{" "}
-                <GradientSpan>individuals and small businesses</GradientSpan>.
-                Whether you need to certify a photo,{" "}
-                <GradientSpan>video, or audio recording</GradientSpan>.
-                LegalClick provides instant, legally valid proof of
-                authenticity.
+                {serviceData.paragraph[0].text}{" "}
+                <GradientSpan>{serviceData.paragraph[0].colored_text}</GradientSpan>{" "}
+                {serviceData.paragraph[0].second_text}
               </Text>
-            </div>
 
-            {/* Image Section */}
-            <ImageSec imageUrl="/images/Legalclick.jpg" />
-          </div>
+              <ImageSec imageUrl={serviceData.mainImage.url} />
+            </div>
+          ) : (
+            <p>Loading data...</p>
+          )}
           {/* ==== What is DataClick ====== */}
 
           {/* ====== How dataclick works ======= */}
-          <div className="w-full flex flex-col gap-[64px]">
-            <div className="flex flex-col gap-[20px]">
-              <Heading1 headingGray="How" headingWhite="LEGALCLICK Works" />
+          {serviceData ? (
+            <div className="w-full flex flex-col md:gap-[64px] gap-[40px]">
+              <Heading1 headingGray={serviceData.heading[1].light_heading} headingWhite={serviceData.heading[1].dark_heading} />
               <Text>
-                With LegalClick, you can simply upload your media and receive a{" "}
-                <GradientSpan>probative element</GradientSpan> that guarantees
-                its authenticity. The process is quick, easy, and accessible via
-                both <GradientSpan>PC and smartphone</GradientSpan>.
+                {serviceData.paragraph[1].text}{" "}
+                <GradientSpan>{serviceData.paragraph[1].colored_text}</GradientSpan>{" "}
+                {serviceData.paragraph[1].second_text}
               </Text>
             </div>
-          </div>
+          ) : (
+            <p>Loading data...</p>
+          )}
           {/* ====== How dataclick works ======= */}
 
           {/* ====== Why Choose DataClick ======= */}
@@ -147,53 +225,36 @@ function DataClickSecton() {
 
             {/* ==== Cards ==== */}
             <div className="w-full">
-              <div className="flex flex-col justify-content-center items-center gap-[36px]">
+              <div className="flex flex-col justify-content-center items-center gap-[36px]"  style={{maxWidth: '1200px'}}>
                 <div className="hidden lg:flex flex-row flex-wrap justify-center items-center gap-[24px]">
                   {/* {cardsData.map((card, index) => (
                                 <Card3 key={index} {...card} />
-                            ))} */}
-                  <Card3
-                    description={cardsData[0].description}
-                    image={cardsData[0].image}
-                    gradientColors={cardsData[0].gradientColors}
-                    title={cardsData[0].title}
-                  />
-                  <Card3
-                    description={cardsData[1].description}
-                    image={cardsData[1].image}
-                    gradientColors={cardsData[1].gradientColors}
-                    title={cardsData[1].title}
-                  />
-                  <Card3
-                    description={cardsData[2].description}
-                    image={cardsData[2].image}
-                    gradientColors={cardsData[2].gradientColors}
-                    title={cardsData[2].title}
-                  />
+                            ))} */} {Array.isArray(whyChooseData) && whyChooseData.length > 0 ? (
+    whyChooseData.map((benefit, index) => (
+      <Card4
+        key={index}
+        image={benefit.image.url}
+        title={benefit.heading ? benefit.heading.dark_heading : "No Title"}
+        description={benefit.paragraph}
+        gradientColors={["#140902", "#4e2c1c"]} // Adjust gradient colors as needed
+      />
+    ))
+  ) : (
+    <p>No benefits found</p>
+  )}
+                 
                 </div>
 
-                <div className="hidden lg:flex flex-row flex-wrap justify-center items-center gap-[24px]">
-                  {/* {cardsData.map((card, index) => (
-                                <Card3 key={index} {...card} />
-                            ))} */}
-                  <Card3
-                    description={cardsData[3].description}
-                    image={cardsData[3].image}
-                    gradientColors={cardsData[3].gradientColors}
-                    title={cardsData[3].title}
-                  />
-                  <Card3
-                    description={cardsData[4].description}
-                    image={cardsData[4].image}
-                    gradientColors={cardsData[4].gradientColors}
-                    title={cardsData[4].title}
-                  />
-                </div>
+                
               </div>
 
-              <div className="flex lg:hidden">
-                <ServiceSlider1 cards={cardsData} />
-              </div>
+              <div className="md:hidden">
+  {Array.isArray(whyChooseData) && whyChooseData.length > 0 ? (
+    <ServiceSlider1 cards={whyChooseData} />
+  ) : (
+    <p>No benefits found</p>
+  )}
+</div>
             </div>
             {/* ==== Cards ==== */}
 
@@ -210,55 +271,21 @@ function DataClickSecton() {
             />
 
             <div className="lg:hidden block">
-              <ServiceSlider2 cards={BenefitCards} />
+             
+              <ServiceSlider2 cards={benefitsData} />
             </div>
 
             <div className="mx-auto hidden lg:grid grid-cols-4 gap-[36px]">
               {/*  */}
               <div className="lg:block hidden"></div>
-
-              {/* Card 1 */}
-              <Card2
-                title="Legally Valid Certification"
-                description="Provides legally recognized proof of authenticity for photos, videos, and audio recordings"
-                bg={gradients[0]}
-              />
-
-              {/* Card 2 */}
-              <Card2
-                title="Instant Certification"
-                description="Quickly certifies media files with a probative element, ensuring fast and reliable authentication"
-                bg={gradients[1]}
-              />
-
-              {/* Card 3 */}
-              <Card2
-                title="Pay-Per-Use Model"
-                description="No need for subscriptions; only pay when you use the service, making it cost-effective for individuals and small businesses"
-                bg={gradients[2]}
-              />
-
-              {/* Card 4 */}
-              <Card2
-                title="User-Friendly & Accessible"
-                description="Easily upload and certify files via PC or smartphone, ensuring convenience anytime, anywhere"
-                bg={gradients[3]}
-              />
-
-              {/* Card 5 */}
-              <Card2
-                title="Secure & Tamper-Proof"
-                description="Uses strong encryption and digital signatures to prevent any alteration of the certified media"
-                bg={gradients[4]}
-              />
-
-              {/* Card 6 */}
-              <Card2
-                title="Versatile Applications"
-                description="Useful for legal disputes, copyright protection, insurance claims, contract verification, and more"
-                bg={gradients[5]}
-              />
-
+              {benefitsData.map((benefit, index) => (
+    <Card2
+      key={index}
+      title={benefit.title}
+      description={benefit.description}
+      bg={gradients[index % gradients.length]}  // Apply dynamic background gradient
+    />
+  ))}
               <div className="lg:block hidden"></div>
             </div>
           </div>

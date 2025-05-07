@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Heading1 from "./ui/Heading1";
 import { Text, GradientSpan } from "./ui/Text";
 import OurPartnersSlider from "./ui/PartnersSLider";
@@ -8,6 +8,37 @@ import OurPatent from "./OurPatent";
 import IACSlider from "./ui/iacSlider";
 
 function IACWorks() {
+  const [iacData, setIacData] = useState({
+    heading: "",
+    colored_heading: "",
+    text: "",
+    colored_text: "",
+    second_text: "",
+    image_url: "",
+    paragraphs: [],
+  });
+
+  useEffect(() => {
+    
+    const apiUrl = `${import.meta.env.VITE_API_BASE_URL}/iacwork?populate=*`;
+
+    fetch(apiUrl)
+      .then((res) => res.json())
+      .then((data) => {
+        const iacResponse = data.data;
+
+        setIacData({
+          light_heading: iacResponse.heading.light_heading,
+          dark_heading: iacResponse.heading.dark_heading,
+           
+          paragraphs: iacResponse.paragraph, // Store all paragraphs
+          image_url: iacResponse.image?.url, // Get the background video URL
+        });
+      })
+      .catch((err) => {
+        console.error("Error fetching IAC works data:", err);
+      });
+  }, []);
   return (
     <section className="relative overflow-hidden w-full bg-black pt-[100px] pb-[200px] flex  flex-col md:gap-[100px] gap-[40px]">
       <video
@@ -33,8 +64,8 @@ function IACWorks() {
         <div className="relative z-10 flex flex-col justify-center items-center gap-[40px] md:gap-[100px] text-center lg:px-[100px] md:px-[30px] px-[20px]">
           {/* ==== How IAC Works ==== */}
           <div className="shrink-0 relative w-full z-10 flex flex-col justify-center items-center md:gap-[64px] gap-[40px] text-center">
-            <Heading1 headingGray="How" headingWhite="iac works" />
-            <Text>
+            <Heading1 headingGray={iacData.light_heading} headingWhite={iacData.dark_heading} />
+           {/*  <Text>
               <GradientSpan>IAC (Instant Automatic Certification)</GradientSpan>{" "}
               technology is the internationally patented solution for date and
               location legal certification of data captured by smartphones or
@@ -45,26 +76,21 @@ function IACWorks() {
               in a server held by a Notified Body that returns a report to the
               user summarizing date, time and location references of the given
               data (image/sound).
+            </Text> */}
+            <Text>
+            {iacData.paragraphs[0]?.text} <GradientSpan>{iacData.paragraphs[0]?.colored_text}</GradientSpan> (sound and images)
+            {iacData.paragraphs[0]?.second_text}
             </Text>
-
-            <ImageSec imageUrl="/images/IACTech.png" />
+            <ImageSec imageUrl={iacData.image_url}  />
 
             <Text>
-              From a technical point of view, the certification process consists
-              in <GradientSpan>encrypting data</GradientSpan> (sound and images)
-              captured by the camera and/or microphone of smartphones (or other
-              device) and a held in a temporary partitioned memory in order to
-              make it unavailable to the user; the data captured, unmodifiable
-              because inaccessible (!), is subsequently transmitted through
-              certified digital flows such as pec(certified e-mail),
-              time-stamping, block chain or other recognized certification
-              processes to a Certified server held by a Notified Body.
+            {iacData.paragraphs[1]?.text} <GradientSpan>{iacData.paragraphs[1]?.colored_text}</GradientSpan> (sound and images)
+            {iacData.paragraphs[1]?.second_text}
             </Text>
 
             <Text>
-              The result of the instantaneous procedure, which only requires one
-              simple control, is reported to user and/or the office appointed,
-              together with relevant legal evidence.
+            {iacData.paragraphs[2]?.text} <GradientSpan>{iacData.paragraphs[2]?.colored_text}</GradientSpan> (sound and images)
+            {iacData.paragraphs[2]?.second_text}
             </Text>
           </div>
 

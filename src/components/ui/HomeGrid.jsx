@@ -1,12 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import GridSlider from "../ui/GridSlider";
-// import ServiceSlider from './ServiceSlider';
 
 const HomeGrid = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [HomeServices, setHomeServices] = useState(null);
 
   useEffect(() => {
+    const apiUrl = import.meta.env.VITE_API_BASE_URL;
+    fetch(`${apiUrl}/homeservice?populate=services.bg_image`)
+      .then((response) => response.json())
+      .then((data) => {
+        setHomeServices(data.data); // Set "What We Do" data into state
+      })
+      .catch((error) => console.error("Failed to fetch What We Do data:", error));
+    
     const handleResize = () => {
       setIsMobile(window.innerWidth < 1200);
     };
@@ -26,7 +34,11 @@ const HomeGrid = () => {
     return <GridSlider />;
   }
 
-  // Otherwise render grid
+  // Check if HomeServices is loaded before rendering
+  if (!HomeServices) {
+    return <div className="bg-black">Loading...</div>;  // You can customize this to show a loading spinner or message
+  }
+
   return (
     <div className="w-full mx-auto p-4">
       <div className="grid gap-8 grid-cols-1 xl:grid-cols-4 auto-rows-[minmax(120px,130px)]">
@@ -36,12 +48,12 @@ const HomeGrid = () => {
             to="/"
             className="relative flex flex-col justify-end py-[24px] items-center gap-6 p-5 w-full h-full bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: "url('/images/TeritorryMonitoring.jpg')",
+              backgroundImage: `url(${HomeServices?.services?.[0]?.bg_image?.url})`, // Safe navigation to prevent error
             }}
           >
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
             <p className="z-10 lg:text-[1.2rem] text-2xl font-bold tracking-wide text-white text-center font-outfit uppercase">
-              Territory Monitoring
+              {HomeServices?.services?.[0]?.service}
             </p>
           </Link>
         </div>
@@ -52,12 +64,12 @@ const HomeGrid = () => {
             to="/"
             className="relative flex flex-col justify-end py-[24px] items-center gap-6 p-5 w-full h-full bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: "url('/images/grid2.png')",
+              backgroundImage: `url(${HomeServices?.services?.[1]?.bg_image?.url})`, // Safe navigation to prevent error
             }}
           >
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
             <p className="z-10 lg:text-[1.2rem] text-2xl font-bold tracking-wide text-white text-center font-outfit uppercase">
-              Logistics
+              {HomeServices?.services?.[1]?.service}
             </p>
           </Link>
         </div>
@@ -68,12 +80,12 @@ const HomeGrid = () => {
             to="/"
             className="relative flex flex-col justify-end py-[24px] items-center gap-6 p-5 w-full h-full bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: "url('/images/grid3.png')",
+              backgroundImage: `url(${HomeServices?.services?.[2]?.bg_image?.url})`, // Safe navigation to prevent error
             }}
           >
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
             <p className="z-10 lg:text-[1.2rem] text-2xl font-bold tracking-wide text-white text-center font-outfit uppercase">
-              Measurements
+              {HomeServices?.services?.[2]?.service}
             </p>
           </Link>
         </div>
@@ -89,10 +101,10 @@ const HomeGrid = () => {
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
             <p className="z-10 lg:text-[90px]/[100%] md:text-[60px]/[100%] text-[48px]/[100%] font-raleway font-[700] tracking-widest text-white text-center font-outfit uppercase flex flex-col">
               <span className="bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-                tailored
+              {HomeServices?.heading.split(' ')[0]}
               </span>
               <span className="bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-                Services
+              {HomeServices?.heading.split(' ')[1]}
               </span>
             </p>
           </div>
@@ -104,12 +116,12 @@ const HomeGrid = () => {
             to="/"
             className="relative flex flex-col justify-end py-[24px] items-center gap-6 p-5 w-full h-full bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: "url('/images/wipcontrol.png')",
+              backgroundImage: `url(${HomeServices?.services?.[7]?.bg_image?.url})`,
             }}
           >
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
             <p className="z-10 lg:text-[1.2rem] text-2xl font-bold tracking-wide text-white text-center font-outfit uppercase">
-              WIP control
+            {HomeServices?.services?.[7]?.service}
             </p>
           </Link>
         </div>
@@ -120,12 +132,12 @@ const HomeGrid = () => {
             to="/"
             className="relative flex flex-col justify-end py-[24px] items-center gap-6 p-5 w-full h-full bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: "url('/images/grid5.png')",
+              backgroundImage: `url(${HomeServices?.services?.[3]?.bg_image?.url})`, // Safe navigation to prevent error
             }}
           >
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
             <p className="z-10 lg:text-[1.2rem] text-2xl font-bold tracking-wide text-white text-center font-outfit uppercase">
-              Commercial Contracts
+              {HomeServices?.services?.[3]?.service}
             </p>
           </Link>
         </div>
@@ -136,12 +148,12 @@ const HomeGrid = () => {
             to="/"
             className="relative flex flex-col justify-end py-[24px] items-center gap-6 p-5 w-full h-full bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: "url('/images/fraud.png')",
+              backgroundImage: `url(${HomeServices?.services?.[6]?.bg_image?.url})`, // Safe navigation to prevent error
             }}
           >
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
             <p className="z-10 lg:text-[1.2rem] text-2xl font-bold tracking-wide text-white text-center font-outfit uppercase">
-              Fraud
+              {HomeServices?.services?.[6]?.service}
             </p>
           </Link>
         </div>
@@ -152,12 +164,12 @@ const HomeGrid = () => {
             to="/"
             className="relative flex flex-col justify-end py-[24px] items-center gap-6 p-5 w-full h-full bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: "url('/images/theft.png')",
+              backgroundImage: `url(${HomeServices?.services?.[4]?.bg_image?.url})`, // Safe navigation to prevent error
             }}
           >
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
             <p className="z-10 lg:text-[1.2rem] text-2xl font-bold tracking-wide text-white text-center font-outfit uppercase">
-              Theft
+              {HomeServices?.services?.[4]?.service}
             </p>
           </Link>
         </div>
@@ -168,14 +180,14 @@ const HomeGrid = () => {
             to="/"
             className="relative flex flex-col justify-end py-[24px] items-center gap-6 p-5 w-full h-full bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: "url('/images/insurancefraud.png')",
+              backgroundImage: `url(${HomeServices?.services?.[5]?.bg_image?.url})`, // Safe navigation to prevent error
             }}
           >
             {/* Overlay */}
             {/* <div className="absolute inset-0 bg-black/30"></div> */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
             <p className="z-10 lg:text-[1.2rem] text-2xl font-bold tracking-wide text-white text-center font-outfit uppercase">
-              insurance fraud
+              {HomeServices?.services?.[5]?.service}
             </p>
           </Link>
         </div>

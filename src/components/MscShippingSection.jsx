@@ -9,7 +9,22 @@ import FumigationProcess from "./FumigationProcess";
 import SolutionSection from "./MscSolutions";
 import ResultsSection from "./MSCResult";
 
-function MSCShippingSection() {
+const MSCShippingSection = ({ worksectorData }) => {
+  const { details, services } = worksectorData;
+  
+  const challengeDetail = details[2];
+  const theSolution = details[6];
+  const theSolutionText = details[7];
+  const theBottomLine = details[8];
+  const theBottomLinePara = details[9];
+  
+  // Filter out the facts where __component === "facts.fact"
+  const facts = details.filter(item => item.__component === "facts.fact");
+
+  if (!worksectorData) {
+    return <div className="bg-black">Loading...</div>; // Display loading message until data is available
+  }
+
   return (
     <section className="relative overflow-hidden bg-black w-full py-[100px] flex flex-col">
       <video
@@ -26,108 +41,106 @@ function MSCShippingSection() {
       {/* <div className="md:container px-[20px] md:px-auto mx-auto"> */}
       <div className="relative max-w-[1280px] mx-auto z-10">
         <h1 className="text-center font-raleway text-white font-normal text-xl md:text-[40px] my-[48px]">
-          <span className="text-white/[0.64]">THE</span> CHALLENGE
+          <span className="text-white/[0.64]">{challengeDetail ? challengeDetail.light_heading : "Loading..."}</span> 
         </h1>
         <div className="flex flex-col gap-[48px] font-outfit font-light text-base md:text-2xl text-white/[0.64] text-center mb-[50px] sm:px-[20px]">
           <p className="px-[20px] bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">  
-          Container Entry & Exit Process
+          {challengeDetail ? challengeDetail.dark_heading : "Loading..."}
           </p>
           <p className="px-[20px]">
-          Clients frequently file complaints regarding the condition of goods inside containers, leading to disputes between shippers and consignees. Common issues include:
+          {challengeDetail ? challengeDetail.second_dark_heading : "Loading..."}:
           </p>
         </div>
         <div className="flex flex-col gap-[50px]">
-          <div
-            style={{
-              border: "2px solid transparent",
-              background:
-                "linear-gradient(#000000 0%, #000000 0%) padding-box, linear-gradient(to left, #FF986433 20%, #602F16, #FF9864) border-box",
-            }}
-            className="shadow-challenge flex flex-wrap lg:flex-nowrap lg:justify-start lg:text-start justify-center text-center rounded-[10px] items-center gap-[32px] py-[65px] lg:pl-[45px] px-[5px] text-white"
-          >
-            <div className="z-999 font-outfit font-[100] text-[32px] md:text-[104px] bg-gradient-to-r to-[#FFFFFF] from-[#555555] bg-clip-text text-transparent">
-              01
-            </div>
-            <div className="font-outfit font-light text-[24px] md:text-[32px]">
-              Unverified container conditions at entry and exit points.
-            </div>
+        {details
+  .filter((item) => item.__component === "work.work-list")
+  .map((item, index) => (
+    <div
+      key={index}
+      style={{
+        border: "2px solid transparent",
+        background:
+          "linear-gradient(#000000 0%, #000000 0%) padding-box, linear-gradient(to left, #FF986433 20%, #602F16, #FF9864) border-box",
+      }}
+      className={`shadow-challenge ${index % 2 === 0 ? "lg:justify-start" : "lg:justify-end"} flex flex-wrap lg:flex-nowrap justify-center text-center rounded-[10px] items-center gap-[32px] py-[65px] lg:px-[45px] px-[5px] text-white`}
+    >
+      {index % 2 === 0 ? (
+        // For even-index items (first item, Title comes first)
+        <>
+          <div className="z-999 font-outfit font-[100] text-[32px] md:text-[104px] bg-gradient-to-r to-[#FFFFFF] from-[#555555] bg-clip-text text-transparent">
+            {item.Title}
           </div>
-          <div
-            style={{
-              border: "2px solid transparent",
-              background:
-                "linear-gradient(#000000 0%, #000000 0%) padding-box, linear-gradient(to right, #FF986433 20%, #602F16, #FF9864) border-box",
-            }}
-            className="shadow-challenge-2 flex flex-wrap lg:flex-nowrap lg:justify-end lg:text-start justify-center text-center rounded-[10px] items-center gap-[32px] py-[65px] lg:pr-[45px] px-[5px] text-white"
-          >
-            <div className="font-outfit font-light text-[24px] md:text-[32px]">
-              Unclear proof of seal integrity at different supply chain stages.
-            </div>
-            <div className="z-999 font-outfit font-[100] text-[32px] md:text-[104px] bg-gradient-to-r to-[#FFFFFF] from-[#555555] bg-clip-text text-transparent">
-              02
-            </div>
+          <div className="font-outfit font-light text-[24px] md:text-[32px]">
+            {item.Description}
           </div>
-          <div
-            style={{
-              border: "2px solid transparent",
-              background:
-                "linear-gradient(#000000 0%, #000000 0%) padding-box, linear-gradient(to left, #FF986433 20%, #602F16, #FF9864) border-box",
-            }}
-            className="shadow-challenge flex flex-wrap lg:flex-nowrap lg:justify-start lg:text-start justify-center text-center rounded-[10px] items-center gap-[32px] py-[65px] lg:pl-[45px] px-[5px] text-white"
-          >
-            <div className="z-999 font-outfit font-[100] text-[32px] md:text-[104px] bg-gradient-to-r to-[#FFFFFF] from-[#555555] bg-clip-text text-transparent">
-              03
-            </div>
-            <div className="font-outfit font-light text-[24px] md:text-[32px]">
-              Extensive manual documentation processes leading to
-              inefficiencies.
-            </div>
+        </>
+      ) : (
+        // For odd-index items (second item, Title comes second)
+        <>
+          <div className="font-outfit font-light text-[24px] md:text-[32px]">
+            {item.Description}
           </div>
+          <div className="z-999 font-outfit font-[100] text-[32px] md:text-[104px] bg-gradient-to-r to-[#FFFFFF] from-[#555555] bg-clip-text text-transparent">
+            {item.Title}
+          </div>
+        </>
+      )}
+    </div>
+  ))}
+
         </div>
         <h1 className="mt-[100px] text-center font-raleway text-white font-normal text-xl md:text-[40px] mb-[48px]">
-          <span className="text-white/[0.64]">THE</span> SOLUTION
+          <span className="text-white/[0.64]">{theSolution ? theSolution.light_heading : "Loading..."}</span> {theSolution ? theSolution.dark_heading : "Loading..."}
         </h1>
         <p className="text-center text-white/64 font-outfit font-light text-base md:text-2xl mb-[48px]">
-          Tolemaica introduces a certified digital solution that ensures
-          complete traceability by capturing{" "}
+        {theSolutionText ? theSolutionText.text : "Loading..."}{" "}
           <span className="bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-            legally valid, timestamped, and geolocated images
-          </span>{" "}
-          at both arrival and departure. The system records:
+          {theSolutionText ? theSolutionText.colored_text : "Loading..."}
+          </span> 
         </p>
         <div className="flex flex-col gap-[32px]">
           <div className="flex flex-wrap items-center justify-center gap-16">
-            <div className="solution-shadow w-[302px] h-[475px] border-2 border-white/64 bg-black/24 backdrop-blur-[200] py-[24px] px-[16px] rounded-[20px]">
-              <img src="/sol3.png" className="rounded-[12px] mx-auto" />
-              <p className="mt-[24px] mb-[16px] font-outfit text-center font-medium text-2xl bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-                Container number verification
-              </p>
-            </div>
-            <div className="solution-shadow w-[302px] h-[475px] border-2 border-white/64 bg-black/24 backdrop-blur-[200] py-[24px] px-[16px] rounded-[20px]">
-              <img src="/sol4.png" className="rounded-[12px] mx-auto" />
-              <p className="mt-[24px] mb-[16px] font-outfit text-center font-medium text-2xl bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-                Truck license plate for vehicle identification
-              </p>
-            </div>
+          {services.slice(0, 2).map((service, index) => (
+              <div
+                key={index}
+                className="solution-shadow w-[302px] h-[475px] border-2 border-white/64 bg-black/24 backdrop-blur-[200] py-[24px] px-[16px] rounded-[20px]"
+              >
+                <img
+                  src={service.image.url}
+                  className="rounded-[12px] mx-auto"
+                  alt={service.image.name}
+                />
+                <p className="mt-[24px] mb-[16px] font-outfit text-center font-medium text-2xl bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
+                  {service.heading.light_heading}
+                </p>
+                <p className="font-outfit font-light text-[12px] md:text-xl text-white/64 text-center">
+                  {service.paragraph}
+                </p>
+              </div>
+            ))}
           </div>
           <div className="flex flex-wrap items-center justify-center gap-16">
-            <div className="solution-shadow w-[302px] h-[475px] border-2 border-white/64 bg-black/24 backdrop-blur-[200] py-[24px] px-[16px] rounded-[20px]">
-              <img src="/sol5.png" className="rounded-[12px] mx-auto" />
-              <p className="mt-[24px] mb-[16px] font-outfit text-center font-medium text-2xl bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-                Seal number and condition to verify integrity
-              </p>
-            </div>
-            <div className="solution-shadow w-[302px] h-[475px] border-2 border-white/64 bg-black/24 backdrop-blur-[200] py-[24px] px-[16px] rounded-[20px]">
-              <img src="/sol6.png" className="rounded-[12px] mx-auto" />
-              <p className="mt-[24px] mb-[16px] font-outfit text-center font-medium text-2xl bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-                Additional relevant notes for dispute resolution
-              </p>
-            </div>
+          {services.slice(2, 4).map((service, index) => (
+              <div
+                key={index}
+                className="solution-shadow w-[302px] h-[475px] border-2 border-white/64 bg-black/24 backdrop-blur-[200] py-[24px] px-[16px] rounded-[20px]"
+              >
+                <img
+                  src={service.image.url}
+                  className="rounded-[12px] mx-auto"
+                  alt={service.image.name}
+                />
+                <p className="mt-[24px] mb-[16px] font-outfit text-center font-medium text-2xl bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
+                  {service.heading.light_heading}
+                </p>
+                <p className="font-outfit font-light text-[12px] md:text-xl text-white/64 text-center">
+                  {service.paragraph}
+                </p>
+              </div>
+            ))}
           </div>
           <p className="text-center font-outfit font-light text-base md:text-2xl text-white/64">
-            The solution automates the documentation process for both land and
-            maritime transport, covering loading, unloading, and transshipment
-            operations.
+          {theSolutionText ? theSolutionText.second_text : "Loading..."}
           </p>
         </div>
       </div>
@@ -141,15 +154,25 @@ function MSCShippingSection() {
             The <span className="px-2 text-white">Fumigation Process</span> for
             export
           </h1>
-          <FumigationProcess />
+          {/* <FumigationProcess /> */}
+          <FumigationProcess services={services.slice(4, 11)} />
         </div>
 
         {/* Solution Section */}
         <SolutionSection />
 
         {/* Result Section */}
-        <ResultsSection />
-
+        <ResultsSection  data={facts} />
+        <div className="mt-[100px] text-center flex flex-col md:gap-[64px] gap-[40px] max-w-[1000px] mx-auto">
+                  <Heading1 headingGray={theBottomLine ? theBottomLine.light_heading : "Loading..."} headingWhite={theBottomLine ? theBottomLine.dark_heading : "Loading..."} />
+                  <Text>
+                  {theBottomLinePara ? theBottomLinePara.text : "Loading..."}{" "}
+                    <GradientSpan>
+                    {theBottomLinePara ? theBottomLinePara.colored_text : "Loading..."}{" "}
+                    </GradientSpan>
+                    {theBottomLinePara ? theBottomLinePara.second_text : "Loading..."}
+                  </Text>
+                </div>
         {/* ISO Certified */}
         <ISOCertified />
       </div>

@@ -1,17 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Heading1 from "./ui/Heading1";
 import { Text, GradientSpan } from "./ui/Text";
-import Card from "./ui/Card";
-import CustomBtn from "./ui/CustomeBtn";
+import Video from "./ui/Video"; // Assuming you already have this component
 import { Link } from "react-router-dom";
 import OurPartnersSlider from "./ui/PartnersSLider";
 import OurPatent from "./OurPatent";
 import SliderComponent from "./Slider";
-import Video from "./ui/Video";
 import ISOCertified from "./ISOCertified";
 import HomeGrid from "./ui/HomeGrid";
 import Heading2 from "./ui/Heading2";
-
+import Card from "./ui/Card";
+import CustomBtn from "./ui/CustomeBtn";
 const cards = [
   {
     icon: "/images/legalClick.png",
@@ -73,33 +72,53 @@ const cards = [
     playButton: "/images/playBtn.png",
     playButtonLink: "/services/BarCertCode",
   },
-  // {
-  //   icon: "/images/legalVideo.png",
-  //   title: "LegalVideo",
-  //   buttonText: "know more",
-  //   backgroundImage: "/card6.png",
-  //   buttonLink: "/",
-  //   buttonBorder: "#FF9966",
-  //   buttonBg: "white",
-  //   buttonTextColor: "black",
-  //   playButton: "/images/playBtn.png",
-  //   playButtonLink: "https://example.com/play",
-  // },
-  // {
-  //   icon: "/images/legalSound.png",
-  //   title: "LegalSound",
-  //   buttonText: "know more",
-  //   backgroundImage: "/card7.png",
-  //   buttonLink: "/",
-  //   buttonBorder: "white",
-  //   buttonBg: "black",
-  //   buttonTextColor: "#FF9966",
-  //   playButton: "/images/playBtn.png",
-  //   playButtonLink: "https://example.com/play",
-  // },
 ];
 
 function OurPartners() {
+  const [facts, setFacts] = useState([]); // State to store facts data
+  const [whatWeDo, setWhatWeDo] = useState(null); // State to store "What We Do" data
+  const [AboutIac, setAboutIac] = useState(null);
+  const [SoftwareSolution, setSoftwareSolution] = useState(null);
+  
+
+  useEffect(() => {
+    // Fetch facts data from the API
+   
+    const apiUrl = import.meta.env.VITE_API_BASE_URL;
+    fetch(`${apiUrl}/homefact?populate=*`)
+      .then((response) => response.json())
+      .then((data) => {
+        setFacts(data.data.facts); // Set the facts data into state
+      })
+      .catch((error) => console.error("Failed to fetch facts data:", error));
+
+      fetch(`${apiUrl}/aboutiac?populate=*`)
+      .then((response) => response.json())
+      .then((data) => {
+        setAboutIac(data.data); // Set the facts data into state
+      })
+      .catch((error) => console.error("Failed to fetch facts data:", error));
+
+    // Fetch "What We Do" data from the API 
+    fetch(`${apiUrl}/whatwedo?populate=*`)
+      .then((response) => response.json())
+      .then((data) => {
+        setWhatWeDo(data.data); // Set "What We Do" data into state
+      })
+      .catch((error) => console.error("Failed to fetch What We Do data:", error));
+
+      fetch(`${apiUrl}/softwaresolution?populate=solutions.image&populate=solutions.bg_image&populate=heading&&populate=paragraph`)
+      .then((response) => response.json())
+      .then((data) => {
+        setSoftwareSolution(data.data); // Set "What We Do" data into state
+      })
+      .catch((error) => console.error("Failed to fetch What We Do data:", error));
+
+      
+  }, []);
+
+  
+
   return (
     <section className="relative overflow-hidden w-full bg-black py-[100px] flex flex-col">
       <video
@@ -124,28 +143,22 @@ function OurPartners() {
           {/* Statistics section */}
           <div className="w-full shrink-0 flex flex-col justify-center items-center gap-[50px]">
             <div className="w-full flex justify-center md:justify-between gap-10 md:gap-[50px]">
-              {[
-                { value: "99", operator: "%", label: "Uptime Reliability" },
-                {
-                  value: "25K",
-                  operator: "+",
-                  label: "Certifications Issued ",
-                },
-                { value: "15", operator: "+", label: "Countries Operating In" },
-              ].map((item, index) => (
-                <p
-                  key={index}
-                  className="flex flex-col justify-center items-center gap-[10px] p-[10px] font-outfit text-center"
-                >
-                  <p className="shrink-0 font-outfit text-[40px]/[50px] xl:text-[128px]/[100%] bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent tracking-[5%] flex flex-row">
-                    <span className="font-[400]">{item.value}</span>{" "}
-                    <span className="font-[200]">{item.operator}</span>
+              {/* Dynamically render facts from API */}
+              {facts.length > 0 ? (
+                facts.map((item, index) => (
+                  <p key={index} className="flex flex-col justify-center items-center gap-[10px] p-[10px] font-outfit text-center">
+                    <p className="shrink-0 font-outfit text-[40px]/[50px] xl:text-[128px]/[100%] bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent tracking-[5%] flex flex-row">
+                      <span className="font-[400]">{item.ColoredHeading}</span>{" "}
+                      
+                    </p>
+                    <span className="font-outfit text-white font-[300] text-[14px]/[17px] md:text-[24px]/[28px] text-center tracking-[5%] capitalize">
+                      {item.FactDetail}
+                    </span>
                   </p>
-                  <span className="font-outfit text-white font-[300] text-[14px]/[17px] md:text-[24px]/[28px] text-center tracking-[5%] capitalize">
-                    {item.label}
-                  </span>
-                </p>
-              ))}
+                ))
+              ) : (
+                <p>Loading...</p> // In case the data is still loading
+              )}
             </div>
 
             <div className="w-full flex justify-center">
@@ -155,30 +168,40 @@ function OurPartners() {
 
           {/* ==== What we do ====== */}
           <div className="w-full flex flex-col justify-center items-center md:gap-[64px] gap-[40px]">
-            <Heading1 headingGray="what" headingWhite="we do" />
+            <Heading1 headingGray={whatWeDo?.heading.light_heading} headingWhite={whatWeDo?.heading.dark_heading} />
             <Text>
-              All data collected (photographs, videos, sounds, phone calls,
-              etc.) from smartphones and other devices undergo,{" "}
-              <GradientSpan>automatically and instantaneously</GradientSpan>, a
-              certification process giving legal value to the exact moment (date
-              and time) and geolocation of when it was captured. The
-              certification takes place according to different processes such as
-              pec, time-stamping or block chain and returns to the user, or to
-              the company back office, a certified copy of the photo or sound
-              together with the certificate that summarizes all relevant
-              references of the data collected.
+              {whatWeDo ? (
+                <>
+                  {whatWeDo.paragraph.text}{" "}
+                  <GradientSpan>{whatWeDo.paragraph.colored_text}</GradientSpan> 
+                  {whatWeDo.paragraph.second_text}
+                </>
+              ) : (
+                "Loading..." // Show loading text if the data is not yet fetched
+              )}
             </Text>
 
-            <Video link="/video1.mp4" />
+            {whatWeDo?.video?.url && (
+              <Video link={whatWeDo.video.url} />
+            )}
           </div>
           {/* ==== What we do ====== */}
 
           {/* ===== ABout IAC Technology ======= */}
           <div className="w-full flex flex-col justify-center items-center md:gap-[64px] gap-[40px]">
-            <Heading1 headingGray="about" headingWhite="iac technology" />
+            <Heading1 headingGray={AboutIac?.heading.light_heading} headingWhite={AboutIac?.heading.dark_heading} />
 
             <Text>
-              IAC (Instant Automatic Certification) is a patented technology
+            {AboutIac ? (
+                <>
+                  {AboutIac.paragraph.text}{" "}
+                  <GradientSpan>{AboutIac.paragraph.colored_text}</GradientSpan> 
+                  {AboutIac.paragraph.second_text}
+                </>
+              ) : (
+                "Loading..." // Show loading text if the data is not yet fetched
+              )}
+              {/* IAC (Instant Automatic Certification) is a patented technology
               that provides{" "}
               <span className="text-white font-[500]">instant,</span>{" "}
               <GradientSpan>
@@ -189,63 +212,60 @@ function OurPartners() {
                 smartphones or other devices.
               </span>{" "}
               The certified data is securely stored on a Notified Body's server,
-              which promptly issues a verification report to the user.
+              which promptly issues a verification report to the user. */}
             </Text>
-
+            
             <Link
               to="/iac-tech"
               className="uppercase text-white w-[200px] md:w-[330px] md:px-[100px] px-[48px] md:py-[20px] py-[14px] rounded-full border-[2px] border-white font-raleway font-[700] text-[16px]/[100%]  md:text-[20px]/[100%] tracking-[5%]"
             >
-              check now
+              {AboutIac?.btn_text}
             </Link>
           </div>
           {/* ===== ABout IAC Technology ======= */}
 
           {/* ====== Our Software solutions start ======= */}
           <div className="w-full flex flex-col md:gap-[64px] gap-[40px]">
-            <Heading1 headingGray="Our" headingWhite="software solutions" />
+            <Heading1 headingGray={SoftwareSolution?.heading.light_heading} headingWhite={SoftwareSolution?.heading.dark_heading} />
 
             <Text>
-              Tolemaica provides secure and automated digital solutions to
-              ensure legal certification, authenticity, compliance, and data
-              integrity. Our software suite leverages proprietary{" "}
+            {SoftwareSolution?.paragraph.text} {" "}
               <GradientSpan>
-                Instant Automatic Certification (IAC) technology
+              {SoftwareSolution?.paragraph.colored_text} 
               </GradientSpan>{" "}
-              to deliver trust and security across all industries. velit
-              vestibulum adipiscing.
+              {SoftwareSolution?.paragraph.second_text} 
             </Text>
 
             <div className="w-full hidden lg:grid md:grid-cols-2 grid-cols-1 gap-[24px]">
               <Card
-                icon="/images/legalClick.png"
-                title="LegalClick"
-                buttonText="know more"
+                icon= {SoftwareSolution?.solutions[1].image.url} 
+                title={SoftwareSolution?.solutions[1].text} 
+                buttonText={SoftwareSolution?.solutions[1].btn_text} 
                 buttonLink="/services/legal-click"
                 buttonBorder="white"
                 buttonBg="black"
                 buttonTextColor="#FF9966"
                 playButton="/images/playBtn.png"
                 playButtonLink="https://example.com/play"
-                backgroundImage="/card1.png"
+                backgroundImage={SoftwareSolution?.solutions[1].bg_image.url} 
               />
 
               <Card
-                icon="/images/dataClick.png"
-                title="DataClick"
-                buttonText="know more"
+                 icon= {SoftwareSolution?.solutions[0].image.url} 
+                 title={SoftwareSolution?.solutions[0].text} 
+                 buttonText={SoftwareSolution?.solutions[0].btn_text} 
                 buttonLink="/services/data-click"
                 buttonBorder="#FF9966"
                 buttonBg="white"
                 buttonTextColor="black"
                 playButton="/images/playBtn.png"
                 playButtonLink="https://example.com/play"
-                backgroundImage="/card2.png"
+                backgroundImage={SoftwareSolution?.solutions[0].bg_image.url} 
               />
 
               <div className="w-full flex flex-col justify-center">
                 <CustomBtn
-                  text="Best In Market"
+                  text={SoftwareSolution?.heading_one} 
                   borderColor="white"
                   bgColor="black"
                   textColor="#FF9966"
@@ -253,7 +273,7 @@ function OurPartners() {
                   lgFontSize="48px"
                 />
                 <CustomBtn
-                  text="Industry Leading"
+                  text={SoftwareSolution?.heading_two}
                   borderColor="white"
                   bgColor="#641A15"
                   textColor="white"
@@ -261,7 +281,7 @@ function OurPartners() {
                   lgFontSize="48px"
                 />
                 <CustomBtn
-                  text="SOlutions"
+                  text={SoftwareSolution?.heading_three}
                   borderColor="white"
                   bgColor="black"
                   textColor="#FF9966"
@@ -270,42 +290,42 @@ function OurPartners() {
                 />
               </div>
               <Card
-                icon="/images/legalCheck.png"
-                title="legalcheck"
-                buttonText="know more"
+                  icon= {SoftwareSolution?.solutions[2].image.url} 
+                  title={SoftwareSolution?.solutions[2].text} 
+                  buttonText={SoftwareSolution?.solutions[2].btn_text} 
                 buttonLink="/services/legal-check"
                 buttonBorder="white"
                 buttonBg="black"
                 buttonTextColor="#FF9966"
                 playButton="/images/playBtn.png"
                 playButtonLink="https://example.com/play"
-                backgroundImage="/card3.png"
+                backgroundImage={SoftwareSolution?.solutions[2].bg_image.url} 
               />
 
               <Card
-                icon="/images/qr-certcode.png"
-                title="QrCertCode"
-                buttonText="know more"
+                  icon= {SoftwareSolution?.solutions[4].image.url} 
+                  title={SoftwareSolution?.solutions[4].text} 
+                  buttonText={SoftwareSolution?.solutions[4].btn_text} 
                 buttonLink="/services/QrCertCode"
                 buttonBorder="white"
                 buttonBg="black"
                 buttonTextColor="#FF9966"
                 playButton="/images/playBtn.png"
                 playButtonLink="https://example.com/play"
-                backgroundImage="/card4.png"
+                backgroundImage={SoftwareSolution?.solutions[4].bg_image.url} 
               />
 
               <Card
-                icon="/images/bar-certcode.png"
-                title="BarCertCode"
-                buttonText="know more"
+                 icon= {SoftwareSolution?.solutions[3].image.url} 
+                 title={SoftwareSolution?.solutions[3].text} 
+                 buttonText={SoftwareSolution?.solutions[3].btn_text} 
                 buttonLink="/services/BarCertCode"
                 buttonBorder="#FF9966"
                 buttonBg="white"
                 buttonTextColor="black"
                 playButton="/images/playBtn.png"
                 playButtonLink="https://example.com/play"
-                backgroundImage="/card5.png"
+                backgroundImage={SoftwareSolution?.solutions[3].bg_image.url} 
               />
             </div>
 

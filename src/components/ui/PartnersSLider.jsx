@@ -28,11 +28,12 @@ function OurPartnersSlider() {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:1337/api/ourpartner?populate=*")
+    const apiUrl = `${import.meta.env.VITE_API_BASE_URL}/ourpartner?populate=*`;
+    fetch(apiUrl)
       .then((res) => res.json())
       .then((res) => {
         const baseUrl = "http://localhost:1337";
-        const fetchedImages = res.data.images.map((img) => baseUrl + img.url);
+        const fetchedImages = res.data.images.map((img) =>  img.url);
         setImages(fetchedImages);
       })
       .catch((err) => {

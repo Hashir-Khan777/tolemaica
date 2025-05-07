@@ -7,11 +7,11 @@ import RegisterModal from "./ui/RegisterModal";
 function Hero() {
   const [contactModalIsOpen, setContactModalIsOpen] = useState(false);
   const [registerModalIsOpen, setRegisterModalIsOpen] = useState(false);
-
   const [heroData, setHeroData] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:1337/api/homehero?populate=*")
+    const apiUrl = `${import.meta.env.VITE_API_BASE_URL}/homehero?populate=*`;
+    fetch(apiUrl)
       .then((res) => res.json())
       .then((json) => {
         setHeroData(json.data);

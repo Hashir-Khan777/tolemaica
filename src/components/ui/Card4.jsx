@@ -12,7 +12,7 @@ function Card4({
 
   return (
     <div
-      className="w-full md:w-[302px] md:h-[525px] min-h-[500px] border-2 border-white/64 rounded-[20px] backdrop-blur-[100px] p-5 flex flex-col gap-[12px] py-[24px] items-center justify-start text-center"
+      className="lg:w-[302px] md:w-[302px] md:h-[525px] min-h-[500px] border-2 border-white/64 rounded-[20px] backdrop-blur-[100px] p-5 flex flex-col gap-[12px] py-[24px] items-center justify-start text-center"
       style={backgroundStyle}
     >
       <img

@@ -9,7 +9,50 @@ import FumigationProcess from "./FumigationProcess";
 import SolutionSection from "./MscSolutions";
 import ResultsSection from "./MSCResult";
 
-function InsuranceSection() {
+const InsuranceSection = ({ worksectorData }) => {
+  const { details, services } = worksectorData;
+  
+  const useCase1Heading = details[2];
+  const challenge1Heading = details[3];
+  const challenge1Para = details[4];
+  const solution1Heading = details[5];
+  const solution1Para = details[6];
+  const benefits1Heading = details[7];
+  const benefits1Para = details[8];
+
+   const useCase2Heading = details[9];
+  // const challenge2Heading = details[3];
+   const challenge2Para = details[10];
+  // const solution2Heading = details[5];
+   const solution2Para = details[11];
+  // const benefits2Heading = details[7];
+   const benefits2Para = details[12];
+
+   const useCase3Heading = details[13];
+  // const challenge3Heading = details[3];
+   const challenge3Para = details[14];
+  // const solution3Heading = details[5];
+   const solution3Para = details[15];
+  // const benefits3Heading = details[7];
+   const benefits3Para = details[16];
+
+   
+   const useCase4Heading = details[17];
+  // const challenge3Heading = details[3];
+   const challenge4Para = details[18];
+  // const solution3Heading = details[5];
+   const solution4Para = details[19];
+  // const benefits3Heading = details[7];
+   const benefits4Para = details[20];
+
+ 
+  const theBottomLine = details[21];
+  const theBottomLinePara = details[22];
+ 
+  if (!worksectorData) {
+    return <div className="bg-black">Loading...</div>; // Display loading message until data is available
+  }
+
   return (
     <section className="relative overflow-hidden bg-black w-full py-[100px] flex flex-col">
       <video
@@ -25,22 +68,22 @@ function InsuranceSection() {
 
       {/* <div className="md:container px-[20px] md:px-auto mx-auto"> */}
       <div className="relative max-w-[1280px] mx-auto z-10">
-      <h1 class="my-10 text-center font-raleway text-white/60 font-[400] text-[20px]/[23px] md:text-[40px]/[100%] uppercase tracking-wide">USE CASE 1: <span class="bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">Certified Damage Assessment for Insurance Claim</span></h1>
+      <h1 class="my-10 text-center font-raleway text-white/60 font-[400] text-[20px]/[23px] md:text-[40px]/[100%] uppercase tracking-wide">{useCase1Heading ? useCase1Heading.light_heading : "Loading..."} <span class="bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">{useCase1Heading ? useCase1Heading.dark_heading : "Loading..."}</span></h1>
 
         <h2 className="text-center font-raleway text-white font-normal text-xl md:text-[40px] mb-[48px]">
-          <span className="text-white/[0.64]">THE</span> CHALLENGE
+          <span className="text-white/[0.64]">{challenge1Heading ? challenge1Heading.light_heading : "Loading..."}</span> {challenge1Heading ? challenge1Heading.dark_heading : "Loading..."}
         </h2>
         <div className="flex flex-col gap-[48px] font-outfit font-light text-base md:text-2xl text-white/[0.64] text-center mb-[50px]">
           <p>
-          The Insurance Company faced challenges in verifying the authenticity and accuracy of photographic evidence submitted for insurance claims. The reliance on manually acquired images created risks of fraud, manipulation, and incorrect damage assessment.
+          {challenge1Para ? challenge1Para.text : "Loading..."}
           </p>
           </div>
           <h2 className="text-center font-raleway text-white font-normal text-xl md:text-[40px] mb-[48px]">
-          <span className="text-white/[0.64]">THE</span> SOLUTION
+          <span className="text-white/[0.64]">{solution1Heading ? solution1Heading.light_heading : "Loading..."}</span> {solution1Heading ? solution1Heading.dark_heading : "Loading..."}
         </h2>
         <div className="flex flex-col gap-[48px] font-outfit font-light text-base md:text-2xl text-white/[0.64] text-center mb-[50px]">
           <p>
-          Tolemaica implemented Instant Automatic Certification (IAC), allowing real-time image certification through a WebApp or API integration. The system ensures that all images submitted contain legally certified metadata (time, location, and identity of the uploader), making them fully verifiable and tamper-proof.
+          {solution1Para ? solution1Para.text : "Loading..."}
           </p>
         </div>
         {/* <div className="flex flex-col gap-[50px]">
@@ -92,39 +135,35 @@ function InsuranceSection() {
           </div>
         </div> */}
         <h2 className="mt-[100px] text-center font-raleway text-white font-normal text-xl md:text-[40px] mb-[48px]">
-          <span className="text-white/[0.64]">THE</span> BENEFITS
+          <span className="text-white/[0.64]">{benefits1Heading ? benefits1Heading.light_heading : "Loading..."}</span> {benefits1Heading ? benefits1Heading.dark_heading : "Loading..."}
         </h2>
         <p className="text-center text-white/64 font-outfit font-light text-base md:text-2xl mb-[48px]">
-          Tolemaica introduces a certified digital solution that ensures
-          complete traceability by capturing{" "}
+        {benefits1Para ? benefits1Para.text : "Loading..."}{" "}
           <span className="bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-            legally valid, timestamped, and geolocated images
+          {benefits1Para ? benefits1Para.colored_text : "Loading..."}
           </span>{" "}
-          at both arrival and departure. The system records:
+         
         </p>
         <div className="flex flex-col gap-[32px]">
           <div className="flex flex-wrap items-center justify-center gap-16">
-            <div className="solution-shadow w-[302px] h-[475px] border-2 border-white/64 bg-black/24 backdrop-blur-[200] py-[24px] px-[16px] rounded-[20px]">
-              <img src="/insu-1.png" className="rounded-[12px] mx-auto" />
-              <p className="mt-[24px] mb-[16px] font-outfit text-center font-medium text-2xl bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-              Fraud Reduction
-              </p>
-              <p class="font-outfit font-light text-[12px] md:text-xl text-white/64 text-center">Certified images prevent fraudulent claims and ensure claim accuracy.</p>
-            </div>
-            <div className="solution-shadow w-[302px] h-[475px] border-2 border-white/64 bg-black/24 backdrop-blur-[200] py-[24px] px-[16px] rounded-[20px]">
-              <img src="/insu-2.png" className="rounded-[12px] mx-auto" />
-              <p className="mt-[24px] mb-[16px] font-outfit text-center font-medium text-2xl bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-              Operational Efficiency
-              </p>
-              <p class="font-outfit font-light text-[12px] md:text-xl text-white/64 text-center">Faster claims processing through automatic AI damage assessment.</p>
-            </div>
-            <div className="solution-shadow w-[302px] h-[475px] border-2 border-white/64 bg-black/24 backdrop-blur-[200] py-[24px] px-[16px] rounded-[20px]">
-              <img src="/insu-3.png" className="rounded-[12px] mx-auto" />
-              <p className="mt-[24px] mb-[16px] font-outfit text-center font-medium text-2xl bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-              Cost Savings
-              </p>
-              <p class="font-outfit font-light text-[12px] md:text-xl text-white/64 text-center">Reduced reliance on manual verifications and on-site inspections.</p>
-            </div>
+          {services.slice(0, 3).map((service, index) => (
+              <div
+                key={index}
+                className="solution-shadow w-[302px] h-[475px] border-2 border-white/64 bg-black/24 backdrop-blur-[200] py-[24px] px-[16px] rounded-[20px]"
+              >
+                <img
+                  src={service.image.url}
+                  className="rounded-[12px] mx-auto"
+                  alt={service.image.name}
+                />
+                <p className="mt-[24px] mb-[16px] font-outfit text-center font-medium text-2xl bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
+                  {service.heading.light_heading}
+                </p>
+                <p className="font-outfit font-light text-[12px] md:text-xl text-white/64 text-center">
+                  {service.paragraph}
+                </p>
+              </div>
+            ))}
           </div>
          
           {/* <p className="text-center font-outfit font-light text-base md:text-2xl text-white/64">
@@ -135,22 +174,22 @@ function InsuranceSection() {
         </div>
       </div>
       <div className="relative max-w-[1280px] mx-auto z-10">
-      <h1 class="my-10 text-center font-raleway text-white/60 font-[400] text-[20px]/[23px] md:text-[40px]/[100%] uppercase tracking-wide">USE CASE 2: <span class="bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent"> Preemptive Damage Assessment for Urban Infrastructure</span></h1>
+      <h1 class="my-10 text-center font-raleway text-white/60 font-[400] text-[20px]/[23px] md:text-[40px]/[100%] uppercase tracking-wide">{useCase1Heading ? useCase1Heading.light_heading : "Loading..."} <span class="bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">{useCase2Heading ? useCase2Heading.dark_heading : "Loading..."}</span></h1>
 
         <h2 className="text-center font-raleway text-white font-normal text-xl md:text-[40px] mb-[48px]">
-          <span className="text-white/[0.64]">THE</span> CHALLENGE
+          <span className="text-white/[0.64]">{challenge1Heading ? challenge1Heading.light_heading : "Loading..."}</span> {challenge1Heading ? challenge1Heading.dark_heading : "Loading..."}
         </h2>
         <div className="flex flex-col gap-[48px] font-outfit font-light text-base md:text-2xl text-white/[0.64] text-center mb-[50px]">
           <p>
-          Traditional infrastructure damage assessments were reactive and required extensive manual effort, leading to delays in insurance compensation and risk mitigation.
+          {challenge2Para ? challenge2Para.text : "Loading..."}
           </p>
           </div>
           <h2 className="text-center font-raleway text-white font-normal text-xl md:text-[40px] mb-[48px]">
-          <span className="text-white/[0.64]">THE</span> SOLUTION
+          <span className="text-white/[0.64]">{solution1Heading ? solution1Heading.light_heading : "Loading..."}</span> {solution1Heading ? solution1Heading.dark_heading : "Loading..."}
         </h2>
         <div className="flex flex-col gap-[48px] font-outfit font-light text-base md:text-2xl text-white/[0.64] text-center mb-[50px]">
           <p>
-          By integrating IAC technology, the Insurance Company and NTT Data enabled real-time monitoring and documentation of urban infrastructure conditions through certified photographic evidence collected via experts and remote IoT devices.
+          {solution2Para ? solution2Para.text : "Loading..."}
           </p>
         </div>
         {/* <div className="flex flex-col gap-[50px]">
@@ -202,39 +241,35 @@ function InsuranceSection() {
           </div>
         </div> */}
         <h2 className="mt-[100px] text-center font-raleway text-white font-normal text-xl md:text-[40px] mb-[48px]">
-          <span className="text-white/[0.64]">THE</span> BENEFITS
+          <span className="text-white/[0.64]">{benefits1Heading ? benefits1Heading.light_heading : "Loading..."}</span> {benefits1Heading ? benefits1Heading.dark_heading : "Loading..."}
         </h2>
         <p className="text-center text-white/64 font-outfit font-light text-base md:text-2xl mb-[48px]">
-          Tolemaica introduces a certified digital solution that ensures
-          complete traceability by capturing{" "}
+        {benefits1Para ? benefits1Para.text : "Loading..."}{" "}
           <span className="bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-            legally valid, timestamped, and geolocated images
+          {benefits2Para ? benefits2Para.colored_text : "Loading..."}
           </span>{" "}
-          at both arrival and departure. The system records:
+         
         </p>
         <div className="flex flex-col gap-[32px]">
           <div className="flex flex-wrap items-center justify-center gap-16">
-            <div className="solution-shadow w-[302px] h-[475px] border-2 border-white/64 bg-black/24 backdrop-blur-[200] py-[24px] px-[16px] rounded-[20px]">
-              <img src="/insu-4.png" className="rounded-[12px] mx-auto" />
-              <p className="mt-[24px] mb-[16px] font-outfit text-center font-medium text-2xl bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-              Predictive Maintenance
-              </p>
-              <p class="font-outfit font-light text-[12px] md:text-xl text-white/64 text-center">Automated alerts flag potential risks before they escalate.</p>
-            </div>
-            <div className="solution-shadow w-[302px] h-[475px] border-2 border-white/64 bg-black/24 backdrop-blur-[200] py-[24px] px-[16px] rounded-[20px]">
-              <img src="/insu-5.png" className="rounded-[12px] mx-auto" />
-              <p className="mt-[24px] mb-[16px] font-outfit text-center font-medium text-2xl bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-              Data Accuracy
-              </p>
-              <p class="font-outfit font-light text-[12px] md:text-xl text-white/64 text-center">Secure documentation ensures compliance and dispute resolution.</p>
-            </div>
-            <div className="solution-shadow w-[302px] h-[475px] border-2 border-white/64 bg-black/24 backdrop-blur-[200] py-[24px] px-[16px] rounded-[20px]">
-              <img src="/insu-6.png" className="rounded-[12px] mx-auto" />
-              <p className="mt-[24px] mb-[16px] font-outfit text-center font-medium text-2xl bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-              Enhanced Safety
-              </p>
-              <p class="font-outfit font-light text-[12px] md:text-xl text-white/64 text-center">Immediate action can be taken on critical infrastructure failures.</p>
-            </div>
+          {services.slice(3, 6).map((service, index) => (
+              <div
+                key={index}
+                className="solution-shadow w-[302px] h-[475px] border-2 border-white/64 bg-black/24 backdrop-blur-[200] py-[24px] px-[16px] rounded-[20px]"
+              >
+                <img
+                  src={service.image.url}
+                  className="rounded-[12px] mx-auto"
+                  alt={service.image.name}
+                />
+                <p className="mt-[24px] mb-[16px] font-outfit text-center font-medium text-2xl bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
+                  {service.heading.light_heading}
+                </p>
+                <p className="font-outfit font-light text-[12px] md:text-xl text-white/64 text-center">
+                  {service.paragraph}
+                </p>
+              </div>
+            ))}
           </div>
          
           {/* <p className="text-center font-outfit font-light text-base md:text-2xl text-white/64">
@@ -245,22 +280,22 @@ function InsuranceSection() {
         </div>
       </div>
       <div className="relative max-w-[1280px] mx-auto z-10">
-      <h1 class="my-10 text-center font-raleway text-white/60 font-[400] text-[20px]/[23px] md:text-[40px]/[100%] uppercase tracking-wide">USE CASE 3: <span class="bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent"> AI-Powered Claims Verification for Automotive Insurance</span></h1>
+      <h1 class="my-10 text-center font-raleway text-white/60 font-[400] text-[20px]/[23px] md:text-[40px]/[100%] uppercase tracking-wide">{useCase3Heading ? useCase3Heading.light_heading : "Loading..."} <span class="bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">{useCase3Heading ? useCase3Heading.dark_heading : "Loading..."}</span></h1>
 
         <h2 className="text-center font-raleway text-white font-normal text-xl md:text-[40px] mb-[48px]">
-          <span className="text-white/[0.64]">THE</span> CHALLENGE
+          <span className="text-white/[0.64]">{challenge1Heading ? challenge1Heading.light_heading : "Loading..."}</span> {challenge1Heading ? challenge1Heading.dark_heading : "Loading..."}
         </h2>
         <div className="flex flex-col gap-[48px] font-outfit font-light text-base md:text-2xl text-white/[0.64] text-center mb-[50px]">
           <p>
-          The Insurance Company needed to streamline the process of verifying vehicle damage post-accident while reducing the administrative burden on both claimants and adjusters.
+          {challenge3Para ? challenge3Para.text : "Loading..."}
           </p>
           </div>
           <h2 className="text-center font-raleway text-white font-normal text-xl md:text-[40px] mb-[48px]">
-          <span className="text-white/[0.64]">THE</span> SOLUTION
+          <span className="text-white/[0.64]">{solution1Heading ? solution1Heading.light_heading : "Loading..."}</span> {solution1Heading ? solution1Heading.dark_heading : "Loading..."}
         </h2>
         <div className="flex flex-col gap-[48px] font-outfit font-light text-base md:text-2xl text-white/[0.64] text-center mb-[50px]">
           <p>
-          Tolemaica’s AI-powered verification system was integrated into the Insurance Company’s claims processing workflow. Certified photos of vehicle damage, captured at the accident site via a dedicated WebApp, were analyzed instantly, reducing the need for manual inspections.
+          {solution3Para ? solution3Para.text : "Loading..."}
           </p>
         </div>
         {/* <div className="flex flex-col gap-[50px]">
@@ -312,39 +347,35 @@ function InsuranceSection() {
           </div>
         </div> */}
         <h2 className="mt-[100px] text-center font-raleway text-white font-normal text-xl md:text-[40px] mb-[48px]">
-          <span className="text-white/[0.64]">THE</span> BENEFITS
+          <span className="text-white/[0.64]">{benefits1Heading ? benefits1Heading.light_heading : "Loading..."}</span> {benefits1Heading ? benefits1Heading.dark_heading : "Loading..."}
         </h2>
         <p className="text-center text-white/64 font-outfit font-light text-base md:text-2xl mb-[48px]">
-          Tolemaica introduces a certified digital solution that ensures
-          complete traceability by capturing{" "}
+        {benefits3Para ? benefits3Para.text : "Loading..."}{" "}
           <span className="bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-            legally valid, timestamped, and geolocated images
+          {benefits3Para ? benefits3Para.colored_text : "Loading..."}
           </span>{" "}
-          at both arrival and departure. The system records:
+         
         </p>
         <div className="flex flex-col gap-[32px]">
           <div className="flex flex-wrap items-center justify-center gap-16">
-            <div className="solution-shadow w-[302px] h-[475px] border-2 border-white/64 bg-black/24 backdrop-blur-[200] py-[24px] px-[16px] rounded-[20px]">
-              <img src="/insu-7.png" className="rounded-[12px] mx-auto" />
-              <p className="mt-[24px] mb-[16px] font-outfit text-center font-medium text-2xl bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-              Faster Claims Processing
-              </p>
-              <p class="font-outfit font-light text-[12px] md:text-xl text-white/64 text-center">Automatic validation reduces approval time by X%.</p>
-            </div>
-            <div className="solution-shadow w-[302px] h-[475px] border-2 border-white/64 bg-black/24 backdrop-blur-[200] py-[24px] px-[16px] rounded-[20px]">
-              <img src="/insu-8.png" className="rounded-[12px] mx-auto" />
-              <p className="mt-[24px] mb-[16px] font-outfit text-center font-medium text-2xl bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-              Customer Convenience
-              </p>
-              <p class="font-outfit font-light text-[12px] md:text-xl text-white/64 text-center">Claimants can submit certified images instantly via mobile.</p>
-            </div>
-            <div className="solution-shadow w-[302px] h-[475px] border-2 border-white/64 bg-black/24 backdrop-blur-[200] py-[24px] px-[16px] rounded-[20px]">
-              <img src="/insu-9.png" className="rounded-[12px] mx-auto" />
-              <p className="mt-[24px] mb-[16px] font-outfit text-center font-medium text-2xl bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-              Reduced Costs
-              </p>
-              <p class="font-outfit font-light text-[12px] md:text-xl text-white/64 text-center">AI-powered damage estimation lowers manual intervention.</p>
-            </div>
+          {services.slice(6, 9).map((service, index) => (
+              <div
+                key={index}
+                className="solution-shadow w-[302px] h-[475px] border-2 border-white/64 bg-black/24 backdrop-blur-[200] py-[24px] px-[16px] rounded-[20px]"
+              >
+                <img
+                  src={service.image.url}
+                  className="rounded-[12px] mx-auto"
+                  alt={service.image.name}
+                />
+                <p className="mt-[24px] mb-[16px] font-outfit text-center font-medium text-2xl bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
+                  {service.heading.light_heading}
+                </p>
+                <p className="font-outfit font-light text-[12px] md:text-xl text-white/64 text-center">
+                  {service.paragraph}
+                </p>
+              </div>
+            ))}
           </div>
          
           {/* <p className="text-center font-outfit font-light text-base md:text-2xl text-white/64">
@@ -355,22 +386,22 @@ function InsuranceSection() {
         </div>
       </div>
       <div className="relative max-w-[1280px] mx-auto z-10">
-      <h1 class="my-10 text-center font-raleway text-white/60 font-[400] text-[20px]/[23px] md:text-[40px]/[100%] uppercase tracking-wide">USE CASE 4: <span class="bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">  Automated Insurance Verification for Corporate Fleets</span></h1>
+      <h1 class="my-10 text-center font-raleway text-white/60 font-[400] text-[20px]/[23px] md:text-[40px]/[100%] uppercase tracking-wide">{useCase4Heading ? useCase4Heading.light_heading : "Loading..."} <span class="bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">{useCase1Heading ? useCase1Heading.dark_heading : "Loading..."}</span></h1>
 
         <h2 className="text-center font-raleway text-white font-normal text-xl md:text-[40px] mb-[48px]">
-          <span className="text-white/[0.64]">THE</span> CHALLENGE
+          <span className="text-white/[0.64]">{challenge1Heading ? challenge1Heading.light_heading : "Loading..."}</span> {challenge1Heading ? challenge1Heading.dark_heading : "Loading..."}
         </h2>
         <div className="flex flex-col gap-[48px] font-outfit font-light text-base md:text-2xl text-white/[0.64] text-center mb-[50px]">
           <p>
-          Fleet managers needed a seamless process to verify vehicle conditions and insurance coverage at scale, ensuring compliance and preventing fraudulent claims.
+          {challenge4Para ? challenge4Para.text : "Loading..."}
           </p>
           </div>
           <h2 className="text-center font-raleway text-white font-normal text-xl md:text-[40px] mb-[48px]">
-          <span className="text-white/[0.64]">THE</span> SOLUTION
+          <span className="text-white/[0.64]">{solution1Heading ? solution1Heading.light_heading : "Loading..."}</span> {solution1Heading ? solution1Heading.dark_heading : "Loading..."}
         </h2>
         <div className="flex flex-col gap-[48px] font-outfit font-light text-base md:text-2xl text-white/[0.64] text-center mb-[50px]">
           <p>
-          Tolemaica’s blockchain-powered certification enabled the Insurance Company to maintain a real-time digital ledger of all vehicle inspections, ensuring that each claim was backed by verifiable data.
+          {solution4Para ? solution4Para.text : "Loading..."}
           </p>
         </div>
         {/* <div className="flex flex-col gap-[50px]">
@@ -422,39 +453,37 @@ function InsuranceSection() {
           </div>
         </div> */}
         <h2 className="mt-[100px] text-center font-raleway text-white font-normal text-xl md:text-[40px] mb-[48px]">
-          <span className="text-white/[0.64]">THE</span> BENEFITS
+          <span className="text-white/[0.64]">{benefits1Heading ? benefits1Heading.light_heading : "Loading..."}</span> {benefits1Heading ? benefits1Heading.dark_heading : "Loading..."}
         </h2>
         <p className="text-center text-white/64 font-outfit font-light text-base md:text-2xl mb-[48px]">
-          Tolemaica introduces a certified digital solution that ensures
-          complete traceability by capturing{" "}
+        {benefits4Para ? benefits4Para.text : "Loading..."}{" "}
           <span className="bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-            legally valid, timestamped, and geolocated images
+          {benefits4Para ? benefits4Para.colored_text : "Loading..."}
           </span>{" "}
-          at both arrival and departure. The system records:
+         
         </p>
         <div className="flex flex-col gap-[32px]">
           <div className="flex flex-wrap items-center justify-center gap-16">
-            <div className="solution-shadow w-[302px] h-[475px] border-2 border-white/64 bg-black/24 backdrop-blur-[200] py-[24px] px-[16px] rounded-[20px]">
-              <img src="/insu-10.png" className="rounded-[12px] mx-auto" />
-              <p className="mt-[24px] mb-[16px] font-outfit text-center font-medium text-2xl bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-              Transparency & Compliance
-              </p>
-              <p class="font-outfit font-light text-[12px] md:text-xl text-white/64 text-center">Every inspection is recorded with a verifiable timestamp.</p>
-            </div>
-            <div className="solution-shadow w-[302px] h-[475px] border-2 border-white/64 bg-black/24 backdrop-blur-[200] py-[24px] px-[16px] rounded-[20px]">
-              <img src="/insu-11.png" className="rounded-[12px] mx-auto" />
-              <p className="mt-[24px] mb-[16px] font-outfit text-center font-medium text-2xl bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-              Operational Efficiency
-              </p>
-              <p class="font-outfit font-light text-[12px] md:text-xl text-white/64 text-center">Automated verification reduces fleet management workload.</p>
-            </div>
-            <div className="solution-shadow w-[302px] h-[475px] border-2 border-white/64 bg-black/24 backdrop-blur-[200] py-[24px] px-[16px] rounded-[20px]">
-              <img src="/insu-12.png" className="rounded-[12px] mx-auto" />
-              <p className="mt-[24px] mb-[16px] font-outfit text-center font-medium text-2xl bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
-              Financial Impact
-              </p>
-              <p class="font-outfit font-light text-[12px] md:text-xl text-white/64 text-center">Preventative monitoring lowers unexpected claim costs by X%.</p>
-            </div>
+            
+            
+          {services.slice(9, 12).map((service, index) => (
+              <div
+                key={index}
+                className="solution-shadow w-[302px] h-[475px] border-2 border-white/64 bg-black/24 backdrop-blur-[200] py-[24px] px-[16px] rounded-[20px]"
+              >
+                <img
+                  src={service.image.url}
+                  className="rounded-[12px] mx-auto"
+                  alt={service.image.name}
+                />
+                <p className="mt-[24px] mb-[16px] font-outfit text-center font-medium text-2xl bg-gradient-to-r from-[#FF9966] to-white bg-clip-text text-transparent">
+                  {service.heading.light_heading}
+                </p>
+                <p className="font-outfit font-light text-[12px] md:text-xl text-white/64 text-center">
+                  {service.paragraph}
+                </p>
+              </div>
+            ))}
           </div>
          
           {/* <p className="text-center font-outfit font-light text-base md:text-2xl text-white/64">
@@ -469,13 +498,13 @@ function InsuranceSection() {
       <div className="relative mt-[100px] z-10 flex flex-col justify-center items-center text-center lg:px-[100px] md:px-[30px] px-[20px]">
       
         <div className="mt-[100px] text-center flex flex-col md:gap-[64px] gap-[40px] max-w-[1000px] mx-auto">
-                  <Heading1 headingGray="bottom" headingWhite="line" />
+        <Heading1 headingGray={theBottomLine ? theBottomLine.light_heading : "Loading..."} headingWhite={theBottomLine ? theBottomLine.dark_heading : "Loading..."} />
                   <Text>
-                  Through its partnership with NTT Data, Tolemaica revolutionized insurance claims processing, infrastructure monitoring, and vehicle damage verification. By leveraging IAC-certified documentation, the Insurance Company not {" "}
+                  {theBottomLinePara ? theBottomLinePara.text : "Loading..."}{" "}
                     <GradientSpan>
-                    only streamlined workflows but also reduced fraud, improved efficiency, and
-                    </GradientSpan>{" "}
-                    <GradientSpan>enhanced customer experience—setting a new standard in digital insurance claims automation.</GradientSpan>
+                    {theBottomLinePara ? theBottomLinePara.colored_text : "Loading..."}
+                    </GradientSpan>
+                    
                   </Text>
                 </div>
         {/* Fumigation process */}
